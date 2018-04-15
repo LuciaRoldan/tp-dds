@@ -7,5 +7,4 @@ public class Documento {
 		this.tipo = tipo;
 		this.documento = documento;
 	}
-	
 }
