@@ -1,23 +1,29 @@
 import java.time.LocalDate;
 
 public class Administrador extends Usuario{
-	String numeroDeIdentificacion;
 
-	public String getNumeroDeIdentificacion() {
-		return numeroDeIdentificacion;
-	}
+	int numeroDeIdentificacion;
+
+
 
 	Administrador(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena,
-				  String numeroDeIdentificacion){
+				  int numeroDeIdentificacion){
+
 		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 	
+
 	
-	
-	//Getters and Setters
-	public void setNumeroDeIdentificacion(String numeroDeIdentificacion) {
+	/////////////////////////////////  GETTERS AND SETTERS //////////////////////////////////////////////////////
+
+
+	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) {
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
-	
+
+    public int getNumeroDeIdentificacion() {
+        return numeroDeIdentificacion;
+    }
+
 }

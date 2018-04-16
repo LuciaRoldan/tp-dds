@@ -1,13 +1,19 @@
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import java.io.File;
+import java.io.FileReader;
 
 public class Dispositivo {
 	String nombre;
 	int kWh;
 	boolean encendido;
-	
-	Dispositivo(String nombre, int kWh, boolean encendido){
+    TipoDeDispositivo tipoDeDispositivo;
+
+	Dispositivo(String nombre, int kWh, boolean encendido,TipoDeDispositivo tipoDeDispositivo){
 		this.nombre = nombre;
 		this.kWh = kWh;
 		this.encendido = encendido;
+		this.tipoDeDispositivo = tipoDeDispositivo;
 	}
 	
 	
@@ -31,4 +37,22 @@ public class Dispositivo {
 	public void setEncendido(boolean encendido) {
 		this.encendido = encendido;
 	}
+
+
+	///////////////////// PARSEAR OBJETO ///////////////////////////
+
+    /*
+
+    Gson gson = new Gson();
+
+    File f = new File("NewFile.txt");
+
+    // 1. JSON to Java object, read it from a file.
+    Dispositivo disp = gson.fromJson(new FileReader(f), Dispositivo.class);
+
+    */
+
+
 }
+
+
