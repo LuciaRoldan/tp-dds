@@ -1,5 +1,6 @@
-public interface CategoriaResidencial {
 
+
+public interface CategoriaResidencial {
 
 
 }

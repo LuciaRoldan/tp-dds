@@ -15,10 +15,10 @@ public class Dispositivo {
 		this.encendido = encendido;
 		this.tipoDeDispositivo = tipoDeDispositivo;
 	}
-	
-	
-	
-	
+
+
+
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -41,8 +41,8 @@ public class Dispositivo {
 
 	///////////////////// PARSEAR OBJETO ///////////////////////////
 
-    /*
 
+    /*
     Gson gson = new Gson();
 
     File f = new File("NewFile.txt");
