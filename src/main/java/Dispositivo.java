@@ -16,7 +16,6 @@ public class Dispositivo {
 
 
 
-
 	public String getNombre() {
 		return nombre;
 	}
