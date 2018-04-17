@@ -3,11 +3,11 @@ import java.io.IOException;
 
 public class Dispositivo {
 	String nombre;
-	int kWh;
+	long kWh;
 	boolean encendido;
     TipoDeDispositivo tipoDeDispositivo;
 
-	Dispositivo(String nombre, int kWh, boolean encendido,TipoDeDispositivo tipoDeDispositivo) throws IOException {
+	public void inicializarDispositivo(String nombre, long kWh, boolean encendido,TipoDeDispositivo tipoDeDispositivo) throws IOException {
 		this.nombre = nombre;
 		this.kWh = kWh;
 		this.encendido = encendido;
@@ -22,7 +22,7 @@ public class Dispositivo {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public int getkWh() {
+	public long getkWh() {
 		return kWh;
 	}
 	public void setkWh(int kWh) {

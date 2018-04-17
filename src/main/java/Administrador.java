@@ -9,7 +9,7 @@ public class Administrador extends Usuario{
 	Administrador(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena,
 				  int numeroDeIdentificacion){
 
-		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
+		this.inicializarUsuario(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 	

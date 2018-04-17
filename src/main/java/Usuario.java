@@ -1,4 +1,3 @@
-import java.sql.Date;
 import java.time.LocalDate;
 
 public abstract class Usuario {
@@ -8,7 +7,7 @@ public abstract class Usuario {
 	String nombreUsuario;
 	String contrasena;
 	
-	Usuario(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena){
+	public void inicializarUsuario(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena){
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio = domicilio;
 		this.fechaDeAlta = fechaDeAlta;

@@ -12,22 +12,25 @@ import java.io.IOException;
 
         public static void main(String[] args) throws IOException {
 
+            //System.out.println("TESTTTTTT");
+            //parsearDispositivo("src/main/java/hola.json");
             System.out.println("TESTTTTTT");
-            parsearDispositivo("src/main/java/hola.json");
-            System.out.println("TESTTTTTT");
+            parsearCliente("src/main/java/hola.json");
 
 
         }
 
-        public static void parsearDispositivo(String nombreArchivo) {
+        public static Dispositivo parsearDispositivo(String nombreArchivo) {
 
              JSONParser parser = new JSONParser();
+
+             Dispositivo dispo = new Dispositivo();
 
             try {
 
                 //Object obj = parser.parse(new FileReader(System.getProperty("user.dir") + System.getProperty("file.separator") + nombreArchivo));
 
-                Object obj = parser.parse(new FileReader("src/main/java/hola.json"));
+                Object obj = parser.parse(new FileReader(nombreArchivo));
 
                 /*String nombre;
 	            int kWh;
@@ -44,16 +47,15 @@ import java.io.IOException;
                 long kWH = (long) jsonObject.get("kWh");
                 System.out.println(kWH);
 
-                TipoDeDispositivo tdd = (TipoDeDispositivo) jsonObject.get("TipoDeDispositivo") ;
+                boolean encendido = (boolean) jsonObject.get("encendido");
+                System.out.print(encendido);
 
-                /*
-                // loop array
-                JSONArray msg = (JSONArray) jsonObject.get("encendido");
-                Iterator<String> iterator = msg.iterator();
-                while (iterator.hasNext()) {
-                    System.out.println(iterator.next());
-                }
-                */
+                TipoDeDispositivo tdd = (TipoDeDispositivo) jsonObject.get("TipoDeDispositivo") ;
+                System.out.print(tdd);
+
+
+               dispo.inicializarDispositivo(name,kWH,encendido,tdd);
+
 
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -63,24 +65,89 @@ import java.io.IOException;
                 e.printStackTrace();
             }
 
+            return  dispo;
+
         }
 
 
 
 
-/*
-    public Cliente parsearCliente(String nombreArchivo) throws IOException {
 
-            File archivo = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + nombreArchivo);
+    public static Cliente parsearCliente(String nombreArchivo) throws IOException {
 
-            ObjectMapper mapper = new ObjectMapper();
+        JSONParser parser = new JSONParser();
+        Cliente cliente = new Cliente();
 
-            //JSON from file to Object
-            Cliente cliente = mapper.readValue(archivo, Cliente.class);
+        try {
 
-            return cliente;
+
+            Object obj = parser.parse(new FileReader(nombreArchivo));
+            JSONObject jsonObject = (JSONObject) obj;
+            System.out.println(jsonObject);
+
+            String nombresYapellidos = (String) jsonObject.get("nombresYapellidos");
+            System.out.println(nombresYapellidos);
+
+            String tipoDocument = (String) jsonObject.get("tipoDocumento");
+            System.out.println(tipoDocument);
+
+            String nombreUsuario = (String) jsonObject.get("nombreDeUsuario");
+            System.out.println(nombreUsuario);
+
+            String domicilio = (String) jsonObject.get("domicilio");
+            System.out.println(domicilio);
+
+            long telefono = (long) jsonObject.get("telefono");
+            System.out.println(telefono);
+            long numeroDocumento = (long) jsonObject.get("numeroDocumento");
+            System.out.println(numeroDocumento);
+
+
+
+            String fechaDeAlta = (String) jsonObject.get("FechaDeAlta");
+            System.out.println(fechaDeAlta);
+
+
+
+            String categoriaResidencial = (String) jsonObject.get("TipoDeCategoria");
+            System.out.println(categoriaResidencial);
+
+            String contrasena = (String) jsonObject.get("Contrasena");
+            System.out.println(contrasena);
+
+
+
+
+            JSONObject dispositivos = (JSONObject) jsonObject.get("Dispositivos");
+            System.out.println(dispositivos);
+
+            /*
+            Iterator<Dispositivo> iterator = dispositivos.iterator();
+            while (iterator.hasNext()) {
+                System.out.println(iterator.next());
+            }
+
+            */
+
+
+            //public void inicilalizarCliente(String g nombreUsuario, String contrasena, String tipoDocumento,long numeroDocumento, String telefono, categoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
+
+                cliente.inicilalizarCliente(nombresYapellidos,domicilio,null,nombreUsuario,contrasena,tipoDocument,numeroDocumento,telefono,null,null);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        return cliente;
+
     }
-    */
+    }
 
-}
+
+
 
