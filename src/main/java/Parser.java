@@ -1,52 +1,63 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Iterator;
 
-public class Parser {
-    ///////////////////// PARSEAR OBJETO ///////////////////////////
+///////////////////// PARSEAR OBJETO ///////////////////////////
 
-    public Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {
+    public class Parser {
 
-        File archivo = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + nombreArchivo);
+        public void parsearDispositivo(String nombreArchivo) {
 
+             JSONParser parser = new JSONParser();
 
-        JSONArray a = (JSONArray) parser.parse(new FileReader(archivo));
+            try {
 
-        for (Object o : a)
-        {
-            JSONObject person = (JSONObject) o;
+                Object obj = parser.parse(new FileReader(System.getProperty("user.dir") + System.getProperty("file.separator") + nombreArchivo));
 
-            String name = (String) person.get("name");
-            System.out.println(name);
+                /*String nombre;
+	            int kWh;
+                boolean encendido;
+                TipoDeDispositivo tipoDeDispositivo;
+                */
 
-            String city = (String) person.get("city");
-            System.out.println(city);
+                JSONObject jsonObject = (JSONObject) obj;
+                System.out.println(jsonObject);
 
-            String job = (String) person.get("job");
-            System.out.println(job);
+                String name = (String) jsonObject.get("nombre");
+                System.out.println(name);
 
-            JSONArray cars = (JSONArray) person.get("cars");
+                int kWH = (int) jsonObject.get("kWh");
+                System.out.println(kWH);
 
-            for (Object c : cars)
-            {
-                System.out.println(c+"");
+                TipoDeDispositivo tdd = (TipoDeDispositivo) jsonObject.get("TipoDeDispositivo") ;
+
+                // loop array
+                JSONArray msg = (JSONArray) jsonObject.get("encendido");
+                Iterator<String> iterator = msg.iterator();
+                while (iterator.hasNext()) {
+                    System.out.println(iterator.next());
+                }
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (ParseException e) {
+                e.printStackTrace();
             }
+
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        //JSON from file to Object
-        Dispositivo dispositivo = mapper.readValue(archivo, Dispositivo.class);
-
-        return dispositivo;
 
 
-    }
 
+/*
     public Cliente parsearCliente(String nombreArchivo) throws IOException {
 
             File archivo = new File(System.getProperty("user.dir") + System.getProperty("file.separator") + nombreArchivo);
@@ -58,6 +69,7 @@ public class Parser {
 
             return cliente;
     }
+    */
 
 }
 
