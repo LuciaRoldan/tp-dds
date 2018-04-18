@@ -4,8 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property="type")
 @JsonSubTypes({
@@ -16,9 +17,6 @@ import java.util.List;
 public abstract class CategoriaResidencial {
 
 
-    private List<Class<? extends CategoriaResidencial>> listaClases = new ArrayList<Class<? extends CategoriaResidencial>>();
-
-
     public Double cargoVariable(){return null;}
     public Double cargoFijo(){return null;}
     public Boolean pertenece(double consumo){return null;}
@@ -26,19 +24,16 @@ public abstract class CategoriaResidencial {
     public String getNombre(){return null;}
 
     @JsonCreator
-    public CategoriaResidencial fromString(String tipoCategoria) {
+    public static CategoriaResidencial fromString(String tipoCategoria) {
 
-        this.listaClases.add(CategoriaR9.class);
-        this.listaClases.add(CategoriaR8.class);
-        this.listaClases.add(CategoriaR7.class);
-        this.listaClases.add(CategoriaR6.class);
-        this.listaClases.add(CategoriaR5.class);
-        this.listaClases.add(CategoriaR4.class);
-        this.listaClases.add(CategoriaR3.class);
-        this.listaClases.add(CategoriaR2.class);
-        this.listaClases.add(CategoriaR1.class);
+       List<CategoriaResidencial> listaClases = asList(new CategoriaR1(),new CategoriaR2(),new CategoriaR2(),
+               new CategoriaR3(),new CategoriaR4(),new CategoriaR5(),new CategoriaR6(),new CategoriaR7()
+                ,new CategoriaR8(),new CategoriaR9());
 
-        CategoriaResidencial categoria = (CategoriaResidencial) this.listaClases.stream().filter(cat -> ! (cat.getName()).equals(tipoCategoria));
+        CategoriaResidencial categoria =  listaClases.stream()
+                .filter(x -> tipoCategoria.equals(x.getNombre()))
+                .findAny()
+                .orElse(null);
 
       return categoria;
 

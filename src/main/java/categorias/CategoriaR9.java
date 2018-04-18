@@ -23,6 +23,8 @@ public class CategoriaR9 extends CategoriaResidencial {
     @Override
     public Boolean pertenece(double consumo) {return (consumo >1400);}
 
+    public String getNombre(){return "CategoriaR9";}
+
     @JsonCreator
     public  CategoriaR9 CategoriaR9(){
         System.out.print("JsonCreator");
