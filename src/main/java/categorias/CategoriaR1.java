@@ -1,5 +1,9 @@
 package categorias;// R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
 
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.PROPERTY, property="objectType")
 public class CategoriaR1 implements CategoriaResidencial {
 
     @Override

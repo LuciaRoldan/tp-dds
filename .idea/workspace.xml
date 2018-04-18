@@ -3,25 +3,25 @@
   <component name="ChangeListManager">
     <list default="true" id="4f8961d4-904e-4274-ab5e-65b4b7dccdd7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR6.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR7.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaR9.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Categorias/CategoriaResidencial.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dispositivos/Dispositivo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dispositivos/DispositivoEstandar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dispositivos/DispositivoInteligente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dispositivos/TipoDeDispositivo.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Administrador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Cliente.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Parser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hola.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hola.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/TPANUAL-1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/TPANUAL-1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TipoDocumento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/TipoDocumento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hola.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hola.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-61">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state relative-caret-position="161">
+              <caret line="62" column="2" lean-forward="true" selection-start-line="62" selection-start-column="2" selection-end-line="78" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,14 +51,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
+      <file leaf-file-name="hola.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="42" column="111" selection-start-line="42" selection-start-column="111" selection-end-line="42" selection-end-column="111" />
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriaR8.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriaResidencial.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoriaR9.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -101,19 +128,20 @@
         <option value="$PROJECT_DIR$/src/main/java/Administrador.java" />
         <option value="$PROJECT_DIR$/src/main/java/hola2.json" />
         <option value="$PROJECT_DIR$/src/main/java/test.json" />
-        <option value="$PROJECT_DIR$/src/main/java/hola.json" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR8.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" />
         <option value="$PROJECT_DIR$/src/main/java/Cliente.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hola.json" />
       </list>
     </option>
   </component>
@@ -129,6 +157,17 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="TPANUAL" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
@@ -170,7 +209,15 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="2018-vn-group-19" type="cbb8eebc:String" user="2018-vn-group-19" />
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
-              <item name="Resources" type="cbb8eebc:String" user="Resources" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="categorias" type="cbb8eebc:String" user="categorias" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="2018-vn-group-19" type="cbb8eebc:String" user="2018-vn-group-19" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="dispositivos" type="cbb8eebc:String" user="dispositivos" />
             </path>
           </expand>
           <select />
@@ -329,12 +376,12 @@
       <workItem from="1524001265336" duration="2101000" />
       <workItem from="1524013711717" duration="610000" />
       <workItem from="1524014363202" duration="320000" />
-      <workItem from="1524014772741" duration="199000" />
+      <workItem from="1524014772741" duration="4316000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34392000" />
+    <option name="totallyTimeSpent" value="38509000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
@@ -342,18 +389,19 @@
     <layout>
       <window_info anchor="right" id="Palette" order="6" />
       <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4969697" weight="0.46875" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5022727" side_tool="true" weight="0.0082236845" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5151515" side_tool="true" visible="true" weight="0.08223684" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49772727" weight="0.0082236845" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4848485" visible="true" weight="0.08223684" />
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49848485" weight="0.32894737" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.27575758" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.27575758" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Learn" order="0" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
@@ -364,7 +412,6 @@
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39936608" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49848485" weight="0.46875" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
@@ -376,6 +423,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -542,13 +594,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -556,90 +601,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state relative-caret-position="90">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="96" selection-start-line="6" selection-start-column="96" selection-end-line="6" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="96" selection-start-line="6" selection-start-column="96" selection-end-line="6" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="42" column="111" selection-start-line="42" selection-start-column="111" selection-end-line="42" selection-end-column="111" />
+        <state relative-caret-position="161">
+          <caret line="62" column="2" lean-forward="true" selection-start-line="62" selection-start-column="2" selection-end-line="78" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JacksonAnnotation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JsonTypeInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="52" lean-forward="true" selection-start-line="7" selection-start-column="52" selection-end-line="7" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

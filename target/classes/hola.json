@@ -4,16 +4,9 @@
 	"nombreDeUsuario": "Matias21313",
 	"domicilio": "Av.del libertador 2000",
 	"telefono": 44444444,
-	"numeroDocumento": 1234456,
+	"documento": 1234456,
 	"Contrasena": "123321",
-	"TipoDeCategoria": "CategoriaR8",
-	"FechaDeAlta": "01012001",
-	"Dispositivos":{
-		"nombre": "juanperez",
-		"kWh": 12,
-		"encendido": true,
-		"tipoDeDispositivo": null
-	}
+	"type": "CategoriaR8",
+	"FechaDeAlta": "01012001"
+
 }
-
-

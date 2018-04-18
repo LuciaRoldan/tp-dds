@@ -1,5 +1,4 @@
 import categorias.CategoriaResidencial;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dispositivos.Dispositivo;
 
 import java.time.LocalDate;
@@ -7,7 +6,6 @@ import java.util.ArrayList;
 
 public class Cliente extends Usuario {
 
-	@JsonIgnore
 	private Long numeroDocumento;
 	private TipoDocumento tipoDocumento;
 	private Long telefono;

@@ -1,5 +1,9 @@
 package categorias;//  R7 600<C<=700 cargo fijo 443,59 cargo variable 0,851
 
+
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
+@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.PROPERTY, property="objectType")
 public class CategoriaR7 implements CategoriaResidencial {
 
     public Double cargoVariable() { return 0.851; }
