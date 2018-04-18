@@ -6,11 +6,23 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.PROPERTY, property="objectType")
 public class CategoriaR2 extends CategoriaResidencial {
-    public Double cargoVariable() { return 0.644; }
+
+    private static Double CARGOVARIABLE =  0.644;
+    private static Double CARGOFIJO     =  35.32;
+    private static Double CONSUMOMAXIMO = 325.00;
+    private static Double CONSUMOMINIMO = 150.00;
 
     @Override
-    public Double cargoFijo() { return 35.32;}
+    public Double cargoVariable() {
+        return CARGOVARIABLE;
+    }
 
     @Override
-    public Boolean pertenece(double consumo) { return ((150 < consumo) && (consumo <= 325)); }
+    public Double cargoFijo() { return CARGOFIJO; }
+
+    @Override
+    public Boolean pertenece(Double consumo) { return ((CONSUMOMINIMO < consumo) && (consumo <= CONSUMOMAXIMO));}
+
+    @Override
+    public String getNombre(){return "CategoriaR2";}
 }

@@ -3,9 +3,7 @@ package categorias;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
 import java.util.List;
-
 import static java.util.Arrays.asList;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property="type")
@@ -19,7 +17,7 @@ public abstract class CategoriaResidencial {
 
     public Double cargoVariable(){return null;}
     public Double cargoFijo(){return null;}
-    public Boolean pertenece(double consumo){return null;}
+    public Boolean pertenece(Double consumo){return null;}
     public CategoriaResidencial getCategoria(){return null;}
     public String getNombre(){return null;}
 
@@ -36,11 +34,10 @@ public abstract class CategoriaResidencial {
                 .orElse(null);
 
       return categoria;
-
-
-
+    }
 }
-/*CATEGORIAS:
+
+  /*  CATEGORIAS:
   R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
   R2 150 < C <= 325 cargo fijo = 35,32  cargo variable = 0,644
   R3 325<C<=400 cargo fijo = 60,71 cargo variable = 0,681
@@ -51,4 +48,3 @@ public abstract class CategoriaResidencial {
   R8 700<C<= 1400 cargo fijo 545,96 cargo variable 0,851
   R9 C>1400 cargo fijo 887,19 cargo variable 0,851
   */
-    }
