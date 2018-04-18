@@ -1,3 +1,5 @@
+package Categorias;
+
 
 
 // R2 150 < C <= 325 cargo fijo = 35,32  cargo variable = 0,644

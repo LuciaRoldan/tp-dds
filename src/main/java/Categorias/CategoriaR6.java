@@ -1,3 +1,5 @@
+package Categorias;
+
 // R6 500<C<=600 CARGO FIJO =220,75 // CARGO VARIABLE = 0,832
 
 

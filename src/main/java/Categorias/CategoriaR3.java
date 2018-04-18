@@ -1,3 +1,5 @@
+package Categorias;
+
 //R3 325<C<=400 cargo fijo = 60,71 cargo variable = 0,681
 
 public class CategoriaR3 implements CategoriaResidencial{

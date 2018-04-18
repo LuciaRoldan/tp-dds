@@ -1,6 +1,9 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+import Categorias.CategoriaResidencial;
+import Dispositivos.Dispositivo;
+
 public class Cliente extends Usuario{
 
 	long numeroDocumento;

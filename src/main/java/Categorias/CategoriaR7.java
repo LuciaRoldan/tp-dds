@@ -1,3 +1,5 @@
+package Categorias;
+
 //  R7 600<C<=700 cargo fijo 443,59 cargo variable 0,851
 
 public class CategoriaR7 implements CategoriaResidencial{
