@@ -1,3 +1,4 @@
+package usuario;
 
 public enum TipoDocumento {
 	DNI,

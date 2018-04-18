@@ -1,3 +1,4 @@
+package usuario;
 import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
 
@@ -13,7 +14,9 @@ public class Cliente extends Usuario {
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
 	
-	public void inicializarCliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena, TipoDocumento tipoDocumento,long numeroDocumento, long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
+	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, 
+			String nombreUsuario, String contrasena, TipoDocumento tipoDocumento,long numeroDocumento, 
+			long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
 		
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio = domicilio;

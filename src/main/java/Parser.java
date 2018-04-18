@@ -3,7 +3,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dispositivos.Dispositivo;
 import org.json.simple.parser.JSONParser;
 
-import java.io.File;
+import dispositivos.Dispositivo;
+import dispositivos.TipoDeDispositivo;
+import usuario.Cliente;
+import usuario.TipoDocumento;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 
 ///////////////////// PARSEAR OBJETO ///////////////////////////
