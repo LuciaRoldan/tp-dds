@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Administrador extends Usuario{
 
@@ -24,6 +25,13 @@ public class Administrador extends Usuario{
 
     public int getNumeroDeIdentificacion() {
         return numeroDeIdentificacion;
+    }
+    
+    
+    /////////////////////////////////////////  METODOS //////////////////////////////////////////////////////////////
+    
+    public long mesesComoAdministrador() {
+    	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
     }
 
 }

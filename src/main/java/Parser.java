@@ -1,6 +1,13 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+<<<<<<< HEAD
+=======
+
+import Dispositivos.Dispositivo;
+import Dispositivos.TipoDeDispositivo;
+
+>>>>>>> refs/remotes/origin/master
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -98,7 +105,7 @@ import java.io.IOException;
             String nombresYapellidos = (String) jsonObject.get("nombresYapellidos");
             System.out.println(nombresYapellidos);
 
-            String tipoDocument = (String) jsonObject.get("tipoDocumento");
+            TipoDocumento tipoDocument = (TipoDocumento) jsonObject.get("tipoDocumento");
             System.out.println(tipoDocument);
 
             String nombreUsuario = (String) jsonObject.get("nombreDeUsuario");
@@ -140,7 +147,7 @@ import java.io.IOException;
 
             //public void inicilalizarCliente(String g nombreUsuario, String contrasena, String tipoDocumento,long numeroDocumento, String telefono, categoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
 
-                cliente.inicilalizarCliente(nombresYapellidos,domicilio,null,nombreUsuario,contrasena,tipoDocument,numeroDocumento,telefono,null,null);
+                cliente.inicializarCliente(nombresYapellidos,domicilio,null,nombreUsuario,contrasena,tipoDocument,numeroDocumento,telefono,null,null);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();

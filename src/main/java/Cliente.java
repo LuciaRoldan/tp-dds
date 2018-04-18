@@ -4,24 +4,38 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+<<<<<<< HEAD
 public class Cliente extends Usuario {
+=======
+import Categorias.CategoriaResidencial;
+import Dispositivos.Dispositivo;
+
+public class Cliente extends Usuario{
+>>>>>>> refs/remotes/origin/master
 
 	@JsonIgnore
 	long numeroDocumento;
+<<<<<<< HEAD
 	String tipoDocumento; //les parece que el documento sea una clase??
 	//porque tiene tipo y numero
 	private long telefono = 0;
+=======
+	TipoDocumento tipoDocumento;
+	long documento;
+	private long telefono;
+>>>>>>> refs/remotes/origin/master
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
 	
-	public void inicilalizarCliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena, String tipoDocumento,long numeroDocumento, long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
-		this.tipoDocumento = tipoDocumento;
-		this.domicilio = domicilio;
+	public void inicializarCliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena, TipoDocumento tipoDocumento,long numeroDocumento, long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
+		
 		this.nombreYApellido = nombreYApellido;
+		this.domicilio = domicilio;
 		this.fechaDeAlta = fechaDeAlta;
+		this.tipoDocumento = tipoDocumento;
 		this.nombreUsuario = nombreUsuario;
 		this.contrasena = contrasena;
-		//this.documento = documento;
+		this.documento = numeroDocumento;
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
@@ -29,8 +43,6 @@ public class Cliente extends Usuario {
 
 	//Getters and Setters
 
-	//public Documento getDocumento() {return documento;}
-	//public void setDocumento(Documento documento) {this.documento = documento;}
 	public long getTelefono() {
 		return telefono;
 	}
@@ -50,6 +62,62 @@ public class Cliente extends Usuario {
 	public void setDispotivos(ArrayList<Dispositivo> listaDispositivos) {
 		this.dispositivos = listaDispositivos;
 	}
+
+	public long getNumeroDocumento() {
+		return numeroDocumento;
+	}
+
+	public void setNumeroDocumento(long numeroDocumento) {
+		this.numeroDocumento = numeroDocumento;
+	}
+
+	public TipoDocumento getTipoDocumento() {
+		return tipoDocumento;
+	}
+
+	public void setTipoDocumento(TipoDocumento tipoDocumento) {
+		this.tipoDocumento = tipoDocumento;
+	}
+
+	public long getDocumento() {
+		return documento;
+	}
+
+	public void setDocumento(long documento) {
+		this.documento = documento;
+	}
+
+	public ArrayList<Dispositivo> getDispositivos() {
+		return dispositivos;
+	}
+
+	public void setDispositivos(ArrayList<Dispositivo> dispositivos) {
+		this.dispositivos = dispositivos;
+	}
+	
+	public int cantidadDispositivos() {
+		return dispositivos.size();
+	}
+	
+	public boolean poseeDispositivosEncendidos() {
+		return this.cantidadDispositivosEncendidos() > 0;
+	}
+	
+	public int cantidadDispositivosEncendidos() {
+		int cantidadEncendidos = 0;
+		for (Dispositivo dispositivo : dispositivos) {
+			if(dispositivo.isEncendido()) {
+				cantidadEncendidos += 1;
+			}
+		}
+		return cantidadEncendidos;
+	}
+	
+	public int cantidadDispositivosApagados() {
+		int cantidadApagados = this.cantidadDispositivos() - this.cantidadDispositivosEncendidos();
+		return cantidadApagados;
+	}
+	
 	
 	
 }
