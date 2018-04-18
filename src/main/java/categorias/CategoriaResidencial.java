@@ -3,8 +3,6 @@ package categorias;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.sun.org.apache.xpath.internal.objects.XObject;
-import sun.awt.geom.AreaOp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +16,7 @@ import java.util.List;
 public abstract class CategoriaResidencial {
 
 
-    private List<CategoriaResidencial> listaClases = new ArrayList<CategoriaResidencial>();
+    private List<Class<? extends CategoriaResidencial>> listaClases = new ArrayList<Class<? extends CategoriaResidencial>>();
 
 
     public Double cargoVariable(){return null;}
@@ -32,15 +30,15 @@ public abstract class CategoriaResidencial {
 
         this.listaClases.add(CategoriaR9.class);
         this.listaClases.add(CategoriaR8.class);
-        listaClases.add(CategoriaR7.class);
-        listaClases.add(CategoriaR6.class);
-        listaClases.add(CategoriaR5.class);
-        listaClases.add(CategoriaR4.class);
-        listaClases.add(CategoriaR3.class);
-        listaClases.add(CategoriaR2.class);
-        listaClases.add(CategoriaR1.class);
+        this.listaClases.add(CategoriaR7.class);
+        this.listaClases.add(CategoriaR6.class);
+        this.listaClases.add(CategoriaR5.class);
+        this.listaClases.add(CategoriaR4.class);
+        this.listaClases.add(CategoriaR3.class);
+        this.listaClases.add(CategoriaR2.class);
+        this.listaClases.add(CategoriaR1.class);
 
-        CategoriaResidencial categoria = (CategoriaResidencial) this.listaClases.stream().filter(cat -> ! (cat.getNombre()).equals(tipoCategoria));
+        CategoriaResidencial categoria = (CategoriaResidencial) this.listaClases.stream().filter(cat -> ! (cat.getName()).equals(tipoCategoria));
 
       return categoria;
 
