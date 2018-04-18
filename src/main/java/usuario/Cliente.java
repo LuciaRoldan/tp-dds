@@ -1,9 +1,16 @@
 package usuario;
+
 import categorias.CategoriaResidencial;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import dispositivos.Dispositivo;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+
+
+
 
 public class Cliente extends Usuario {
 
@@ -12,9 +19,11 @@ public class Cliente extends Usuario {
 	private Long telefono;
 	private long documento;
 	private CategoriaResidencial categoriaResidencial;
+	private String nombreYapellido;
 	private ArrayList<Dispositivo> dispositivos;
-	
-	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, 
+
+	@JsonCreator
+	public void inicializarCliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta,
 			String nombreUsuario, String contrasena, TipoDocumento tipoDocumento,long numeroDocumento, 
 			long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
 		
@@ -29,6 +38,14 @@ public class Cliente extends Usuario {
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 	}
+
+
+	@JsonProperty("categoriaResidencial")
+	public void setType(String type) throws IOException {
+		this.categoriaResidencial = CategoriaResidencial.fromString(type);
+	}
+
+
 
 	//Getters and Setters
 

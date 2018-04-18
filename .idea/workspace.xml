@@ -3,9 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="4f8961d4-904e-4274-ab5e-65b4b7dccdd7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hola.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hola.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene2Dispositivos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene3DispositivosApagados.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/TipoDocumento.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Usuario.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hola.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hola.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,29 +42,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="44" column="72" selection-start-line="44" selection-start-column="68" selection-end-line="44" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2331#2332#0" expanded="true" />
+                <element signature="e#2372#2373#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="hola.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CategoriaR8.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
+      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CategoriaResidencial.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+            <state relative-caret-position="-211">
+              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,13 +77,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
+      <file leaf-file-name="CategoriaResidencial.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="140">
+              <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#622#644#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,8 +93,11 @@
       <file leaf-file-name="CategoriaR9.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="361">
+              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +112,11 @@
         <option value="AnnotationType" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>type</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,7 +139,6 @@
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR3.java" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR2.java" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR1.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/Dispositivo.java" />
         <option value="$PROJECT_DIR$/src/main/java/Administrador.java" />
@@ -114,18 +146,21 @@
         <option value="$PROJECT_DIR$/src/main/java/test.json" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR8.java" />
         <option value="$PROJECT_DIR$/src/main/java/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" />
         <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java" />
         <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" />
         <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java" />
         <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java" />
         <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java" />
-        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" />
         <option value="$PROJECT_DIR$/src/main/java/hola.json" />
+        <option value="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados.java" />
         <option value="$PROJECT_DIR$/src/main/java/Parser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java" />
+        <option value="$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java" />
       </list>
     </option>
   </component>
@@ -171,7 +206,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -190,10 +224,18 @@
               <item name="src/main" type="cbb8eebc:String" user="src/main" />
               <item name="java" type="cbb8eebc:String" user="java" />
             </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="2018-vn-group-19" type="cbb8eebc:String" user="2018-vn-group-19" />
+              <item name="src/main" type="cbb8eebc:String" user="src/main" />
+              <item name="java" type="cbb8eebc:String" user="java" />
+              <item name="usuario" type="cbb8eebc:String" user="usuario" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -240,6 +282,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2773585" />
   </component>
@@ -347,18 +392,23 @@
       <workItem from="1524013711717" duration="610000" />
       <workItem from="1524014363202" duration="320000" />
       <workItem from="1524014772741" duration="4316000" />
+      <workItem from="1524050204431" duration="1459000" />
+      <workItem from="1524054770023" duration="3964000" />
+      <workItem from="1524077947211" duration="5974000" />
+      <workItem from="1524084400041" duration="2136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38718000" />
+    <option name="totallyTimeSpent" value="52053000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
+    <frame x="-1" y="28" width="1368" height="741" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4969697" weight="0.46875" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.49621212" weight="0.05098684" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -366,11 +416,11 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.48030302" weight="0.08223684" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4848485" weight="0.08223684" />
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49848485" weight="0.32894737" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.28030303" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.2931818" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Learn" order="0" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
@@ -378,35 +428,13 @@
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="4" sideWeight="0.50328946" side_tool="true" weight="0.27575758" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.39936608" />
-      <window_info anchor="right" id="Palette" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info id="Designer" order="1" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" visible="true" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39802632" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.49848485" weight="0.32894737" />
-      <window_info id="Learn" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.4848485" visible="true" weight="0.08223684" />
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Capture Tool" order="3" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.39936608" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5151515" side_tool="true" visible="true" weight="0.08223684" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info id="Favorites" order="4" sideWeight="0.50328946" side_tool="true" weight="0.27575758" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.3296355" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.27575758" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,52 +453,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JacksonAnnotation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JsonTypeInfo.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="55" column="20" lean-forward="true" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2263#2264#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -530,13 +512,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -592,13 +568,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TipoDocumento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TipoDocumento.java" />
     <entry file="uml://JAVA/Dispositivo">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -618,104 +588,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/DispositivoInteligente.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.4/jackson-databind-2.9.4.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Override.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/DispositivoEstandar.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="41" column="14" lean-forward="true" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TipoDeDispositivo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Dispositivo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hola2.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/test.json" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Administrador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2263#2264#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Administrador.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Usuario.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="50" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="96" selection-start-line="6" selection-start-column="96" selection-end-line="6" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="96" selection-start-line="6" selection-start-column="96" selection-end-line="6" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -733,43 +618,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/TipoDocumento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="30">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR8.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" column="76" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR4.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        <state relative-caret-position="90">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR7.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Escritorio/Software/jdk1.8.0_161/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="115" column="45" lean-forward="true" selection-start-line="115" selection-start-column="45" selection-end-line="115" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.4/jackson-databind-2.9.4.jar!/com/fasterxml/jackson/databind/ObjectMapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="1131" column="41" selection-start-line="1131" selection-start-column="34" selection-end-line="1131" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene2Dispositivos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Administrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaR9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="269">
+          <caret line="44" column="72" selection-start-line="44" selection-start-column="68" selection-end-line="44" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2331#2332#0" expanded="true" />
+            <element signature="e#2372#2373#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hola.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/categorias/CategoriaResidencial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#622#644#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -777,9 +776,81 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>TPANUAL</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>

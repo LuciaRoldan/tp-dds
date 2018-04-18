@@ -2,12 +2,16 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dispositivos.Dispositivo;
 import org.json.simple.parser.JSONParser;
+import usuario.Administrador;
 import usuario.Cliente;
 
 import java.io.File;
 import java.io.IOException;
+
 ///////////////////// PARSEAR OBJETO ///////////////////////////
+
 //TODO Hacer singleton
+
 public class Parser {
     //private Parser instance = null;
     //public Parser getInstance() { }
@@ -17,6 +21,7 @@ public class Parser {
         System.out.println("TESTTTTTT");
         parsearCliente("src/main/java/hola.json");
     }
+
     public static Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {
         JSONParser parser = new JSONParser();
         ObjectMapper mapper = new ObjectMapper();
@@ -24,17 +29,31 @@ public class Parser {
         Dispositivo dispo = mapper.readValue(new File(nombreArchivo), Dispositivo.class);
         return  dispo;
     }
-    // @JsonIgnore
+
+
     public static Cliente parsearCliente(String nombreArchivo) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        Cliente cliente = mapper.readValue(new File(nombreArchivo), Cliente.class);
+        System.out.print(cliente.getCategoriaResidencial());
+        return cliente;
+    }
+
+
+    public static Administrador parsearAdministrador(String nombreArchivo) throws IOException{
         JSONParser parser = new JSONParser();
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         //JSON from file to Object
-        Cliente cliente = mapper.readValue(new File(nombreArchivo), Cliente.class);
-        System.out.print(cliente);
-        return cliente;
+        Administrador admin = mapper.readValue(new File(nombreArchivo), Administrador.class);
+        System.out.print(admin);
+        return admin;
     }
+
 }
+
+// mvn exec:java -Dexec.mainClass="Parser" -X
 /* {
    "nombresYapellidos": "MatiasMorsa",
    "tipoDocumento": "DNI",

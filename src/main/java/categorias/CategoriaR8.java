@@ -6,7 +6,7 @@ package categorias;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.PROPERTY, property="objectType")
-public class CategoriaR8 implements CategoriaResidencial {
+public class CategoriaR8 extends CategoriaResidencial {
 
     private static Double CARGOVARIABLE = 0.851;
     private static Double CARGOFIJO = 545.96;
