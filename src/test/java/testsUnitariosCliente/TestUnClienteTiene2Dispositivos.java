@@ -1,4 +1,4 @@
-package tests;
+package testsUnitariosCliente;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -9,7 +9,6 @@ import dispositivos.Dispositivo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import dispositivos.DispositivoEstandar;
-
 
 public class TestUnClienteTiene2Dispositivos {
 

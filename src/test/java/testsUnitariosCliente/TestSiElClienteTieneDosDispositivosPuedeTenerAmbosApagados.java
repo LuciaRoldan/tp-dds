@@ -1,4 +1,4 @@
-package tests;
+package testsUnitariosCliente;
 
 import static org.junit.Assert.*;
 import org.junit.Assert;
@@ -12,10 +12,10 @@ import usuario.Cliente;
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-public class siLaPersonaTieneDosDispositivosPuedeTenerAmbosApagados {
+public class TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados {
 
 	@Test 
-	public void siLaPersonaTieneDosDispositivosPuedeTenerAmbosApagados() {
+	public void test() {
 		
 		CategoriaR1 r1 = new CategoriaR1();
 		Dispositivo dispositivo1 = new Dispositivo("television", 5000, false,new DispositivoInteligente());
@@ -25,6 +25,6 @@ public class siLaPersonaTieneDosDispositivosPuedeTenerAmbosApagados {
 		dispositivos.add(dispositivo2);
 		Cliente cliente = new Cliente("Ivana Mazzini", "Rawson 550",LocalDate.of(2018, 02, 03), "imazzini", "imazzini",TipoDocumento.DNI,39804507,546545, r1,dispositivos);
 		
-		Assert.assertEquals(2, cliente.cantidadDispositivosApagados());
+		assertEquals(2, cliente.cantidadDispositivosApagados());
 	}
 }
