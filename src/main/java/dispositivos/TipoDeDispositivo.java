@@ -1,4 +1,4 @@
-package Dispositivos;
+package dispositivos;
 public interface TipoDeDispositivo {
 
 

@@ -1,13 +1,10 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-<<<<<<< HEAD
-=======
 
-import Dispositivos.Dispositivo;
-import Dispositivos.TipoDeDispositivo;
+import dispositivos.Dispositivo;
+import dispositivos.TipoDeDispositivo;
 
->>>>>>> refs/remotes/origin/master
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -16,10 +13,8 @@ import java.io.IOException;
  //TODO Hacer singleton
     public class Parser {
 
-        private Parser instance = null;
-        public Parser getInstance() {
-
-        }
+        //private Parser instance = null;
+        //public Parser getInstance() { }
 
         private Parser(){
 
@@ -41,7 +36,7 @@ import java.io.IOException;
 
              Dispositivo dispo = new Dispositivo();
 
-             Dispositivo disp = parser.(esteArchivo, Dispositivo.class);
+            // Dispositivo disp = parser.(esteArchivo, Dispositivo.class);
 
             try {
 
@@ -133,7 +128,7 @@ import java.io.IOException;
             System.out.println(contrasena);
 
 
-            JSONObject dispositivos = (JSONObject) jsonObject.get("Dispositivos");
+            JSONObject dispositivos = (JSONObject) jsonObject.get("dispositivos");
             System.out.println(dispositivos);
 
             /*

@@ -1,4 +1,4 @@
-package Dispositivos;
+package dispositivos;
 
 import java.io.IOException;
 
