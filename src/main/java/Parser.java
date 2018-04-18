@@ -13,9 +13,9 @@ import java.io.IOException;
 //TODO Hacer singleton
 
 public class Parser {
-    //private Parser instance = null;
-    //public Parser getInstance() { }
+
     public static void main(String[] args) throws IOException {
+
         //System.out.println("TESTTTTTT");
         //parsearDispositivo("src/main/java/hola.json");
         System.out.println("TESTTTTTT");
@@ -45,7 +45,6 @@ public class Parser {
         JSONParser parser = new JSONParser();
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        //JSON from file to Object
         Administrador admin = mapper.readValue(new File(nombreArchivo), Administrador.class);
         System.out.print(admin);
         return admin;
