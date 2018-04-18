@@ -8,7 +8,7 @@ public class Dispositivo {
 	boolean encendido;
     TipoDeDispositivo tipoDeDispositivo;
 
-	public Dispositivo(String nombre, long kWh, boolean encendido,TipoDeDispositivo tipoDeDispositivo) throws IOException {
+	public Dispositivo(String nombre, long kWh, boolean encendido,TipoDeDispositivo tipoDeDispositivo) {
 		this.nombre = nombre;
 		this.kWh = kWh;
 		this.encendido = encendido;
