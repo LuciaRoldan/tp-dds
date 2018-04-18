@@ -1,14 +1,22 @@
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 ///////////////////// PARSEAR OBJETO ///////////////////////////
-
+ //TODO Hacer singleton
     public class Parser {
+
+        private Parser instance = null;
+        public Parser getInstance() {
+
+        }
+
+        private Parser(){
+
+        }
 
         public static void main(String[] args) throws IOException {
 
@@ -25,6 +33,8 @@ import java.io.IOException;
              JSONParser parser = new JSONParser();
 
              Dispositivo dispo = new Dispositivo();
+
+             Dispositivo disp = parser.(esteArchivo, Dispositivo.class);
 
             try {
 
@@ -114,8 +124,6 @@ import java.io.IOException;
 
             String contrasena = (String) jsonObject.get("Contrasena");
             System.out.println(contrasena);
-
-
 
 
             JSONObject dispositivos = (JSONObject) jsonObject.get("Dispositivos");

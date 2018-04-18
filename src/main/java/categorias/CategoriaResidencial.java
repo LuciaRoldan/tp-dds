@@ -1,4 +1,4 @@
-/*CATEGORIAS:
+package categorias;/*CATEGORIAS:
   R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
   R2 150 < C <= 325 cargo fijo = 35,32  cargo variable = 0,644
   R3 325<C<=400 cargo fijo = 60,71 cargo variable = 0,681
@@ -12,8 +12,8 @@
 
 public interface CategoriaResidencial {
 
-    public double cargoVariable();
-    public double cargoFijo();
-    public boolean pertenece(double consumo);
+    public Double cargoVariable();
+    public Double cargoFijo();
+    public Boolean pertenece(double consumo);
 
 }

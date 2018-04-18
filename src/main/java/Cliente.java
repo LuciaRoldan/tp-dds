@@ -1,12 +1,16 @@
+import categorias.CategoriaResidencial;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Cliente extends Usuario{
+public class Cliente extends Usuario {
 
+	@JsonIgnore
 	long numeroDocumento;
 	String tipoDocumento; //les parece que el documento sea una clase??
 	//porque tiene tipo y numero
-	private long telefono;
+	private long telefono = 0;
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
 	
