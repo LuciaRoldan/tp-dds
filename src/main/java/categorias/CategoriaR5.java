@@ -13,16 +13,5 @@ public class CategoriaR5 extends CategoriaResidencial {
     private static Double CONSUMOMINIMO = 450.00;
 
     @Override
-    public Double cargoVariable() {
-        return CARGOVARIABLE;
-    }
-
-    @Override
-    public Double cargoFijo() { return CARGOFIJO; }
-
-    @Override
-    public Boolean pertenece(Double consumo) { return ((CONSUMOMINIMO < consumo) && (consumo <= CONSUMOMAXIMO));}
-
-    @Override
     public String getNombre(){return "CategoriaR5";}
 }

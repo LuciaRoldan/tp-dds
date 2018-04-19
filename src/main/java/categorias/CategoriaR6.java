@@ -1,5 +1,6 @@
-package categorias;// R6 500<C<=600 CARGO FIJO =220,75 // CARGO VARIABLE = 0,832
+package categorias;
 
+//R6 500<C<=600 CARGO FIJO =220,75 // CARGO VARIABLE = 0,832
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -12,16 +13,6 @@ public class CategoriaR6 extends CategoriaResidencial {
     private static Double CONSUMOMINIMO = 500.00;
 
     @Override
-    public Double cargoVariable() {
-        return CARGOVARIABLE;
-    }
-
-    @Override
-    public Double cargoFijo() { return CARGOFIJO; }
-
-    @Override
-    public Boolean pertenece(Double consumo) { return ((CONSUMOMINIMO < consumo) && (consumo <= CONSUMOMAXIMO));}
-
-    @Override
     public String getNombre(){return "CategoriaR6";}
+    
 }

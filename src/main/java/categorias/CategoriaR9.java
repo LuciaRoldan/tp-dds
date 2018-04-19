@@ -1,6 +1,6 @@
 package categorias;
 
-// R9 C>1400 CARGO FIJO = 887,19 // CARGO VARIABLE = 0,851
+//R9 C>1400 CARGO FIJO = 887,19 // CARGO VARIABLE = 0,851
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -14,18 +14,9 @@ public class CategoriaR9 extends CategoriaResidencial {
     private static Double CONSUMOMINIMO = 1400.00;
 
     @Override
-    public Double cargoVariable() {
-        return CARGOVARIABLE;
-    }
-
-    @Override
-    public Double cargoFijo() { return CARGOFIJO; }
-
-    @Override
     public Boolean pertenece(Double consumo) { return (CONSUMOMINIMO < consumo);}
 
     @Override
     public String getNombre(){return "CategoriaR9";}
-
-
+    
 }

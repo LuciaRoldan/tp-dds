@@ -13,13 +13,30 @@ import static java.util.Arrays.asList;
 
 })
 public abstract class CategoriaResidencial {
+	
+	private static Double CARGOVARIABLE;
+	private static Double CARGOFIJO;
+	private static Double CONSUMOMAXIMO;
+    private static Double CONSUMOMINIMO;
+    
+    public Double getCargoVariable() {
+        return CARGOVARIABLE;
+    }
+    
+    public Double getCargoFijo() {
+    	return CARGOFIJO;
+    }
+    
+    public Boolean pertenece(Double consumo){
+    	return ((CONSUMOMINIMO < consumo) && (consumo <= CONSUMOMAXIMO));
+    }
 
-
-    public Double cargoVariable(){return null;}
-    public Double cargoFijo(){return null;}
-    public Boolean pertenece(Double consumo){return null;}
-    public CategoriaResidencial getCategoria(){return null;}
-    public String getNombre(){return null;}
+    public String getNombre(){
+    	return null;
+    }
+    
+    
+    public CategoriaResidencial getCategoria(){return null;} //dudoso
 
     @JsonCreator
     public static CategoriaResidencial fromString(String tipoCategoria) {
