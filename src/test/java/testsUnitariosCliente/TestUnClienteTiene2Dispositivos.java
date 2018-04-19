@@ -20,8 +20,7 @@ public class TestUnClienteTiene2Dispositivos {
 		dispositivos.add(new Dispositivo("Dispositivo1", Long.valueOf(1), true, new DispositivoEstandar()));
 		dispositivos.add(new Dispositivo("Dispositivo2", Long.valueOf(1), true, new DispositivoEstandar()));
 		
-		Cliente cliente = new Cliente();
-		cliente.inicializarCliente("Juan Perez", "Calle Falsa 123", LocalDate.now(), "jperez", "123",
+		Cliente cliente = new Cliente("Juan Perez", "Calle Falsa 123", LocalDate.now(), "jperez", "123",
 				TipoDocumento.DNI, 12345678, 12345678, new CategoriaR1(), dispositivos);
 		
 		assertEquals(2, cliente.cantidadDispositivos());

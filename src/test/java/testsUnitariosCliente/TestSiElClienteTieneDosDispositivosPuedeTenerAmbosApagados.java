@@ -24,8 +24,7 @@ public class TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados {
 		ArrayList<Dispositivo>dispositivos = new ArrayList<>();
 		dispositivos.add(dispositivo1);
 		dispositivos.add(dispositivo2);
-		Cliente cliente = new Cliente();
-		cliente.inicializarCliente("Ivana Mazzini", "Rawson 550",LocalDate.of(2018, 02, 03), "imazzini", "imazzini",TipoDocumento.DNI,39804507,546545, r1,dispositivos);
+		Cliente cliente = new Cliente("Ivana Mazzini", "Rawson 550",LocalDate.of(2018, 02, 03), "imazzini", "imazzini",TipoDocumento.DNI,39804507,546545, r1,dispositivos);
 		
 		assertEquals(2, cliente.cantidadDispositivosApagados());
 	}

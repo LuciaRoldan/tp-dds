@@ -8,7 +8,9 @@ public abstract class Usuario {
 	String nombreUsuario;
 	String contrasena;
 	
-	public void inicializarUsuario(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario, String contrasena){
+		
+	public Usuario(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+			String contrasena) {
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio = domicilio;
 		this.fechaDeAlta = fechaDeAlta;
@@ -16,11 +18,6 @@ public abstract class Usuario {
 		this.contrasena = contrasena;
 	}
 
-
-	
-	
-	
-	
 	//Getters and Setters
 	public String getNombreYApellido() {
 		return nombreYApellido;

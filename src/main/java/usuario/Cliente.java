@@ -10,36 +10,27 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-
-
-
 public class Cliente extends Usuario {
 
-	private Long numeroDocumento;
 	private TipoDocumento tipoDocumento;
-	private Long telefono;
-	private long documento;
+	private int documento;
+	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private String nombreYapellido;
 	private ArrayList<Dispositivo> dispositivos;
 
 	@JsonCreator
-	public void inicializarCliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta,
-			String nombreUsuario, String contrasena, TipoDocumento tipoDocumento,long numeroDocumento, 
-			long telefono, CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos){
-		
-		this.nombreYApellido = nombreYApellido;
-		this.domicilio = domicilio;
-		this.fechaDeAlta = fechaDeAlta;
+	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
+			CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
+		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
 		this.tipoDocumento = tipoDocumento;
-		this.nombreUsuario = nombreUsuario;
-		this.contrasena = contrasena;
-		this.documento = numeroDocumento;
+		this.documento = documento;
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 	}
-
+	
+	
 
 	@JsonProperty("categoriaResidencial")
 	public void setType(String type) throws IOException {
@@ -48,12 +39,15 @@ public class Cliente extends Usuario {
 
 
 
+
+
+
 	//Getters and Setters
 
-	public long getTelefono() {
+	public int getTelefono() {
 		return telefono;
 	}
-	public void setTelefono(long telefono) {
+	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
 	public CategoriaResidencial getCategoriaResidencial() {
@@ -70,14 +64,6 @@ public class Cliente extends Usuario {
 		this.dispositivos = listaDispositivos;
 	}
 
-	public long getNumeroDocumento() {
-		return numeroDocumento;
-	}
-
-	public void setNumeroDocumento(long numeroDocumento) {
-		this.numeroDocumento = numeroDocumento;
-	}
-
 	public TipoDocumento getTipoDocumento() {
 		return tipoDocumento;
 	}
@@ -86,11 +72,11 @@ public class Cliente extends Usuario {
 		this.tipoDocumento = tipoDocumento;
 	}
 
-	public long getDocumento() {
+	public int getDocumento() {
 		return documento;
 	}
 
-	public void setDocumento(long documento) {
+	public void setDocumento(int documento) {
 		this.documento = documento;
 	}
 

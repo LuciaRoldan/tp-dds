@@ -12,8 +12,7 @@ public class TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdm
 
 	@Test
 	public void test() {
-		Administrador administrador = new Administrador();
-				administrador.inicializarAdministrador("Juan Perez", "Calle Falsa 123",
+		Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123",
 				LocalDate.now().minus(1,ChronoUnit.YEARS), "jperez", "123",3);
 		
 		assertEquals(12, administrador.mesesComoAdministrador());

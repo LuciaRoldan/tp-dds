@@ -7,24 +7,14 @@ import java.time.temporal.ChronoUnit;
 public class Administrador extends Usuario{
 
 	private Integer numeroDeIdentificacion;
-	private String nombresYapellidos;
-	private String nombreDeUsuario;
-
+	
 	@JsonCreator
-	public void inicializarAdministrador(String nombreYApellido, String domicilio,LocalDate fechaDeAlta, String nombreUsuario,
-										 String contrasena,int numeroDeIdentificacion){
-
-		this.inicializarUsuario(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
+	public Administrador(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+			String contrasena, Integer numeroDeIdentificacion) {
+		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
-		this.nombresYapellidos = nombreYApellido;
-		this.nombreDeUsuario = nombreUsuario;
-		this.domicilio = domicilio;
-		this.fechaDeAlta = fechaDeAlta;
-		this.numeroDeIdentificacion = numeroDeIdentificacion;
-		this.contrasena = contrasena;
 	}
 	
-
 	
 	/////////////////////////////////  GETTERS AND SETTERS //////////////////////////////////////////////////////
 
@@ -33,14 +23,16 @@ public class Administrador extends Usuario{
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 
-    public int getNumeroDeIdentificacion() {
+
+	public int getNumeroDeIdentificacion() {
         return numeroDeIdentificacion;
     }
     
     
     /////////////////////////////////////////  METODOS //////////////////////////////////////////////////////////////
     
-    public long mesesComoAdministrador() {
+
+	public long mesesComoAdministrador() {
     	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
     }
 
