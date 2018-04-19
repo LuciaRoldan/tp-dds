@@ -14,40 +14,30 @@ import java.io.IOException;
 
 public class Parser {
 
-    public static void main(String[] args) throws IOException {
 
-        //System.out.println("TESTTTTTT");
-        //parsearDispositivo("src/main/java/hola.json");
-        System.out.println("TESTTTTTT");
-        parsearCliente("src/main/java/hola.json");
-    }
+    public Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {
 
-    public static Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {
         JSONParser parser = new JSONParser();
         ObjectMapper mapper = new ObjectMapper();
-        //JSON from file to Object
         Dispositivo dispo = mapper.readValue(new File(nombreArchivo), Dispositivo.class);
         return  dispo;
     }
 
 
-    public static Cliente parsearCliente(String nombreArchivo) throws IOException {
+    public Cliente parsearCliente(String nombreArchivo) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Cliente cliente = mapper.readValue(new File(nombreArchivo), Cliente.class);
-        System.out.print(cliente.getCategoriaResidencial());
         return cliente;
     }
 
 
-    public static Administrador parsearAdministrador(String nombreArchivo) throws IOException{
-        JSONParser parser = new JSONParser();
+    public Administrador parsearAdministrador(String nombreArchivo) throws IOException{
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        Administrador admin = mapper.readValue(new File(nombreArchivo), Administrador.class);
-        System.out.print(admin);
-        return admin;
+        Administrador administrador = mapper.readValue(new File(nombreArchivo), Administrador.class);
+        return administrador;
     }
 
 }
