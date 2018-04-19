@@ -13,6 +13,6 @@ public class CategoriaR7 extends CategoriaResidencial {
     private static Double CONSUMOMINIMO = 600.00;
 
     @Override
-    public String getNombre(){return "CategoriaR7";}
+    public String getNombre(){return "CATEGORIAR7";}
     
 }

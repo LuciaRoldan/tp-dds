@@ -1,8 +1,9 @@
 package dispositivos;
 
-public class DispositivoEstandar implements TipoDeDispositivo {
+public class DispositivoEstandar extends TipoDeDispositivo {
 
-
+    @Override
+    public String getNombre(){return "ESTANDAR";}
 
 
 }

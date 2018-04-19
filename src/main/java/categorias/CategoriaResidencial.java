@@ -31,19 +31,16 @@ public abstract class CategoriaResidencial {
     	return ((CONSUMOMINIMO < consumo) && (consumo <= CONSUMOMAXIMO));
     }
 
-    public String getNombre(){
-    	return null;
-    }
-    
-    
+    public String getNombre(){ return null; }
     public CategoriaResidencial getCategoria(){return null;} //dudoso
 
     @JsonCreator
     public static CategoriaResidencial fromString(String tipoCategoria) {
 
        List<CategoriaResidencial> listaClases = asList(new CategoriaR1(),new CategoriaR2(),new CategoriaR2(),
-               new CategoriaR3(),new CategoriaR4(),new CategoriaR5(),new CategoriaR6(),new CategoriaR7()
-                ,new CategoriaR8(),new CategoriaR9());
+                                                       new CategoriaR3(),new CategoriaR4(),new CategoriaR5(),
+                                                       new CategoriaR6(),new CategoriaR7(),new CategoriaR8(),
+                                                       new CategoriaR9());
 
         CategoriaResidencial categoria =  listaClases.stream()
                 .filter(x -> tipoCategoria.equals(x.getNombre()))
