@@ -1,4 +1,6 @@
 
+import java.io.IOException;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +15,10 @@ public class ParserTest {
 	
 	@Before 
 	
-	public void setUp() {
+	public void setUp() throws IOException {
 		
 		parser = new Parser();
-		cliente = parser.parsearCliente("src/main/java/hola.json");
+		cliente = parser.parsearCliente("src/test/java/cliente.json");
 
 	}
 
