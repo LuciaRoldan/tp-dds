@@ -1,6 +1,6 @@
 {
 	"nombre": "Eco Tostadora",
 	"kWh": "1",
-	"encendido": "true",
-	"tipoDeDispositivo": DispositivoInteligente
+	"encendido": true,
+	"tipoDeDispositivo": "INTELIGENTE"
 }
