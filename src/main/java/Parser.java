@@ -29,6 +29,7 @@ public class Parser {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Cliente cliente = mapper.readValue(new File(nombreArchivo), Cliente.class);
+        System.out.print(cliente.getNombreYApellido());
         return cliente;
     }
 

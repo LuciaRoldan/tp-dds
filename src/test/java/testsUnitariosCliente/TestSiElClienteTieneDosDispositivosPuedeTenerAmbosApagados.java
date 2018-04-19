@@ -1,19 +1,8 @@
 package testsUnitariosCliente;
 
-import categorias.CategoriaR1;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoEstandar;
-import dispositivos.DispositivoInteligente;
-import org.junit.Test;
-import usuario.Cliente;
-import usuario.TipoDocumento;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
-
 public class TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados {
+
+	/*
 
 	@Test 
 	public void test() {
@@ -28,4 +17,5 @@ public class TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados {
 		
 		assertEquals(2, cliente.cantidadDispositivosApagados());
 	}
+	*/
 }

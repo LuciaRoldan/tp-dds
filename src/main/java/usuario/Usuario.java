@@ -1,22 +1,27 @@
 package usuario;
+
 import java.time.LocalDate;
 
 public abstract class Usuario {
-	String nombreYApellido;
-	String domicilio;
-	LocalDate fechaDeAlta;
-	String nombreUsuario;
-	String contrasena;
-	
-		
-	public Usuario(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+
+	public String nombreYapellido ;
+	public String domicilio;
+	public String fechaDeAlta;
+	public String contrasena;
+	public String nombreDeUsuario;
+	public String nombreYApellido;
+
+
+
+	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 			String contrasena) {
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio = domicilio;
 		this.fechaDeAlta = fechaDeAlta;
-		this.nombreUsuario = nombreUsuario;
+		this.nombreDeUsuario = nombreUsuario;
 		this.contrasena = contrasena;
 	}
+
 
 	//Getters and Setters
 	public String getNombreYApellido() {
@@ -36,19 +41,19 @@ public abstract class Usuario {
 	}
 
 	public LocalDate getFechaDeAlta() {
-		return fechaDeAlta;
+		return LocalDate.parse(this.fechaDeAlta);
 	}
 
-	public void setFechaDeAlta(LocalDate fechaDeAlta) {
+	public void setFechaDeAlta(String fechaDeAlta) {
 		this.fechaDeAlta = fechaDeAlta;
 	}
 
 	public String getNombreUsuario() {
-		return nombreUsuario;
+		return nombreDeUsuario;
 	}
 
 	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreUsuario = nombreUsuario;
+		this.nombreDeUsuario = nombreUsuario;
 	}
 
 	public String getContrasena() {
@@ -58,6 +63,6 @@ public abstract class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-	
+
 	
 }

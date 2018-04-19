@@ -1,4 +1,5 @@
 package usuario;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import java.time.LocalDate;
@@ -9,9 +10,9 @@ public class Administrador extends Usuario{
 	private Integer numeroDeIdentificacion;
 	
 	@JsonCreator
-	public Administrador(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 			String contrasena, Integer numeroDeIdentificacion) {
-		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
+		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
 		this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 	
@@ -35,5 +36,7 @@ public class Administrador extends Usuario{
 	public long mesesComoAdministrador() {
     	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
     }
+
+
 
 }

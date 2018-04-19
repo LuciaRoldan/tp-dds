@@ -1,18 +1,8 @@
 package testsUnitariosCliente;
 
-import categorias.CategoriaR1;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoEstandar;
-import org.junit.Test;
-import usuario.Cliente;
-import usuario.TipoDocumento;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-
-import static org.junit.Assert.assertEquals;
-
 public class TestUnClienteTiene2Dispositivos {
+
+	/*
 
 	@Test
 	public void test() {
@@ -25,5 +15,5 @@ public class TestUnClienteTiene2Dispositivos {
 		
 		assertEquals(2, cliente.cantidadDispositivos());
 	}
-
+*/
 }

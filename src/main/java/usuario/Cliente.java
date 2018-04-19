@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import dispositivos.Dispositivo;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -18,16 +17,23 @@ public class Cliente extends Usuario {
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
 
+
+	public Cliente(){
+
+	}
+
 	@JsonCreator
-	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+	public  void inicializar(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 			CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
-		super(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena);
-		this.tipoDocumento = tipoDocumento;
-		this.documento = documento;
-		this.telefono = telefono;
-		this.categoriaResidencial = categoriaResidencial;
-		this.dispositivos = dispositivos;
+
+			super.inicializar(nombreYApellido,fechaDeAlta,nombreDeUsuario,nombreDeUsuario,contrasena);
+			this.tipoDocumento = tipoDocumento;
+			this.documento = documento;
+			this.telefono = telefono;
+			this.categoriaResidencial = categoriaResidencial;
+			this.dispositivos = dispositivos;
+
 	}
 	
 	
@@ -39,14 +45,17 @@ public class Cliente extends Usuario {
 
 
 
-
-
-
 	//Getters and Setters
+
+
+	public String getNombreYApellido() {
+		return nombreYapellido;
+	}
 
 	public int getTelefono() {
 		return telefono;
 	}
+	@JsonProperty("telefono")
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
 	}
@@ -104,7 +113,16 @@ public class Cliente extends Usuario {
 		int cantidadApagados = this.cantidadDispositivos() - this.cantidadDispositivosEncendidos();
 		return cantidadApagados;
 	}
-	
-	
-	
+
+
+	public String getContrasena() { return this.contrasena;
+	}
+
+	public String getDomicilio() {
+		return this.domicilio;
+	}
+
+	public String getNombreUsuario() {
+		return this.nombreDeUsuario;
+	}
 }
