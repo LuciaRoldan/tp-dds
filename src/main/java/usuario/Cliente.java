@@ -8,6 +8,7 @@ import dispositivos.Dispositivo;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 
 
@@ -110,13 +111,7 @@ public class Cliente extends Usuario {
 	}
 	
 	public int cantidadDispositivosEncendidos() {
-		int cantidadEncendidos = 0;
-		for (Dispositivo dispositivo : dispositivos) {
-			if(dispositivo.isEncendido()) {
-				cantidadEncendidos += 1;
-			}
-		}
-		return cantidadEncendidos;
+		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList()).size();
 	}
 	
 	public int cantidadDispositivosApagados() {
