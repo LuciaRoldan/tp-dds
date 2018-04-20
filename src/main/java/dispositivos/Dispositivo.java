@@ -1,6 +1,8 @@
 package dispositivos;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.IOException;
 
 public class Dispositivo {
@@ -9,8 +11,11 @@ public class Dispositivo {
 	private Boolean encendido;
     private TipoDeDispositivo tipoDeDispositivo;
 
+
+
     public Dispositivo(String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo){
 		this.inicializar( nombre,  kWh,  encendido,  tipoDeDispositivo);
+
 	}
 
 

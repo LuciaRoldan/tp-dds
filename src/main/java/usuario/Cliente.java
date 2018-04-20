@@ -1,7 +1,6 @@
 package usuario;
 
 import categorias.CategoriaResidencial;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import dispositivos.Dispositivo;
 
@@ -17,25 +16,22 @@ public class Cliente extends Usuario {
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
 
+	public Cliente(){
 
-
-
-	@JsonCreator
-	public Cliente inicializar(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
-							   String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-							   CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
-
-			super.inicializar(nombreYApellido,fechaDeAlta,nombreDeUsuario,nombreDeUsuario,contrasena);
-			this.tipoDocumento = tipoDocumento;
-			this.documento = documento;
-			this.telefono = telefono;
-			this.categoriaResidencial = categoriaResidencial;
-			this.dispositivos = dispositivos;
-
-		return this;
 	}
-	
-	
+
+
+	public Cliente(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
+				   String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
+				   CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
+
+		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena);
+		this.tipoDocumento = tipoDocumento;
+		this.documento = documento;
+		this.telefono = telefono;
+		this.categoriaResidencial = categoriaResidencial;
+		this.dispositivos = dispositivos;
+	}
 
 	@JsonProperty("categoriaResidencial")
 	public void setType(String type) throws IOException {
