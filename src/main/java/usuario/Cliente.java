@@ -18,14 +18,12 @@ public class Cliente extends Usuario {
 	private ArrayList<Dispositivo> dispositivos;
 
 
-	public Cliente(){
 
-	}
 
 	@JsonCreator
-	public  void inicializar(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
-			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
+	public Cliente inicializar(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
+							   String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
+							   CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
 
 			super.inicializar(nombreYApellido,fechaDeAlta,nombreDeUsuario,nombreDeUsuario,contrasena);
 			this.tipoDocumento = tipoDocumento;
@@ -34,6 +32,7 @@ public class Cliente extends Usuario {
 			this.categoriaResidencial = categoriaResidencial;
 			this.dispositivos = dispositivos;
 
+		return this;
 	}
 	
 	
