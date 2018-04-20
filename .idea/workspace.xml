@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f8961d4-904e-4274-ab5e-65b4b7dccdd7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/usuario/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usuario/Administrador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene2Dispositivos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene2Dispositivos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene3DispositivosApagados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene3DispositivosApagados.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +50,8 @@
       <file leaf-file-name="Dispositivo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="105">
+              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -283,76 +277,6 @@
               <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
               <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispositivos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="usuario" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="testsUnitariosCliente" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -492,12 +416,12 @@
       <workItem from="1524106241846" duration="4098000" />
       <workItem from="1524147023567" duration="5146000" />
       <workItem from="1524175424626" duration="277000" />
-      <workItem from="1524188934663" duration="3022000" />
+      <workItem from="1524188934663" duration="3289000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74251000" />
+    <option name="totallyTimeSpent" value="74518000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -510,11 +434,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32894737" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.880303" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.880303" visible="true" weight="0.24177632" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -526,7 +449,7 @@
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4969697" weight="0.32894737" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="1" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.27121213" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.27121213" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info id="Learn" order="0" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
@@ -891,8 +814,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="105">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
