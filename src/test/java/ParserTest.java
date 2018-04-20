@@ -2,7 +2,10 @@
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import categorias.CategoriaR5;
 import usuario.Cliente;
+import usuario.TipoDocumento;
 
 import java.io.IOException;
 
@@ -10,81 +13,74 @@ import java.io.IOException;
 public class ParserTest {
 
 	Parser parser;
+	Cliente cliente;
 
 	@Before
 
 	public void setUp() throws IOException {
 
 		parser = new Parser();
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
+		cliente= parser.parsearCliente("src/test/java/cliente.json");
 
 	}
 
 	@Test
-	public void nombre() throws IOException {
+	public void nombre() {
 
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
 		Assert.assertEquals("MatiasMorsa", cliente.getNombreYApellido());
 	}
 
 
 	@Test
-	public void tipoDocumento() throws IOException{
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
-		Assert.assertEquals("DNI", cliente.getTipoDocumento());
+	public void tipoDocumento(){
+		TipoDocumento documento = cliente.getTipoDocumento();
+		Assert.assertEquals(TipoDocumento.DNI,	 documento);
 	}
 
 
 	@Test
-	public void nombreUsuario() throws IOException {
+	public void nombreUsuario() {
 
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
 		Assert.assertEquals("Matias21313", cliente.getNombreUsuario());
 	}
 
 	@Test
-	public void domicilio() throws IOException {
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
+	public void domicilio() {
 
 		Assert.assertEquals("Av.del libertador 2000", cliente.getDomicilio());
 	}
 
 	@Test
-	public void telefono() throws IOException {
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
+	public void telefono() {
 
 		Assert.assertEquals(44444444, cliente.getTelefono());
 	}
 
 	@Test
-	public void numeroDocumente() throws IOException {
+	public void numeroDocumente() {
 
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
 		Assert.assertEquals(1234456, cliente.getDocumento());
 	}
 
 	@Test
-	public void contraseña() throws IOException {
+	public void contraseña() {
 
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
 		Assert.assertEquals("123321", cliente.getContrasena());
 	}
 
 	@Test
-	public void categoriaResidencial() throws IOException {
-
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
-
-		Assert.assertEquals("CategoriaR8", cliente.getCategoriaResidencial());
+	public void categoriaResidencial() {
+		
+		Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());
 	}
 
 	/*
 	@Test
-	public void fechaDeAlta() throws IOException {
+	public void fechaDeAlta() {
 		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
 		Assert.assertEquals("01012001", cliente.getFechaDeAlta());
