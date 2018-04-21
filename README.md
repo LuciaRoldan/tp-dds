@@ -1,36 +1,26 @@
 # 2018-vn-group-19
 
-/////////////////////////////////////////////// CONSUMO CLIENTE ////////////////////////////////////////////////////////
-El consumo MENSUAL de cada cliente esta compuesto por la suma de todos los kWh de sus dispositivos encendidos.
+### Estado Actual
+- [ ] Tests Usuario Cliente
+- [ ] Tests Usuarios Administradores
+- [ ] Tests Categorias 1, 5 y 9
+- [ ] Tests Parser Usuario Cliente
+- [ ] Tests Parser Usuario Administrador
+- [ ] Cliente se recategoriza
+- [ ] Cliente calcula su consumo mensual
+
+### CONSUMO CLIENTE:
+El consumo **MENSUAL** de cada cliente esta compuesto por la suma de todos los kWh de sus dispositivos encendidos.
 
 
-///////////////////////////////////////////// PARSER //////////////////////////////////////////////////////////////////////////
-Cosas a tener en cuenta:
+### PARSER :
 
-El parser lee un archivo nombre.json que contiene una lista de Usuarios, y devuelve dicha lista.
+El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
 
-Ejemplo de un archivo json
+- [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
 
-[
-	{
-		"categoriaResidencial": "CATEGORIAR5",
-		"nombreYapellido": "MatiasMorsa",
-		"tipoDocumento": "DNI",
-		"nombreDeUsuario": "Matias21313",
-		"domicilio": "Av.del libertador 2000",
-		"telefono": 44444444,
-		"documento": 1234456,
-		"contrasena": "123321",
-		"fechaDeAlta": "01012001",
-		"tipoDeUsuario": "CLIENTE",
-		"sarasa": "sarasa",
-		"dispositivos":[{
+- [Template Usuario Cliente](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
+- [Template Usuario Administrador](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/administrador.json)
 
-				"nombre": "Eco Tostadora",
-				"kWh": "1",
-				"encendido": true,
-				"tipoDeDispositivo": "INTELIGENTE"
-    }
-]
+- [Template Dispositivo](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/dispositivo.json)
 
-En este caso tiene un usuario con categoria CLIENTE y el cliente tiene una lista de dispositivos.
