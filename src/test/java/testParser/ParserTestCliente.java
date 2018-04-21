@@ -1,7 +1,6 @@
 package testParser;
 
 import categorias.CategoriaR5;
-import dispositivos.Dispositivo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -95,25 +94,7 @@ public class ParserTestCliente {
 	@Test
 	public void dispositivo() throws IOException {
 
-		Dispositivo dispositivo = parser.parsearDispositivo("/home/matias/2018-vn-group-19/src/test/java/testParser/dispositivo.json");
-		Assert.assertEquals(dispositivo, cliente.getPrimerDispositivo());
+		Assert.assertEquals("Eco Tostadora", cliente.getPrimerDispositivo().getNombre());
 	}
-
-
 }
 
-/*
- * Esto es lo que hay dentro de hola.json
- * {
-	"nombresYapellidos": "MatiasMorsa",
-	"tipoDocumento": "DNI",
-	"nombreDeUsuario": "Matias21313",
-	"domicilio": "Av.del libertador 2000",
-	"telefono": 44444444,
-	"documento": 1234456,
-	"Contrasena": "123321",
-	"type": "CategoriaR8",
-	"FechaDeAlta": "01012001"
-
-}
-*/

@@ -21,7 +21,6 @@ public abstract class Usuario {
 	public TipoDeUsuario tipoDeUsuario;
 
 
-
 	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 			String contrasena,TipoDeUsuario tipoDeUsuario) {
 		this.nombreYApellido = nombreYApellido;

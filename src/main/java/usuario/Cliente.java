@@ -52,9 +52,8 @@ public class Cliente extends Usuario {
 	public Dispositivo getPrimerDispositivo(){
 		return this.dispositivos.get(0);
 	}
-	public int getTelefono() {
-		return telefono;
-	}
+	public int getTelefono() { return telefono; }
+
 	@JsonProperty("telefono")
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;

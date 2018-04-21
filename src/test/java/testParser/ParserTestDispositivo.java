@@ -27,41 +27,4 @@ public class ParserTestDispositivo {
 
 		Assert.assertEquals("Eco Tostadora", dispositivo.getNombre());
 	}
-
-	@Test
-	public void tipoDeDispositivo() {
-
-		Assert.assertEquals("INTELIGENTE", dispositivo.getTipoDeDispositivo().getNombre());
-	}
-	@Test
-	public void kWh() {
-
-		Assert.assertEquals("1", dispositivo.getkWh());
-	}
-
-
-	@Test
-	public void encendido() {
-
-		Assert.assertEquals(true, dispositivo.isEncendido());
-	}
-
-
-
 }
-
-/*
- * Esto es lo que hay dentro de hola.json
- * {
-	"nombresYapellidos": "MatiasMorsa",
-	"tipoDocumento": "DNI",
-	"nombreDeUsuario": "Matias21313",
-	"domicilio": "Av.del libertador 2000",
-	"telefono": 44444444,
-	"documento": 1234456,
-	"Contrasena": "123321",
-	"type": "CategoriaR8",
-	"FechaDeAlta": "01012001"
-
-}
-*/

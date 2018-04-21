@@ -11,10 +11,13 @@ public class Administrador extends Usuario{
 
 	private Integer numeroDeIdentificacion;
 
+
+	@JsonCreator
 	public Administrador(){
 
+
 	}
-	@JsonCreator
+
 	public Administrador(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 						 String contrasena, Integer numeroDeIdentificacion){
 					super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR);
@@ -22,7 +25,6 @@ public class Administrador extends Usuario{
 	}
 
 	/////////////////////////////////  GETTERS AND SETTERS //////////////////////////////////////////////////////
-
 
 	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) {
 		this.numeroDeIdentificacion = numeroDeIdentificacion;

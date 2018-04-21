@@ -21,7 +21,8 @@ public class ParserTestAdministrador {
 	public void setUp() throws IOException {
 
 		parser = new MiParser();
-		administrador = (Administrador) listaDeUsuarios.get(0);
+		listaDeUsuarios = parser.parsearUsuario("/home/matias/2018-vn-group-19/src/test/java/testParser/cliente.json");
+		administrador = (Administrador) listaDeUsuarios.get(1);
 
 	}
 
@@ -59,24 +60,4 @@ public class ParserTestAdministrador {
 
 		Assert.assertEquals("01012001", administrador.getFechaDeAlta());
 	}
-
-
-
-
 }
-
-/*
- * Esto es lo que hay dentro de hola.json
- * {
-	"nombresYapellidos": "MatiasMorsa",
-	"tipoDocumento": "DNI",
-	"nombreDeUsuario": "Matias21313",
-	"domicilio": "Av.del libertador 2000",
-	"telefono": 44444444,
-	"documento": 1234456,
-	"Contrasena": "123321",
-	"type": "CategoriaR8",
-	"FechaDeAlta": "01012001"
-
-}
-*/

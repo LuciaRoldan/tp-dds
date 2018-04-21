@@ -12,6 +12,19 @@ public class CategoriaR7 extends CategoriaResidencial {
     private static Double CONSUMOMAXIMO = 700.00;
     private static Double CONSUMOMINIMO = 600.00;
 
+
+    public Double getCargoVariable() {
+        return this.CARGOVARIABLE;
+    }
+
+    public Double getCargoFijo() {
+        return this.CARGOFIJO;
+    }
+
+    public Boolean pertenece(Double consumo){
+        return ((this.CONSUMOMINIMO < consumo) && (consumo <= this.CONSUMOMAXIMO));
+    }
+
     @Override
     public String getNombre(){return "CATEGORIAR7";}
     
