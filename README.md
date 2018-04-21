@@ -28,6 +28,7 @@ El cliente debe poder recategorizarse cada tres meses, para esta primera impleme
   R7 600 < C <= 700  cargo fijo = 443,59 cargo variable = 0,851
   R8 700 < C <= 1400 cargo fijo = 545,96 cargo variable = 0,851
   R9       C >  1400 cargo fijo = 887,19 cargo variable = 0,851
+                                                                    *C = consumo mensual del cliente)
 ```
 
 
