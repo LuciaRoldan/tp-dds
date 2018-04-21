@@ -7,8 +7,11 @@ import dispositivos.DispositivoInteligente;
 import org.junit.Test;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+
 import java.util.ArrayList;
+
 import static junit.framework.TestCase.assertEquals;
+
 public class TestSiElClienteTieneDosDispositivosPuedeTenerAmbosApagados {
 
 

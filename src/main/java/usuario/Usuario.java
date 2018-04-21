@@ -1,5 +1,9 @@
 package usuario;
 
+import categorias.CategoriaResidencial;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.IOException;
 import java.time.LocalDate;
 
 public abstract class Usuario {
@@ -10,18 +14,24 @@ public abstract class Usuario {
 	public String contrasena;
 	public String nombreDeUsuario;
 	public String nombreYApellido;
+	public TipoDeUsuario tipoDeUsuario;
 
 
 
 	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
-			String contrasena) {
+			String contrasena,TipoDeUsuario tipoDeUsuario) {
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio = domicilio;
 		this.fechaDeAlta = fechaDeAlta;
 		this.nombreDeUsuario = nombreUsuario;
 		this.contrasena = contrasena;
+		this.tipoDeUsuario = tipoDeUsuario;
 	}
 
+	@JsonProperty("tipoDeUsuario")
+	public void setType(TipoDeUsuario type) throws IOException {
+		this.tipoDeUsuario = type.fromString(type);
+	}
 
 	//Getters and Setters
 	public String getNombreYApellido() {

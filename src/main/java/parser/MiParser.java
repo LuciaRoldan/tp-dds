@@ -6,7 +6,6 @@ import dispositivos.Dispositivo;
 import org.json.simple.parser.JSONParser;
 import usuario.Administrador;
 import usuario.Cliente;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -16,11 +15,12 @@ import java.io.IOException;
 
 public class MiParser {
 
+    JSONParser parser = new JSONParser();
+    ObjectMapper mapper = new ObjectMapper();
 
     public Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {
 
-        JSONParser parser = new JSONParser();
-        ObjectMapper mapper = new ObjectMapper();
+
         Dispositivo dispo = mapper.readValue(new File(nombreArchivo), Dispositivo.class);
         return  dispo;
     }
@@ -28,8 +28,6 @@ public class MiParser {
 
     public Cliente parsearCliente(String nombreArchivo) throws IOException {
 
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Cliente cliente = mapper.readValue(new File(nombreArchivo), Cliente.class);
         System.out.print(cliente.getNombreYApellido());
         return cliente;
@@ -37,7 +35,7 @@ public class MiParser {
 
 
     public Administrador parsearAdministrador(String nombreArchivo) throws IOException{
-        ObjectMapper mapper = new ObjectMapper();
+
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Administrador administrador = mapper.readValue(new File(nombreArchivo), Administrador.class);
         return administrador;

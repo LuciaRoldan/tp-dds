@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
+import static usuario.TipoDeUsuario.CLIENTE;
+
 public class Cliente extends Usuario {
 
 	private TipoDocumento tipoDocumento;
@@ -25,7 +27,7 @@ public class Cliente extends Usuario {
 				   String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 				   CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
 
-		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena);
+		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena ,CLIENTE);
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 		this.telefono = telefono;
@@ -41,7 +43,7 @@ public class Cliente extends Usuario {
 
 
 	//Getters and Setters
-
+	public TipoDeUsuario getTipoDeUsuario() {return CLIENTE;}
 
 	public String getNombreYApellido() {
 		return nombreYapellido;
