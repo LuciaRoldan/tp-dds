@@ -1,26 +1,27 @@
 package testParser;
 
-import categorias.CategoriaR5;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import parser.MiParser;
-import usuario.Cliente;
-import usuario.TipoDocumento;
+import usuario.Administrador;
+import usuario.Usuario;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ParserTestAdministrador {
 
 	MiParser parser;
-	Cliente cliente;
+	List<Usuario> listaDeUsuarios;
+	Administrador administrador;
 
 	@Before
 
 	public void setUp() throws IOException {
 
 		parser = new MiParser();
-		cliente= parser.parsearCliente("src/test/java/cliente.json");
+		administrador = (Administrador) listaDeUsuarios.get(0);
 
 	}
 
@@ -28,65 +29,38 @@ public class ParserTestAdministrador {
 	public void nombre() {
 
 
-		Assert.assertEquals("MatiasMorsa", cliente.getNombreYApellido());
+		Assert.assertEquals("MatiasMorsa", administrador.getNombreYApellido());
 	}
 
-
-	@Test
-	public void tipoDocumento(){
-		TipoDocumento documento = cliente.getTipoDocumento();
-		Assert.assertEquals(TipoDocumento.DNI,	 documento);
-	}
 
 
 	@Test
 	public void nombreUsuario() {
 
 
-		Assert.assertEquals("Matias21313", cliente.getNombreUsuario());
+		Assert.assertEquals("Matias21313", administrador.getNombreUsuario());
 	}
 
 	@Test
 	public void domicilio() {
 
-		Assert.assertEquals("Av.del libertador 2000", cliente.getDomicilio());
-	}
-
-	@Test
-	public void telefono() {
-
-		Assert.assertEquals(44444444, cliente.getTelefono());
-	}
-
-	@Test
-	public void numeroDocumente() {
-
-
-		Assert.assertEquals(1234456, cliente.getDocumento());
+		Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());
 	}
 
 	@Test
 	public void contraseña() {
 
 
-		Assert.assertEquals("123321", cliente.getContrasena());
+		Assert.assertEquals("123321", administrador.getContrasena());
 	}
 
-	@Test
-	public void categoriaResidencial() {
-		
-		Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());
-	}
-
-	/*
 	@Test
 	public void fechaDeAlta() {
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
-		Assert.assertEquals("01012001", cliente.getFechaDeAlta());
+		Assert.assertEquals("01012001", administrador.getFechaDeAlta());
 	}
 
-	*/
+
 
 
 }

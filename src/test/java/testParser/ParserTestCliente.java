@@ -8,12 +8,15 @@ import org.junit.Test;
 import parser.MiParser;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+import usuario.Usuario;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ParserTestCliente {
 
 	MiParser parser;
+	List<Usuario> listaDeUsuarios;
 	Cliente cliente;
 
 	@Before
@@ -21,8 +24,8 @@ public class ParserTestCliente {
 	public void setUp() throws IOException {
 
 		parser = new MiParser();
-		cliente= parser.parsearCliente("/home/matias/2018-vn-group-19/src/test/java/testParser/cliente.json");
-
+		listaDeUsuarios = parser.parsearUsuario("/home/matias/2018-vn-group-19/src/test/java/testParser/cliente.json");
+		cliente = (Cliente) listaDeUsuarios.get(0);
 	}
 
 	@Test
@@ -31,6 +34,15 @@ public class ParserTestCliente {
 
 		Assert.assertEquals("MatiasMorsa", cliente.getNombreYApellido());
 	}
+
+	@Test
+	public void clase() {
+
+		Cliente clientePrueba = new Cliente();
+		Assert.assertEquals(clientePrueba.getClass(), cliente.getClass());
+	}
+
+
 
 
 	@Test
@@ -83,11 +95,9 @@ public class ParserTestCliente {
 	@Test
 	public void dispositivo() throws IOException {
 
-		Dispositivo dispositivo = parser.parsearDispositivo("/home/matias/2018-vn-group-19/src/test/java/dispositivo.json");
+		Dispositivo dispositivo = parser.parsearDispositivo("/home/matias/2018-vn-group-19/src/test/java/testParser/dispositivo.json");
 		Assert.assertEquals(dispositivo, cliente.getPrimerDispositivo());
 	}
-
-
 
 
 }

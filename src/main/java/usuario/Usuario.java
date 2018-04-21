@@ -1,11 +1,15 @@
 package usuario;
 
-import categorias.CategoriaResidencial;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipoDeUsuario")
+@JsonSubTypes({
+		@JsonSubTypes.Type(value=Cliente.class, name="CLIENTE"),
+		@JsonSubTypes.Type(value=Administrador.class, name="ADMINISTRADOR")
+})
 public abstract class Usuario {
 
 	public String nombreYapellido ;
@@ -28,10 +32,8 @@ public abstract class Usuario {
 		this.tipoDeUsuario = tipoDeUsuario;
 	}
 
-	@JsonProperty("tipoDeUsuario")
-	public void setType(TipoDeUsuario type) throws IOException {
-		this.tipoDeUsuario = type.fromString(type);
-	}
+
+
 
 	//Getters and Setters
 	public String getNombreYApellido() {
@@ -69,6 +71,9 @@ public abstract class Usuario {
 	public String getContrasena() {
 		return contrasena;
 	}
+
+
+	public TipoDeUsuario getTipoDeUsuario() {return null;}
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;

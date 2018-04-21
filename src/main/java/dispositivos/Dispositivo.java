@@ -10,6 +10,10 @@ public class Dispositivo {
 	private Boolean encendido;
     private TipoDeDispositivo tipoDeDispositivo;
 
+    public Dispositivo(){
+
+	}
+
 
     public Dispositivo(String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo){
 		this.inicializar( nombre,  kWh,  encendido,  tipoDeDispositivo);
