@@ -47,6 +47,9 @@ public class Cliente extends Usuario {
 		return nombreYapellido;
 	}
 
+	public Dispositivo getPrimerDispositivo(){
+		return this.dispositivos.get(0);
+	}
 	public int getTelefono() {
 		return telefono;
 	}

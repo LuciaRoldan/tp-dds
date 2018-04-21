@@ -11,7 +11,6 @@ public class Dispositivo {
     private TipoDeDispositivo tipoDeDispositivo;
 
 
-
     public Dispositivo(String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo){
 		this.inicializar( nombre,  kWh,  encendido,  tipoDeDispositivo);
 
@@ -33,7 +32,8 @@ public class Dispositivo {
 
 	public String getNombre() {return nombre;}
 	public void setNombre(String nombre) { this.nombre = nombre; }
-	public long getkWh() { return kWh;	}
+	public TipoDeDispositivo getTipoDeDispositivo(){ return this.tipoDeDispositivo;}
+	public Long getkWh() { return kWh;	}
 	public void setkWh(Long kWh) {	this.kWh = kWh;	}
 	public Boolean isEncendido() 	{ return encendido; }
 	public void setEncendido(boolean encendido) { this.encendido = encendido; }

@@ -1,8 +1,11 @@
+package testParser;
+
+import categorias.CategoriaR5;
+import dispositivos.Dispositivo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import categorias.CategoriaR5;
+import parser.MiParser;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
@@ -10,15 +13,15 @@ import java.io.IOException;
 
 public class ParserTestCliente {
 
-	Parser parser;
+	MiParser parser;
 	Cliente cliente;
 
 	@Before
 
 	public void setUp() throws IOException {
 
-		parser = new Parser();
-		cliente= parser.parsearCliente("src/test/java/cliente.json");
+		parser = new MiParser();
+		cliente= parser.parsearCliente("/home/matias/2018-vn-group-19/src/test/java/testParser/cliente.json");
 
 	}
 
@@ -76,15 +79,15 @@ public class ParserTestCliente {
 		Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());
 	}
 
-	/*
-	@Test
-	public void fechaDeAlta() {
-		Cliente cliente = parser.parsearCliente("/home/matias/2018-vn-group-19/src/main/java/cliente.json");
 
-		Assert.assertEquals("01012001", cliente.getFechaDeAlta());
+	@Test
+	public void dispositivo() throws IOException {
+
+		Dispositivo dispositivo = parser.parsearDispositivo("/home/matias/2018-vn-group-19/src/test/java/dispositivo.json");
+		Assert.assertEquals(dispositivo, cliente.getPrimerDispositivo());
 	}
 
-	*/
+
 
 
 }

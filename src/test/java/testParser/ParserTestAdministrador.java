@@ -1,25 +1,25 @@
+package testParser;
 
+import categorias.CategoriaR5;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import categorias.CategoriaR5;
+import parser.MiParser;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
 import java.io.IOException;
 
+public class ParserTestAdministrador {
 
-public class ParserTest {
-
-	Parser parser;
+	MiParser parser;
 	Cliente cliente;
 
 	@Before
 
 	public void setUp() throws IOException {
 
-		parser = new Parser();
+		parser = new MiParser();
 		cliente= parser.parsearCliente("src/test/java/cliente.json");
 
 	}
@@ -87,6 +87,7 @@ public class ParserTest {
 	}
 
 	*/
+
 
 }
 

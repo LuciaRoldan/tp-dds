@@ -1,3 +1,5 @@
+package parser;
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dispositivos.Dispositivo;
@@ -12,7 +14,7 @@ import java.io.IOException;
 
 //TODO Hacer singleton
 
-public class Parser {
+public class MiParser {
 
 
     public Dispositivo parsearDispositivo(String nombreArchivo) throws IOException {

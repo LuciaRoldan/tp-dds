@@ -51,6 +51,7 @@ public abstract class CategoriaResidencial {
     }
 }
 
+
   /*  CATEGORIAS:
   R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
   R2 150 < C <= 325 cargo fijo = 35,32  cargo variable = 0,644
