@@ -6,6 +6,7 @@ import dispositivos.Dispositivo;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 import static usuario.TipoDeUsuario.CLIENTE;
@@ -52,14 +53,15 @@ public class Cliente extends Usuario {
 	public int           		  getTelefono()                 	{ return telefono; 								  }
 	public int 					  getDocumento() 					{ return documento;								  }
 	public int 					  getCantidadDispositivos()     	{ return dispositivos.size();					  }
-	public int 					  getSizeDispositivosEncendidos() 	{ return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList()).size(); }
+	public List					  getDispositivosEncendidos() 		{ return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList()); }
+	public int 					  getSizeDispositivosEncendidos()	{ return this.getDispositivosEncendidos().size(); }
 	public int 					  getSizeDispositivosApagados() 	{ return (this.getCantidadDispositivos() - this.getSizeDispositivosEncendidos());}
     public Dispositivo   		  getPrimerDispositivo()		  	{ return this.dispositivos.get(0);				  }
     public CategoriaResidencial   getCategoriaResidencial() 		{ return categoriaResidencial;				      }
 	public TipoDocumento 		  getTipoDocumento() 				{ return tipoDocumento;							  }
 	public TipoDeUsuario 		  getTipoDeUsuario() 				{ return CLIENTE;								  }
 	public ArrayList<Dispositivo> getDispositivos() 				{ return this.dispositivos;						  }
-	public boolean 				  getDispositivosEncendidos()		{ return this.getSizeDispositivosEncendidos() > 0;}
+	public boolean 				  getAnyDispositivosEncendidos()	{ return this.getSizeDispositivosEncendidos() > 0;}
 
 
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
@@ -73,4 +75,26 @@ public class Cliente extends Usuario {
 
 
 
+	public Double calcularConsumoMensual() {
+		
+		List<Dispositivo>dispositivosEncendidos = this.getDispositivosEncendidos();
+		Double consumo = dispositivosEncendidos.stream()
+							  .mapToDouble(dispositivo -> dispositivo.getkWh())
+							  .sum();
+		return consumo;
+									
+	}
+	
+	public void recategorizacion() {
+		//queda muy fea hacerla con un switch?? 
+	}
 }
+	
+	
+	
+	
+	
+	
+	
+	
+	
