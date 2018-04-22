@@ -27,37 +27,18 @@ public class ParserTestAdministrador {
 	}
 
 	@Test
-	public void nombre() {
-
-
-		Assert.assertEquals("MatiasMorsa", administrador.getNombreYApellido());
-	}
-
-
+	public void nombreYapellido() { Assert.assertEquals("MatiasMorsa", administrador.getNombreYApellido());}
 
 	@Test
-	public void nombreUsuario() {
-
-
-		Assert.assertEquals("Matias21313", administrador.getNombreUsuario());
-	}
+	public void nombreUsuario()   { Assert.assertEquals("Matias21313", administrador.getNombreUsuario());}
 
 	@Test
-	public void domicilio() {
-
-		Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());
-	}
+	public void domicilio()       { Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());}
 
 	@Test
-	public void contraseña() {
-
-
-		Assert.assertEquals("123321", administrador.getContrasena());
-	}
+	public void contraseña()      { Assert.assertEquals("123321", administrador.getContrasena());}
 
 	@Test
-	public void fechaDeAlta() {
+	public void fechaDeAlta()     { Assert.assertEquals("01012001", administrador.getFechaDeAlta());}
 
-		Assert.assertEquals("01012001", administrador.getFechaDeAlta());
-	}
 }

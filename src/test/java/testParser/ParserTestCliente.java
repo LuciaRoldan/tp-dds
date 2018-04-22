@@ -28,73 +28,31 @@ public class ParserTestCliente {
 	}
 
 	@Test
-	public void nombre() {
-
-
-		Assert.assertEquals("MatiasMorsa", cliente.getNombreYApellido());
-	}
+	public void categoriaResidencial()  { Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());}
+	@Test
+	public void contraseña() 			{ Assert.assertEquals("123321", cliente.getContrasena());			      }
+	@Test
+	public void dispositivo() 			{ Assert.assertEquals("Eco Tostadora", cliente.getPrimerDispositivo().getNombre());	}
+	@Test
+	public void domicilio() 			{ Assert.assertEquals("Av.del libertador 2000", cliente.getDomicilio()); }
+	@Test
+	public void nombreYapellido()		{ Assert.assertEquals("MatiasMorsa", cliente.getNombreYApellido()); 	  }
+	@Test
+	public void numeroDocumente()   	{ Assert.assertEquals(1234456, cliente.getDocumento());					  }
+	@Test
+	public void nombreUsuario() 		{ Assert.assertEquals("Matias21313", cliente.getNombreUsuario());  		  }
+	@Test
+	public void telefono() 				{ Assert.assertEquals(44444444, cliente.getTelefono());					  }
 
 	@Test
 	public void clase() {
-
 		Cliente clientePrueba = new Cliente();
 		Assert.assertEquals(clientePrueba.getClass(), cliente.getClass());
 	}
-
-
-
-
 	@Test
 	public void tipoDocumento(){
 		TipoDocumento documento = cliente.getTipoDocumento();
 		Assert.assertEquals(TipoDocumento.DNI,	 documento);
-	}
-
-
-	@Test
-	public void nombreUsuario() {
-
-
-		Assert.assertEquals("Matias21313", cliente.getNombreUsuario());
-	}
-
-	@Test
-	public void domicilio() {
-
-		Assert.assertEquals("Av.del libertador 2000", cliente.getDomicilio());
-	}
-
-	@Test
-	public void telefono() {
-
-		Assert.assertEquals(44444444, cliente.getTelefono());
-	}
-
-	@Test
-	public void numeroDocumente() {
-
-
-		Assert.assertEquals(1234456, cliente.getDocumento());
-	}
-
-	@Test
-	public void contraseña() {
-
-
-		Assert.assertEquals("123321", cliente.getContrasena());
-	}
-
-	@Test
-	public void categoriaResidencial() {
-		
-		Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());
-	}
-
-
-	@Test
-	public void dispositivo() throws IOException {
-
-		Assert.assertEquals("Eco Tostadora", cliente.getPrimerDispositivo().getNombre());
 	}
 }
 

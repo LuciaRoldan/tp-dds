@@ -12,14 +12,16 @@ import java.time.LocalDate;
 })
 public abstract class Usuario {
 
-	public String nombreYapellido ;
-	public String domicilio;
-	public String fechaDeAlta;
-	public String contrasena;
-	public String nombreDeUsuario;
-	public String nombreYApellido;
+	public String 		 nombreYapellido ;
+	public String 		 domicilio;
+	public String 		 fechaDeAlta;
+	public String 		 contrasena;
+	public String 		 nombreDeUsuario;
+	public String 		 nombreYApellido;
 	public TipoDeUsuario tipoDeUsuario;
 
+
+	//////////////////////////// CONSTRUCTOR /////////////////////////////////////////////////////////////
 
 	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 			String contrasena,TipoDeUsuario tipoDeUsuario) {
@@ -32,51 +34,21 @@ public abstract class Usuario {
 	}
 
 
+	/////////////////////////// GETTERS /////////////////////////////////////////////////////////////
 
+	public String 	 getContrasena() 						  { return contrasena; 						 }
+	public String    getDomicilio() 						  { return domicilio;						 }
+	public String	 getNombreUsuario() 					  { return nombreDeUsuario; 				 }
+	public String    getNombreYApellido()					  { return this.nombreYApellido;			 }
+	public LocalDate getFechaDeAlta() 					  	  { return LocalDate.parse(this.fechaDeAlta);}
+	public TipoDeUsuario getTipoDeUsuario()					  { return null;}
 
-	//Getters and Setters
-	public String getNombreYApellido() {
-		return nombreYApellido;
-	}
+	/////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
-	public void setNombreYApellido(String nombreYApellido) {
-		this.nombreYApellido = nombreYApellido;
-	}
+	public void setContrasena(String contrasena) 		     { this.contrasena = contrasena;			 }
+	public void setDomicilio(String domicilio) 			     { this.domicilio = domicilio; 				 }
+	public void setNombreYApellido(String nombreYApellido)   { this.nombreYApellido = nombreYApellido;	 }
+	public void setNombreUsuario(String nombreUsuario) 	     { this.nombreDeUsuario = nombreUsuario;	 }
+	public void setFechaDeAlta(String fechaDeAlta) 		     { this.fechaDeAlta = fechaDeAlta; 			 }
 
-	public String getDomicilio() {
-		return domicilio;
-	}
-
-	public void setDomicilio(String domicilio) {
-		this.domicilio = domicilio;
-	}
-
-	public LocalDate getFechaDeAlta() {
-		return LocalDate.parse(this.fechaDeAlta);
-	}
-
-	public void setFechaDeAlta(String fechaDeAlta) {
-		this.fechaDeAlta = fechaDeAlta;
-	}
-
-	public String getNombreUsuario() {
-		return nombreDeUsuario;
-	}
-
-	public void setNombreUsuario(String nombreUsuario) {
-		this.nombreDeUsuario = nombreUsuario;
-	}
-
-	public String getContrasena() {
-		return contrasena;
-	}
-
-
-	public TipoDeUsuario getTipoDeUsuario() {return null;}
-
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
-	}
-
-	
 }

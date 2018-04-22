@@ -16,16 +16,11 @@ public class CategoriaR6 extends CategoriaResidencial {
     public Double getCargoVariable() {
         return this.CARGOVARIABLE;
     }
-
-    public Double getCargoFijo() {
-        return this.CARGOFIJO;
-    }
+    public Double getCargoFijo()     { return this.CARGOFIJO    ; }
+    public String getNombre()        { return "CATEGORIAR6";}
 
     public Boolean pertenece(Double consumo){
         return ((this.CONSUMOMINIMO < consumo) && (consumo <= this.CONSUMOMAXIMO));
     }
-
-    @Override
-    public String getNombre(){return "CATEGORIAR6";}
     
 }

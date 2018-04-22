@@ -15,15 +15,11 @@ import static java.util.Arrays.asList;
 public abstract class CategoriaResidencial {
 
 
-    public Double getCargoVariable() { return null; }
-
-    public Double getCargoFijo() { return null; }
-
-    public Boolean pertenece(Double consumo){ return null;};
-	
-
-    public String getNombre(){ return null; }
-
+    public Double getCargoVariable()            { return null; }
+    public Double getCargoFijo()                { return null; }
+    public String getNombre()                   { return null; }
+    public Boolean pertenece(Double consumo)    { return null;}
+    
     @JsonCreator
     public static CategoriaResidencial fromString(String tipoCategoria) {
 

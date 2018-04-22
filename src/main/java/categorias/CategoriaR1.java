@@ -1,11 +1,11 @@
 package categorias;
 
-//R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
-
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include=JsonTypeInfo.As.PROPERTY, property="objectType")
 public class CategoriaR1 extends CategoriaResidencial {
+
+    //R1 C<= 150 ; Cargo fijo = 18,76 Cargo variable = 0,644
 
     private static Double CARGOVARIABLE =  0.644;
     private static Double CARGOFIJO     =  18.76;
@@ -16,12 +16,9 @@ public class CategoriaR1 extends CategoriaResidencial {
     public Double getCargoVariable() {
         return this.CARGOVARIABLE;
     }
-
-    public Double getCargoFijo() {
-        return this.CARGOFIJO;
-    }
-
+    public Double getCargoFijo()     { return this.CARGOFIJO    ; }
+    public String getNombre()        { return "CATEGORIAR1";}
     public Boolean pertenece(Double consumo) { return (consumo <= this.CONSUMOMAXIMO);}
 
-    public String getNombre(){return "CATEGORIAR1";}
+
 }
