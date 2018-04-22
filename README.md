@@ -1,13 +1,14 @@
 # 2018-vn-group-19
 
 ### Estado Actual
-- [X] Tests Usuario Cliente
-- [X] Tests Usuarios Administradores
+- [X] Tests Usuario Cliente (parte 1)
+- [X] Tests Usuarios Administradores (parte 1)
 - [X] Tests Categorias 1, 5 y 9
 - [X] Tests Parser Usuario Cliente
 - [X] Tests Parser Usuario Administrador
-- [ ] Cliente se recategoriza
-- [ ] Cliente calcula su consumo mensual
+- [ ] Cliente se recategoriza (parte 2)
+- [ ] Cliente calcula su consumo mensual (parte 2)
+- [ ] Test Cliente (parte 2)
 
 ### CONSUMO CLIENTE:
 El consumo **MENSUAL** de cada cliente esta compuesto por la suma de todos los kWh de sus dispositivos encendidos.
