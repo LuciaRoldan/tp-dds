@@ -36,7 +36,7 @@ El cliente debe poder recategorizarse cada tres meses, para esta primera impleme
 
 El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
 
-- [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
+- [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/usuarios.json)
 
 - [Template Usuario Cliente](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
 - [Template Usuario Administrador](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/administrador.json)
