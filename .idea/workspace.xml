@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f8961d4-904e-4274-ab5e-65b4b7dccdd7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/testParser/clientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/cliente.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestConsumoCliente.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,15 +33,43 @@
     <favorites_list name="TPANUAL" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TestCategoriaR5.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR5.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="86" column="48" lean-forward="true" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestConsumoCliente.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestConsumoCliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="AnnotationType" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,7 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/test.json" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR8.java" />
         <option value="$PROJECT_DIR$/src/main/java/Cliente.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -96,9 +123,7 @@
         <option value="$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java" />
         <option value="$PROJECT_DIR$/src/main/java/parser/MiParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/usuario/Administrador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" />
         <option value="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR1.java" />
-        <option value="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java" />
         <option value="$PROJECT_DIR$/src/main/java/usuario/Usuario.java" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/cliente.json" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/administrador.json" />
@@ -107,6 +132,9 @@
         <option value="$PROJECT_DIR$/src/test/java/testParser/ParserTestCliente.java" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/clientes.json" />
+        <option value="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java" />
+        <option value="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/usuario/Cliente.java" />
       </list>
     </option>
   </component>
@@ -150,18 +178,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="2018-vn-group-19" type="cbb8eebc:String" user="2018-vn-group-19" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +207,14 @@
               <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
               <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="usuario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
+              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -206,12 +230,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="testParser" type="462c0819:PsiDirectoryNode" />
+              <item name="testsUnitariosCliente" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="2018-vn-group-19" type="cbb8eebc:String" user="2018-vn-group-19" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -444,23 +480,12 @@
       <workItem from="1524175424626" duration="277000" />
       <workItem from="1524188934663" duration="3289000" />
       <workItem from="1524240663704" duration="5936000" />
-      <workItem from="1524319394625" duration="23066000" />
+      <workItem from="1524319394625" duration="24339000" />
+      <workItem from="1524406129407" duration="244000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 46m 59s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 47m 26s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 48m 51s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 53m 02s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 53m 35s.xml">
       <configuration name="All in TPANUAL" configurationId="JUnit" />
     </history-entry>
@@ -479,9 +504,21 @@
     <history-entry file="All_in_TPANUAL - 2018.04.21 at 23h 04m 29s.xml">
       <configuration name="All in TPANUAL" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 23h 17m 08s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 23h 19m 32s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 23h 20m 06s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 23h 20m 20s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103520000" />
+    <option name="totallyTimeSpent" value="105037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -494,10 +531,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="741" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32894737" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.87651515" weight="0.3026316" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -505,13 +542,12 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.8772727" visible="true" weight="0.2631579" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.8772727" weight="0.2631579" />
       <window_info anchor="bottom" id="Terminal" order="3" sideWeight="0.4969697" weight="0.32894737" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="1" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.28560606" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.2901515" />
       <window_info anchor="right" id="Database" order="7" weight="0.32954547" />
-      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49924242" weight="0.32894737" />
       <window_info id="Learn" order="0" weight="0.32954547" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
@@ -519,8 +555,10 @@
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="4" sideWeight="0.50328946" side_tool="true" weight="0.27575758" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39802632" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.87651515" weight="0.3026316" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49924242" weight="0.32894737" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" visible="true" weight="0.25" />
@@ -543,8 +581,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Administrador.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Usuario.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/Cliente.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.9.0/jackson-annotations-2.9.0.jar!/com/fasterxml/jackson/annotation/JacksonAnnotation.class">
       <provider selected="true" editor-type-id="text-editor">
@@ -588,27 +624,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Resources/dispositivo.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Resources/administrador.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json" />
+    <entry file="file://$PROJECT_DIR$/src/main/Resources/dispositivo.json" />
+    <entry file="file://$PROJECT_DIR$/src/main/Resources/administrador.json" />
     <entry file="file://$PROJECT_DIR$/src/test/java/testAdministrador/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -623,20 +641,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/ClienteEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/AdministradorEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="29" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/ClienteEnum.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/AdministradorEnum.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestUnClienteTiene2Dispositivos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -651,9 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="28" column="61" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="56" column="119" selection-start-line="56" selection-start-column="119" selection-end-line="56" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Escritorio/Software/jdk1.8.0_161/src.zip!/java/time/format/DateTimeFormatter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -800,13 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/DispositivoEstandar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -821,13 +810,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -894,6 +877,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="78" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="86" column="48" lean-forward="true" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testsUnitariosCliente/TestConsumoCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
         </state>
       </provider>
     </entry>
