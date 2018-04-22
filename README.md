@@ -1,11 +1,11 @@
 # 2018-vn-group-19
 
 ### Estado Actual
-- [ ] Tests Usuario Cliente
-- [ ] Tests Usuarios Administradores
-- [ ] Tests Categorias 1, 5 y 9
-- [ ] Tests Parser Usuario Cliente
-- [ ] Tests Parser Usuario Administrador
+- [X] Tests Usuario Cliente
+- [X] Tests Usuarios Administradores
+- [X] Tests Categorias 1, 5 y 9
+- [X] Tests Parser Usuario Cliente
+- [X] Tests Parser Usuario Administrador
 - [ ] Cliente se recategoriza
 - [ ] Cliente calcula su consumo mensual
 
