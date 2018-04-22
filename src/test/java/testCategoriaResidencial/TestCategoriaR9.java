@@ -21,9 +21,9 @@ public class TestCategoriaR9 {
 	@Test
 	public void getCargoFijo() 		{ Assert.assertEquals(Double.valueOf(887.19),categoria.getCargoFijo() );		}
 	@Test
-	public void noPertenece() 		{ Assert.assertEquals(false,categoria.pertenece(1.00));	}
+	public void noPertenece() 		{ Assert.assertEquals(false,categoria.pertenece(1399.00));	}
 	@Test
-	public void siPertenece() 		{ Assert.assertEquals(true,categoria.pertenece(2500.00));  }
+	public void siPertenece() 		{ Assert.assertEquals(true,categoria.pertenece(1400.01));  }
 	@Test
 	public void getNombre() 		{ Assert.assertEquals("CATEGORIAR9",categoria.getNombre() );		 }
 

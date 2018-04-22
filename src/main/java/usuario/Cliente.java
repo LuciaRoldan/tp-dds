@@ -76,13 +76,11 @@ public class Cliente extends Usuario {
 
 
 	public Double calcularConsumoMensual() {
-		
 		List<Dispositivo>dispositivosEncendidos = this.getDispositivosEncendidos();
 		Double consumo = dispositivosEncendidos.stream()
 							  .mapToDouble(dispositivo -> dispositivo.getkWh())
 							  .sum();
 		return consumo;
-									
 	}
 	
 	public void recategorizacion() {
