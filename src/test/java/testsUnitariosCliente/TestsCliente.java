@@ -146,14 +146,14 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		fail("Not yet implemented");
-
-// 		assertEquals(,);
+ 		assertEquals((double)4,cliente.calcularConsumoMensual());
 	}
 
 	@Test
 	public void testRecategorizacion() {
-		fail("Not yet implemented");
+		cliente.recategorizarse();
+		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
+
 
 		
 //		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());
