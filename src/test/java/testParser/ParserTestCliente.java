@@ -21,7 +21,7 @@ public class ParserTestCliente {
 	public void setUp() throws IOException {
 
 		parser = new MiParser();
-		listaDeUsuarios = parser.parsearUsuario("/home/matias/2018-vn-group-19/src/test/java/testParser/cliente.json");
+		listaDeUsuarios = parser.parsearUsuario("/home/matias/2018-vn-group-19/src/test/java/testParser/usuarios.json");
 		cliente = (Cliente) listaDeUsuarios.get(0);
 	}
 

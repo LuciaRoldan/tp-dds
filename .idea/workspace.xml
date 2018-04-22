@@ -4,6 +4,9 @@
     <list default="true" id="4f8961d4-904e-4274-ab5e-65b4b7dccdd7" name="Default" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/administrador.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Resources/dispositivo.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/parser/cliente.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/usuario/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/usuario/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java" afterDir="false" />
@@ -11,6 +14,12 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testParser/administrador.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/administrador.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/testParser/cliente.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/cliente.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/testParser/dispositivo.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testParser/dispositivo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/testAdministrador/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/parser/cliente.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testParser/administrador.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testParser/administrador.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testParser/cliente.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testParser/cliente.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/testParser/dispositivo.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/testParser/dispositivo.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,86 +50,7 @@
     <favorites_list name="TPANUAL" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ParserTestDispositivo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dispositivo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cliente.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/cliente.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="34" column="9" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="34" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserTestAdministrador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="40" column="79" selection-start-line="40" selection-start-column="79" selection-end-line="40" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Usuario.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserTestCliente.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestCliente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dispositivo.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/dispositivo.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="administrador.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/testParser/administrador.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,7 +73,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Administrador.java" />
         <option value="$PROJECT_DIR$/src/main/java/hola2.json" />
         <option value="$PROJECT_DIR$/src/main/java/test.json" />
         <option value="$PROJECT_DIR$/src/main/java/CategoriaR8.java" />
@@ -194,6 +123,7 @@
         <option value="$PROJECT_DIR$/src/test/java/testParser/cliente.json" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java" />
         <option value="$PROJECT_DIR$/src/test/java/testParser/administrador.json" />
+        <option value="$PROJECT_DIR$/src/test/java/testParser/dispositivo.json" />
       </list>
     </option>
   </component>
@@ -286,14 +216,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TPANUAL" type="b2602c69:ProjectViewProjectNode" />
-              <item name="2018-vn-group-19" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="testParser" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -530,17 +452,11 @@
       <workItem from="1524175424626" duration="277000" />
       <workItem from="1524188934663" duration="3289000" />
       <workItem from="1524240663704" duration="5936000" />
-      <workItem from="1524319394625" duration="22396000" />
+      <workItem from="1524319394625" duration="22752000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 36m 28s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 38m 41s.xml">
-      <configuration name="All in TPANUAL" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 44m 25s.xml">
       <configuration name="All in TPANUAL" configurationId="JUnit" />
     </history-entry>
@@ -565,9 +481,15 @@
     <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 55m 42s.xml">
       <configuration name="All in TPANUAL" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 59m 05s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_TPANUAL - 2018.04.21 at 22h 59m 55s.xml">
+      <configuration name="All in TPANUAL" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102850000" />
+    <option name="totallyTimeSpent" value="103206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -579,8 +501,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1368" height="741" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1" y="28" width="1368" height="741" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.32894737" />
@@ -598,6 +519,7 @@
       <window_info id="Designer" order="1" />
       <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49671054" visible="true" weight="0.28863636" />
       <window_info anchor="right" id="Database" order="7" weight="0.32954547" />
+      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49924242" weight="0.32894737" />
       <window_info id="Learn" order="0" weight="0.32954547" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
@@ -607,7 +529,6 @@
       <window_info anchor="bottom" id="Debug" order="9" weight="0.39802632" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="6" sideWeight="0.49924242" weight="0.32894737" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" visible="true" weight="0.25" />
@@ -676,7 +597,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/cliente.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
@@ -697,7 +618,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/tests/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testAdministrador/TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
@@ -708,13 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parser/cliente.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -895,44 +809,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestCliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testCategoriaResidencial/TestCategoriaR9.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -950,17 +830,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/cliente.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="40" column="79" selection-start-line="40" selection-start-column="79" selection-end-line="40" selection-end-column="79" />
+        <state relative-caret-position="255">
+          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/cliente.json">
+    <entry file="file://$PROJECT_DIR$/src/main/java/parser/old.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="34" column="9" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="34" selection-end-column="9" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestAdministrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="26" column="104" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dispositivos/Dispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="39" column="36" selection-start-line="39" selection-start-column="36" selection-end-line="39" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestDispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/usuario/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/testParser/ParserTestCliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>
