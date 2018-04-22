@@ -7,7 +7,7 @@
 - [X] Tests Parser Usuario Cliente
 - [X] Tests Parser Usuario Administrador
 - [ ] Cliente se recategoriza (parte 2)
-- [ ] Cliente calcula su consumo mensual (parte 2)
+- [X] Cliente calcula su consumo mensual (parte 2)
 - [ ] Test Cliente (parte 2)
 
 ### CONSUMO CLIENTE:
