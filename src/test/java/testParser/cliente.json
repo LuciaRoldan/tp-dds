@@ -1,4 +1,5 @@
-{
+[
+	{
 			"categoriaResidencial": 	"CATEGORIAR5",
 			"contrasena"     :			"123321",
 			"documento"      :			1234456,
@@ -17,4 +18,5 @@
 					"tipoDeDispositivo": "INTELIGENTE"
 				}
 			]
-}
+	}
+]

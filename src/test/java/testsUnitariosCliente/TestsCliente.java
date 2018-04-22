@@ -12,7 +12,6 @@ import categorias.CategoriaR1;
 import categorias.CategoriaR5;
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoEstandar;
-import dispositivos.TipoDeDispositivo;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
@@ -140,23 +139,18 @@ public class TestsCliente {
 		
 		cliente.setDispositivos(otrosDispositivos);
 		
-		assertEquals(otrosDispositivos, cliente.getDispositivos());
-		
+		assertEquals(otrosDispositivos, cliente.getDispositivos());	
 	}
 
 	@Test
 	public void testCalcularConsumoMensual() {
- 		assertEquals((double)4,cliente.calcularConsumoMensual());
+		assertEquals((double) 4, cliente.calcularConsumoMensual());
 	}
 
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
 		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
-
-
-		
-//		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());
 	}
 
 }

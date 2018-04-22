@@ -5,17 +5,16 @@ import dispositivos.TipoDeDispositivo;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import parser.MiParser;
+import parser.Parser;
 import usuario.Cliente;
-import usuario.Usuario;
 
 import java.io.IOException;
 import java.util.List;
 
 public class ParserTestDispositivo {
 
-	MiParser parser;
-	List<Usuario> listaDeUsuarios;
+	Parser parser;
+	List<Cliente> listaDeClientes;
 	Cliente cliente;
 	TipoDeDispositivo pruebaInteligente;
 
@@ -23,9 +22,9 @@ public class ParserTestDispositivo {
 
 	public void setUp() throws IOException {
 
-		parser = new MiParser();
-		listaDeUsuarios = parser.parsearUsuario("src/test/java/testParser/usuarios.json");
-		cliente = (Cliente) listaDeUsuarios.get(0);
+		parser = new Parser();
+		listaDeClientes = parser.parsear(Cliente.class,"src/test/java/testParser/cliente.json");
+		cliente = listaDeClientes.get(0);
 		pruebaInteligente = new DispositivoInteligente();
 
 

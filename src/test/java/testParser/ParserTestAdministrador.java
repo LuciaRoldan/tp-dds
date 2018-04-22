@@ -3,9 +3,8 @@ package testParser;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import parser.MiParser;
+import parser.Parser;
 import usuario.Administrador;
-import usuario.Usuario;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -14,8 +13,8 @@ import java.util.List;
 
 public class ParserTestAdministrador {
 
-	MiParser parser;
-	List<Usuario> listaDeUsuarios;
+	Parser parser;
+	List<Administrador> listaDeAdministradores;
 	Administrador administrador;
 	DateTimeFormatter formatter;
 
@@ -23,9 +22,9 @@ public class ParserTestAdministrador {
 
 	public void setUp() throws IOException {
 
-		parser 			= new MiParser();
-		listaDeUsuarios = parser.parsearUsuario("src/test/java/testParser/usuarios.json");
-		administrador   = (Administrador) listaDeUsuarios.get(1);
+		parser 			= new Parser();
+		listaDeAdministradores = parser.parsear(Administrador.class, "src/test/java/testParser/administrador.json");
+		administrador   = listaDeAdministradores.get(0);
 		formatter= DateTimeFormatter.ofPattern("d/MM/yyyy");
 	}
 
