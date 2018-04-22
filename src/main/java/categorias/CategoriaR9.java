@@ -20,5 +20,10 @@ public class CategoriaR9 extends CategoriaResidencial {
     public Double getCargoFijo()     { return this.CARGOFIJO    ; }
     public String getNombre()        { return "CATEGORIAR9";}
     public Boolean pertenece(Double consumo) { return (CONSUMOMINIMO < consumo);}
+    
+    @Override
+    public boolean validar(Double consumo) {
+    	return consumo > 1400;
+    }
 
 }

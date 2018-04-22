@@ -6,35 +6,52 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import java.util.List;
 import static java.util.Arrays.asList;
 
-@JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property="type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes({
 
-        @JsonSubTypes.Type(value= CategoriaR9.class, name="CategoriaR9"),
+		@JsonSubTypes.Type(value = CategoriaR9.class, name = "CategoriaR9"),
 
 })
+
 public abstract class CategoriaResidencial {
 
+	public Double getCargoVariable() {
+		return null;
+	}
 
-    public Double getCargoVariable()            { return null; }
-    public Double getCargoFijo()                { return null; }
-    public String getNombre()                   { return null; }
-    public Boolean pertenece(Double consumo)    { return null;}
-    
-    @JsonCreator
-    public static CategoriaResidencial fromString(String tipoCategoria) {
+	public Double getCargoFijo() {
+		return null;
+	}
 
-       List<CategoriaResidencial> listaClases = asList(new CategoriaR1(),new CategoriaR2(),new CategoriaR2(),
-                                                       new CategoriaR3(),new CategoriaR4(),new CategoriaR5(),
-                                                       new CategoriaR6(),new CategoriaR7(),new CategoriaR8(),
-                                                       new CategoriaR9());
+	public String getNombre() {
+		return null;
+	}
 
-        CategoriaResidencial categoria =  listaClases.stream()
-                .filter(x -> tipoCategoria.equals(x.getNombre()))
-                .findAny()
-                .orElse(null);
+	public Boolean pertenece(Double consumo) {
+		return null;
+	}
 
-      return categoria;
-    }
+	public static List<CategoriaResidencial> listaClases = asList(new CategoriaR1(), new CategoriaR2(),
+			new CategoriaR2(), new CategoriaR3(), new CategoriaR4(), new CategoriaR5(), new CategoriaR6(),
+			new CategoriaR7(), new CategoriaR8(), new CategoriaR9());
+
+	@JsonCreator
+	public static CategoriaResidencial fromString(String tipoCategoria) {
+
+		CategoriaResidencial categoria = listaClases.stream().filter(x -> tipoCategoria.equals(x.getNombre())).findAny()
+				.orElse(null);
+
+		return categoria;
+	}
+	
+	public boolean validar(Double consumo) {
+		return false;
+	}
+
+	public CategoriaResidencial recategorizar(Double consumo) {
+		return listaClases.stream().filter(categoria -> categoria.validar(consumo))
+								   .findFirst()
+								   .get();
+	}
+
 }
-
-

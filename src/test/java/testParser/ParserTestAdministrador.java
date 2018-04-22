@@ -24,7 +24,7 @@ public class ParserTestAdministrador {
 	public void setUp() throws IOException {
 
 		parser 			= new MiParser();
-		listaDeUsuarios = parser.parsearUsuario("/home/matias/2018-vn-group-19/src/test/java/testParser/usuarios.json");
+		listaDeUsuarios = parser.parsearUsuario("src/test/java/testParser/usuarios.json");
 		administrador   = (Administrador) listaDeUsuarios.get(1);
 		formatter= DateTimeFormatter.ofPattern("d/MM/yyyy");
 	}
