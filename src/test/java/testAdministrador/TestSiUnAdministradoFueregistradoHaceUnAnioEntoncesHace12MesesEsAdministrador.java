@@ -1,4 +1,4 @@
-package tests;
+package testAdministrador;
 
 public class TestSiUnAdministradoFueregistradoHaceUnAnioEntoncesHace12MesesEsAdministrador {
 

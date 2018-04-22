@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipoDeUsuario")
 @JsonSubTypes({
@@ -12,13 +13,14 @@ import java.time.LocalDate;
 })
 public abstract class Usuario {
 
-	public String 		 nombreYapellido ;
-	public String 		 domicilio;
-	public String 		 fechaDeAlta;
-	public String 		 contrasena;
-	public String 		 nombreDeUsuario;
-	public String 		 nombreYApellido;
-	public TipoDeUsuario tipoDeUsuario;
+	public String 		 	 nombreYapellido ;
+	public String 		 	 domicilio;
+	public String 		 	 fechaDeAlta;
+	public String 		 	 contrasena;
+	public String 		     nombreDeUsuario;
+	public String 		     nombreYApellido;
+	public TipoDeUsuario     tipoDeUsuario;
+	public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
 
 	//////////////////////////// CONSTRUCTOR /////////////////////////////////////////////////////////////
@@ -36,19 +38,19 @@ public abstract class Usuario {
 
 	/////////////////////////// GETTERS /////////////////////////////////////////////////////////////
 
-	public String 	 getContrasena() 						  { return contrasena; 						 }
-	public String    getDomicilio() 						  { return domicilio;						 }
-	public String	 getNombreUsuario() 					  { return nombreDeUsuario; 				 }
-	public String    getNombreYApellido()					  { return this.nombreYApellido;			 }
-	public LocalDate getFechaDeAlta() 					  	  { return LocalDate.parse(this.fechaDeAlta);}
-	public TipoDeUsuario getTipoDeUsuario()					  { return null;}
+	public String 	     getContrasena() 				      { return contrasena; 						  		   }
+	public String        getDomicilio() 					  { return domicilio;						 		   }
+	public String	     getNombreUsuario() 				  { return nombreDeUsuario; 				 		   }
+	public String        getNombreYApellido()				  { return this.nombreYApellido;			 		   }
+	public LocalDate     getFechaDeAlta() 					  { return LocalDate.parse(this.fechaDeAlta,formatter);}
+	public TipoDeUsuario getTipoDeUsuario()					  { return null;							 		   }
 
 	/////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
-	public void setContrasena(String contrasena) 		     { this.contrasena = contrasena;			 }
-	public void setDomicilio(String domicilio) 			     { this.domicilio = domicilio; 				 }
-	public void setNombreYApellido(String nombreYApellido)   { this.nombreYApellido = nombreYApellido;	 }
-	public void setNombreUsuario(String nombreUsuario) 	     { this.nombreDeUsuario = nombreUsuario;	 }
-	public void setFechaDeAlta(String fechaDeAlta) 		     { this.fechaDeAlta = fechaDeAlta; 			 }
+	public void setContrasena(String contrasena) 		     { this.contrasena = contrasena;			 		   }
+	public void setDomicilio(String domicilio) 			     { this.domicilio = domicilio; 				 		   }
+	public void setNombreYApellido(String nombreYApellido)   { this.nombreYApellido = nombreYApellido;	 		   }
+	public void setNombreUsuario(String nombreUsuario) 	     { this.nombreDeUsuario = nombreUsuario;	 		   }
+	public void setFechaDeAlta(String fechaDeAlta) 		     { this.fechaDeAlta = fechaDeAlta; 			 		   }
 
 }

@@ -1,5 +1,4 @@
 package testParser;
-
 import categorias.CategoriaR5;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,7 +7,6 @@ import parser.MiParser;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 import usuario.Usuario;
-
 import java.io.IOException;
 import java.util.List;
 

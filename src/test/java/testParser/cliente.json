@@ -5,7 +5,7 @@
 			"contrasena"     :			"123321",
 			"documento"      :			1234456,
 			"domicilio"      :			"Av.del libertador 2000",
-			"fechaDeAlta"    :			"01012001",
+			"fechaDeAlta"    :			"01/01/2001",
 			"telefono"       :			44444444,
 			"tipoDeUsuario"  : 			"CLIENTE",
 			"tipoDocumento"	 : 			"DNI",
@@ -14,7 +14,7 @@
 			"dispositivos":[
 				{
 					"nombre"	:    	"Eco Tostadora",
-					"kWh"		: 	  	"1",
+					"kWh"		: 	  	1,
 					"encendido"	: 		 true,
 					"tipoDeDispositivo": "INTELIGENTE"
 				}
@@ -29,7 +29,7 @@
 			"telefono": 44444444,
 			"documento": 1234456,
 			"contrasena": "123321",
-			"fechaDeAlta": "01012001",
+			"fechaDeAlta": "01/01/2001",
 			"numeroDeIdentificacion": 1234,
 			"tipoDeUsuario": "ADMINISTRADOR"
 		}
