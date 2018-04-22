@@ -12,12 +12,12 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Parser {
+public class OtroParserMasGenerico {
 
     JSONParser   parser = new JSONParser();
     ObjectMapper mapper = new ObjectMapper();
 
-    public Parser(){
+    public OtroParserMasGenerico(){
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 

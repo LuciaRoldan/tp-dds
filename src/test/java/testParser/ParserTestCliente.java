@@ -3,7 +3,7 @@ import categorias.CategoriaR5;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import parser.Parser;
+import parser.OtroParserMasGenerico;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ParserTestCliente {
 
-	Parser parser;
+	OtroParserMasGenerico parser;
 	List<Cliente> listaDeClientes;
 	Cliente cliente;
 
@@ -19,7 +19,7 @@ public class ParserTestCliente {
 
 	public void setUp() throws IOException {
 
-		parser = new Parser();
+		parser = new OtroParserMasGenerico();
 		listaDeClientes = parser.parsear(Cliente.class,"src/test/java/testParser/cliente.json");
 		cliente = listaDeClientes.get(0);
 	}
