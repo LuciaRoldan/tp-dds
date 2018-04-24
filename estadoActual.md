@@ -7,9 +7,9 @@
 - [X] Tests Categorias 1, 5 y 9
 - [X] Tests Parser Usuario Cliente
 - [X] Tests Parser Usuario Administrador
-- [ ] Cliente se recategoriza (parte 2)
+- [X] Cliente se recategoriza (parte 2)
 - [X] Cliente calcula su consumo mensual (parte 2)
-- [ ] Test Cliente (parte 2)
+- [X] Test Cliente (parte 2)
 
 ### CONSUMO CLIENTE:
 El consumo **MENSUAL** de cada cliente esta compuesto por la suma de todos los kWh de sus dispositivos encendidos.
