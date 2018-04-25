@@ -28,11 +28,11 @@ public abstract class Usuario {
 	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 			String contrasena,TipoDeUsuario tipoDeUsuario) {
 		this.nombreYApellido = nombreYApellido;
-		this.domicilio = domicilio;
-		this.fechaDeAlta = fechaDeAlta;
+		this.domicilio 		 = domicilio;
+		this.fechaDeAlta	 = fechaDeAlta;
 		this.nombreDeUsuario = nombreUsuario;
-		this.contrasena = contrasena;
-		this.tipoDeUsuario = tipoDeUsuario;
+		this.contrasena 	 = contrasena;
+		this.tipoDeUsuario   = tipoDeUsuario;
 	}
 
 

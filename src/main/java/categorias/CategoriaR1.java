@@ -20,9 +20,5 @@ public class CategoriaR1 extends CategoriaResidencial {
     public String getNombre()        { return "CATEGORIAR1";}
     public Boolean pertenece(Double consumo) { return (consumo <= this.CONSUMOMAXIMO);}
 
-    @Override
-    public boolean validar(Double consumo) {
-    	return consumo <= 150;  
-    	
-    }
+
 }

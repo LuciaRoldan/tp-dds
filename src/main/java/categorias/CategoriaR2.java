@@ -21,9 +21,5 @@ public class CategoriaR2 extends CategoriaResidencial {
         return ((this.CONSUMOMINIMO < consumo) && (consumo <= this.CONSUMOMAXIMO));
     }
     
-    @Override
-    public boolean validar(Double consumo) {
-    	return 150 < consumo && consumo <= 325;
-    }
 
 }

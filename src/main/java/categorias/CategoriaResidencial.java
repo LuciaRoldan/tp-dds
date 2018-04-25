@@ -43,13 +43,9 @@ public abstract class CategoriaResidencial {
 
 		return categoria;
 	}
-	
-	public boolean validar(Double consumo) {
-		return false;
-	}
 
 	public CategoriaResidencial recategorizar(Double consumo) {
-		return listaClases.stream().filter(categoria -> categoria.validar(consumo))
+		return listaClases.stream().filter(categoria -> categoria.pertenece(consumo))
 								   .findFirst()
 								   .get();
 	}
