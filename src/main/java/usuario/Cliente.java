@@ -44,34 +44,26 @@ public class Cliente extends Usuario {
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
-	public String getContrasena() {
-		return this.contrasena;
+	public String getContrasena() 		{	return this.contrasena;
 	}
-
-	public String getNombreYApellido() {
+	public String getNombreYApellido()		 {
 		return nombreYapellido;
 	}
-
 	public String getNombreUsuario() {
 		return this.nombreDeUsuario;
 	}
-
 	public String getDomicilio() {
 		return this.domicilio;
 	}
-
-	public int getTelefono() {
+	public int 	  getTelefono() {
 		return telefono;
 	}
-
-	public int getDocumento() {
+	public int 	  getDocumento() {
 		return documento;
 	}
-
-	public int getCantidadDispositivos() {
+	public int 	  getCantidadDispositivos() {
 		return dispositivos.size();
 	}
-
 	public List getDispositivosEncendidos() {
 		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
 	}
