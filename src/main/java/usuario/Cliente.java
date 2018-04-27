@@ -21,8 +21,7 @@ public class Cliente extends Usuario {
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
-	public Cliente() {
-	}
+	public Cliente() {}
 
 	public Cliente(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
@@ -43,7 +42,6 @@ public class Cliente extends Usuario {
 											   .mapToDouble(dispositivo -> dispositivo.getkWh())
 											   .sum();
 		return consumo;
-
 	}
 
 	public void recategorizarse() {
@@ -104,7 +102,6 @@ public class Cliente extends Usuario {
 		return documento;
 	}
 
-	
 
 	public CategoriaResidencial getCategoriaResidencial() {
 		return categoriaResidencial;
@@ -122,8 +119,8 @@ public class Cliente extends Usuario {
 		return this.dispositivos;
 	}
 
-	/////////////////////////////////////////// SETTERS
-	/////////////////////////////////////////// /////////////////////////////////////////////////////////////
+	
+	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
 	public void setCategoriaResidencial(CategoriaResidencial cr) {
 		this.categoriaResidencial = cr;

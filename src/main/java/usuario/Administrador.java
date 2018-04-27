@@ -9,8 +9,6 @@ public class Administrador extends Usuario{
 	private Integer numeroDeIdentificacion;
 
 	//////////////////////////////// CONSTRUCTORES /////////////////////////////////////////////////////////////
-	@JsonCreator
-	public Administrador(){}
 
 	public Administrador(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 						 String contrasena, Integer numeroDeIdentificacion){
@@ -24,11 +22,15 @@ public class Administrador extends Usuario{
 
     /////////////////////////////////////////  GETTERS //////////////////////////////////////////////////////////////
 
-	public long 		 cantidadMesesComoAdministrador() {
+	public long cantidadMesesComoAdministrador() {
     	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
     }
-	public int 			 getNumeroDeIdentificacion() {
+	public int getNumeroDeIdentificacion() {
 		return numeroDeIdentificacion;
 	}
 	public TipoDeUsuario getTipoDeUsuario()			 { return ADMINISTRADOR;}
+	
+	
+	@JsonCreator
+	public Administrador(){}
 }
