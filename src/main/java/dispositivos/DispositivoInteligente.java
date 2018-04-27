@@ -1,6 +1,7 @@
 package dispositivos;
 
 public class DispositivoInteligente extends TipoDeDispositivo {
-    @Override
+    
+	@Override
     public String getNombre(){return "INTELIGENTE";}
 }
