@@ -14,7 +14,7 @@ public class Administrador extends Usuario{
 
 	public Administrador(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
 						 String contrasena, Integer numeroDeIdentificacion){
-						 super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR);
+					super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR);
 			this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 
@@ -24,7 +24,11 @@ public class Administrador extends Usuario{
 
     /////////////////////////////////////////  GETTERS //////////////////////////////////////////////////////////////
 
-	public long 		 cantidadMesesComoAdministrador() 		{ return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);}
-	public int 			 getNumeroDeIdentificacion()			{ return numeroDeIdentificacion;}
-	public TipoDeUsuario getTipoDeUsuario()			 			{ return ADMINISTRADOR;}
+	public long 		 getMesesComoAdministrador() {
+    	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
+    }
+	public int 			 getNumeroDeIdentificacion() {
+		return numeroDeIdentificacion;
+	}
+	public TipoDeUsuario getTipoDeUsuario()			 { return ADMINISTRADOR;}
 }

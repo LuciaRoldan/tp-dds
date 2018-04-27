@@ -15,10 +15,21 @@ import static java.util.Arrays.asList;
 
 public abstract class CategoriaResidencial {
 
-	public Double  getCargoVariable() 			{ return null; }
-	public Double  getCargoFijo() 				{ return null; }
-	public String  getNombre() 					{ return null; }
-	public Boolean pertenece(Double consumo) 	{ return null; }
+	public Double getCargoVariable() {
+		return null;
+	}
+
+	public Double getCargoFijo() {
+		return null;
+	}
+
+	public String getNombre() {
+		return null;
+	}
+
+	public Boolean pertenece(Double consumo) {
+		return null;
+	}
 
 	public static List<CategoriaResidencial> listaClases = asList(new CategoriaR1(), new CategoriaR2(),
 			new CategoriaR2(), new CategoriaR3(), new CategoriaR4(), new CategoriaR5(), new CategoriaR6(),

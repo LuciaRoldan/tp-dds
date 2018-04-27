@@ -5,9 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.IOException;
 
 public class Dispositivo {
-	private String  		  nombre;
-	private Long 			  kWh;
-	private Boolean 		  encendido;
+	private String nombre;
+	private Long kWh;
+	private Boolean encendido;
     private TipoDeDispositivo tipoDeDispositivo;
 
 

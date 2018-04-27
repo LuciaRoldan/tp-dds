@@ -1,19 +1,18 @@
 package testsUnitariosCliente;
 
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import categorias.CategoriaR1;
 import categorias.CategoriaR5;
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoEstandar;
+import org.junit.Before;
+import org.junit.Test;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+
+import java.util.ArrayList;
+
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class TestsCliente {
 
