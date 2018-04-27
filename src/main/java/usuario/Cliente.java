@@ -21,8 +21,7 @@ public class Cliente extends Usuario {
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
-	public Cliente() {
-	}
+	public Cliente() {}
 
 	public Cliente(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
@@ -35,12 +34,47 @@ public class Cliente extends Usuario {
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 	}
+	
+	public Double calcularConsumoMensual() {
 
-	// ESTA FUNCION ES PARA EL PARSER
-	@JsonProperty("categoriaResidencial")
-	public void setType(String type) throws IOException {
-		this.categoriaResidencial = CategoriaResidencial.fromString(type);
+		List<Dispositivo> dispositivosEncendidos = this.getDispositivosEncendidos();
+		Double consumo = dispositivosEncendidos.stream()
+											   .mapToDouble(dispositivo -> dispositivo.getkWh())
+											   .sum();
+		return consumo;
 	}
+
+	public void recategorizarse() {
+
+		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
+		this.setCategoriaResidencial(nuevaCategoria);
+	}
+	
+	public int getCantidadDispositivos() {
+		return dispositivos.size();
+	}
+
+	public List<Dispositivo> getDispositivosEncendidos() {
+		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
+	}
+
+	public int getCantidadDispositivosEncendidos() {
+		return this.getDispositivosEncendidos().size();
+	}
+
+	public int getCantidadDispositivosApagados() {
+		return (this.getCantidadDispositivos() - this.getCantidadDispositivosEncendidos());
+	}
+
+	public Dispositivo getPrimerDispositivo() {
+		return this.dispositivos.get(0);
+	}
+	
+	public boolean alMenosUnoEstaEncendido() {
+		return this.getCantidadDispositivosEncendidos() > 0;
+	}
+
+
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
@@ -68,25 +102,6 @@ public class Cliente extends Usuario {
 		return documento;
 	}
 
-	public int getCantidadDispositivos() {
-		return dispositivos.size();
-	}
-
-	public List getDispositivosEncendidos() {
-		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
-	}
-
-	public int getSizeDispositivosEncendidos() {
-		return this.getDispositivosEncendidos().size();
-	}
-
-	public int getSizeDispositivosApagados() {
-		return (this.getCantidadDispositivos() - this.getSizeDispositivosEncendidos());
-	}
-
-	public Dispositivo getPrimerDispositivo() {
-		return this.dispositivos.get(0);
-	}
 
 	public CategoriaResidencial getCategoriaResidencial() {
 		return categoriaResidencial;
@@ -104,12 +119,8 @@ public class Cliente extends Usuario {
 		return this.dispositivos;
 	}
 
-	public boolean getAnyDispositivosEncendidos() {
-		return this.getSizeDispositivosEncendidos() > 0;
-	}
-
-	/////////////////////////////////////////// SETTERS
-	/////////////////////////////////////////// /////////////////////////////////////////////////////////////
+	
+	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
 	public void setCategoriaResidencial(CategoriaResidencial cr) {
 		this.categoriaResidencial = cr;
@@ -130,20 +141,10 @@ public class Cliente extends Usuario {
 	public void setDispositivos(ArrayList<Dispositivo> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
-
-	public Double calcularConsumoMensual() {
-
-		List<Dispositivo> dispositivosEncendidos = this.getDispositivosEncendidos();
-		Double consumo = dispositivosEncendidos.stream()
-											   .mapToDouble(dispositivo -> dispositivo.getkWh())
-											   .sum();
-		return consumo;
-
-	}
-
-	public void recategorizarse() {
-
-		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
-		this.setCategoriaResidencial(nuevaCategoria);
+	
+	// ESTA FUNCION ES PARA EL PARSER
+	@JsonProperty("categoriaResidencial")
+	public void setType(String type) throws IOException {
+		this.categoriaResidencial = CategoriaResidencial.fromString(type);
 	}
 }

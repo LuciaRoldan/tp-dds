@@ -26,7 +26,7 @@ public class TestUnClienteTiene3DispositivosApagados {
 		Cliente cliente = new Cliente("Juan Perez", "Calle Falsa 123", "020202", "jperez", "123",
 				TipoDocumento.DNI, 12345678, 12345678, new CategoriaR1(), dispositivos);
 		
-		assertEquals(2, cliente.getSizeDispositivosApagados());
+		assertEquals(2, cliente.getCantidadDispositivosApagados());
 	}
 
 

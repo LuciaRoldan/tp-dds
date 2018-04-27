@@ -35,6 +35,13 @@ public abstract class CategoriaResidencial {
 			new CategoriaR2(), new CategoriaR3(), new CategoriaR4(), new CategoriaR5(), new CategoriaR6(),
 			new CategoriaR7(), new CategoriaR8(), new CategoriaR9());
 
+	public CategoriaResidencial recategorizar(Double consumo) {
+		return listaClases.stream().filter(categoria -> categoria.pertenece(consumo))
+								   .findFirst()
+								   .get();
+	}
+
+	///// PARSER /////
 	@JsonCreator
 	public static CategoriaResidencial fromString(String tipoCategoria) {
 
@@ -43,11 +50,4 @@ public abstract class CategoriaResidencial {
 
 		return categoria;
 	}
-
-	public CategoriaResidencial recategorizar(Double consumo) {
-		return listaClases.stream().filter(categoria -> categoria.pertenece(consumo))
-								   .findFirst()
-								   .get();
-	}
-
 }

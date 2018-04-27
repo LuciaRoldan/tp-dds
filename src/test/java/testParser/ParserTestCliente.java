@@ -3,29 +3,31 @@ import categorias.CategoriaR5;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import parser.OtroParserMasGenerico;
+import parser.MiParser;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+import usuario.Usuario;
+
 import java.io.IOException;
 import java.util.List;
 
 public class ParserTestCliente {
 
-	OtroParserMasGenerico parser;
-	List<Cliente> listaDeClientes;
+	MiParser parser;
+	List<Usuario> listaDeClientes;
 	Cliente cliente;
 
 	@Before
 
 	public void setUp() throws IOException {
 
-		parser = new OtroParserMasGenerico();
-		listaDeClientes = parser.parsear(Cliente.class,"src/test/java/testParser/cliente.json");
-		cliente = listaDeClientes.get(0);
+		parser = new MiParser();
+		listaDeClientes = parser.parsearUsuario("src/test/java/testParser/cliente.json");
+		cliente = (Cliente) listaDeClientes.get(0);
 	}
 
 	@Test
-	public void categoriaResidencial()  { Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());}
+	public void categoriaResidencial() { Assert.assertEquals(CategoriaR5.class,cliente.getCategoriaResidencial().getClass());}
 	@Test
 	public void contraseña() 			{ Assert.assertEquals("123321", cliente.getContrasena());			      }
 	@Test

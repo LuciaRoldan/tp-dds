@@ -54,3 +54,4 @@ public abstract class Usuario {
 	public void setFechaDeAlta(String fechaDeAlta) 		     { this.fechaDeAlta = fechaDeAlta; 			 		   }
 
 }
+

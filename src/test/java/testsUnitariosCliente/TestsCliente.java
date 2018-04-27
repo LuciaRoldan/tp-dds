@@ -59,7 +59,6 @@ public class TestsCliente {
 		12345678,
 		new CategoriaR1(),
 		dispositivos);
-		
 	}
 
 	@Test
@@ -81,12 +80,12 @@ public class TestsCliente {
 
 	@Test
 	public void testGetSizeDispositivosEncendidos() {
-		assertEquals(4,cliente.getSizeDispositivosEncendidos());
+		assertEquals(4,cliente.getCantidadDispositivosEncendidos());
 	}
 
 	@Test
 	public void testGetSizeDispositivosApagados() {
-		assertEquals(1,cliente.getSizeDispositivosApagados());
+		assertEquals(1,cliente.getCantidadDispositivosApagados());
 	}
 
 	@Test
@@ -111,14 +110,13 @@ public class TestsCliente {
 
 	@Test
 	public void testGetAnyDispositivosEncendidos() {
-		assertTrue(cliente.getAnyDispositivosEncendidos());
+		assertTrue(cliente.alMenosUnoEstaEncendido());
 	}
 
 	@Test
 	public void testSetCategoriaResidencial() {
 		cliente.setCategoriaResidencial(new CategoriaR5() );
-		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());
-		
+		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());	
 	}
 
 
