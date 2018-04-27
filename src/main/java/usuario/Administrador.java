@@ -24,7 +24,7 @@ public class Administrador extends Usuario{
 
     /////////////////////////////////////////  GETTERS //////////////////////////////////////////////////////////////
 
-	public long 		 getMesesComoAdministrador() {
+	public long 		 cantidadMesesComoAdministrador() {
     	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
     }
 	public int 			 getNumeroDeIdentificacion() {
