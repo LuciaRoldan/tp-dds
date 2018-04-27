@@ -44,84 +44,31 @@ public class Cliente extends Usuario {
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
-	public String getContrasena() 		{	return this.contrasena;
-	}
-	public String getNombreYApellido()		 {
-		return nombreYapellido;
-	}
-	public String getNombreUsuario() {
-		return this.nombreDeUsuario;
-	}
-	public String getDomicilio() {
-		return this.domicilio;
-	}
-	public int 	  getTelefono() {
-		return telefono;
-	}
-	public int 	  getDocumento() {
-		return documento;
-	}
-	public int 	  getCantidadDispositivos() {
-		return dispositivos.size();
-	}
-	public List getDispositivosEncendidos() {
-		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
-	}
+	public String 					getContrasena() 			  				{ return this.contrasena; }
+	public String 					getNombreYApellido()		   				{ return nombreYapellido; }
+	public String 					getNombreUsuario()		   					{ return this.nombreDeUsuario;}
+	public String 					getDomicilio() 			   					{ return this.domicilio; }
+	public int 	  					getTelefono() 			   					{ return telefono;}
+	public int 	  					getDocumento() 			   					{ return documento;}
+	public int 	  					getCantidadDispositivos()    				{ return dispositivos.size();}
+	public int    					getSizeDispositivosEncendidos() 			{ return this.getDispositivosEncendidos().size(); }
+	public int    					getSizeDispositivosApagados()   			{ return (this.getCantidadDispositivos() - this.getSizeDispositivosEncendidos());}
+	public List   					getDispositivosEncendidos()    				{ return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());}
+	public Dispositivo 				getPrimerDispositivo()  					{ return this.dispositivos.get(0); }
+	public CategoriaResidencial 	getCategoriaResidencial()   				{ return categoriaResidencial; }
+	public TipoDocumento 			getTipoDocumento() 			    			{ return tipoDocumento;}
+	public TipoDeUsuario 			getTipoDeUsuario() 							{ return CLIENTE;}
+	public ArrayList<Dispositivo> 	getDispositivos() 							{ return this.dispositivos;}
+	public boolean 					getAnyDispositivosEncendidos() 				{ return this.getSizeDispositivosEncendidos() > 0;}
 
-	public int getSizeDispositivosEncendidos() {
-		return this.getDispositivosEncendidos().size();
-	}
+	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////////////
 
-	public int getSizeDispositivosApagados() {
-		return (this.getCantidadDispositivos() - this.getSizeDispositivosEncendidos());
-	}
+	public void 					setCategoriaResidencial(CategoriaResidencial cr) 	 { this.categoriaResidencial = cr;    }
+	public void 					setTelefono(int telefono) 						 	 { this.telefono = telefono;          }
+	public void 					setTipoDocumento(TipoDocumento tipoDocumento) 	 	 { this.tipoDocumento = tipoDocumento;}
+	public void 					setDocumento(int documento) 					 	 { this.documento = documento; 		  }
+	public void 					setDispositivos(ArrayList<Dispositivo> dispositivos) { this.dispositivos = dispositivos;  }
 
-	public Dispositivo getPrimerDispositivo() {
-		return this.dispositivos.get(0);
-	}
-
-	public CategoriaResidencial getCategoriaResidencial() {
-		return categoriaResidencial;
-	}
-
-	public TipoDocumento getTipoDocumento() {
-		return tipoDocumento;
-	}
-
-	public TipoDeUsuario getTipoDeUsuario() {
-		return CLIENTE;
-	}
-
-	public ArrayList<Dispositivo> getDispositivos() {
-		return this.dispositivos;
-	}
-
-	public boolean getAnyDispositivosEncendidos() {
-		return this.getSizeDispositivosEncendidos() > 0;
-	}
-
-	/////////////////////////////////////////// SETTERS
-	/////////////////////////////////////////// /////////////////////////////////////////////////////////////
-
-	public void setCategoriaResidencial(CategoriaResidencial cr) {
-		this.categoriaResidencial = cr;
-	}
-
-	public void setTelefono(int telefono) {
-		this.telefono = telefono;
-	}
-
-	public void setTipoDocumento(TipoDocumento tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
-	}
-
-	public void setDocumento(int documento) {
-		this.documento = documento;
-	}
-
-	public void setDispositivos(ArrayList<Dispositivo> dispositivos) {
-		this.dispositivos = dispositivos;
-	}
 
 	public Double calcularConsumoMensual() {
 

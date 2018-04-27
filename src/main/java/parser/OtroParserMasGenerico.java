@@ -1,15 +1,16 @@
 package parser;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.parser.JSONParser;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.simple.parser.JSONParser;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+/////////////////////////////////////// PARSER CREADO PARA USAR EN CASO DE EMERGENCIA ////////////////////////////////
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OtroParserMasGenerico {

@@ -12,9 +12,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-
 //TODO Hacer singleton
-
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MiParser {
 
