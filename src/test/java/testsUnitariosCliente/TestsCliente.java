@@ -1,25 +1,25 @@
 package testsUnitariosCliente;
 
-import categorias.CategoriaR1;
-import categorias.CategoriaR5;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoEstandar;
-import org.junit.Before;
-import org.junit.Test;
-import usuario.Cliente;
-import usuario.TipoDocumento;
+import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
+
+import categorias.CategoriaResidencial;
+import dispositivos.Dispositivo;
+import dispositivos.DispositivoEstandar;
+import usuario.Cliente;
+import usuario.TipoDocumento;
 
 public class TestsCliente {
 
 	ArrayList<Dispositivo> dispositivos;
 	Cliente cliente;
-
-	CategoriaR1 r1;
+	
+	CategoriaResidencial r1;
 
 	Dispositivo dispositivo1;
 	Dispositivo dispositivo2;
@@ -31,7 +31,7 @@ public class TestsCliente {
 
 	public void setUp() throws Exception {
 		
-		r1 = new CategoriaR1();
+		r1 = CategoriaResidencial.CATEGORIAR1;
 		
 		//                              String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo
 		dispositivo1 = new Dispositivo("Dispositivo1", Long.valueOf(1), true, new DispositivoEstandar() );
@@ -57,7 +57,7 @@ public class TestsCliente {
 		TipoDocumento.DNI,
 		12345678,
 		12345678,
-		new CategoriaR1(),
+		CategoriaResidencial.CATEGORIAR2,
 		dispositivos);
 	}
 
@@ -95,7 +95,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetCategoriaResidencial() {
-		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
+		assertEquals(CategoriaResidencial.CATEGORIAR2, cliente.getCategoriaResidencial());
 	}
 
 	@Test
@@ -115,8 +115,8 @@ public class TestsCliente {
 
 	@Test
 	public void testSetCategoriaResidencial() {
-		cliente.setCategoriaResidencial(new CategoriaR5() );
-		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());	
+		cliente.setCategoriaResidencial2(CategoriaResidencial.CATEGORIAR5);
+		assertEquals(CategoriaResidencial.CATEGORIAR5, cliente.getCategoriaResidencial());	
 	}
 
 
@@ -147,7 +147,7 @@ public class TestsCliente {
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
+		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
 	}
 
 }

@@ -32,8 +32,7 @@ public class ParserTestDispositivo {
 	}
 
 	@Test
-	public void nombre() {
-		-Assert.assertEquals("Eco Tostadora", cliente.getPrimerDispositivo().getNombre()); }
+	public void nombre()			 { Assert.assertEquals("Eco Tostadora", cliente.getPrimerDispositivo().getNombre()); }
 	@Test
 	public void kWh()	 			 { Assert.assertEquals(Long.valueOf(1), cliente.getPrimerDispositivo().getkWh());}
 	@Test

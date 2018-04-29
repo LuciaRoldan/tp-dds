@@ -36,7 +36,7 @@ public class ParserTestAdministrador {
 	@Test
 	public void domicilio()       { Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());}
 	@Test
-	public void contraseña()      { Assert.assertEquals("123321", administrador.getContrasena());}
+	public void contrasenia()      { Assert.assertEquals("123321", administrador.getContrasena());}
 	@Test
 	public void fechaDeAlta()     { Assert.assertEquals(LocalDate.parse("01/01/2001",formatter), administrador.getFechaDeAlta());}
 
