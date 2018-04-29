@@ -11,6 +11,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import Excepciones.NoSePudoAbrirElArchivoException;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OtroParserMasGenerico {
 
@@ -21,10 +23,16 @@ public class OtroParserMasGenerico {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    public <T> List<T> parsear(Class<T> clase,String nombreArchivo) throws IOException {
-//		https://github.com/FasterXML/jackson-core/issues/295
-        List<T> listaObjetos = mapper.readValue(new File(nombreArchivo),mapper.getTypeFactory().constructCollectionLikeType(ArrayList.class, clase));
-        return listaObjetos;
-    }
+	public <T> List<T> parsear(Class<T> clase, String nombreArchivo) throws NoSePudoAbrirElArchivoException {
+		// https://github.com/FasterXML/jackson-core/issues/295
+		try {
+			List<T> listaObjetos = mapper.readValue(new File(nombreArchivo),
+					mapper.getTypeFactory()
+					.constructCollectionLikeType(ArrayList.class, clase));
+			return listaObjetos;
+		} catch (IOException e) {
+			throw new NoSePudoAbrirElArchivoException();
+		}
+	}
 
 }
