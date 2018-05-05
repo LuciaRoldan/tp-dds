@@ -1,15 +1,16 @@
 package usuario;
 
-import categorias.CategoriaResidencial;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import dispositivos.Dispositivo;
+import static usuario.TipoDeUsuario.CLIENTE;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static usuario.TipoDeUsuario.CLIENTE;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import categorias.CategoriaResidencial;
+import dispositivos.Dispositivo;
 
 public class Cliente extends Usuario {
 
@@ -47,7 +48,7 @@ public class Cliente extends Usuario {
 	public void recategorizarse() {
 
 		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
-		this.setCategoriaResidencial(nuevaCategoria);
+		this.setCategoriaResidencial2(nuevaCategoria);
 	}
 	
 	public int getCantidadDispositivos() {
@@ -122,7 +123,7 @@ public class Cliente extends Usuario {
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
-	public void setCategoriaResidencial(CategoriaResidencial cr) {
+	public void setCategoriaResidencial2(CategoriaResidencial cr) {
 		this.categoriaResidencial = cr;
 	}
 

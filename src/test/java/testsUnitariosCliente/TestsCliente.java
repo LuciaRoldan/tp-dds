@@ -1,25 +1,61 @@
 package testsUnitariosCliente;
 
-import categorias.CategoriaR1;
-import categorias.CategoriaR5;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoEstandar;
+import static junit.framework.TestCase.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
+
+import categorias.CategoriaResidencial;
+import dispositivos.Dispositivo;
+import dispositivos.DispositivoEstandar;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
-import java.util.ArrayList;
-
-import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertTrue;
-
 public class TestsCliente {
-
-	ClienteEstandar clienteEstandar = new ClienteEstandar();
-	Cliente cliente = clienteEstandar.generarse();
-	ArrayList<Dispositivo> dispositivos = clienteEstandar.dispositivos();
+	ArrayList<Dispositivo> dispositivos;
+	Cliente cliente;
 	
+	CategoriaResidencial r1;
+
+	Dispositivo dispositivo1;
+	Dispositivo dispositivo2;
+	Dispositivo dispositivo3;
+	Dispositivo dispositivo4;
+	Dispositivo dispositivo5;
+
+	@Before
+
+	public void setUp() throws Exception {
+		
+		r1 = CategoriaResidencial.CATEGORIAR1;
+		
+		//                              String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo
+		dispositivo1 = new Dispositivo("Dispositivo1", Long.valueOf(1), true, new DispositivoEstandar() );
+		dispositivo2 = new Dispositivo("Dispositivo2", Long.valueOf(1), true, new DispositivoEstandar() );
+		dispositivo3 = new Dispositivo("Dispositivo3", Long.valueOf(1), true, new DispositivoEstandar() );
+		dispositivo4 = new Dispositivo("Dispositivo4", Long.valueOf(1), false, new DispositivoEstandar() );
+		dispositivo5 = new Dispositivo("Dispositivo5", Long.valueOf(1), true, new DispositivoEstandar() );
+		
+		dispositivos = new ArrayList <Dispositivo>();
+		
+		dispositivos.add(dispositivo1);
+		dispositivos.add(dispositivo2);
+		dispositivos.add(dispositivo3);
+		dispositivos.add(dispositivo4);
+		dispositivos.add(dispositivo5);
+		
+
+		cliente = new Cliente("Juan Perez",
+		"Calle Falsa 123",
+		"01012001",
+		"jperez",
+		"123",
+		TipoDocumento.DNI,
+		12345678,
+		12345678,
+		CategoriaResidencial.CATEGORIAR2,
+		dispositivos);
+	}
+
 	@Test
 	public void testGetCantidadDispositivos() {
 		assertEquals(5,cliente.getCantidadDispositivos());
@@ -27,14 +63,23 @@ public class TestsCliente {
 
 	@Test
 	public void testGetDispositivosEncendidos() {
-		//esto no me gusta nada pero no se me ocurre otra forma
-		ArrayList<Dispositivo> dispositivosEncendidos = new ArrayList <Dispositivo>();
-		dispositivosEncendidos.add(dispositivos.get(0));
-		dispositivosEncendidos.add(dispositivos.get(1));
-		dispositivosEncendidos.add(dispositivos.get(2));
-		dispositivosEncendidos.add(dispositivos.get(4));
+		ArrayList<Dispositivo> dispositivosEncendidos;
+		dispositivosEncendidos = new ArrayList <Dispositivo>();
+	@Test
+	public void testGetCantidadDispositivos() {
+		assertEquals(5,cliente.getCantidadDispositivos());
+	}
+
+	@Test
+	public void testGetDispositivosEncendidos() {
+		ArrayList<Dispositivo> dispositivosEncendidos;
+		dispositivosEncendidos = new ArrayList <Dispositivo>();
+		dispositivosEncendidos.add(dispositivo1);
+		dispositivosEncendidos.add(dispositivo2);
+		dispositivosEncendidos.add(dispositivo3);
+		dispositivosEncendidos.add(dispositivo5);
 		
-		assertEquals(dispositivosEncendidos, cliente.getDispositivosEncendidos());
+		assertEquals(dispositivosEncendidos,cliente.getDispositivosEncendidos());
 	}
 
 	@Test
@@ -49,12 +94,12 @@ public class TestsCliente {
 
 	@Test
 	public void testGetPrimerDispositivo() {
-		assertEquals(dispositivos.get(0), cliente.getPrimerDispositivo());
+		assertEquals(dispositivo1, cliente.getPrimerDispositivo());
 	}
 
 	@Test
 	public void testGetCategoriaResidencial() {
-		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
+		assertEquals(CategoriaResidencial.CATEGORIAR2, cliente.getCategoriaResidencial());
 	}
 
 	@Test
@@ -74,8 +119,8 @@ public class TestsCliente {
 
 	@Test
 	public void testSetCategoriaResidencial() {
-		cliente.setCategoriaResidencial(new CategoriaR5() );
-		assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());	
+		cliente.setCategoriaResidencial2(CategoriaResidencial.CATEGORIAR5);
+		assertEquals(CategoriaResidencial.CATEGORIAR5, cliente.getCategoriaResidencial());	
 	}
 
 
@@ -90,8 +135,9 @@ public class TestsCliente {
 	public void testSetDispositivos() {
 		ArrayList<Dispositivo> otrosDispositivos;
 		otrosDispositivos = new ArrayList <Dispositivo>();
-		otrosDispositivos.add(dispositivos.get(0));
-		otrosDispositivos.add(dispositivos.get(3));
+		otrosDispositivos.add(dispositivo1);
+		otrosDispositivos.add(dispositivo3);
+		
 		cliente.setDispositivos(otrosDispositivos);
 		
 		assertEquals(otrosDispositivos, cliente.getDispositivos());	
@@ -105,7 +151,7 @@ public class TestsCliente {
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaR1.class, cliente.getCategoriaResidencial().getClass());
+		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
 	}
 
 }
