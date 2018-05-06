@@ -51,7 +51,7 @@ public class TestsParser {
 
 	@Test
 	public void coincidenLosCamposDeCliente() {
-		Assert.assertEquals(CategoriaR5.class, cliente.getCategoriaResidencial().getClass());
+		Assert.assertEquals(CategoriaResidencial.CATEGORIAR5, cliente.getCategoriaResidencial());
 		Assert.assertEquals("123321", cliente.getContrasena());	
 		Assert.assertEquals(1234456, cliente.getDocumento());	
 		Assert.assertEquals("Av.del libertador 2000", cliente.getDomicilio());

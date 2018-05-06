@@ -1,5 +1,5 @@
 package testsUnitariosCliente;
-import categorias.CategoriaR1;
+import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoEstandar;
 import usuario.Cliente;
@@ -42,7 +42,7 @@ public class ClienteEstandar{
 			TipoDocumento.DNI,
 			12345678,
 			12345678,
-			new CategoriaR1(),
+			CategoriaResidencial.CATEGORIAR1,
 			this.dispositivos());
 		
 		return cliente;

@@ -1,6 +1,10 @@
 package testsUnitariosCliente;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -56,15 +60,6 @@ public class TestsCliente {
 		dispositivos);
 	}
 
-	@Test
-	public void testGetCantidadDispositivos() {
-		assertEquals(5,cliente.getCantidadDispositivos());
-	}
-
-	@Test
-	public void testGetDispositivosEncendidos() {
-		ArrayList<Dispositivo> dispositivosEncendidos;
-		dispositivosEncendidos = new ArrayList <Dispositivo>();
 	@Test
 	public void testGetCantidadDispositivos() {
 		assertEquals(5,cliente.getCantidadDispositivos());
