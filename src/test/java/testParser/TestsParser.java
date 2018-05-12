@@ -1,6 +1,5 @@
 package testParser;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -9,6 +8,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import Excepciones.NoSePudoAbrirElArchivoException;
 import categorias.*;
 import dispositivos.*;
 import parser.*;
@@ -28,7 +28,7 @@ public class TestsParser {
 
 	@Before
 
-	public void setUp() throws IOException {
+	public void setUp() throws NoSePudoAbrirElArchivoException {
 
 		parser = new MiParser();
 
