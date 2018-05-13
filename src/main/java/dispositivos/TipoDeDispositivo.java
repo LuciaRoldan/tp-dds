@@ -12,6 +12,9 @@ import static java.util.Arrays.asList;
 public abstract class  TipoDeDispositivo {
 
     public String    getNombre()     {return null;}
+    
+    public abstract Long consumoMensual();
+    public abstract boolean esInteligente();
 
     @JsonCreator
     public static TipoDeDispositivo fromString(String tipoDeDispositivo) {

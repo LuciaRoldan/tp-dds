@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
 
@@ -19,6 +20,7 @@ public class Cliente extends Usuario {
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<Dispositivo> dispositivos;
+	private int puntos = 0;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -40,7 +42,7 @@ public class Cliente extends Usuario {
 
 		List<Dispositivo> dispositivosEncendidos = this.getDispositivosEncendidos();
 		Double consumo = dispositivosEncendidos.stream()
-											   .mapToDouble(dispositivo -> dispositivo.getkWh())
+											   .mapToDouble(dispositivo -> dispositivo.consumoMensual())
 											   .sum();
 		return consumo;
 	}
@@ -75,6 +77,20 @@ public class Cliente extends Usuario {
 		return this.getCantidadDispositivosEncendidos() > 0;
 	}
 
+	public void agregarModulo(Dispositivo dispositivo) {
+		if (dispositivosEstandar().contains(dispositivo)) {
+		dispositivo.agregarModulo();
+		this.puntos += 10;
+		}
+	}
+	
+	public List<Dispositivo> dispositivosInteligentes(){
+		return dispositivos.stream().filter(dispositivo -> dispositivo.esInteligente()).collect(Collectors.toList());
+	}
+	
+	public List<Dispositivo> dispositivosEstandar() {
+		return dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
+	}
 
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////

@@ -18,13 +18,27 @@ public class Dispositivo {
     public Dispositivo(String nombre, Long kWh, Boolean encendido, TipoDeDispositivo tipoDeDispositivo){
 		this.inicializar( nombre,  kWh,  encendido,  tipoDeDispositivo);
 	}
-
+    
+    
+    ///////////////////////////////// METODOS ///////////////////////////////// 
+    
+    public Long consumoMensual() {
+    	return tipoDeDispositivo.consumoMensual();
+    }
+    public void agregarModulo() {
+    	tipoDeDispositivo = new DispositivoInteligente();
+    }
+    public boolean esInteligente() {
+    	return tipoDeDispositivo.esInteligente();
+    }
+    
+    
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
 	public Long 					getkWh() 						{ return kWh;					 }
 	public String 					getNombre() 				 	{ return nombre;				 }
 	public TipoDeDispositivo		getTipoDeDispositivo()		 	{ return this.tipoDeDispositivo; }
-	public Boolean 					isEncendido() 			     	{ return encendido;			  	 }
+	public Boolean 					isEncendido() 			     	{ return encendido;	}
 
 
 	//////////////////////////////////// SETTERS ////////////////////////////////////
