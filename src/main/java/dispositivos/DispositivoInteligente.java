@@ -1,9 +1,10 @@
 package dispositivos;
 
 public class DispositivoInteligente extends TipoDeDispositivo {
-    
+
 	private Estado estado;
 
+<<<<<<< Updated upstream
 	////////////////// CONSTRUCTORES ///////////////////
 	public DispositivoInteligente(){};
 	public DispositivoInteligente(Estado unEstado){
@@ -12,15 +13,33 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	
 	
 	//////////////// SETTERS Y GETTERS ////////////////
+=======
+	DispositivoInteligente() {
+	};
+
 	@Override
-    public String getNombre(){return "INTELIGENTE";}
-	
+	public Long consumoMensual() {
+		return (long) 0;
+	} // hacer lol
+
+	@Override
+	public boolean esInteligente() {
+		return true;
+	}
+
+>>>>>>> Stashed changes
+	@Override
+	public String getNombre() {
+		return "INTELIGENTE";
+	}
+
 	public Estado getEstado() {
 		return estado;
 	}
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+<<<<<<< Updated upstream
 	
 	///////////////////// METODOS /////////////////////
 	@Override
@@ -52,6 +71,25 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	}
 	
 	@Override
+=======
+
+	public boolean estaPrendido() {
+		return this.getEstado().estaPrendido();
+	}
+
+	public boolean estaApagado() {
+		return this.getEstado().estaApagado();
+	}
+
+	public void encendete() {
+		this.getEstado().encendete(this);
+	}
+
+	public void apagate() {
+		this.getEstado().apagate(this);
+	}
+
+>>>>>>> Stashed changes
 	public void activarAhorroDeEnergia() {
 		this.setEstado(new AhorroDeEnergia());
 	}

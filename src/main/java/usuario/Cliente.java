@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
+import dispositivos.DispositivoEstandar;
 
 public class Cliente extends Usuario {
 
@@ -40,10 +41,9 @@ public class Cliente extends Usuario {
 	
 	public Double calcularConsumoMensual() {
 
-		List<Dispositivo> dispositivosEncendidos = this.getDispositivosEncendidos();
-		Double consumo = dispositivosEncendidos.stream()
-											   .mapToDouble(dispositivo -> dispositivo.consumoMensual())
-											   .sum();
+		Double consumo = dispositivos.stream()
+									 .mapToDouble(dispositivo -> dispositivo.consumoMensual())
+									 .sum();
 		return consumo;
 	}
 
@@ -56,17 +56,21 @@ public class Cliente extends Usuario {
 	public int getCantidadDispositivos() {
 		return dispositivos.size();
 	}
-
-	public List<Dispositivo> getDispositivosEncendidos() {
-		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
+	
+	public int cantidadDipositivosInteligentes() {
+		return this.dispositivosInteligentes().size();
 	}
 
-	public int getCantidadDispositivosEncendidos() {
-		return this.getDispositivosEncendidos().size();
+	public List<Dispositivo> getDispositivosInteligentesEncendidos() {
+		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
 	}
 
-	public int getCantidadDispositivosApagados() {
-		return (this.getCantidadDispositivos() - this.getCantidadDispositivosEncendidos());
+	public int getCantidadDispositivosInteligentesEncendidos() {
+		return this.getDispositivosInteligentesEncendidos().size();
+	}
+
+	public int getCantidadDispositivosInteligentesApagados() {
+		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosInteligentesEncendidos());
 	}
 
 	public Dispositivo getPrimerDispositivo() {
@@ -74,7 +78,7 @@ public class Cliente extends Usuario {
 	}
 	
 	public boolean alMenosUnoEstaEncendido() {
-		return this.getCantidadDispositivosEncendidos() > 0;
+		return this.getCantidadDispositivosInteligentesEncendidos() > 0;
 	}
 
 	public void agregarModulo(Dispositivo dispositivo) {
@@ -91,6 +95,7 @@ public class Cliente extends Usuario {
 	public List<Dispositivo> dispositivosEstandar() {
 		return dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
 	}
+	
 
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
