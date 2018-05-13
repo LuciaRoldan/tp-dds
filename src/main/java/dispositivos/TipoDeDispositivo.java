@@ -15,6 +15,12 @@ public abstract class  TipoDeDispositivo {
     
     public abstract Long consumoMensual();
     public abstract boolean esInteligente();
+    public abstract boolean estaEncendido();
+    public abstract boolean estaApagado();
+    public abstract void encendete();
+    public abstract void apagate();
+    public abstract void activarAhorroDeEnergia();
+    public abstract Estado getEstado();
 
     @JsonCreator
     public static TipoDeDispositivo fromString(String tipoDeDispositivo) {

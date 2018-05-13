@@ -14,10 +14,7 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	@Override
 	public boolean esInteligente() {
 		return false;
-	}
-	
-	
-	
+	}	
 	
 	/////////////GETTERS/////////////
     public Long getkWh() {
@@ -27,7 +24,10 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	public int getHorasDeUsoPorDia() {
 		return horasDeUsoPorDia;
 	}
-
+	
+	@Override
+    public String getNombre(){return "ESTANDAR";}
+	
 	/////////////SETTERS/////////////
 	public void setkWh(Long kWh) {
 		this.kWh = kWh;
@@ -37,14 +37,28 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 		this.horasDeUsoPorDia = horasDeUsoPorDia;
 	}
 
-
-
-
-
-
-
+/////////////METODOS/////////////
+	@Override
+	public boolean estaEncendido() {
+		return false;
+	}
 
 	@Override
-    public String getNombre(){return "ESTANDAR";}
+	public boolean estaApagado() {
+		return false;
+	}
 
+	@Override
+	public void encendete() {}
+
+	@Override
+	public void apagate() {}
+
+	@Override
+	public void activarAhorroDeEnergia() {}
+
+	@Override
+	public Estado getEstado() {
+		return new Apagado();
+	}
 }

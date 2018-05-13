@@ -31,7 +31,26 @@ public class Dispositivo {
     public boolean esInteligente() {
     	return tipoDeDispositivo.esInteligente();
     }
-    
+	
+	public boolean estaEncendido() {
+		return this.getTipoDeDispositivo().estaEncendido();
+	}
+	
+	public boolean estaApagado() {
+		return this.getTipoDeDispositivo().estaApagado();
+	}
+	
+	public void encendete() {
+		this.getTipoDeDispositivo().encendete();
+	}
+	
+	public void apagate() {
+		this.getTipoDeDispositivo().apagate();
+	}
+	
+	public void activarAhorroDeEnergia() {
+		this.getTipoDeDispositivo().activarAhorroDeEnergia();
+	}
     
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
