@@ -10,8 +10,7 @@ public class Dispositivo {
 	private Boolean encendido;
 	private TipoDeDispositivo tipoDeDispositivo;
 
-	///////////////////////////////// CONTRUCTORES
-	///////////////////////////////// /////////////////////////////////////////////////////
+	///////////////////////////////// CONTRUCTORES///////////////////////////////// /////////////////////////////////////////////////////
 
 	public Dispositivo() {
 	}
@@ -20,58 +19,7 @@ public class Dispositivo {
 		this.inicializar(nombre, kWh, encendido, tipoDeDispositivo);
 	}
 
-	///////////////////////////////// METODOS /////////////////////////////////
-
-	public Long consumoMensual() {
-		return tipoDeDispositivo.consumoMensual();
-	}
-
-	public void agregarModulo() {
-		this.setTipoDeDispositivo(new DispositivoInteligente());
-	}
-
-	public boolean esInteligente() {
-		return tipoDeDispositivo.esInteligente();
-	}
-
-	///////////////////////////////////// GETTERS PARA LOS TESTS///////////////////////////////////// ////////////////////////
-
-	public Long getkWh() {
-		return kWh;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public TipoDeDispositivo getTipoDeDispositivo() {
-		return this.tipoDeDispositivo;
-	}
-
-	public Boolean isEncendido() {
-		return encendido;
-	}
-
-	//////////////////////////////////// SETTERS //////////////////////////////////// ////////////////////////////////////
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public void setkWh(Long kWh) {
-		this.kWh = kWh;
-	}
-
-	public void setEncendido(boolean encendido) {
-		this.encendido = encendido;
-	}
-
-	public void setTipoDeDispositivo(TipoDeDispositivo tipoDeDispositivo) {
-		this.tipoDeDispositivo = tipoDeDispositivo;
-	}
-<<<<<<< Updated upstream
-    
-    
+	    
     ///////////////////////////////// METODOS ///////////////////////////////// 
     
     public Long consumoMensual() {
@@ -117,8 +65,6 @@ public class Dispositivo {
 	public void 					setNombre(String nombre) 	 	{ this.nombre = nombre; 		}
 	public void 					setkWh(Long kWh) 			 	{	this.kWh = kWh;				}
 	public void 					setEncendido(boolean encendido) { this.encendido = encendido;   }
-=======
->>>>>>> Stashed changes
 
 	// ESTA FUNCION LA USA EL PARSER
 	@JsonCreator
