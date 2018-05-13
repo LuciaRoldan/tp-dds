@@ -40,4 +40,8 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	public void apagate() {
 		this.getEstado().apagate(this);
 	}
+	
+	public void activarAhorroDeEnergia() {
+		this.setEstado(new AhorroDeEnergia());
+	}
 }
