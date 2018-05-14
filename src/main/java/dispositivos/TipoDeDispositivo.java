@@ -22,16 +22,5 @@ public abstract class  TipoDeDispositivo {
     public abstract void activarAhorroDeEnergia();
     public abstract Estado getEstado();
 
-    @JsonCreator
-    public static TipoDeDispositivo fromString(String tipoDeDispositivo) {
-
-        List<TipoDeDispositivo> listaClases = asList(new DispositivoInteligente(),new DispositivoEstandar());
-
-        TipoDeDispositivo tipoDisp  =  listaClases.stream()
-                .filter(x -> tipoDeDispositivo.equals(x.getNombre()))
-                .findAny()
-                .orElse(null);
-
-        return tipoDisp;
-    }
+  
 }

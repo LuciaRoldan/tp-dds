@@ -5,6 +5,9 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	private Long kWh;
 	private int horasDeUsoPorDia;
 	
+	public DispositivoEstandar(int horasDeUsoPorDia) {
+		this.horasDeUsoPorDia = horasDeUsoPorDia;
+	}
 	
 	@Override
 	public Long consumoMensual() {

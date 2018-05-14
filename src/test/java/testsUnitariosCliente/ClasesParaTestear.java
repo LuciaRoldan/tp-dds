@@ -27,11 +27,11 @@ public class ClasesParaTestear {
 	
 	public static ArrayList <Dispositivo> cincoDispositivos(){
 		ArrayList<Dispositivo> dispositivos = new ArrayList <Dispositivo>();
-		Dispositivo dispositivo1 = new Dispositivo("Dispositivo1", Long.valueOf(1), true, new DispositivoEstandar() );
-		Dispositivo dispositivo2 = new Dispositivo("Dispositivo2", Long.valueOf(1), true, new DispositivoEstandar() );
-		Dispositivo dispositivo3 = new Dispositivo("Dispositivo3", Long.valueOf(1), true, new DispositivoEstandar() );
-		Dispositivo dispositivo4 = new Dispositivo("Dispositivo4", Long.valueOf(1), false, new DispositivoEstandar() );
-		Dispositivo dispositivo5 = new Dispositivo("Dispositivo5", Long.valueOf(1), true, new DispositivoEstandar() );
+		Dispositivo dispositivo1 = new Dispositivo("Dispositivo1", Long.valueOf(1), true, new DispositivoEstandar(1) );
+		Dispositivo dispositivo2 = new Dispositivo("Dispositivo2", Long.valueOf(1), true, new DispositivoEstandar(1) );
+		Dispositivo dispositivo3 = new Dispositivo("Dispositivo3", Long.valueOf(1), true, new DispositivoEstandar(1) );
+		Dispositivo dispositivo4 = new Dispositivo("Dispositivo4", Long.valueOf(1), false, new DispositivoEstandar(1) );
+		Dispositivo dispositivo5 = new Dispositivo("Dispositivo5", Long.valueOf(1), true, new DispositivoEstandar(1) );
 		dispositivos.add(dispositivo1);
 		dispositivos.add(dispositivo2);
 		dispositivos.add(dispositivo3);

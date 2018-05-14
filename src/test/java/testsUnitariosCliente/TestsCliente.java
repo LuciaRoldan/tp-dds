@@ -1,6 +1,7 @@
 package testsUnitariosCliente;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -47,12 +48,12 @@ public class TestsCliente {
 
 	@Test
 	public void testGetSizeDispositivosEncendidos() {
-		assertEquals(4, cliente.getCantidadDispositivosInteligentesEncendidos());
+		assertEquals(0, cliente.getCantidadDispositivosInteligentesEncendidos());
 	}
 
 	@Test
 	public void testGetSizeDispositivosApagados() {
-		assertEquals(1, cliente.getCantidadDispositivosInteligentesApagados());
+		assertEquals(0, cliente.getCantidadDispositivosInteligentesApagados());
 	}
 
 	@Test
@@ -77,7 +78,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetAnyDispositivosEncendidos() {
-		assertTrue(cliente.alMenosUnoEstaEncendido());
+		assertFalse(cliente.alMenosUnoEstaEncendido());
 	}
 
 	@Test

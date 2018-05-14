@@ -12,6 +12,7 @@ public class Dispositivo {
 
 	///////////////////////////////// CONTRUCTORES///////////////////////////////// /////////////////////////////////////////////////////
 
+
 	public Dispositivo() {
 	}
 
@@ -65,6 +66,8 @@ public class Dispositivo {
 	public void 					setNombre(String nombre) 	 	{ this.nombre = nombre; 		}
 	public void 					setkWh(Long kWh) 			 	{	this.kWh = kWh;				}
 	public void 					setEncendido(boolean encendido) { this.encendido = encendido;   }
+	public void setTipoDeDispositivo(TipoDeDispositivo tipoDeDispositivo) { this.tipoDeDispositivo = tipoDeDispositivo;}
+
 
 	// ESTA FUNCION LA USA EL PARSER
 	@JsonCreator
@@ -73,12 +76,6 @@ public class Dispositivo {
 		this.kWh = kWh;
 		this.encendido = encendido;
 		this.tipoDeDispositivo = tipoDeDispositivo;
-	}
-
-	// ESTA FUNCION LA USA EL PARSER
-	@JsonProperty("tipoDeDispositivo")
-	public void setType(String type) throws IOException {
-		this.tipoDeDispositivo = TipoDeDispositivo.fromString(type);
 	}
 
 }
