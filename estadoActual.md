@@ -1,7 +1,12 @@
 
-# MAS INFO 
+## TP DDS 2018 GRUPO 19
 
 ### Estado Actual
+- [ ] Implementar cambio de Estandar a Inteligente.
+- [ ] Modelar y crear sensores, reglas y actuadores
+- [ ] Testear sensores, reglas y actuadores
+- [ ] Builder dispositivo
+- [ ] Test builder
 - [X] Tests Usuario Cliente (parte 1)
 - [X] Tests Usuarios Administradores (parte 1)
 - [X] Tests Categorias 1, 5 y 9
@@ -11,13 +16,24 @@
 - [X] Cliente calcula su consumo mensual (parte 2)
 - [X] Test Cliente (parte 2)
 
-### CONSUMO CLIENTE:
+
+| **ACTUADORES:** | **SENSORES:** | **REGLAS:** |
+| :-------------: | :-----------: | :---------: |
+| Envío acciones a los dispositivos (aparte de prender/apagar), como ser subir/bajar intensidad, cambiar modo de operación, agendar acción o configurar timers, etc. | Tienen la capacidad de tomar una determinada medición y comunicarla. | Determinación de reglas, para que dado un conjunto de mediciones se disparen determinadas acciones. |
+
+
+#### DISPOSITIVOS
+|         **ESTANDAR:**     |                 **INTELIGENTE:**                 |
+| :-----------------------: | :--------------------------------------------:   |
+| Estos dispositivos son simples. No tienen la posibilidad de conectarse a nuestro sistema ni saber cuánta energía están consumiendo en un determinado momento. Tampoco podemos saber si están encendidos o apagados, o sea que no se deberán tener en cuenta al momento de preguntarle a un cliente por la cantidad de dispositivos encendidos/apagados. Solo sabemos de ellos una estimación acerca de cuánta energía consumen por hora (porque así lo habíamos modelado la iteración anterior). **Por eso usamos un builder** | Estos dispositivos se van a poder conectar con nuestro sistema. *Cada vez que el usuario registre uno de estos dispositivos, se le deberá otorgar 15 puntos* [Nos serviran para ...](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)  |
+
+#### CONSUMO CLIENTE:
 El consumo **MENSUAL** de cada cliente esta compuesto por la suma de todos los kWh de sus dispositivos encendidos.
 
-### RECATEGORIZACION DEL CLIENTE:
+#### RECATEGORIZACION DEL CLIENTE:
 El cliente debe poder recategorizarse cada tres meses, para esta primera implementacion debe poder hacerlo sin tener en cuenta el tiempo.
 
-#### Categorias de clientes
+#### CATEGORIAS DE CLIENTES
 
 ```JAVA
   CATEGORIAS:
@@ -34,14 +50,16 @@ El cliente debe poder recategorizarse cada tres meses, para esta primera impleme
 ```
 
 
-### PARSER :
+#### PARSER :
 
 El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
 
 - [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/usuarios.json)
-
 - [Template Usuario Cliente](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
 - [Template Usuario Administrador](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/administrador.json)
-
 - [Template Dispositivo](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/dispositivo.json)
 
+### ENUNCIADOS :
+- [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
+- [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
+- [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
