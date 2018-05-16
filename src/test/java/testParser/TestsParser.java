@@ -71,13 +71,9 @@ public class TestsParser {
 
 	@Test
 	public void coincidenLosCamposDeAdministrador() {
-		//Assert.assertEquals(CategoriaR5.class, administrador.getCategoriaResidencial().getClass());
 		Assert.assertEquals("MatiasMorsa", administrador.getNombreYApellido());
-		//Assert.assertEquals(TipoDocumento.DNI, administrador.getTipoDocumento());
 		Assert.assertEquals("Matias21313", administrador.getNombreUsuario());
 		Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());
-		//Assert.assertEquals(4444, administrador.getTelefono());
-		//Assert.assertEquals(1234456, administrador.getDocumento());
 		Assert.assertEquals("123321", administrador.getContrasena());
 		Assert.assertEquals(LocalDate.parse("01/01/2001", formatter), administrador.getFechaDeAlta());
 		Assert.assertEquals(1234, administrador.getNumeroDeIdentificacion());
