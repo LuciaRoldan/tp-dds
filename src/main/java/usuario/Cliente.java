@@ -9,10 +9,8 @@ import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
 import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
-import dispositivos.DispositivoEstandar;
 
 public class Cliente extends Usuario {
 
@@ -62,7 +60,7 @@ public class Cliente extends Usuario {
 	}
 
 	public List<Dispositivo> getDispositivosInteligentesEncendidos() {
-		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
+		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.getTipoDeDispositivo().estaEncendido()).collect(Collectors.toList());
 	}
 
 	public int getCantidadDispositivosInteligentesEncendidos() {

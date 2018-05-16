@@ -4,6 +4,7 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 
 	private Long kWh;
 	private int horasDeUsoPorDia;
+	private Estado estado;
 	
 	public DispositivoEstandar(int horasDeUsoPorDia) {
 		this.horasDeUsoPorDia = horasDeUsoPorDia;
