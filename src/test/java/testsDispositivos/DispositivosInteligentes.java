@@ -11,13 +11,7 @@ import org.junit.Test;
 public class DispositivosInteligentes {
 
 	Dispositivo dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
-	
 	Dispositivo dispositivo;
-	
-	@Before
-	public void inicializar() {
-		dispositivo = new Dispositivo("Dispositivos 1", Long.valueOf(5), true, new DispositivoInteligente(new Apagado()));
-	}
 	
 	@Test
 	public void testEncenderDIApagado() {

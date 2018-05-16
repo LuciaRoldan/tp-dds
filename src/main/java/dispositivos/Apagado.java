@@ -1,9 +1,9 @@
 package dispositivos;
 
-public class Apagado implements Estado{
+public class Apagado implements Estado {
 
 	@Override
-	public boolean estaPrendido() {
+	public boolean estaEncendido() {
 		return false;
 	}
 

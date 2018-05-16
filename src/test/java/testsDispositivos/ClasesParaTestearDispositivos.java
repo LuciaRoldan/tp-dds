@@ -10,7 +10,6 @@ public class ClasesParaTestearDispositivos {
 		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
 									"Aire Acondicionado",
 									Long.valueOf(1000),
-									false,
 									new DispositivoInteligente(),
 									0);
 		Dispositivo dispositivo = dispositivoBuilder.construir();
@@ -20,8 +19,7 @@ public class ClasesParaTestearDispositivos {
 		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
 									"Microondas",
 									Long.valueOf(20000),
-									false,
-									new DispositivoEstandar(1),
+									new DispositivoEstandar(),
 									1);
 		Dispositivo dispositivo = dispositivoBuilder.construir();
 		return dispositivo;

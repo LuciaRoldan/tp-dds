@@ -6,8 +6,7 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 
 	////////////////// CONSTRUCTORES ///////////////////
 	public DispositivoInteligente() {
-
-	}
+	}	
 	
 	//////////////// SETTERS Y GETTERS ////////////////
 
@@ -35,26 +34,26 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	
 	@Override
 	public boolean estaEncendido() {
-		return this.getEstado().estaPrendido();
+		return estado.estaEncendido();
 	}
 	
 	@Override
 	public boolean estaApagado() {
-		return this.getEstado().estaApagado();
+		return estado.estaApagado();
 	}
 	
 	@Override
 	public void encendete() {
-		this.getEstado().encendete(this);
+		estado.encendete(this);
 	}
 	
 	@Override
 	public void apagate() {
-		this.getEstado().apagate(this);
+		estado.apagate(this);
 	}
 	
 	@Override
 	public void activarAhorroDeEnergia() {
-		this.setEstado(new AhorroDeEnergia());
+		estado = new AhorroDeEnergia();
 	}
 }

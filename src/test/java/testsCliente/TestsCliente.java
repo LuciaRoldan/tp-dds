@@ -43,17 +43,17 @@ public class TestsCliente {
 		dispositivosEncendidos.add(dispositivos.get(2));
 		dispositivosEncendidos.add(dispositivos.get(4));
 		
-		assertEquals(dispositivosEncendidos,cliente.getDispositivosInteligentesEncendidos());
+		assertEquals(dispositivosEncendidos, cliente.getDispositivosEncendidos());
 	}
 
 	@Test
 	public void testGetSizeDispositivosEncendidos() {
-		assertEquals(0, cliente.getCantidadDispositivosInteligentesEncendidos());
+		assertEquals(0, cliente.getCantidadDispositivosEncendidos());
 	}
 
 	@Test
 	public void testGetSizeDispositivosApagados() {
-		assertEquals(0, cliente.getCantidadDispositivosInteligentesApagados());
+		assertEquals(0, cliente.getCantidadDispositivosApagados());
 	}
 
 	@Test
@@ -78,7 +78,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetAnyDispositivosEncendidos() {
-		assertFalse(cliente.alMenosUnoEstaEncendido());
+		assertTrue(cliente.alMenosUnoEstaEncendido());
 	}
 
 	@Test

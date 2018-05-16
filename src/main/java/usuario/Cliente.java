@@ -59,16 +59,16 @@ public class Cliente extends Usuario {
 		return this.dispositivosInteligentes().size();
 	}
 
-	public List<Dispositivo> getDispositivosInteligentesEncendidos() {
-		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.getTipoDeDispositivo().estaEncendido()).collect(Collectors.toList());
+	public List<Dispositivo> getDispositivosEncendidos() {
+		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
-	public int getCantidadDispositivosInteligentesEncendidos() {
-		return this.getDispositivosInteligentesEncendidos().size();
+	public int getCantidadDispositivosEncendidos() {
+		return this.getDispositivosEncendidos().size();
 	}
 
-	public int getCantidadDispositivosInteligentesApagados() {
-		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosInteligentesEncendidos());
+	public int getCantidadDispositivosApagados() {
+		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
 	public Dispositivo getPrimerDispositivo() {
@@ -76,7 +76,7 @@ public class Cliente extends Usuario {
 	}
 	
 	public boolean alMenosUnoEstaEncendido() {
-		return this.getCantidadDispositivosInteligentesEncendidos() > 0;
+		return this.getCantidadDispositivosEncendidos() > 0;
 	}
 
 	public void agregarModulo(Dispositivo dispositivo) {

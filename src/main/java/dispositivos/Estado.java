@@ -2,7 +2,7 @@ package dispositivos;
 
 public interface Estado {
 
-	public boolean estaPrendido();
+	public boolean estaEncendido();
 
 	public boolean estaApagado();
 

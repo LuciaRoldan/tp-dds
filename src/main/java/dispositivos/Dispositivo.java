@@ -41,6 +41,14 @@ public class Dispositivo {
 	public void activarAhorroDeEnergia() {
 		this.getTipoDeDispositivo().activarAhorroDeEnergia();
 	}
+	
+	public boolean estaEncendido() {
+		return tipoDeDispositivo.estaEncendido();
+	}
+	
+	public boolean estaApagado() {
+		return tipoDeDispositivo.estaApagado();
+	}
     
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
