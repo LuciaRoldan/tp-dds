@@ -67,7 +67,7 @@ public enum CategoriaResidencial {
 	public static CategoriaResidencial fromString(String tipoCategoria) {
 
 		CategoriaResidencial categoria = listaClases.stream().filter(x -> tipoCategoria.equals(x.getNombre()))
-				.findAny().orElse(null);
+				.findAny().orElse(null); //el null puede hacer romper todo arreglar
 
 		return categoria;
 	}

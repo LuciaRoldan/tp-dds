@@ -5,12 +5,9 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	private Estado estado;
 
 	////////////////// CONSTRUCTORES ///////////////////
-	public DispositivoInteligente(){};
-	
-	public DispositivoInteligente(Estado unEstado){
-		this.setEstado(unEstado);
-	};
-	
+	public DispositivoInteligente() {
+
+	}
 	
 	//////////////// SETTERS Y GETTERS ////////////////
 
