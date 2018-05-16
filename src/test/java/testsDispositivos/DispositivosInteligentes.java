@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class DispositivosInteligentes {
 
+	Dispositivo dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
+	
 	Dispositivo dispositivo;
 	
 	@Before
@@ -19,20 +21,22 @@ public class DispositivosInteligentes {
 	
 	@Test
 	public void testEncenderDIApagado() {
-		dispositivo.encendete();
-		assertTrue(dispositivo.estaEncendido());
+		dispositivoInteligente.encendete();
+		assertTrue(dispositivoInteligente.estaEncendido());
 	}
 	
 	@Test
 	public void testApagarDIApagado() {
-		dispositivo.apagate();
-		assertTrue(dispositivo.estaApagado());
+		dispositivoInteligente.apagate();
+		assertTrue(dispositivoInteligente.estaApagado());
 	}
 	
 	@Test
 	public void testActivarAhorroDeEnergia() {
-		dispositivo.activarAhorroDeEnergia();
-		assertTrue(dispositivo.estaEncendido());
+		dispositivoInteligente.activarAhorroDeEnergia();
+		assertTrue(dispositivoInteligente.estaEncendido());
 	}
+	
+	//@Test Consumo
 
 }

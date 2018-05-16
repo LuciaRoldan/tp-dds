@@ -1,4 +1,4 @@
-package testsUnitariosCliente;
+package testsCliente;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -23,8 +23,8 @@ public class TestsCliente {
 
 	public void setUp() throws Exception {
 		
-		cliente = ClasesParaTestear.clienteEstandar();
-		dispositivos = ClasesParaTestear.cincoDispositivos();
+		cliente = ClasesParaTestearCliente.clienteEstandar();
+		dispositivos = ClasesParaTestearCliente.cincoDispositivos();
 		cliente.setDispositivos(dispositivos);
 }
 

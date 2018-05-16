@@ -1,4 +1,4 @@
-package testsUnitariosCliente;
+package testsCliente;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ import dispositivos.DispositivoEstandar;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
-public class ClasesParaTestear {
+public class ClasesParaTestearCliente {
 	public static Cliente clienteEstandar() {
 		ArrayList<Dispositivo> dispositivos = new ArrayList<>();
 		Cliente cliente = new Cliente("Juan Perez",
