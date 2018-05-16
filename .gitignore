@@ -54,3 +54,8 @@ crashlytics-build.properties
 
 fabric.properties
 /target/
+
+# Eclipse
+.classpath
+.project
+.settings/
