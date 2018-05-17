@@ -1,10 +1,14 @@
 package dispositivos;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
 public class DispositivoInteligente extends TipoDeDispositivo {
 
 	private Estado estado;
+	private ArrayList<Estado> estadosAnteriores;
 
-	////////////////// CONSTRUCTORES ///////////////////
+	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente() {
 	}	
 	
@@ -21,11 +25,34 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+	
+	public void agregarEstado(Estado estado) {
+		estadosAnteriores.add(estado);
+	}
 
 	///////////////////// METODOS /////////////////////
 	
-	@Override
-	public Long consumoMensual(Long kwH){return (long) 0;} //hacer lol
+	@Override /////// hacer
+	public Long consumoMensual(Long kwH) {
+		return (long) 0;
+	}
+	
+	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
+		ArrayList<Estado> estadosCompletosPeriodo = new ArrayList<>();
+		ArrayList<Estado> estadosBordePeriodo = new ArrayList<>();
+		
+		estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
+		.forEach(estado -> estadosCompletosPeriodo.add(estado));
+		estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
+		.forEach(estado -> estadosBordePeriodo.add(estado));
+		
+		return estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(kWh)).sum() 
+		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, kWh)).sum();
+	}
+	
+	public Long calcularConsumoNHoras(int horas, Long kWh) {
+		this.calcularConsumoPeriodo(inicio, LocalDateTime.now(), kWh)
+	}
 	
 	@Override
 	public boolean esInteligente() {
@@ -50,6 +77,6 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	
 	@Override
 	public void activarAhorroDeEnergia() {
-		estado = new AhorroDeEnergia();
+		estado.activarAhorroDeEnergia(this);
 	}
 }
