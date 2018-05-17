@@ -88,6 +88,11 @@ public class TestsParser {
 		Assert.assertEquals(true, dispositivo.isEncendido());
 		Assert.assertEquals(DispositivoInteligente.class, dispositivo.getTipoDeDispositivo().getClass());
 	}
+	
+	@Test (expected = NoSePudoAbrirElArchivoException.class)
+	public void noSePudoAbrirElArchivoException() {
+		parser.parsearUsuario("~/Pictures/Wallpapers/Frank-best-tutor.jpg");
+	}
 
 
 }

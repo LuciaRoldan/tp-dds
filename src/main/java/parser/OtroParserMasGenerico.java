@@ -23,7 +23,7 @@ public class OtroParserMasGenerico {
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-	public <T> List<T> parsear(Class<T> clase, String nombreArchivo) throws NoSePudoAbrirElArchivoException {
+	public <T> List<T> parsear(Class<T> clase, String nombreArchivo) {
 		// https://github.com/FasterXML/jackson-core/issues/295
 		try {
 			List<T> listaObjetos = mapper.readValue(new File(nombreArchivo),
@@ -31,7 +31,7 @@ public class OtroParserMasGenerico {
 					.constructCollectionLikeType(ArrayList.class, clase));
 			return listaObjetos;
 		} catch (IOException e) {
-			throw new NoSePudoAbrirElArchivoException();
+			throw new NoSePudoAbrirElArchivoException("No se pudo abrir el archivo: "+nombreArchivo);
 		}
 	}
 
