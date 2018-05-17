@@ -2,6 +2,7 @@ package testsDispositivos;
 
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoInteligente;
+import dispositivos.AhorroDeEnergia;
 import dispositivos.Apagado;
 import static org.junit.Assert.*;
 
@@ -29,6 +30,19 @@ public class DispositivosInteligentes {
 	public void testActivarAhorroDeEnergia() {
 		dispositivoInteligente.activarAhorroDeEnergia();
 		assertTrue(dispositivoInteligente.estaEncendido());
+	}
+	
+	@Test
+	public void testEncenderDispositivo() {
+		dispositivoInteligente.encendete();
+		assertEquals(true, dispositivoInteligente.estaEncendido());
+	}
+	
+	@Test
+	public void testAhorroDeEnergiaYEncendido() {
+		dispositivoInteligente.activarAhorroDeEnergia();
+		assertEquals(true, dispositivoInteligente.estaEncendido());
+		
 	}
 	
 	//@Test Consumo

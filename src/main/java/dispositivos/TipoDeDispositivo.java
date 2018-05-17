@@ -18,6 +18,5 @@ public abstract class  TipoDeDispositivo {
     public abstract void apagate();
     public abstract void activarAhorroDeEnergia();
     public abstract Estado getEstado();
-
   
 }

@@ -30,15 +30,15 @@ public class Dispositivo {
     }
 	
 	public void encendete() {
-		this.getTipoDeDispositivo().encendete();
+		tipoDeDispositivo.encendete();
 	}
 	
 	public void apagate() {
-		this.getTipoDeDispositivo().apagate();
+		tipoDeDispositivo.apagate();
 	}
 	
 	public void activarAhorroDeEnergia() {
-		this.getTipoDeDispositivo().activarAhorroDeEnergia();
+		tipoDeDispositivo.activarAhorroDeEnergia();
 	}
 	
 	public boolean estaEncendido() {
@@ -47,6 +47,10 @@ public class Dispositivo {
 	
 	public boolean estaApagado() {
 		return tipoDeDispositivo.estaApagado();
+	}
+	
+	public Estado getEstado() {
+		return tipoDeDispositivo.getEstado();
 	}
     
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////

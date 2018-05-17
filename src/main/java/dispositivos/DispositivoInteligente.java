@@ -32,22 +32,18 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 		return true;
 	}
 	
-	@Override
 	public boolean estaEncendido() {
 		return estado.estaEncendido();
 	}
 	
-	@Override
 	public boolean estaApagado() {
 		return estado.estaApagado();
 	}
 	
-	@Override
 	public void encendete() {
 		estado.encendete(this);
 	}
 	
-	@Override
 	public void apagate() {
 		estado.apagate(this);
 	}

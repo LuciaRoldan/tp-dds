@@ -1,5 +1,7 @@
 package dispositivos;
 
+import Excepciones.NoSePuedeConocerElEstadoDelEstandarException;
+
 public class DispositivoEstandar extends TipoDeDispositivo {
 	
 	private int horasDeUsoPorDia;
@@ -52,9 +54,9 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	public String getNombre() {
 		return "ESTANDAR";
 	}
-
 	@Override
 	public Estado getEstado() {
-		return new Apagado();
+		throw new NoSePuedeConocerElEstadoDelEstandarException();
 	}
+
 }
