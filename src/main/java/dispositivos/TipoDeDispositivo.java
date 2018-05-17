@@ -10,7 +10,7 @@ public abstract class  TipoDeDispositivo {
 
     public String    getNombre()     {return null;}
     
-    public abstract Long consumoMensual();
+    public abstract Long consumoMensual(Long kwh);
     public abstract boolean esInteligente();
     public abstract boolean estaEncendido();
     public abstract boolean estaApagado();

@@ -15,7 +15,7 @@ public class DispositivoBuilder {
 		this.nombre = nombre;
 		this.kWh = KWh;
 		this.tipoDeDispositivo = tipoDeDispositivo;
-		this.horasDeUsoPorDia = horasDeUsoPorDia;
+		this.horasDeUsoPorDia = horasDeUsoPorDia;;
 	}
 
 	public Dispositivo construir() {

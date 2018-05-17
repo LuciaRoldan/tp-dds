@@ -8,8 +8,7 @@ public class Dispositivo {
 	///////////////////////////////// CONTRUCTORES///////////////////////////////// /////////////////////////////////////////////////////
 
 
-	public Dispositivo() {
-	}
+	public Dispositivo() {}
 
 	public Dispositivo(String nombre, Long kWh, TipoDeDispositivo tipoDeDispositivo) {
 		this.nombre = nombre;
@@ -21,7 +20,7 @@ public class Dispositivo {
     ///////////////////////////////// METODOS ///////////////////////////////// 
     
     public Long consumoMensual() {
-    	return tipoDeDispositivo.consumoMensual();
+    	return tipoDeDispositivo.consumoMensual(kWh);
     }
     public void agregarModulo() {
     	tipoDeDispositivo = new DispositivoInteligente();

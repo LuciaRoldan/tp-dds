@@ -1,5 +1,6 @@
 package testsDispositivos;
 
+import dispositivos.Apagado;
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoBuilder;
 import dispositivos.DispositivoEstandar;

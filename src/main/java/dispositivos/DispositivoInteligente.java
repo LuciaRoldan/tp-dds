@@ -25,7 +25,7 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	///////////////////// METODOS /////////////////////
 	
 	@Override
-	public Long consumoMensual(){return (long) 0;} //hacer lol
+	public Long consumoMensual(Long kwH){return (long) 0;} //hacer lol
 	
 	@Override
 	public boolean esInteligente() {

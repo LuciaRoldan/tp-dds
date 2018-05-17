@@ -48,7 +48,7 @@ public class Cliente extends Usuario {
 	public void recategorizarse() {
 
 		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
-		this.setCategoriaResidencial2(nuevaCategoria);
+		this.setCategoriaResidencial(nuevaCategoria);
 	}
 	
 	public int getCantidadDispositivos() {
@@ -142,7 +142,7 @@ public class Cliente extends Usuario {
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
-	public void setCategoriaResidencial2(CategoriaResidencial cr) {
+	public void setCategoriaResidencial(CategoriaResidencial cr) {
 		this.categoriaResidencial = cr;
 	}
 

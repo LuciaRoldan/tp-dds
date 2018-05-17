@@ -33,6 +33,10 @@ public class ClasesParaTestearCliente {
 		Dispositivo dispositivo3 = ClasesParaTestearDispositivos.unDispositivoInteligente();
 		Dispositivo dispositivo4 = ClasesParaTestearDispositivos.unDispositivoEstandar();
 		Dispositivo dispositivo5 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+		dispositivo1.encendete();
+		dispositivo2.encendete();
+		dispositivo3.encendete();
+		dispositivo5.encendete();
 		dispositivos.add(dispositivo1);
 		dispositivos.add(dispositivo2);
 		dispositivos.add(dispositivo3);

@@ -48,7 +48,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetSizeDispositivosEncendidos() {
-		assertEquals(0, cliente.getCantidadDispositivosEncendidos());
+		assertEquals(4, cliente.getCantidadDispositivosEncendidos());
 	}
 
 	@Test
@@ -83,7 +83,7 @@ public class TestsCliente {
 
 	@Test
 	public void testSetCategoriaResidencial() {
-		cliente.setCategoriaResidencial2(CategoriaResidencial.CATEGORIAR5);
+		cliente.setCategoriaResidencial(CategoriaResidencial.CATEGORIAR5);
 		assertEquals(CategoriaResidencial.CATEGORIAR5, cliente.getCategoriaResidencial());	
 	}
 
@@ -109,13 +109,13 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		assertEquals((double) 4, cliente.calcularConsumoMensual());
+		assertEquals((double) 600000, cliente.calcularConsumoMensual());
 	}
 
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
+		assertEquals(CategoriaResidencial.CATEGORIAR9, cliente.getCategoriaResidencial());
 	}
 
 }
