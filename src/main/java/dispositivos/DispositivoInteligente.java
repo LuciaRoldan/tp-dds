@@ -33,8 +33,8 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	///////////////////// METODOS /////////////////////
 	
 	@Override /////// hacer
-	public Long consumoMensual(Long kwH) {
-		return (long) 0;
+	public Long consumoMensual(Long kWh) {
+		return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), kWh);
 	}
 	
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
