@@ -8,6 +8,10 @@ public class Encendido implements Estado {
 	public LocalDateTime inicio = LocalDateTime.now();
 	public LocalDateTime fin;
 	
+	public Encendido() {
+		
+	}
+	
 	@Override
 	public boolean estaEncendido() {
 		return true;

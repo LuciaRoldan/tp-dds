@@ -8,6 +8,10 @@ public class Apagado implements Estado {
 	//cuando instancio la clase ?? O hay que ponerlo en el constructor??
 	private LocalDateTime fin;
 	
+	public Apagado() {
+		
+	}
+	
 	@Override
 	public boolean estaEncendido() {
 		return false;

@@ -72,4 +72,9 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 		throw new NoSePuedeCalcularElConsumoException();
 	}
 
+	@Override
+	public void setEstado(Estado estado) {
+		
+	}
+
 }

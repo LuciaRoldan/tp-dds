@@ -2,6 +2,7 @@ package testsDispositivos;
 
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoInteligente;
+import dispositivos.Estado;
 import dispositivos.AhorroDeEnergia;
 import dispositivos.Apagado;
 import static org.junit.Assert.*;
@@ -54,17 +55,30 @@ public class DispositivosInteligentes {
 		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
 
 		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoPeriodo(hoy, manana,
-				Long.valueOf(1));
+				Long.valueOf(1000));
 
-		assertEquals(Long.valueOf(1), consumo);
+		assertEquals(Long.valueOf(0), consumo);
 	}
 	
 	@Test
 	public void testConsumoEnUltimasTresHoras() {
 		
-		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(3, Long.valueOf(1));
+		dispositivoInteligente.encendete();	
 		
-		assertEquals(Long.valueOf(1), consumo);
+		assertTrue(dispositivoInteligente.estaEncendido());
+		
+		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(8, Long.valueOf(1000));
+		
+		assertEquals(Long.valueOf(0), consumo);
+	}
+	
+	@Test
+	public void testPrueba() {
+		DispositivoInteligente dispositivoInteligente = new DispositivoInteligente();
+		dispositivoInteligente.setEstado(new Apagado());
+		
+		assertEquals("INTELIGENTE", dispositivoInteligente.getNombre());
+		
 	}
 
 }

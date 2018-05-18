@@ -18,7 +18,7 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<Dispositivo> dispositivos;
+	private ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
 	private int puntos = 0;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////

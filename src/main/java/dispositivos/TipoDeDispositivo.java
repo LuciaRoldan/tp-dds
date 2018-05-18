@@ -22,6 +22,8 @@ public abstract class  TipoDeDispositivo {
     public abstract Estado getEstado();
     public abstract Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh);
     public abstract Long calcularConsumoUltimasNHoras(int horas, Long kWh);
+    public abstract void setEstado(Estado estado);
+    public abstract void setHorasDeUsoPorDia(int horasDeUsoPorDia);
     
   
 }

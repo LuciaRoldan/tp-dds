@@ -70,7 +70,7 @@ public class TestsCliente {
 	public void testGetTipoDocumento() {
 		assertEquals(TipoDocumento.DNI, cliente.getTipoDocumento());
 	}
-
+	
 	@Test
 	public void testGetDispositivos() {
 		assertEquals(dispositivos, cliente.getDispositivos());
