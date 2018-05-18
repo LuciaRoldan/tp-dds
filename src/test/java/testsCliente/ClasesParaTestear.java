@@ -1,4 +1,4 @@
-package testsUnitariosCliente;
+package testsCliente;
 
 import java.util.ArrayList;
 

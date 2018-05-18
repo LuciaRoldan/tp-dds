@@ -1,4 +1,4 @@
-package testsUnitariosCliente;
+package testsCliente;
 import categorias.CategoriaResidencial;
 import dispositivos.Dispositivo;
 import dispositivos.DispositivoEstandar;

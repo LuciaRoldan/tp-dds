@@ -17,7 +17,7 @@ import usuario.*;
 
 public class TestsParser {
 
-	MiParser parser;
+	Parser parser;
 	List<Usuario> listaDeAdministradores;
 	Administrador administrador;
 	DateTimeFormatter formatter;
@@ -30,7 +30,7 @@ public class TestsParser {
 
 	public void setUp() throws NoSePudoAbrirElArchivoException {
 
-		parser = new MiParser();
+		parser = new Parser();
 
 		listaDeClientes = parser.parsearUsuario("src/test/java/testParser/cliente.json");
 		cliente = (Cliente) listaDeClientes.get(0);
@@ -39,7 +39,9 @@ public class TestsParser {
 		administrador = (Administrador) listaDeAdministradores.get(1);
 		formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-		dispositivo = cliente.getPrimerDispositivo();
+		dispositivo = parser.parsearDispositivo("src/test/java/testParser/dispositivo.json");
+		
+		
 	}
 	
 
@@ -71,13 +73,9 @@ public class TestsParser {
 
 	@Test
 	public void coincidenLosCamposDeAdministrador() {
-		//Assert.assertEquals(CategoriaR5.class, administrador.getCategoriaResidencial().getClass());
 		Assert.assertEquals("MatiasMorsa", administrador.getNombreYApellido());
-		//Assert.assertEquals(TipoDocumento.DNI, administrador.getTipoDocumento());
 		Assert.assertEquals("Matias21313", administrador.getNombreUsuario());
 		Assert.assertEquals("Av.del libertador 2000", administrador.getDomicilio());
-		//Assert.assertEquals(4444, administrador.getTelefono());
-		//Assert.assertEquals(1234456, administrador.getDocumento());
 		Assert.assertEquals("123321", administrador.getContrasena());
 		Assert.assertEquals(LocalDate.parse("01/01/2001", formatter), administrador.getFechaDeAlta());
 		Assert.assertEquals(1234, administrador.getNumeroDeIdentificacion());
@@ -91,6 +89,11 @@ public class TestsParser {
 		Assert.assertEquals(Long.valueOf(1), dispositivo.getkWh());
 		Assert.assertEquals(true, dispositivo.isEncendido());
 		Assert.assertEquals(DispositivoInteligente.class, dispositivo.getTipoDeDispositivo().getClass());
+	}
+	
+	@Test (expected = NoSePudoAbrirElArchivoException.class)
+	public void noSePudoAbrirElArchivoException() {
+		parser.parsearDispositivo("src/test/java/testParser/archivoQueNoExiste.json"); 
 	}
 
 

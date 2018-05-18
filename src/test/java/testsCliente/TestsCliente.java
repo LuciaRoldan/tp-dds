@@ -1,4 +1,4 @@
-package testsUnitariosCliente;
+package testsCliente;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;

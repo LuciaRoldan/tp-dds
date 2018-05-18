@@ -18,7 +18,7 @@ import java.util.List;
 //TODO Hacer singleton
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MiParser {
+public class Parser {
 
     JSONParser   parser = new JSONParser();
     ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +33,7 @@ public class MiParser {
 			return listaDeUsuarios;
 			
 		} catch (IOException e) {
-			throw new NoSePudoAbrirElArchivoException();
+			throw new NoSePudoAbrirElArchivoException("No se pudo abrir el archivo: "+nombreArchivo);
 		}
     }
 
@@ -46,7 +46,7 @@ public class MiParser {
 			Dispositivo dispo = mapper.readValue(new File(nombreArchivo), Dispositivo.class);
 			return dispo;
 		} catch (IOException e) {
-			throw new NoSePudoAbrirElArchivoException();
+			throw new NoSePudoAbrirElArchivoException("No se pudo abrir el archivo: "+nombreArchivo);
 		}
     }
 
@@ -57,7 +57,7 @@ public class MiParser {
 			Administrador administrador = mapper.readValue(new File(nombreArchivo), Administrador.class);
 			return administrador;
 		} catch (IOException e) {
-			throw new NoSePudoAbrirElArchivoException();
+			throw new NoSePudoAbrirElArchivoException("No se pudo abrir el archivo: "+nombreArchivo);
 		}
     }
 
