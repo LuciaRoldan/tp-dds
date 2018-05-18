@@ -37,6 +37,7 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 		return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), kWh);
 	}
 	
+	@Override
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
 		ArrayList<Estado> estadosCompletosPeriodo = new ArrayList<>();
 		ArrayList<Estado> estadosBordePeriodo = new ArrayList<>();
@@ -50,6 +51,7 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, kWh)).sum();
 	}
 	
+	@Override
 	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
 		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now(), kWh);
 	}

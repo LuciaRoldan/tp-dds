@@ -1,4 +1,6 @@
 package dispositivos;
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
@@ -18,5 +20,8 @@ public abstract class  TipoDeDispositivo {
     public abstract void apagate();
     public abstract void activarAhorroDeEnergia();
     public abstract Estado getEstado();
+    public abstract Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh);
+    public abstract Long calcularConsumoUltimasNHoras(int horas, Long kWh);
+    
   
 }
