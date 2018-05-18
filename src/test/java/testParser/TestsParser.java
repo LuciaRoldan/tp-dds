@@ -39,7 +39,9 @@ public class TestsParser {
 		administrador = (Administrador) listaDeAdministradores.get(1);
 		formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
-		dispositivo = cliente.getPrimerDispositivo();
+		dispositivo = parser.parsearDispositivo("src/test/java/testParser/dispositivo.json");
+		
+		
 	}
 	
 
