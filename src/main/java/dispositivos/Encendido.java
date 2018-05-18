@@ -3,15 +3,25 @@ package dispositivos;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import javax.xml.ws.ServiceMode;
+
 public class Encendido implements Estado {
 	
-	public LocalDateTime inicio = LocalDateTime.now();
+	public LocalDateTime inicio;
 	public LocalDateTime fin;
 	
 	public Encendido() {
-		
+		inicio = LocalDateTime.now();
 	}
 	
+	public void setInicio(LocalDateTime inicio) {
+		this.inicio = inicio;
+	}
+
+	public void setFin(LocalDateTime fin) {
+		this.fin = fin;
+	}
+
 	@Override
 	public boolean estaEncendido() {
 		return true;
@@ -30,7 +40,7 @@ public class Encendido implements Estado {
 	}
 
 	@Override
-	public void encendete(DispositivoInteligente dispositivo) {
+	public void encendete(TipoDeDispositivo dispositivo) {
 	}
 	
 	@Override

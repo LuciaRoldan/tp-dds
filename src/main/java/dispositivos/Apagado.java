@@ -4,14 +4,21 @@ import java.time.LocalDateTime;
 
 public class Apagado implements Estado {
 
-	private LocalDateTime inicio = LocalDateTime.now(); //esta bien? Se registra
-	//cuando instancio la clase ?? O hay que ponerlo en el constructor??
+	private LocalDateTime inicio;
 	private LocalDateTime fin;
 	
 	public Apagado() {
-		
+		inicio = LocalDateTime.now();
 	}
 	
+	protected void setInicio(LocalDateTime inicio) {
+		this.inicio = inicio;
+	}
+
+	protected void setFin(LocalDateTime fin) {
+		this.fin = fin;
+	}
+
 	@Override
 	public boolean estaEncendido() {
 		return false;
@@ -27,7 +34,7 @@ public class Apagado implements Estado {
 	}
 
 	@Override
-	public void encendete(DispositivoInteligente dispositivo) {
+	public void encendete(TipoDeDispositivo dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Encendido());

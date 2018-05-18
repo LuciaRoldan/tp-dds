@@ -8,20 +8,15 @@ import java.time.temporal.ChronoUnit;
 
 import org.junit.Test;
 
+import dispositivos.ApagadoMock;
 import dispositivos.Dispositivo;
+import dispositivos.DispositivoInteligente;
+import dispositivos.EncendidoMock;
 
 public class DispositivosInteligentes {
 
 	Dispositivo dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
 	Dispositivo dispositivo;
-	
-//	@Mock private Estado estado;
-//
-//	private void mockearEstado() {
-//		LocalDateTime inicio = LocalDateTime.of(2018, 05, 01, 12, 42);
-//		LocalDateTime fin = LocalDateTime.now();
-//		when(estado.calcularConsumo(Long.valueOf(500))).thenReturn(1000);
-//	}
 	
 
 	@Test
@@ -59,7 +54,9 @@ public class DispositivosInteligentes {
 	public void testConsumoEnPeriodo() {
 		LocalDateTime hoy = LocalDateTime.now();
 		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
-
+		
+		dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
+		
 		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoPeriodo(hoy, manana,
 				dispositivoInteligente.getkWh());
 
@@ -69,12 +66,14 @@ public class DispositivosInteligentes {
 	@Test
 	public void testConsumoEnUltimasTresHoras() {
 		
+		LocalDateTime hoy = LocalDateTime.now();
+		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
 		
-		dispositivoInteligente.encendete();	
+		dispositivoInteligente.getTipoDeDispositivo().agregarEstado(new EncendidoMock(hoy, manana));
 		
-		assertTrue(dispositivoInteligente.estaEncendido());
+		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(24, dispositivoInteligente.getkWh());
 		
-		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(8, dispositivoInteligente.getkWh());
+		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
 		assertEquals(Long.valueOf(0), consumo);
 	}

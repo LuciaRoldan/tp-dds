@@ -10,7 +10,7 @@ public interface Estado {
 
 	public void apagate(DispositivoInteligente dispositivo);
 
-	public void encendete(DispositivoInteligente dispositivo);
+	public void encendete(TipoDeDispositivo dispositivo);
 
 	public void activarAhorroDeEnergia(DispositivoInteligente dispositivoInteligente);
 	

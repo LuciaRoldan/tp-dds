@@ -77,4 +77,9 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 		
 	}
 
+	@Override
+	public void agregarEstado(Estado estado) {
+		
+	}
+
 }

@@ -4,10 +4,23 @@ import java.time.LocalDateTime;
 
 public class AhorroDeEnergia extends Encendido {
 	
-	public AhorroDeEnergia(){}
+	private LocalDateTime inicio;
+	private LocalDateTime fin;
+	
+	public AhorroDeEnergia() {
+		inicio = LocalDateTime.now();
+	}
+	
+	public void setInicio(LocalDateTime inicio) {
+		this.inicio = inicio;
+	}
+
+	public void setFin(LocalDateTime fin) {
+		this.fin = fin;
+	}
 
 	@Override
-	public void encendete(DispositivoInteligente dispositivo) {
+	public void encendete(TipoDeDispositivo dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Encendido());
