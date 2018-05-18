@@ -23,11 +23,11 @@ public class DispositivoBuilder {
 		Dispositivo dispositivo;
 
 		if (this.tipoDeDispositivo.esInteligente()) {
-//			DispositivoInteligente claseInteligente = new DispositivoInteligente();
+			DispositivoInteligente claseInteligente = new DispositivoInteligente();
 			tipoDeDispositivo.setEstado(new Apagado());
 			dispositivo = new Dispositivo(this.nombre, this.kWh, tipoDeDispositivo);
 		} else {
-//			DispositivoEstandar claseEstandar = new DispositivoEstandar();
+			DispositivoEstandar claseEstandar = new DispositivoEstandar();
 			tipoDeDispositivo.setHorasDeUsoPorDia(horasDeUsoPorDia);
 			dispositivo = new Dispositivo(this.nombre, this.kWh, tipoDeDispositivo);
 		}

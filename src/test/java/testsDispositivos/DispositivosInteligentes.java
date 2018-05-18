@@ -1,22 +1,28 @@
 package testsDispositivos;
 
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoInteligente;
-import dispositivos.Estado;
-import dispositivos.AhorroDeEnergia;
-import dispositivos.Apagado;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import org.junit.Before;
 import org.junit.Test;
+
+import dispositivos.Dispositivo;
 
 public class DispositivosInteligentes {
 
 	Dispositivo dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
 	Dispositivo dispositivo;
+	
+//	@Mock private Estado estado;
+//
+//	private void mockearEstado() {
+//		LocalDateTime inicio = LocalDateTime.of(2018, 05, 01, 12, 42);
+//		LocalDateTime fin = LocalDateTime.now();
+//		when(estado.calcularConsumo(Long.valueOf(500))).thenReturn(1000);
+//	}
+	
 
 	@Test
 	public void testEncenderDIApagado() {
@@ -55,7 +61,7 @@ public class DispositivosInteligentes {
 		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
 
 		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoPeriodo(hoy, manana,
-				Long.valueOf(1000));
+				dispositivoInteligente.getkWh());
 
 		assertEquals(Long.valueOf(0), consumo);
 	}
@@ -63,22 +69,15 @@ public class DispositivosInteligentes {
 	@Test
 	public void testConsumoEnUltimasTresHoras() {
 		
+		
 		dispositivoInteligente.encendete();	
 		
 		assertTrue(dispositivoInteligente.estaEncendido());
 		
-		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(8, Long.valueOf(1000));
+		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(8, dispositivoInteligente.getkWh());
 		
 		assertEquals(Long.valueOf(0), consumo);
 	}
 	
-	@Test
-	public void testPrueba() {
-		DispositivoInteligente dispositivoInteligente = new DispositivoInteligente();
-		dispositivoInteligente.setEstado(new Apagado());
-		
-		assertEquals("INTELIGENTE", dispositivoInteligente.getNombre());
-		
-	}
 
 }
