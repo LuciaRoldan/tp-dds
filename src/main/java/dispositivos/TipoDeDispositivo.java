@@ -19,12 +19,12 @@ public abstract class  TipoDeDispositivo {
     public abstract void encendete();
     public abstract void apagate();
     public abstract void activarAhorroDeEnergia();
-    public abstract Estado getEstado();
+    public abstract EstadoDispositivo getEstado();
     public abstract Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh);
     public abstract Long calcularConsumoUltimasNHoras(int horas, Long kWh);
-    public abstract void setEstado(Estado estado);
+    public abstract void setEstado(EstadoDispositivo estado);
     public abstract void setHorasDeUsoPorDia(int horasDeUsoPorDia);
-    public abstract void agregarEstado(Estado estado);
+    public abstract void agregarEstado(EstadoDispositivo estado);
     
   
 }

@@ -49,7 +49,7 @@ public class Dispositivo {
 		return tipoDeDispositivo.estaApagado();
 	}
 	
-	public Estado getEstado() {
+	public EstadoDispositivo getEstado() {
 		return tipoDeDispositivo.getEstado();
 	}
     

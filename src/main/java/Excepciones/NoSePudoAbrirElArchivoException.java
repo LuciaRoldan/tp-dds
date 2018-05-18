@@ -6,4 +6,3 @@ public class NoSePudoAbrirElArchivoException extends RuntimeException {
         super(mensaje);
     }
 }
-}

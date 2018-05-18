@@ -2,7 +2,7 @@ package dispositivos;
 
 import java.time.LocalDateTime;
 
-public interface Estado {
+public interface EstadoDispositivo {
 
 	public boolean estaEncendido();
 

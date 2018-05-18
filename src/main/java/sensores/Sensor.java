@@ -3,7 +3,6 @@ package sensores;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.org.apache.regexp.internal.RE;
 import reglas.Regla;
 
 

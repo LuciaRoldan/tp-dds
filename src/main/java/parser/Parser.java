@@ -58,7 +58,7 @@ public class Parser {
 			DispositivoBuilder builder = mapper.readValue(new File(nombreArchivo), DispositivoBuilder.class);
 			return builder;
 		} catch (IOException e) {
-			throw new NoSePudoAbrirElArchivoException();
+			throw new NoSePudoAbrirElArchivoException("No se pudo abrir el archivo: "+nombreArchivo);
 		}
 	}
 

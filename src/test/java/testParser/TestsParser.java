@@ -32,7 +32,7 @@ public class TestsParser {
 
 		parser = new Parser();
 
-		listaDeClientes = parser.parsearUsuario("src/test/java/testParser/cliente.json");
+		listaDeClientes = parser.parsearUsuario("/2018-vn-group-19/src/test/java/testParser/usuarios.json");
 		cliente = (Cliente) listaDeClientes.get(0);
 
 		listaDeAdministradores = parser.parsearUsuario("src/test/java/testParser/usuarios.json");

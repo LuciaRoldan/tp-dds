@@ -11,7 +11,7 @@ public abstract class Actuador {
 
     // Esta es la accion que va a ejecutar al recibir el mensaje de la regla //
         public void unaAccion() {
-            this.dispositivos.forEach(dispositivo -> dispositivo.setEncendido(true));
+            //this.dispositivos.forEach(dispositivo -> dispositivo.setEncendido(true));
         }
 
      // Este es el mensaje de la regla //
