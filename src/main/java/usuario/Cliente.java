@@ -18,7 +18,8 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<Dispositivo> dispositivos;
+	private ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
+	private int puntos = 0;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -38,25 +39,28 @@ public class Cliente extends Usuario {
 	
 	public Double calcularConsumoMensual() {
 
-		List<Dispositivo> dispositivosEncendidos = this.getDispositivosEncendidos();
-		Double consumo = dispositivosEncendidos.stream()
-											   .mapToDouble(dispositivo -> dispositivo.getkWh())
-											   .sum();
+		Double consumo = dispositivos.stream()
+									 .mapToDouble(dispositivo -> dispositivo.consumoMensual())
+									 .sum();
 		return consumo;
 	}
 
 	public void recategorizarse() {
 
 		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
-		this.setCategoriaResidencial2(nuevaCategoria);
+		this.setCategoriaResidencial(nuevaCategoria);
 	}
 	
 	public int getCantidadDispositivos() {
 		return dispositivos.size();
 	}
+	
+	public int cantidadDipositivosInteligentes() {
+		return this.dispositivosInteligentes().size();
+	}
 
 	public List<Dispositivo> getDispositivosEncendidos() {
-		return dispositivos.stream().filter(dispositivo -> dispositivo.isEncendido()).collect(Collectors.toList());
+		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
 	public int getCantidadDispositivosEncendidos() {
@@ -64,7 +68,7 @@ public class Cliente extends Usuario {
 	}
 
 	public int getCantidadDispositivosApagados() {
-		return (this.getCantidadDispositivos() - this.getCantidadDispositivosEncendidos());
+		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
 	public Dispositivo getPrimerDispositivo() {
@@ -75,6 +79,21 @@ public class Cliente extends Usuario {
 		return this.getCantidadDispositivosEncendidos() > 0;
 	}
 
+	public void agregarModulo(Dispositivo dispositivo) {
+		if (dispositivosEstandar().contains(dispositivo)) {
+		dispositivo.agregarModulo();
+		this.puntos += 10;
+		}
+	}
+	
+	public List<Dispositivo> dispositivosInteligentes(){
+		return dispositivos.stream().filter(dispositivo -> dispositivo.esInteligente()).collect(Collectors.toList());
+	}
+	
+	public List<Dispositivo> dispositivosEstandar() {
+		return dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
+	}
+	
 
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
@@ -107,7 +126,7 @@ public class Cliente extends Usuario {
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
-	public void setCategoriaResidencial2(CategoriaResidencial cr) {
+	public void setCategoriaResidencial(CategoriaResidencial cr) {
 		this.categoriaResidencial = cr;
 	}
 

@@ -1,6 +1,7 @@
 package testsCliente;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class TestsCliente {
 
 	public void setUp() throws Exception {
 		
-		cliente = ClasesParaTestear.clienteEstandar();
-		dispositivos = ClasesParaTestear.cincoDispositivos();
+		cliente = ClasesParaTestearCliente.clienteEstandar();
+		dispositivos = ClasesParaTestearCliente.cincoDispositivos();
 		cliente.setDispositivos(dispositivos);
 }
 
@@ -42,7 +43,7 @@ public class TestsCliente {
 		dispositivosEncendidos.add(dispositivos.get(2));
 		dispositivosEncendidos.add(dispositivos.get(4));
 		
-		assertEquals(dispositivosEncendidos,cliente.getDispositivosEncendidos());
+		assertEquals(dispositivosEncendidos, cliente.getDispositivosEncendidos());
 	}
 
 	@Test
@@ -52,7 +53,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetSizeDispositivosApagados() {
-		assertEquals(1, cliente.getCantidadDispositivosApagados());
+		assertEquals(0, cliente.getCantidadDispositivosApagados());
 	}
 
 	@Test
@@ -69,7 +70,7 @@ public class TestsCliente {
 	public void testGetTipoDocumento() {
 		assertEquals(TipoDocumento.DNI, cliente.getTipoDocumento());
 	}
-
+	
 	@Test
 	public void testGetDispositivos() {
 		assertEquals(dispositivos, cliente.getDispositivos());
@@ -82,7 +83,7 @@ public class TestsCliente {
 
 	@Test
 	public void testSetCategoriaResidencial() {
-		cliente.setCategoriaResidencial2(CategoriaResidencial.CATEGORIAR5);
+		cliente.setCategoriaResidencial(CategoriaResidencial.CATEGORIAR5);
 		assertEquals(CategoriaResidencial.CATEGORIAR5, cliente.getCategoriaResidencial());	
 	}
 
@@ -108,13 +109,13 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		assertEquals((double) 4, cliente.calcularConsumoMensual());
+		assertEquals((double) 600000, cliente.calcularConsumoMensual());
 	}
 
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
+		assertEquals(CategoriaResidencial.CATEGORIAR9, cliente.getCategoriaResidencial());
 	}
 
 }

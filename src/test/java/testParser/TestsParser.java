@@ -87,7 +87,7 @@ public class TestsParser {
 	public void coincidenLosCamposDeDispositivo() {
 		Assert.assertEquals("Eco Tostadora", dispositivo.getNombre());
 		Assert.assertEquals(Long.valueOf(1), dispositivo.getkWh());
-		Assert.assertEquals(true, dispositivo.isEncendido());
+		Assert.assertEquals(true, dispositivo.estaEncendido());
 		Assert.assertEquals(DispositivoInteligente.class, dispositivo.getTipoDeDispositivo().getClass());
 	}
 	

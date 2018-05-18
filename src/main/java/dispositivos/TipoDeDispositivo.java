@@ -1,9 +1,8 @@
 package dispositivos;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import java.util.List;
-import static java.util.Arrays.asList;
 
 @JsonTypeInfo(use=JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property="type")
 @JsonSubTypes({
@@ -12,17 +11,20 @@ import static java.util.Arrays.asList;
 public abstract class  TipoDeDispositivo {
 
     public String    getNombre()     {return null;}
-
-    @JsonCreator
-    public static TipoDeDispositivo fromString(String tipoDeDispositivo) {
-
-        List<TipoDeDispositivo> listaClases = asList(new DispositivoInteligente(),new DispositivoEstandar());
-
-        TipoDeDispositivo tipoDisp  =  listaClases.stream()
-                .filter(x -> tipoDeDispositivo.equals(x.getNombre()))
-                .findAny()
-                .orElse(null);
-
-        return tipoDisp;
-    }
+    
+    public abstract Long consumoMensual(Long kwh);
+    public abstract boolean esInteligente();
+    public abstract boolean estaEncendido();
+    public abstract boolean estaApagado();
+    public abstract void encendete();
+    public abstract void apagate();
+    public abstract void activarAhorroDeEnergia();
+    public abstract Estado getEstado();
+    public abstract Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh);
+    public abstract Long calcularConsumoUltimasNHoras(int horas, Long kWh);
+    public abstract void setEstado(Estado estado);
+    public abstract void setHorasDeUsoPorDia(int horasDeUsoPorDia);
+    public abstract void agregarEstado(Estado estado);
+    
+  
 }
