@@ -93,7 +93,7 @@ public class TestsParser {
 	
 	@Test (expected = NoSePudoAbrirElArchivoException.class)
 	public void noSePudoAbrirElArchivoException() {
-		parser.parsearUsuario("~/Pictures/Wallpapers/Frank-best-tutor.jpg");
+		parser.parsearDispositivo("src/test/java/testParser/archivoQueNoExiste.json"); 
 	}
 
 
