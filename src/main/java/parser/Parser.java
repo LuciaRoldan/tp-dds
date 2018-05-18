@@ -18,7 +18,7 @@ import java.util.List;
 //TODO Hacer singleton
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MiParser {
+public class Parser {
 
     JSONParser   parser = new JSONParser();
     ObjectMapper mapper = new ObjectMapper();

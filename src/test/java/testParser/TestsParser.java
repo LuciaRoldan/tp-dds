@@ -17,7 +17,7 @@ import usuario.*;
 
 public class TestsParser {
 
-	MiParser parser;
+	Parser parser;
 	List<Usuario> listaDeAdministradores;
 	Administrador administrador;
 	DateTimeFormatter formatter;
@@ -30,7 +30,7 @@ public class TestsParser {
 
 	public void setUp() throws NoSePudoAbrirElArchivoException {
 
-		parser = new MiParser();
+		parser = new Parser();
 
 		listaDeClientes = parser.parsearUsuario("src/test/java/testParser/cliente.json");
 		cliente = (Cliente) listaDeClientes.get(0);
