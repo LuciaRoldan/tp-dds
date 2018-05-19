@@ -1,5 +1,10 @@
 
 ## TP DDS 2018 GRUPO 19
+### ENUNCIADOS :
+- [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
+- [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
+- [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
+
 
 ### Estado Actual
 - [ ] Implementar cambio de Estandar a Inteligente.
@@ -58,8 +63,3 @@ El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean
 - [Template Usuario Cliente](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
 - [Template Usuario Administrador](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/administrador.json)
 - [Template Dispositivo](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/dispositivo.json)
-
-### ENUNCIADOS :
-- [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
-- [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
-- [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
