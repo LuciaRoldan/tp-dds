@@ -1,17 +1,20 @@
-
-## TP DDS 2018 GRUPO 19
+<h1 align = "center">
+  TP DDS 2018 GRUPO 19
+</h1>
+ 
 ### ENUNCIADOS :
 - [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
 - [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
 - [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
 
 
-### Estado Actual
-- [ ] Implementar cambio de Estandar a Inteligente.
-- [ ] Modelar y crear sensores, reglas y actuadores
-- [ ] Testear sensores, reglas y actuadores
-- [ ] Builder dispositivo
-- [ ] Test builder
+### ESTADO ACTUAL :
+- [ ] Aplicar Adapter para cambiar de Estandar a Inteligente
+- [ ] Realizar tests de sensores, reglas y actuadores
+- [ ] Ver historial de estado y calculo de consumo historico
+- [X] Implementar cambio de Estandar a Inteligente
+- [X] Modelar y crear sensores, reglas y actuadores
+- [X] Testear sensores, reglas y actuadores
 - [X] Tests Usuario Cliente (parte 1)
 - [X] Tests Usuarios Administradores (parte 1)
 - [X] Tests Categorias 1, 5 y 9
@@ -39,7 +42,7 @@ El consumo **MENSUAL** de cada cliente esta compuesto por la suma de todos los k
 El cliente debe poder recategorizarse cada tres meses, para esta primera implementacion debe poder hacerlo sin tener en cuenta el tiempo.
 
 #### CATEGORIAS DE CLIENTES
-
+Las modelamos con enums.
 ```JAVA
   CATEGORIAS:
   R1       C <= 150  cargo fijo = 18.76  cargo variable = 0.644
@@ -57,7 +60,7 @@ El cliente debe poder recategorizarse cada tres meses, para esta primera impleme
 
 #### PARSER :
 
-El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
+El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista. El parser se dejo de actualizar luego de la entrega 0.
 
 - [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/usuarios.json)
 - [Template Usuario Cliente](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/cliente.json)
