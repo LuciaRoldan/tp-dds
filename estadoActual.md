@@ -2,10 +2,11 @@
   TP DDS 2018 GRUPO 19
 </h1>
  
-### ENUNCIADOS :
+### LINKS :
 - [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
 - [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
 - [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
+- [Diagrama de clases](https://www.lucidchart.com/invitations/accept/db20d253-e096-42e4-aeca-6afe906ff74d)
 
 
 ### ESTADO ACTUAL :
