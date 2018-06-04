@@ -1,13 +1,43 @@
-package reglas;
+package reglasactsens;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import actuadores.Actuador;
-
 public abstract class Regla {
+	
 	List<Actuador> actuadores = new ArrayList<Actuador>();
-
+	List<Condicion> condiciones = new ArrayList<Condicion>();
+	
+	public Regla(List<Actuador> actuadores, List<Condicion> condiciones) {
+		this.actuadores = actuadores;
+		this.condiciones = condiciones;
+		condiciones.forEach(condicion -> condicion.agregarRegla(this));
+	}
+	
+	boolean verificarCumplimiento() {
+		return condiciones.stream().allMatch(condicion -> condicion.seCumple());
+	}
+	
+	void ejecutarRegla() {
+		if (this.verificarCumplimiento()) {
+			actuadores.forEach(actuador -> actuador.actuar());
+		}
+	}
+	
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+/*
 	public static Float TEMPERATURAMINIMA = 12.5F;
 	public static Float INTENSIDADMAXIMA = 100F;
 	public static Boolean MOVIMIENTO = true;
@@ -24,7 +54,7 @@ public abstract class Regla {
 	public void setMOVIMIENTO(Boolean mov){this.MOVIMIENTO = mov;}
 }
 
-/* ;;Ejemplo de como seria una Regla;;
+;;Ejemplo de como seria una Regla;;
 
 public class apagarLuz extends Regla{
 
