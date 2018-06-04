@@ -7,16 +7,22 @@ public abstract class Condicion {
 	
 	List<Regla> reglas = new ArrayList<Regla>();
 	boolean seCumple;
+	//cada condicion va a tener una o mas variables de la magnitud que mide
 	
 	public Condicion(List<Regla> reglas) {
 		this.reglas = reglas;
 		this.seCumple = false;
 	} //METER la Condicion en la lista de interesados del Sensor que corresponda
 	
-	public abstract boolean evaluarCumplimiento(); //va a cambiar el estado de la variable seCumple
+	public abstract boolean evaluarCumplimiento(Integer medicion); //va a cambiar el estado de la variable seCumple
 	
-	public abstract void notificarMedicion(Integer medicion); //este método se implementa en cada Condicion concreta
-	//y modifica la variable que corresponda de acuerdo al valor que le llegue
+	public void notificarMedicion(Integer medicion) {
+		boolean nuevoCumplimiento = this.evaluarCumplimiento(medicion);
+		if (nuevoCumplimiento != this.seCumple) {
+			seCumple = nuevoCumplimiento;
+			this.notificarCambioCumplimiento();
+		}
+	}
 	
 	public void notificarCambioCumplimiento() {
 		reglas.forEach(regla -> regla.ejecutarRegla());

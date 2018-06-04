@@ -17,7 +17,7 @@ public abstract class Sensor {
 		condiciones.forEach(condicion -> condicion.notificarMedicion(medicion));
 	}
 	
-	public abstract Integer recibirMedicion(); //cuando le llega la medicion de no se donde. Implementa cada
+	public abstract Integer recibirMedicion(); //cuando le llega la medicion de no se donde. Lo implementa cada
 	//sensor concreto.
 	
 }
