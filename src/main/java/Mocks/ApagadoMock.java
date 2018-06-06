@@ -1,4 +1,6 @@
-package dispositivos;
+package Mocks;
+
+import dispositivos.Apagado;
 
 import java.time.LocalDateTime;
 

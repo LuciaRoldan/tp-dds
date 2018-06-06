@@ -25,7 +25,7 @@ public class Cliente extends Usuario {
 
 	public Cliente() {}
 
-	public Cliente(String nombreYapellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
+	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 			CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
 
@@ -97,22 +97,6 @@ public class Cliente extends Usuario {
 
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
-
-	public String getContrasena() {
-		return this.contrasena;
-	}
-
-	public String getNombreYApellido() {
-		return nombreYapellido;
-	}
-
-	public String getNombreUsuario() {
-		return this.nombreDeUsuario;
-	}
-
-	public String getDomicilio() {
-		return this.domicilio;
-	}
 
 	public int getTelefono() {
 		return telefono;

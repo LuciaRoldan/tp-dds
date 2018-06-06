@@ -1,4 +1,6 @@
-package dispositivos;
+package Mocks;
+
+import dispositivos.AhorroDeEnergia;
 
 import java.time.LocalDateTime;
 

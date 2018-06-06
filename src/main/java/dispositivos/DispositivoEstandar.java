@@ -58,7 +58,7 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 		return "ESTANDAR";
 	}
 	@Override
-	public Estado getEstado() {
+	public EstadoDispositivo getEstado() {
 		throw new NoSePuedeConocerElEstadoDelEstandarException();
 	}
 
@@ -73,12 +73,12 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	}
 
 	@Override
-	public void setEstado(Estado estado) {
+	public void setEstado(EstadoDispositivo estado) {
 		
 	}
 
 	@Override
-	public void agregarEstado(Estado estado) {
+	public void agregarEstado(EstadoDispositivo estado) {
 		
 	}
 

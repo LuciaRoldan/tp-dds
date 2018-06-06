@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class DispositivoInteligente extends TipoDeDispositivo {
 
-	private Estado estado;
-	private ArrayList<Estado> estadosAnteriores = new ArrayList<Estado>();
+	private EstadoDispositivo estado;
+	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente() {
@@ -19,14 +19,14 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 		return "INTELIGENTE";
 	}
 
-	public Estado getEstado() {
+	public EstadoDispositivo getEstado() {
 		return estado;
 	}
-	public void setEstado(Estado estado) {
+	public void setEstado(EstadoDispositivo estado) {
 		this.estado = estado;
 	}
 	
-	public void agregarEstado(Estado estado) {
+	public void agregarEstado(EstadoDispositivo estado) {
 		estadosAnteriores.add(estado);
 	}
 
@@ -39,8 +39,8 @@ public class DispositivoInteligente extends TipoDeDispositivo {
 	
 	@Override
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
-		ArrayList<Estado> estadosCompletosPeriodo = new ArrayList<Estado>();
-		ArrayList<Estado> estadosBordePeriodo = new ArrayList<Estado>();
+		ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
+		ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
 		
 		estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
 		.forEach(estado -> estadosCompletosPeriodo.add(estado));

@@ -2,7 +2,7 @@ package dispositivos;
 
 import java.time.LocalDateTime;
 
-public class Apagado implements Estado {
+public class Apagado implements EstadoDispositivo {
 
 	private LocalDateTime inicio;
 	private LocalDateTime fin;

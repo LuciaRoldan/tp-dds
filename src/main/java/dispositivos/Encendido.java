@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 import javax.xml.ws.ServiceMode;
 
-public class Encendido implements Estado {
+public class Encendido implements EstadoDispositivo {
 	
 	public LocalDateTime inicio;
 	public LocalDateTime fin;
