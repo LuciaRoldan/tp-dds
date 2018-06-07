@@ -44,7 +44,12 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+
+                  <processTypes>
+                     <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+                  </processTypes>
                 </configuration>
+                
             </plugin>
       <plugin>
         <groupId>com.heroku.sdk</groupId>
