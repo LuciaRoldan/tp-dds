@@ -1,10 +1,9 @@
 package testsDispositivos;
 
-import dispositivos.Apagado;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoBuilder;
-import dispositivos.DispositivoEstandar;
-import dispositivos.DispositivoInteligente;
+import dispositivo.Dispositivo;
+import dispositivo.DispositivoBuilder;
+import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligente;
 
 public class ClasesParaTestearDispositivos {
 	public static Dispositivo unDispositivoInteligente() {

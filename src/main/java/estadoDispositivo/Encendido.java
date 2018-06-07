@@ -1,9 +1,10 @@
-package dispositivos;
+package estadoDispositivo;
+
+import dispositivo.DispositivoInteligente;
+import dispositivo.TipoDeDispositivo;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
-import javax.xml.ws.ServiceMode;
 
 public class Encendido implements EstadoDispositivo {
 	

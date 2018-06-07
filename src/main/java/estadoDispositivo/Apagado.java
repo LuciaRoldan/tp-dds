@@ -1,4 +1,7 @@
-package dispositivos;
+package estadoDispositivo;
+
+import dispositivo.DispositivoInteligente;
+import dispositivo.TipoDeDispositivo;
 
 import java.time.LocalDateTime;
 
@@ -30,7 +33,7 @@ public class Apagado implements EstadoDispositivo {
 	}
 
 	@Override
-	public void apagate(DispositivoInteligente dispositivo) {		
+	public void apagate(DispositivoInteligente dispositivo) {
 	}
 
 	@Override

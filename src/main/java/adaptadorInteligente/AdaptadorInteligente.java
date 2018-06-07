@@ -1,4 +1,4 @@
-package AdaptadorInteligente;
+package adaptadorInteligente;
 
 public class AdaptadorInteligente {
 }

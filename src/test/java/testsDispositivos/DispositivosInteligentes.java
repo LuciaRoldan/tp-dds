@@ -8,8 +8,8 @@ import java.time.temporal.ChronoUnit;
 
 import org.junit.Test;
 
-import dispositivos.Dispositivo;
-import Mocks.EncendidoMock;
+import dispositivo.Dispositivo;
+import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
 

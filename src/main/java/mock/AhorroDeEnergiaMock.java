@@ -1,6 +1,6 @@
-package Mocks;
+package mock;
 
-import dispositivos.AhorroDeEnergia;
+import estadoDispositivo.AhorroDeEnergia;
 
 import java.time.LocalDateTime;
 

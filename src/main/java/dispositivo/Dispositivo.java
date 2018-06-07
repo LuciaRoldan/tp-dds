@@ -1,4 +1,6 @@
-package dispositivos;
+package dispositivo;
+
+import estadoDispositivo.EstadoDispositivo;
 
 public class Dispositivo {
 	private String nombre;

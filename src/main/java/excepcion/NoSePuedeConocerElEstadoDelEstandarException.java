@@ -1,4 +1,4 @@
-package Excepciones;
+package excepcion;
 
 public class NoSePuedeConocerElEstadoDelEstandarException extends RuntimeException {
 

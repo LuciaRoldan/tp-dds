@@ -1,4 +1,4 @@
-package categorias;
+package categoria;
 
 import static java.util.Arrays.asList;
 

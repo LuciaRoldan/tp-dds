@@ -1,4 +1,6 @@
-package dispositivos;
+package dispositivo;
+
+import estadoDispositivo.EstadoDispositivo;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

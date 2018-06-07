@@ -1,27 +1,27 @@
-package reglas;
+package regla;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import actuadores.Actuador;
+import actuador.Actuador;
 
-public abstract class Regla {
+public interface Regla {
 	List<Actuador> actuadores = new ArrayList<Actuador>();
 
-	public static Float TEMPERATURAMINIMA = 12.5F;
-	public static Float INTENSIDADMAXIMA = 100F;
-	public static Boolean MOVIMIENTO = true;
+	Float TEMPERATURAMINIMA = 12.5F;
+	Float INTENSIDADMAXIMA = 100F;
+	Boolean MOVIMIENTO = true;
 	
 	// ↓ Estos son las condiciones ↓
-	public void temperatura(float unaTemperatura) {};
-	public void movimientoAfuera(boolean hayMovimiento) {};
-	public void luz(float intensidad) {};
+	void temperatura(float unaTemperatura);
+	void movimientoAfuera(boolean hayMovimiento);
+	void luz(float intensidad);
 
 	// Setters //
-	public void agregarActuador(Actuador actuador){this.actuadores.add(actuador);}
-	public void setTEMPERATURAMINIMA(Float TM){this.TEMPERATURAMINIMA = TM;}
-	public void setINTENSIDADMAXIMA(Float IM){this.INTENSIDADMAXIMA = IM;}
-	public void setMOVIMIENTO(Boolean mov){this.MOVIMIENTO = mov;}
+	void agregarActuador(Actuador actuador);
+	void setTEMPERATURAMINIMA(Float TM);
+	void setINTENSIDADMAXIMA(Float IM);
+	void setMOVIMIENTO(Boolean mov);
 }
 
 /* ;;Ejemplo de como seria una Regla;;

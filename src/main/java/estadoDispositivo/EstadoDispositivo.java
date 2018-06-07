@@ -1,4 +1,7 @@
-package dispositivos;
+package estadoDispositivo;
+
+import dispositivo.DispositivoInteligente;
+import dispositivo.TipoDeDispositivo;
 
 import java.time.LocalDateTime;
 

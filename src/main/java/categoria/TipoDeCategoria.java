@@ -1,4 +1,4 @@
-package categorias;
+package categoria;
 
 public enum TipoDeCategoria {
     CATEGORIAR1,

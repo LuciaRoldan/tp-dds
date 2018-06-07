@@ -1,9 +1,9 @@
-package sensores;
+package sensor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import reglas.Regla;
+import regla.Regla;
 
 
 public abstract class Sensor {

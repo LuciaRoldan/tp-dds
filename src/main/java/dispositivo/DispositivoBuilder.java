@@ -1,6 +1,7 @@
-package dispositivos;
+package dispositivo;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import estadoDispositivo.Apagado;
 
 public class DispositivoBuilder {
 

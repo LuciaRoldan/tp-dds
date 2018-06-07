@@ -1,9 +1,10 @@
-package dispositivos;
+package dispositivo;
 
 import java.time.LocalDateTime;
 
-import Excepciones.NoSePuedeCalcularElConsumoException;
-import Excepciones.NoSePuedeConocerElEstadoDelEstandarException;
+import estadoDispositivo.EstadoDispositivo;
+import excepcion.NoSePuedeCalcularElConsumoException;
+import excepcion.NoSePuedeConocerElEstadoDelEstandarException;
 
 public class DispositivoEstandar extends TipoDeDispositivo {
 	
