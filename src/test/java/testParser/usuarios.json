@@ -1,0 +1,36 @@
+[
+
+		{
+			"categoriaResidencial": 	"CATEGORIA5",
+			"contrasena"     :			"123321",
+			"documento"      :			1234456,
+			"domicilio"      :			"Av.del libertador 2000",
+			"fechaDeAlta"    :			"01/01/2001",
+			"telefono"       :			44444444,
+			"tipoDeUsuario"  : 			"CLIENTE",
+			"tipoDocumento"	 : 			"DNI",
+			"nombreYapellido": 			"MatiasMorsa",
+			"nombreDeUsuario": 			"Matias21313",
+			"dispositivos":[
+				{
+					"nombre"	:    	"Eco Tostadora",
+					"kWh"		: 	  	1,
+					"encendido"	: 		 true,
+					"tipoDeDispositivo": "INTELIGENTE"
+				}
+			]
+		},
+		{
+			"categoriaResidencial": "CATEGORIA5",
+			"nombreYApellido": "MatiasMorsa",
+			"tipoDocumento": "DNI",
+			"nombreDeUsuario": "Matias21313",
+			"domicilio": "Av.del libertador 2000",
+			"telefono": 44444444,
+			"documento": 1234456,
+			"contrasena": "123321",
+			"fechaDeAlta": "01/01/2001",
+			"numeroDeIdentificacion": 1234,
+			"tipoDeUsuario": "ADMINISTRADOR"
+		}
+	]

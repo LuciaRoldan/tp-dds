@@ -2,8 +2,9 @@ package testsCliente;
 
 import java.util.ArrayList;
 
-import categoria.CategoriaResidencial;
-import dispositivo.Dispositivo;
+import categorias.CategoriaResidencial;
+import dispositivos.Dispositivo;
+import dispositivos.DispositivoEstandar;
 import testsDispositivos.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
