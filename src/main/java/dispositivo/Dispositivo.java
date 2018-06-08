@@ -5,17 +5,15 @@ import estadoDispositivo.EstadoDispositivo;
 public class Dispositivo {
 	private String nombre;
 	private Long kWh;
-	private TipoDeDispositivo tipoDeDispositivo;
 
 	///////////////////////////////// CONTRUCTORES///////////////////////////////// /////////////////////////////////////////////////////
 
 
 	public Dispositivo() {}
 
-	public Dispositivo(String nombre, Long kWh, TipoDeDispositivo tipoDeDispositivo) {
+	public Dispositivo(String nombre, Long kWh) {
 		this.nombre = nombre;
 		this.kWh = kWh;
-		this.tipoDeDispositivo = tipoDeDispositivo;
 	}
 
 	    
@@ -25,7 +23,7 @@ public class Dispositivo {
     	return tipoDeDispositivo.consumoMensual(kWh);
     }
     public void agregarModulo() {
-    	tipoDeDispositivo = new DispositivoInteligente();
+    	tipoDeDispositivo = new DispositivoInteligenteConcreto();
     }
     public boolean esInteligente() {
     	return tipoDeDispositivo.esInteligente();

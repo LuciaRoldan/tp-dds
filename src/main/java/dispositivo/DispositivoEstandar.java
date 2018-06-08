@@ -6,19 +6,18 @@ import estadoDispositivo.EstadoDispositivo;
 import excepcion.NoSePuedeCalcularElConsumoException;
 import excepcion.NoSePuedeConocerElEstadoDelEstandarException;
 
-public class DispositivoEstandar extends TipoDeDispositivo {
+public class DispositivoEstandar  {
 	
 	private int horasDeUsoPorDia;
 	
 	public DispositivoEstandar() {
 	}
 	
-	@Override
+
 	public Long consumoMensual(Long kWh) {
 		return kWh * horasDeUsoPorDia * 30;
 	}
 
-	@Override
 	public boolean esInteligente() {
 		return false;
 	}	
@@ -35,50 +34,40 @@ public class DispositivoEstandar extends TipoDeDispositivo {
 	}
 
 /////////////METODOS/////////////
-	@Override
 	public boolean estaEncendido() {
 		return false;
 	}
 
-	@Override
 	public boolean estaApagado() {
 		return false;
 	}
 
-	@Override
 	public void encendete() {}
 
-	@Override
 	public void apagate() {}
 
-	@Override
 	public void activarAhorroDeEnergia() {}
 
-	@Override
 	public String getNombre() {
 		return "ESTANDAR";
 	}
-	@Override
+
 	public EstadoDispositivo getEstado() {
 		throw new NoSePuedeConocerElEstadoDelEstandarException();
 	}
 
-	@Override
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
 		throw new NoSePuedeCalcularElConsumoException();
 	}
 
-	@Override
 	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
 		throw new NoSePuedeCalcularElConsumoException();
 	}
 
-	@Override
 	public void setEstado(EstadoDispositivo estado) {
 		
 	}
 
-	@Override
 	public void agregarEstado(EstadoDispositivo estado) {
 		
 	}

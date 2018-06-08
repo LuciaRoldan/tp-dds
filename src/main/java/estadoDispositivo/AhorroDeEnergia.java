@@ -1,7 +1,6 @@
 package estadoDispositivo;
 
-import dispositivo.DispositivoInteligente;
-import dispositivo.TipoDeDispositivo;
+import dispositivo.DispositivoInteligenteConcreto;
 
 import java.time.LocalDateTime;
 
@@ -30,6 +29,6 @@ public class AhorroDeEnergia extends Encendido {
 	}
 	
 	@Override
-	public void activarAhorroDeEnergia(DispositivoInteligente dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteConcreto dispositivo) {
 	}
 }

@@ -1,4 +1,6 @@
 package adaptadorInteligente;
 
-public class AdaptadorInteligente {
+import dispositivo.DispositivoInteligente;
+
+public class AdaptadorInteligente implements DispositivoInteligente {
 }

@@ -7,11 +7,11 @@ public class DispositivoBuilder {
 
 	private String nombre;
 	private Long kWh;
-	private TipoDeDispositivo tipoDeDispositivo;
+	private DispositivoInteligente;
 	private int horasDeUsoPorDia;
 
 	
-	public DispositivoBuilder(String nombre, Long KWh, TipoDeDispositivo tipoDeDispositivo,
+	public DispositivoBuilder(String nombre, Long KWh, DispositivoInteligente tipoDeDispositivo,
 								int horasDeUsoPorDia) {
 		this.nombre = nombre;
 		this.kWh = KWh;
@@ -23,8 +23,8 @@ public class DispositivoBuilder {
 
 		Dispositivo dispositivo;
 
-		if (this.tipoDeDispositivo.esInteligente()) {
-			DispositivoInteligente claseInteligente = new DispositivoInteligente();
+		if (this.Disposi.esInteligente()) {
+			DispositivoInteligenteConcreto claseInteligente = new DispositivoInteligenteConcreto();
 			tipoDeDispositivo.setEstado(new Apagado());
 			dispositivo = new Dispositivo(this.nombre, this.kWh, tipoDeDispositivo);
 		} else {
