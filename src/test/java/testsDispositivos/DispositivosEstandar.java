@@ -3,7 +3,7 @@ package testsDispositivos;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import dispositivos.Dispositivo;
+import dispositivo.Dispositivo;
 
 public class DispositivosEstandar {
 

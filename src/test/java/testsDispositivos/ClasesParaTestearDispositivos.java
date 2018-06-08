@@ -1,17 +1,16 @@
 package testsDispositivos;
 
-import dispositivos.Apagado;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoBuilder;
-import dispositivos.DispositivoEstandar;
-import dispositivos.DispositivoInteligente;
+import dispositivo.Dispositivo;
+import dispositivo.DispositivoBuilder;
+import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligenteConcreto;
 
 public class ClasesParaTestearDispositivos {
 	public static Dispositivo unDispositivoInteligente() {
 		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
 									"Aire Acondicionado",
 									Long.valueOf(1000),
-									new DispositivoInteligente(),
+									new DispositivoInteligenteConcreto(),
 									0);
 		Dispositivo dispositivo = dispositivoBuilder.construir();
 		return dispositivo;

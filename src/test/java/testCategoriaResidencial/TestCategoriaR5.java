@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import categorias.CategoriaResidencial;
+import categoria.CategoriaResidencial;
 import usuario.Cliente;
 
 public class TestCategoriaR5 {

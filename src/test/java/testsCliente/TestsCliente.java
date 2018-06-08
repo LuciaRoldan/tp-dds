@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import categorias.CategoriaResidencial;
-import dispositivos.Dispositivo;
+import categoria.CategoriaResidencial;
+import dispositivo.Dispositivo;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
