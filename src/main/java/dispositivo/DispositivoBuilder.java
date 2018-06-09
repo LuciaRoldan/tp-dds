@@ -1,8 +1,7 @@
 package dispositivo;
 
-import adaptadorInteligente.AdaptadorInteligente;
+import module.module;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import estadoDispositivo.Apagado;
 
 public class DispositivoBuilder {
 
@@ -26,7 +25,7 @@ public class DispositivoBuilder {
 	public DispositivoInteligente construir() {
 
 		if(horasDeUsoPorDia > 0){
-			this.dispositivo = new AdaptadorInteligente(new  DispositivoEstandar(this.kWh,this.nombre,this.horasDeUsoPorDia));
+			this.dispositivo = new module(new  DispositivoEstandar(this.kWh,this.nombre,this.horasDeUsoPorDia));
 		}
 
 		return this.dispositivo;

@@ -1,7 +1,5 @@
 package exceptionDispositivo;
 
-import adaptadorInteligente.AdaptadorInteligente;
-import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 
 public class NoSePuedeAgregarOtroModuloAdicional extends DispositivoInteligenteException{
