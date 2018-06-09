@@ -4,7 +4,7 @@ import estadoDispositivo.EstadoDispositivo;
 
 public interface DispositivoInteligente {
 
-    public Long consumoMensual(Long kWh);
+    public Long consumoMensual();
     public void activarAhorroDeEnergia();
     public void agregarModulo();
     public void agregarEstado(EstadoDispositivo estado);

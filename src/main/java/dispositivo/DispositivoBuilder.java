@@ -1,38 +1,41 @@
 package dispositivo;
 
-import module.module;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import estadoDispositivo.EstadoDispositivo;
+import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
+import modulo.Modulo;
+
+import java.awt.dnd.MouseDragGestureRecognizer;
 
 public class DispositivoBuilder {
 
 	private String nombre;
-	private Long kWh;
-	private DispositivoInteligente dispositivo;
-	private int horasDeUsoPorDia = -1;
+	private Long consumoPorHora;
+	private Long horasDeUsoPorDia;
+	private EstadoDispositivo estadoDispositivo;
+	private Boolean modulo = false;
 
-	
-	public DispositivoBuilder(String nombre, Long KWh, DispositivoInteligente tipoDeDispositivo,
-								int horasDeUsoPorDia) {
-		this.nombre = nombre;
-		this.kWh = KWh;
-		this.horasDeUsoPorDia = horasDeUsoPorDia;;
-	}
 
-	public void setConsumoHora(int horas){
-		this.horasDeUsoPorDia = horas;
-	}
 
-	public DispositivoInteligente construir() {
+	public void setName(String name){this.nombre = name;}
+	public void setConsumoHora(Long horas){this.consumoPorHora = horas;}
+	public void setHorasUsoDia(Long horas){this.horasDeUsoPorDia = horas;}
+	public void setEstadoInicial(EstadoDispositivo ed){this.estadoDispositivo = ed;}
+	public void agregarModulo(){this.modulo = true;}
 
-		if(horasDeUsoPorDia > 0){
-			this.dispositivo = new module(new  DispositivoEstandar(this.kWh,this.nombre,this.horasDeUsoPorDia));
+	public DispositivoInteligente construirInteligente() {
+
+		if (modulo == false) {
+			return (new DispositivoInteligenteConcreto(this.nombre, this.estadoDispositivo,this.consumoPorHora));
+		}else{
+			return (new Modulo(new DispositivoEstandar(this.consumoPorHora,this.nombre, this.horasDeUsoPorDia)));
 		}
 
-		return this.dispositivo;
-
 	}
-	
-	@JsonCreator
+
+	public DispositivoEstandar construirEstandar(){
+		return (new DispositivoEstandar(this.consumoPorHora,this.nombre, this.horasDeUsoPorDia));
+	}
+
 	public DispositivoBuilder() {}
 
 

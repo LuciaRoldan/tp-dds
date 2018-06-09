@@ -1,6 +1,6 @@
 package exceptionDispositivo;
 
-import module.module;
+import modulo.Modulo;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 
@@ -14,7 +14,7 @@ public class NoSePuedeCalcularElConsumoException extends DispositivoInteligenteE
 
 
     public NoSePuedeCalcularElConsumoException(DispositivoEstandar de){
-        super(new module(de));
+        super(new Modulo(de));
         this.error = "NO SE PUEDE CALCULAR EL CONSUMO";
     }
 

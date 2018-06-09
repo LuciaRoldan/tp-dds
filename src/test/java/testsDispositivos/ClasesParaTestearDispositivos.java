@@ -2,25 +2,19 @@ package testsDispositivos;
 
 import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteConcreto;
+import estadoDispositivo.Apagado;
 
 public class ClasesParaTestearDispositivos {
-	public static Dispositivo unDispositivoInteligente() {
-		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
-									"Aire Acondicionado",
-									Long.valueOf(1000),
-									new DispositivoInteligenteConcreto(),
-									0);
-		Dispositivo dispositivo = dispositivoBuilder.construir();
-		return dispositivo;
+
+	public static DispositivoInteligente unDispositivoInteligente() {
+
+		return (new DispositivoInteligenteConcreto("Aire Acondicionado",new Apagado(),10L));
+
 	}
-	public static Dispositivo unDispositivoEstandar() {
-		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
-									"Microondas",
-									Long.valueOf(20000),
-									new DispositivoEstandar(),
-									1);
-		Dispositivo dispositivo = dispositivoBuilder.construir();
-		return dispositivo;
+	public static DispositivoEstandar unDispositivoEstandar() {
+
+		return (new DispositivoEstandar(2000L, "Microondas", 1L));
 	}
 }

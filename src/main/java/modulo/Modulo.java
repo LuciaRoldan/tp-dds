@@ -1,4 +1,4 @@
-package module;
+package modulo;
 
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
@@ -7,7 +7,7 @@ import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class module implements DispositivoInteligente {
+public class Modulo implements DispositivoInteligente {
 
     DispositivoEstandar dispositivoEstandar;
     private EstadoDispositivo estado;
@@ -16,7 +16,7 @@ public class module implements DispositivoInteligente {
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
 
-    public module(DispositivoEstandar de){
+    public Modulo(DispositivoEstandar de){
         this.dispositivoEstandar = de;
     }
 
@@ -40,8 +40,8 @@ public class module implements DispositivoInteligente {
 
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicional(this);}
 
-    public Long consumoMensual(Long kWh) {
-        return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), kWh);
+    public Long consumoMensual() {
+        return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), this.dispositivoEstandar.getConsumoPorHora());
     }
 
 

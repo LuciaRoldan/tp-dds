@@ -20,7 +20,7 @@ public class DispositivoEstandar  {
 	}
 	
 
-	public Long consumoMensual(Long kWh) {
+	public Long consumoMensual() {
 		return consumoPorHora * horasDeUsoPorDia * 30;
 	}
 
@@ -31,6 +31,8 @@ public class DispositivoEstandar  {
 	}
 
 	public String getName() {return this.name;}
+
+	public Long getConsumoPorHora(){return this.consumoPorHora;}
 
 
 	///////////// SETTERS/////////////

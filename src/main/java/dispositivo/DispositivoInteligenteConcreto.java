@@ -3,17 +3,24 @@ package dispositivo;
 import estadoDispositivo.EstadoDispositivo;
 import exceptionDispositivo.DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 	private EstadoDispositivo estado;
 	private String name;
 	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
+	private Long kWh;
 
 	////////////////// CONSTRUCTORES //////////////////
-	public DispositivoInteligenteConcreto() {}
+	public DispositivoInteligenteConcreto(String name,EstadoDispositivo estadoInicial,Long kWh) {
+		this.name = name;
+		this.estado = estadoInicial;
+		this.kWh = kWh;
+	}
 	
 	//////////////// SETTERS Y GETTERS ////////////////
 
@@ -31,12 +38,12 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 	///////////////////// METODOS /////////////////////
 
-	public Long consumoMensual(Long kWh) {
-		return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), kWh);
+	public Long consumoMensual() {
+		return this.calcularConsumoPeriodo(LocalDateTime.now(), LocalDateTime.now().minusMonths(1));
 	}
 	
 
-	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
+	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
 		ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
 		ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
 		
@@ -46,12 +53,12 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 		.forEach(estado -> estadosBordePeriodo.add(estado));
 		
 		return estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(kWh)).sum() 
-		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, kWh)).sum();
+		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, this.kWh)).sum();
 	}
 	
 
 	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now(), kWh);
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
 	}
 	
 

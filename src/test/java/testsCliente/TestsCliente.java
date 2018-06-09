@@ -3,18 +3,18 @@ package testsCliente;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
 import java.util.ArrayList;
 
+import dispositivo.DispositivoInteligente;
 import org.junit.Before;
 import org.junit.Test;
-
 import categoria.CategoriaResidencial;
+
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
 public class TestsCliente {
-	ArrayList<Dispositivo> dispositivos;
+	ArrayList<DispositivoInteligente> dispositivos;
 	Cliente cliente;
 
 
@@ -24,7 +24,7 @@ public class TestsCliente {
 		
 		cliente = ClasesParaTestearCliente.clienteEstandar();
 		dispositivos = ClasesParaTestearCliente.cincoDispositivos();
-		cliente.setDispositivos(dispositivos);
+		cliente.setDispositivosInteligentes(dispositivos);
 }
 
 
@@ -36,7 +36,7 @@ public class TestsCliente {
 	@Test
 	public void testGetDispositivosEncendidos() {
 		//sigue quedando feo porque queda hardcodeado pero oh well
-		ArrayList<Dispositivo> dispositivosEncendidos = new ArrayList <Dispositivo>();
+		ArrayList<DispositivoInteligente> dispositivosEncendidos = new ArrayList <DispositivoInteligente>();
 		dispositivosEncendidos.add(dispositivos.get(0));
 		dispositivosEncendidos.add(dispositivos.get(1));
 		dispositivosEncendidos.add(dispositivos.get(2));
@@ -71,8 +71,8 @@ public class TestsCliente {
 	}
 	
 	@Test
-	public void testGetDispositivos() {
-		assertEquals(dispositivos, cliente.getDispositivos());
+	public void testGetDispositivosInteligentes() {
+		assertEquals(dispositivos, cliente.getDispositivosInteligentes());
 	}
 
 	@Test
@@ -96,14 +96,14 @@ public class TestsCliente {
 
 	@Test
 	public void testSetDispositivos() {
-		ArrayList<Dispositivo> otrosDispositivos;
-		otrosDispositivos = new ArrayList <Dispositivo>();
+		ArrayList<DispositivoInteligente> otrosDispositivos;
+		otrosDispositivos = new ArrayList <DispositivoInteligente>();
 		otrosDispositivos.add(dispositivos.get(0));
 		otrosDispositivos.add(dispositivos.get(2));
 		
-		cliente.setDispositivos(otrosDispositivos);
+		cliente.setDispositivosInteligentes(otrosDispositivos);
 		
-		assertEquals(otrosDispositivos, cliente.getDispositivos());	
+		assertEquals(otrosDispositivos, cliente.getDispositivosInteligentes());
 	}
 
 	@Test

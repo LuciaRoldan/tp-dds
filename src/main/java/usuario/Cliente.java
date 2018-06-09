@@ -10,6 +10,9 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import categoria.CategoriaResidencial;
+import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligente;
+import modulo.Modulo;
 
 public class Cliente extends Usuario {
 
@@ -17,7 +20,8 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
+	private ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
+	private ArrayList<DispositivoEstandar> dispositivosEstandars = new ArrayList<DispositivoEstandar>();
 	private int puntos = 0;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
@@ -26,7 +30,7 @@ public class Cliente extends Usuario {
 
 	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<Dispositivo> dispositivos) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoInteligente> dispositivos,ArrayList<DispositivoEstandar> dispositivosEstandar) {
 
 		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
 		this.tipoDocumento = tipoDocumento;
@@ -58,8 +62,8 @@ public class Cliente extends Usuario {
 		return this.dispositivosInteligentes().size();
 	}
 
-	public List<Dispositivo> getDispositivosEncendidos() {
-		return this.dispositivosInteligentes().stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
+	public List<DispositivoInteligente> getDispositivosEncendidos() {
+		return this.dispositivos.stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
 	public int getCantidadDispositivosEncendidos() {
@@ -70,7 +74,7 @@ public class Cliente extends Usuario {
 		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
-	public Dispositivo getPrimerDispositivo() {
+	public DispositivoInteligente getPrimerDispositivo() {
 		return this.dispositivos.get(0);
 	}
 	
@@ -78,19 +82,20 @@ public class Cliente extends Usuario {
 		return this.getCantidadDispositivosEncendidos() > 0;
 	}
 
-	public void agregarModulo(Dispositivo dispositivo) {
+	public void agregarModulo(DispositivoEstandar dispositivo) {
 		if (dispositivosEstandar().contains(dispositivo)) {
-		dispositivo.agregarModulo();
+		dispositivos.add(new Modulo(dispositivo));
+		dispositivosEstandars.remove(dispositivo);
 		this.puntos += 10;
 		}
 	}
 	
-	public List<Dispositivo> dispositivosInteligentes(){
-		return dispositivos.stream().filter(dispositivo -> dispositivo.esInteligente()).collect(Collectors.toList());
+	public List<DispositivoInteligente> dispositivosInteligentes(){
+		return this.dispositivos;
 	}
 	
-	public List<Dispositivo> dispositivosEstandar() {
-		return dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
+	public List<DispositivoEstandar> dispositivosEstandar() {
+		return this.dispositivosEstandars;
 	}
 	
 
@@ -118,10 +123,13 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<Dispositivo> getDispositivos() {
+	public ArrayList<DispositivoInteligente> getDispositivosInteligentes() {
 		return this.dispositivos;
 	}
 
+	public ArrayList<DispositivoEstandar> getDispositivosEstandar() {
+		return this.dispositivosEstandars;
+	}
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
@@ -141,13 +149,12 @@ public class Cliente extends Usuario {
 		this.documento = documento;
 	}
 
-	public void setDispositivos(ArrayList<Dispositivo> dispositivos) {
+	public void setDispositivosInteligentes(ArrayList<DispositivoInteligente> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
-	
-	// ESTA FUNCION ES PARA EL PARSER
-	@JsonProperty("categoriaResidencial")
-	public void setType(String type) throws IOException {
-		this.categoriaResidencial = CategoriaResidencial.fromString(type);
+
+	public void setDispositivosEstandars(ArrayList<DispositivoEstandar> dispositivos) {
+		this.dispositivosEstandars = dispositivos;
 	}
+
 }
