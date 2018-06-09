@@ -7,11 +7,14 @@
   </br>
 </h1>
 
-  
+<h4>
+ <div class="column" align= "right">PROXIMA ENTREGA 29/06</div>
+</h4>
+
 #### COVERAGE REPORT MAVEN :
 
 Todos los dias a las 17:00 hs se ejecuta y pueden verlo [ACA](https://2018-vn-group-19.github.io/)
-
+  
 ```bash
 cd 2018-vn-group-19
 mvn site
