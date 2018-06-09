@@ -1,5 +1,6 @@
 package dispositivo;
 
+import adaptadorInteligente.AdaptadorInteligente;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import estadoDispositivo.Apagado;
 
@@ -7,33 +8,28 @@ public class DispositivoBuilder {
 
 	private String nombre;
 	private Long kWh;
-	private DispositivoInteligente;
-	private int horasDeUsoPorDia;
+	private DispositivoInteligente dispositivo;
+	private int horasDeUsoPorDia = -1;
 
 	
 	public DispositivoBuilder(String nombre, Long KWh, DispositivoInteligente tipoDeDispositivo,
 								int horasDeUsoPorDia) {
 		this.nombre = nombre;
 		this.kWh = KWh;
-		this.tipoDeDispositivo = tipoDeDispositivo;
 		this.horasDeUsoPorDia = horasDeUsoPorDia;;
 	}
 
-	public Dispositivo construir() {
+	public void setConsumoHora(int horas){
+		this.horasDeUsoPorDia = horas;
+	}
 
-		Dispositivo dispositivo;
+	public DispositivoInteligente construir() {
 
-		if (this.Disposi.esInteligente()) {
-			DispositivoInteligenteConcreto claseInteligente = new DispositivoInteligenteConcreto();
-			tipoDeDispositivo.setEstado(new Apagado());
-			dispositivo = new Dispositivo(this.nombre, this.kWh, tipoDeDispositivo);
-		} else {
-			DispositivoEstandar claseEstandar = new DispositivoEstandar();
-			tipoDeDispositivo.setHorasDeUsoPorDia(horasDeUsoPorDia);
-			dispositivo = new Dispositivo(this.nombre, this.kWh, tipoDeDispositivo);
+		if(horasDeUsoPorDia > 0){
+			this.dispositivo = new AdaptadorInteligente(new  DispositivoEstandar(this.kWh,this.nombre,this.horasDeUsoPorDia));
 		}
 
-		return dispositivo;
+		return this.dispositivo;
 
 	}
 	

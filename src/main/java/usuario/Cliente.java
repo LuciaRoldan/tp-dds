@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import categoria.CategoriaResidencial;
-import dispositivo.Dispositivo;
 
 public class Cliente extends Usuario {
 

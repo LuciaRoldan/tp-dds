@@ -1,7 +1,5 @@
 package actuador;
 
-import dispositivo.Dispositivo;
-
 import java.util.ArrayList;
 import java.util.List;
 

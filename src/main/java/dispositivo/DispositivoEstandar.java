@@ -3,73 +3,54 @@ package dispositivo;
 import java.time.LocalDateTime;
 
 import estadoDispositivo.EstadoDispositivo;
-import excepcion.NoSePuedeCalcularElConsumoException;
-import excepcion.NoSePuedeConocerElEstadoDelEstandarException;
+import exceptionDispositivo.NoSePuedeCalcularElConsumoException;
+import exceptionDispositivo.NoSePuedeConocerElEstadoDelEstandarException;
 
 public class DispositivoEstandar  {
 	
-	private int horasDeUsoPorDia;
-	
-	public DispositivoEstandar() {
+	private Long horasDeUsoPorDia;
+	private String name;
+	private Long consumoPorHora;
+
+
+	public DispositivoEstandar(Long consumoPorHora,String name,Long horasDeUsoPorDia){
+		this.consumoPorHora = consumoPorHora;
+		this. name = name;
+		this.horasDeUsoPorDia = horasDeUsoPorDia;
 	}
 	
 
 	public Long consumoMensual(Long kWh) {
-		return kWh * horasDeUsoPorDia * 30;
+		return consumoPorHora * horasDeUsoPorDia * 30;
 	}
 
-	public boolean esInteligente() {
-		return false;
-	}	
 	///////////// GETTERS/////////////
 
-	public int getHorasDeUsoPorDia() {
-		return horasDeUsoPorDia;
+	public Long getHorasDeUsoPorDia() {
+		return this.horasDeUsoPorDia;
 	}
+
+	public String getName() {return this.name;}
+
 
 	///////////// SETTERS/////////////
 
-	public void setHorasDeUsoPorDia(int horasDeUsoPorDia) {
+	public void setHorasDeUsoPorDia(Long horasDeUsoPorDia) {
 		this.horasDeUsoPorDia = horasDeUsoPorDia;
 	}
+	public void setName(String name){this.name = name;}
 
 /////////////METODOS/////////////
-	public boolean estaEncendido() {
-		return false;
-	}
 
-	public boolean estaApagado() {
-		return false;
-	}
 
-	public void encendete() {}
-
-	public void apagate() {}
-
-	public void activarAhorroDeEnergia() {}
-
-	public String getNombre() {
-		return "ESTANDAR";
-	}
-
-	public EstadoDispositivo getEstado() {
-		throw new NoSePuedeConocerElEstadoDelEstandarException();
-	}
 
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
-		throw new NoSePuedeCalcularElConsumoException();
+		throw new NoSePuedeCalcularElConsumoException(this);
 	}
 
 	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
-		throw new NoSePuedeCalcularElConsumoException();
+		throw new NoSePuedeCalcularElConsumoException(this);
 	}
 
-	public void setEstado(EstadoDispositivo estado) {
-		
-	}
-
-	public void agregarEstado(EstadoDispositivo estado) {
-		
-	}
 
 }

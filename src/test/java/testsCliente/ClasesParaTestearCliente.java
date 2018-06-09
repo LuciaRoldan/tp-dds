@@ -3,7 +3,6 @@ package testsCliente;
 import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
-import dispositivo.Dispositivo;
 import testsDispositivos.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;

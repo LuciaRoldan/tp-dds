@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import categoria.CategoriaResidencial;
-import dispositivo.Dispositivo;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 

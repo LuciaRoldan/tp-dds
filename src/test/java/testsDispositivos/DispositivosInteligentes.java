@@ -8,7 +8,6 @@ import java.time.temporal.ChronoUnit;
 
 import org.junit.Test;
 
-import dispositivo.Dispositivo;
 import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
