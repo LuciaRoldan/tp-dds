@@ -1,4 +1,4 @@
-package testAdministrador;
+package testsAdministrador;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import usuario.Administrador;

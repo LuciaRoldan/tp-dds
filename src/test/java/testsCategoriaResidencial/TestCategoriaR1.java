@@ -1,4 +1,4 @@
-package testCategoriaResidencial;
+package testsCategoriaResidencial;
 
 import org.junit.Assert;
 import org.junit.Before;
