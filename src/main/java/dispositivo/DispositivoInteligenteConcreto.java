@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 	private EstadoDispositivo estado;
-	private String nombre;
+	private String name;
 	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 	////////////////// CONSTRUCTORES //////////////////
@@ -27,6 +27,7 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	public void agregarEstado(EstadoDispositivo estado) {
 		estadosAnteriores.add(estado);
 	}
+	public String getName(){return name;}
 
 	///////////////////// METODOS /////////////////////
 
@@ -54,10 +55,6 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	}
 	
 
-	public boolean esInteligente() {
-		return true;
-	}
-	
 	public boolean estaEncendido() {
 		return estado.estaEncendido();
 	}
@@ -88,11 +85,10 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
 	public Long 					getkWh() 						{ throw new DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh(this);				 }
-	public String 					getNombre() 				 	{ return nombre;				 }
 
 	//////////////////////////////////// SETTERS ////////////////////////////////////
 
-	public void 					setNombre(String nombre) 	 	{ this.nombre = nombre; 		}
+	public void setName(String name) 	 	{ this.name = name; 		}
 	public void 					setkWh(Long kWh) 			 	{ throw new DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh(this);
 	}
 

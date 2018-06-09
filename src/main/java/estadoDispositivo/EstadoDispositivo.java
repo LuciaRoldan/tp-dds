@@ -11,11 +11,11 @@ public interface EstadoDispositivo {
 
 	public boolean estaApagado();
 
-	public void apagate(DispositivoInteligenteConcreto dispositivo);
+	public void apagate(DispositivoInteligente dispositivo);
 
 	public void encendete(DispositivoInteligente dispositivo);
 
-	public void activarAhorroDeEnergia(DispositivoInteligenteConcreto dispositivoInteligenteConcreto);
+	public void activarAhorroDeEnergia(DispositivoInteligente dispositivoInteligenteConcreto);
 	
 	public Long calcularConsumo(Long kWh);
 

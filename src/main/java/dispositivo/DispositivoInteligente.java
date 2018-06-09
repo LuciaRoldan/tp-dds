@@ -4,7 +4,7 @@ import estadoDispositivo.EstadoDispositivo;
 
 public interface DispositivoInteligente {
 
-    public Long consumoMensual();
+    public Long consumoMensual(Long kWh);
     public void activarAhorroDeEnergia();
     public void agregarModulo();
     public void agregarEstado(EstadoDispositivo estado);
@@ -22,6 +22,6 @@ public interface DispositivoInteligente {
 
     //////////////////////////////////// SETTERS ////////////////////////////////////
 
-    public void 					setNombre(String nombre);
+    public void setName(String name);
     public void 					setkWh(Long kWh);
 }

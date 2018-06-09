@@ -36,7 +36,7 @@ El cliente debe poder recategorizarse cada tres meses, para esta primera impleme
 
 ### PARSER :
 
-El parser lee un archivo nombre.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
+El parser lee un archivo name.json que contiene una lista de Usuarios (ya sean clientes o administradores), y devuelve dicha lista.
 
 - [Archivo json con lista de usuarios](https://github.com/dds-utn/2018-vn-group-19/blob/master/src/test/java/testParser/usuarios.json)
 

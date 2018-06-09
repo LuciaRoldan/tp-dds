@@ -29,7 +29,7 @@ public class AhorroDeEnergia extends Encendido {
 		dispositivo.setEstado(new Encendido());
 	}
 	
-	@Override
-	public void activarAhorroDeEnergia(DispositivoInteligenteConcreto dispositivo) {
+
+	public void activarAhorroDeEnergia(DispositivoInteligente dispositivo) {
 	}
 }
