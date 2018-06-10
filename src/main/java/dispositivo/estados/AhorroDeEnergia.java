@@ -1,4 +1,4 @@
-package estadoDispositivo;
+package dispositivo.estados;
 
 import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteConcreto;

@@ -4,7 +4,7 @@ import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteConcreto;
-import estadoDispositivo.Apagado;
+import dispositivo.estados.Apagado;
 
 public class ClasesParaTestearDispositivos {
 

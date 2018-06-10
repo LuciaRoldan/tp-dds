@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
-import modulo.Modulo;
+import dispositivo.Modulo;
 
 public class Cliente extends Usuario {
 

@@ -1,8 +1,8 @@
 package mock;
 
-import estadoDispositivo.Encendido;
-
 import java.time.LocalDateTime;
+
+import dispositivo.estados.Encendido;
 
 public class EncendidoMock extends Encendido {
 

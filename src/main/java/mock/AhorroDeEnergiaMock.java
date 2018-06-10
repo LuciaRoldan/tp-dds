@@ -1,8 +1,8 @@
 package mock;
 
-import estadoDispositivo.AhorroDeEnergia;
-
 import java.time.LocalDateTime;
+
+import dispositivo.estados.AhorroDeEnergia;
 
 public class AhorroDeEnergiaMock extends AhorroDeEnergia {
 	

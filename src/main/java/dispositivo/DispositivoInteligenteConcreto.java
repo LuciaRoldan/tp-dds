@@ -1,12 +1,13 @@
 package dispositivo;
 
-import estadoDispositivo.EstadoDispositivo;
 import exceptionDispositivo.DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
+
+import dispositivo.estados.EstadoDispositivo;
 
 public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 

@@ -1,10 +1,10 @@
 package dispositivo;
 
-import estadoDispositivo.EstadoDispositivo;
 import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
-import modulo.Modulo;
 
 import java.awt.dnd.MouseDragGestureRecognizer;
+
+import dispositivo.estados.EstadoDispositivo;
 
 public class DispositivoBuilder {
 

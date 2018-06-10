@@ -1,8 +1,8 @@
 package mock;
 
-import estadoDispositivo.Apagado;
-
 import java.time.LocalDateTime;
+
+import dispositivo.estados.Apagado;
 
 public class ApagadoMock extends Apagado {
 	

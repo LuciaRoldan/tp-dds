@@ -1,6 +1,6 @@
 package dispositivo;
 
-import estadoDispositivo.EstadoDispositivo;
+import dispositivo.estados.EstadoDispositivo;
 
 public interface DispositivoInteligente {
 

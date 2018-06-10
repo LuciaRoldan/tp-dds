@@ -1,8 +1,8 @@
 package exceptionDispositivo;
 
-import modulo.Modulo;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
+import dispositivo.Modulo;
 
 public class NoSePuedeCalcularElConsumoException extends DispositivoInteligenteException {
 

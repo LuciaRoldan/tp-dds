@@ -1,11 +1,10 @@
-package modulo;
+package dispositivo;
 
-import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligente;
-import estadoDispositivo.EstadoDispositivo;
 import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+
+import dispositivo.estados.EstadoDispositivo;
 
 public class Modulo implements DispositivoInteligente {
 
