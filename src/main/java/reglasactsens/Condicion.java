@@ -11,7 +11,7 @@ public abstract class Condicion {
 	
 	public Condicion() {
 //		this.reglas = reglas;
-//		reglas.forEach(regla -> regla.agregarCondicion(this));
+		reglas.forEach(regla -> regla.agregarCondicion(this));
 		this.seCumple = false;
 	} //METER la Condicion en la lista de interesados del Sensor que corresponda
 	
