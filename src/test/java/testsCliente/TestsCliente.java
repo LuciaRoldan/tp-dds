@@ -52,7 +52,7 @@ public class TestsCliente {
 
 	@Test
 	public void testGetSizeDispositivosApagados() {
-		assertEquals(0, cliente.getCantidadDispositivosApagados());
+		assertEquals(1, cliente.getCantidadDispositivosApagados());
 	}
 
 	@Test
