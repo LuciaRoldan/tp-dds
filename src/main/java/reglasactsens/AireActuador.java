@@ -14,7 +14,20 @@ public class AireActuador extends Actuador{
 
 	@Override
 	public void actuar() {
-		// TODO Auto-generated method stub
 		
 	}
+	
+	public void apagar() {
+//		this.dispositivo.apagate();
+	}
+	
+	public void prender() {
+//		this.dispositivo.prendete();
+	}
+	
+	public void bajarTemperatura() {
+		
+	}
+
 }
+

@@ -5,16 +5,15 @@ import dispositivos.Dispositivo;
 public class VentanaActuador extends Actuador{
 	//la accion es abrir y cerrar la ventana
 	
-	boolean abrir;
+	boolean abierta;
 	
-	VentanaActuador(Dispositivo dispositivo, boolean abrir) { //true es abrir
+	VentanaActuador(Dispositivo dispositivo, boolean abierta) { //true es abrir
 		super(dispositivo);
-		this.abrir = abrir;
+		this.abierta = abierta;
 	}
 	
-	@Override
 	public void actuar() {
-
+		
 	}
 
 }

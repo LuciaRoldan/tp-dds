@@ -9,8 +9,9 @@ public abstract class Condicion {
 	boolean seCumple;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
 	
-	public Condicion(List<Regla> reglas) {
-		this.reglas = reglas;
+	public Condicion() {
+//		this.reglas = reglas;
+//		reglas.forEach(regla -> regla.agregarCondicion(this));
 		this.seCumple = false;
 	} //METER la Condicion en la lista de interesados del Sensor que corresponda
 	
@@ -38,6 +39,4 @@ public abstract class Condicion {
 	public boolean seCumple() {
 		return this.seCumple;
 	}
-	
-	
 }

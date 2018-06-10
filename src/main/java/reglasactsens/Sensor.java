@@ -5,19 +5,22 @@ import java.util.List;
 
 
 public abstract class Sensor {
-
-	List<Condicion> condiciones = new ArrayList<Condicion>();
+	
+	//interesados
+	List<Condicion> condiciones = new ArrayList<Condicion>(); 
+	Integer medicion;
 	
 	public void agregarCondicion(Condicion unaCondicion){
 	      condiciones.add(unaCondicion);
 	}
-
-	public void notificarMedicion() {
-		Integer medicion = this.recibirMedicion();
-		condiciones.forEach(condicion -> condicion.notificarMedicion(medicion));
+	
+	public void cambiarMedicion(Integer medicion) {
+		this.medicion = medicion;
+		this.notificarMedicion();
 	}
 	
-	public abstract Integer recibirMedicion(); //cuando le llega la medicion de no se donde. Lo implementa cada
-	//sensor concreto.
-	
+	public void notificarMedicion() {
+		condiciones.forEach(condicion -> condicion.evaluarCumplimiento(medicion));
+	}	
 }
+

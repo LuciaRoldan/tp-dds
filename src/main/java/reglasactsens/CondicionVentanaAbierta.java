@@ -6,7 +6,7 @@ public class CondicionVentanaAbierta extends Condicion {
 	boolean abierta;
 	
 	public CondicionVentanaAbierta(List<Regla> reglas, boolean abierta) {
-		super(reglas);
+//		super(reglas);
 		this.abierta = abierta;
 	}
 

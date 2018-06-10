@@ -4,11 +4,16 @@ import java.util.List;
 
 public class CondicionTemperaturaAlta extends Condicion {
 	int temperaturaLimite;
+	AireMuyAltoRegla regla = new AireMuyAltoRegla();
 	
-	public CondicionTemperaturaAlta(List<Regla> reglas, int temperaturaLimite) {
-		super(reglas);
+	public CondicionTemperaturaAlta(int temperaturaLimite) {
+		super();
+		this.agregarRegla(regla);
+		regla.agregarCondicion(this);
 		this.temperaturaLimite = temperaturaLimite;
 	}
+	
+
 
 	@Override
 	public boolean evaluarCumplimiento(Integer medicion) {
