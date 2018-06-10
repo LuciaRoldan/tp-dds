@@ -3,8 +3,8 @@ package reglasactsens;
 public class CondicionTemperaturaAlta extends Condicion {
 	int temperaturaLimite;
 	
-	public CondicionTemperaturaAlta(int temperaturaLimite) {
-		super();
+	public CondicionTemperaturaAlta(Sensor sensor, int temperaturaLimite) {
+		super(sensor);
 		this.temperaturaLimite = temperaturaLimite;
 	}
 

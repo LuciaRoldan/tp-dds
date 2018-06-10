@@ -9,8 +9,9 @@ public abstract class Condicion {
 	boolean seCumple;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
 	
-	public Condicion() {
+	public Condicion(Sensor sensor) {
 		this.seCumple = false;
+		sensor.agregarCondicion(this);
 	}
 	
 	public abstract boolean evaluarCumplimiento(Integer medicion); //va a cambiar el estado de la variable seCumple

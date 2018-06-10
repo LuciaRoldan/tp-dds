@@ -4,7 +4,8 @@ package reglasactsens;
 public class CondicionVentanaAbierta extends Condicion {
 	boolean abierta; //dice si quiero que la ventana este abierta o cerrada. true = abierta, false = cerrada
 	
-	public CondicionVentanaAbierta(boolean abierta) {
+	public CondicionVentanaAbierta(Sensor sensor, boolean abierta) {
+		super(sensor);
 		this.abierta = abierta;
 	}
 
