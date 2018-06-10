@@ -7,13 +7,18 @@ public class VentanaActuador extends Actuador{
 	
 	boolean abierta;
 	
-	VentanaActuador(Dispositivo dispositivo, boolean abierta) { //true es abrir
+	VentanaActuador(Dispositivo dispositivo, boolean abierta) {
 		super(dispositivo);
 		this.abierta = abierta;
 	}
 	
-	public void actuar() {
-		
+	@Override
+	public void actuar() { //true = abrir, false = cerrar
+		if(abierta) {
+			//ventana.abirir();
+		}  else {
+			//ventana.cerrar();
+		}
 	}
 
 }
