@@ -55,7 +55,7 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	}
 	
 
-	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
+	public Long calcularConsumoUltimasNHoras(int horas) {
 		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
 	}
 	

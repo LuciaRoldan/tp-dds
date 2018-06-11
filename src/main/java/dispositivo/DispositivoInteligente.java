@@ -16,7 +16,7 @@ public interface DispositivoInteligente {
     public boolean estaEncendido();
     public boolean estaApagado() ;
     public EstadoDispositivo getEstado() ;
-    public Long calcularConsumoUltimasNHoras(int horas, Long kWh);
+    public Long calcularConsumoUltimasNHoras(int horas);
     public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
 
     ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
