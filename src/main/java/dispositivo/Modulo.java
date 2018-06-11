@@ -40,13 +40,14 @@ public class Modulo implements DispositivoInteligente {
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicional(this);}
 
     public Long consumoMensual() {
-        return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now(), this.dispositivoEstandar.getConsumoPorHora());
+        return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
     }
 
 
-    public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
+    public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
         ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
         ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
+        Long kWh = this.dispositivoEstandar.getConsumoPorHora();
 
         estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
                 .forEach(estado -> estadosCompletosPeriodo.add(estado));
@@ -58,8 +59,8 @@ public class Modulo implements DispositivoInteligente {
     }
 
 
-    public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
-        return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now(), kWh);
+    public Long calcularConsumoUltimasNHoras(int horas) {
+        return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
 
 

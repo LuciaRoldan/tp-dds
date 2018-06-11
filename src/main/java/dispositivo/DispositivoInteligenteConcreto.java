@@ -1,13 +1,10 @@
 package dispositivo;
 
-import exceptionDispositivo.DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 import dispositivo.estados.EstadoDispositivo;
+import exceptionDispositivo.DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh;
 
 public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
@@ -40,7 +37,7 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	///////////////////// METODOS /////////////////////
 
 	public Long consumoMensual() {
-		return this.calcularConsumoPeriodo(LocalDateTime.now(), LocalDateTime.now().minusMonths(1));
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
 	}
 	
 
@@ -92,7 +89,9 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
-	public Long 					getkWh() 						{ throw new DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh(this);				 }
+	public Long getkWh() {
+		return this.kWh;
+	}
 
 	//////////////////////////////////// SETTERS ////////////////////////////////////
 
