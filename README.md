@@ -13,7 +13,7 @@
 
 #### COVERAGE REPORT MAVEN :
 
-Todos los dias a las 17:00 hs se ejecuta y pueden verlo [ACA](https://2018-vn-group-19.github.io/)
+Todos los dias a las 17:00 hs se ejecuta el test coverage de la rama master y pueden verlo [ACA](https://2018-vn-group-19.github.io/)
   
 ```bash
 cd 2018-vn-group-19
