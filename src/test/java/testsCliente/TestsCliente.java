@@ -108,7 +108,7 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		assertEquals((double) 600000, cliente.calcularConsumoMensual());
+		assertEquals((double) 1500, cliente.calcularConsumoMensual());
 	}
 
 	@Test

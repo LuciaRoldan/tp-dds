@@ -66,15 +66,15 @@ public class DispositivosInteligentes {
 	public void testConsumoEnUltimasTresHoras() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
+		LocalDateTime hace3horas = hoy.minus(3, ChronoUnit.HOURS);
 		
-		dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
+		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
-		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(24, dispositivoInteligente.getkWh());
+		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(Long.valueOf(0), consumo);
+		assertEquals(Long.valueOf(30), consumo);
 	}
 
 }
