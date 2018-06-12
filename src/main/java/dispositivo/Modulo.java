@@ -43,7 +43,6 @@ public class Modulo implements DispositivoInteligente {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
     }
 
-
     public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
         ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
         ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
@@ -59,7 +58,7 @@ public class Modulo implements DispositivoInteligente {
     }
 
 
-    public Long calcularConsumoUltimasNHoras(int horas) {
+    public Long calcularConsumoUltimasNHoras(Long horas) {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
 

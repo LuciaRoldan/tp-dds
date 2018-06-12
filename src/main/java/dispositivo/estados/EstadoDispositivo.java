@@ -27,6 +27,6 @@ public interface EstadoDispositivo {
 
 	public Long calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, Long kWh);
 
-	boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin);
+	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin);
 
 }

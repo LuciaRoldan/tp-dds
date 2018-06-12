@@ -1,15 +1,12 @@
 package testsCliente;
 
 import static junit.framework.TestCase.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
-
 import dispositivo.DispositivoInteligente;
 import org.junit.Before;
 import org.junit.Test;
 import categoria.CategoriaResidencial;
-
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
@@ -108,13 +105,13 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		assertEquals((double) 1500, cliente.calcularConsumoMensual());
+		assertEquals((double) 1200, cliente.calcularConsumoMensual());
 	}
 
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaResidencial.CATEGORIAR9, cliente.getCategoriaResidencial());
+		assertEquals(CategoriaResidencial.CATEGORIAR8, cliente.getCategoriaResidencial());
 	}
 
 }

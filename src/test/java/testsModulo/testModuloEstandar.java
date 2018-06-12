@@ -1,13 +1,10 @@
 package testsModulo;
 
 import static org.junit.Assert.*;
-
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteConcreto;
@@ -71,7 +68,7 @@ public class testModuloEstandar {
 		
 		dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
-		Long consumo = dispositivo.calcularConsumoUltimasNHoras(24);
+		Long consumo = dispositivo.calcularConsumoUltimasNHoras(24L);
 	
 		// 2,000*24 = 48,000
 		assertEquals(Long.valueOf(48000), consumo);

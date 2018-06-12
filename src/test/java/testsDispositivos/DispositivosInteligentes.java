@@ -70,7 +70,7 @@ public class DispositivosInteligentes {
 		
 		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
-		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3);
+		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3L);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		

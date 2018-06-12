@@ -50,12 +50,12 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 		estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
 		.forEach(estado -> estadosBordePeriodo.add(estado));
 		
-		return estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(kWh)).sum() 
-		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, this.kWh)).sum();
+		return (estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(this.kWh)).sum()
+		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, this.kWh)).sum());
 	}
 	
 
-	public Long calcularConsumoUltimasNHoras(int horas) {
+	public Long calcularConsumoUltimasNHoras(Long horas) {
 		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
 	}
 	
