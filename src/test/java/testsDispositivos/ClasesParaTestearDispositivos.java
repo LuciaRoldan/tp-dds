@@ -1,28 +1,31 @@
 package testsDispositivos;
 
-import dispositivos.Apagado;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoBuilder;
-import dispositivos.DispositivoEstandar;
-import dispositivos.DispositivoInteligente;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+import dispositivo.DispositivoBuilder;
+import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteConcreto;
+import dispositivo.estados.Apagado;
+import mock.EncendidoMock;
 
 public class ClasesParaTestearDispositivos {
-	public static Dispositivo unDispositivoInteligente() {
-		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
-									"Aire Acondicionado",
-									Long.valueOf(1000),
-									new DispositivoInteligente(),
-									0);
-		Dispositivo dispositivo = dispositivoBuilder.construir();
+
+	public static DispositivoInteligente unDispositivoInteligente() {
+		
+		LocalDateTime hoy = LocalDateTime.now();
+		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.DAYS);
+		
+
+		DispositivoInteligente dispositivo = new DispositivoInteligenteConcreto("Aire Acondicionado",new Apagado(),10L);
+		dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
+		
 		return dispositivo;
+
 	}
-	public static Dispositivo unDispositivoEstandar() {
-		DispositivoBuilder dispositivoBuilder = new DispositivoBuilder(
-									"Microondas",
-									Long.valueOf(20000),
-									new DispositivoEstandar(),
-									1);
-		Dispositivo dispositivo = dispositivoBuilder.construir();
-		return dispositivo;
+	public static DispositivoEstandar unDispositivoEstandar() {
+
+		return (new DispositivoEstandar(2000L, "Microondas", 1L));
 	}
 }

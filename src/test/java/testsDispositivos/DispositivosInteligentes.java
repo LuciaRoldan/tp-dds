@@ -6,17 +6,17 @@ import static org.junit.Assert.assertTrue;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteConcreto;
+
 import org.junit.Test;
 
-import dispositivos.ApagadoMock;
-import dispositivos.Dispositivo;
-import dispositivos.DispositivoInteligente;
-import dispositivos.EncendidoMock;
+import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
 
-	Dispositivo dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
-	Dispositivo dispositivo;
+	DispositivoInteligente dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
+	DispositivoInteligente dispositivo;
 	
 
 	@Test
@@ -55,10 +55,9 @@ public class DispositivosInteligentes {
 		LocalDateTime hoy = LocalDateTime.now();
 		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
 		
-		dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
+		//dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
 		
-		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoPeriodo(hoy, manana,
-				dispositivoInteligente.getkWh());
+		Long consumo = dispositivoInteligente.calcularConsumoPeriodo(hoy, manana);
 
 		assertEquals(Long.valueOf(0), consumo);
 	}
@@ -67,16 +66,15 @@ public class DispositivosInteligentes {
 	public void testConsumoEnUltimasTresHoras() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
+		LocalDateTime hace3horas = hoy.minus(3, ChronoUnit.HOURS);
 		
-		dispositivoInteligente.getTipoDeDispositivo().agregarEstado(new EncendidoMock(hoy, manana));
+		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
-		Long consumo = dispositivoInteligente.getTipoDeDispositivo().calcularConsumoUltimasNHoras(24, dispositivoInteligente.getkWh());
+		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3L);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(Long.valueOf(0), consumo);
+		assertEquals(Long.valueOf(30), consumo);
 	}
-	
 
 }
