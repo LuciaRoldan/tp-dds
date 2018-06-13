@@ -14,9 +14,9 @@ public class AireEstadoActuador extends Actuador{
 	@Override
 	public void actuar() {
 		if (encender) {
-			//this.dispositivo.encender();
+			this.dispositivo.encendete();
 		} else {
-			//this.dispositivo.apagar();
+			this.dispositivo.apagate();
 		}
 	}
 }

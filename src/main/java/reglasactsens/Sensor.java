@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class Sensor {
+public class Sensor {
 	
 	//interesados
 	List<Condicion> condiciones = new ArrayList<Condicion>(); 
