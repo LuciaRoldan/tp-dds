@@ -1,4 +1,6 @@
-package reglasactsens;
+package reglas;
+
+import actuadores.Actuador;
 
 import java.util.ArrayList;
 import java.util.List;

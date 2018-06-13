@@ -1,4 +1,6 @@
-package reglasactsens;
+package reglas;
+
+import sensores.Sensor;
 
 import java.util.ArrayList;
 import java.util.List;

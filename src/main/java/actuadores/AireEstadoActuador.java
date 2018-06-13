@@ -1,12 +1,12 @@
-package reglasactsens;
+package actuadores;
 
-import dispositivos.Dispositivo;
+import dispositivo.DispositivoInteligente;
 
-public class AireEstadoActuador extends Actuador{
+public class AireEstadoActuador extends Actuador {
 	
 	boolean encender; //la accion es cambiar la temperatura del aire
 	
-	public AireEstadoActuador(Dispositivo dispositivo, boolean encender) {
+	public AireEstadoActuador(DispositivoInteligente dispositivo, boolean encender) {
 		super(dispositivo);
 		this.encender = encender;
 	}

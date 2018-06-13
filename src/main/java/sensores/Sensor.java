@@ -1,4 +1,6 @@
-package reglasactsens;
+package sensores;
+
+import reglas.Condicion;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.List;
 public class Sensor {
 	
 	//interesados
-	List<Condicion> condiciones = new ArrayList<Condicion>(); 
+	List<Condicion> condiciones = new ArrayList<Condicion>();
 	Integer medicion;
 	
 	public void agregarCondicion(Condicion unaCondicion){
