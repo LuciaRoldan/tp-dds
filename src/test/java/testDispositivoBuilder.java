@@ -9,7 +9,7 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 
-public class testDispositivoBuilderException {
+public class testDispositivoBuilder {
 
 
     @Before
