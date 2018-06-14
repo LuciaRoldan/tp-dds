@@ -1,4 +1,4 @@
-package testsModulo;
+package testsDispositivos.testsModulo;
 
 import static org.junit.Assert.*;
 import java.time.LocalDateTime;
@@ -6,8 +6,6 @@ import java.time.temporal.ChronoUnit;
 import org.junit.Before;
 import org.junit.Test;
 import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 import dispositivo.Modulo;
 import dispositivo.estados.Encendido;
 import mock.EncendidoMock;

@@ -1,3 +1,5 @@
+package testsDispositivos.testDispositivoBuilder;
+
 import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
