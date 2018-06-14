@@ -1,6 +1,6 @@
 package dispositivo;
 
-import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
+import exceptionDispositivo.dispositivoInteligente.NoSePuedeAgregarOtroModuloAdicionalException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -15,8 +15,9 @@ public class Modulo implements DispositivoInteligente {
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
 
-    public Modulo(DispositivoEstandar de){
+    public Modulo(DispositivoEstandar de,EstadoDispositivo estadoDispositivo){
         this.dispositivoEstandar = de;
+        this.setEstado(estadoDispositivo);
     }
 
     //////////////// SETTERS Y GETTERS ////////////////
@@ -37,7 +38,7 @@ public class Modulo implements DispositivoInteligente {
 
     ///////////////////// METODOS /////////////////////
 
-    public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicional(this);}
+    public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicionalException(this);}
 
     public Long consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());

@@ -1,17 +1,15 @@
 package dispositivo;
 
-import exceptionDispositivo.NoSePuedeAgregarOtroModuloAdicional;
-
-import java.awt.dnd.MouseDragGestureRecognizer;
-
 import dispositivo.estados.EstadoDispositivo;
+import exceptionDispositivo.dispositivoBuilder.NoSePuedeCrearDispEstandarException;
+import exceptionDispositivo.dispositivoBuilder.NoSePuedeCrearDispInteligenteExeption;
 
 public class DispositivoBuilder {
 
-	private String nombre;
-	private Long consumoPorHora;
-	private Long horasDeUsoPorDia;
-	private EstadoDispositivo estadoDispositivo;
+	private String nombre = null;
+	private Long consumoPorHora = -1L;
+	private Long horasDeUsoPorDia = -1L;
+	private EstadoDispositivo estadoDispositivo = null;
 	private Boolean modulo = false;
 
 
@@ -24,19 +22,27 @@ public class DispositivoBuilder {
 
 	public DispositivoInteligente construirInteligente() {
 
-		if (modulo == false) {
-			return (new DispositivoInteligenteConcreto(this.nombre, this.estadoDispositivo,this.consumoPorHora));
+		if(this.nombre == null || this.consumoPorHora == -1L || this.estadoDispositivo == null) {
+			throw new NoSePuedeCrearDispInteligenteExeption(this);
 		}else{
-			return (new Modulo(new DispositivoEstandar(this.consumoPorHora,this.nombre, this.horasDeUsoPorDia)));
-		}
 
+			if (modulo == false) {
+				return (new DispositivoInteligenteConcreto(this.nombre, this.estadoDispositivo, this.consumoPorHora));
+			} else {
+				if (horasDeUsoPorDia == -1L){
+					throw new NoSePuedeCrearDispInteligenteExeption(this);
+				}
+				return (new Modulo(new DispositivoEstandar(this.consumoPorHora, this.nombre, this.horasDeUsoPorDia),this.estadoDispositivo));
+			}
+		}
 	}
 
 	public DispositivoEstandar construirEstandar(){
-		return (new DispositivoEstandar(this.consumoPorHora,this.nombre, this.horasDeUsoPorDia));
+		if (this.consumoPorHora == -1L || this.nombre == null || this.horasDeUsoPorDia == -1L){
+			throw new NoSePuedeCrearDispEstandarException(this);
+		}else {
+			return (new DispositivoEstandar(this.consumoPorHora, this.nombre, this.horasDeUsoPorDia));
+		}
 	}
-
-	public DispositivoBuilder() {}
-
 
 }

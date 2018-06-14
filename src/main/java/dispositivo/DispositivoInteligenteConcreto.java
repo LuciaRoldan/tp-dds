@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
-import exceptionDispositivo.DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh;
 
 public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
@@ -84,9 +83,6 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 
 
-
-
-
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
 	public Long getkWh() {
@@ -96,7 +92,8 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	//////////////////////////////////// SETTERS ////////////////////////////////////
 
 	public void setName(String name) 	 	{ this.name = name; 		}
-	public void 					setkWh(Long kWh) 			 	{ throw new DispositivoInteligenteInteligenteConcretoNoTieneAtributokWh(this);
-	}
+	public void setkWh(Long kWh) 			 {this.kWh = kWh;}
 
 }
+
+

@@ -25,8 +25,7 @@ public class testModuloEstandar {
 		DispositivoEstandar dispositivoEstandar = ClasesParaTestearDispositivos.unDispositivoEstandar();
 		// DispositivoEstandar(2000L, "Microondas", 1L
 		
-		dispositivo = new Modulo(dispositivoEstandar);
-		dispositivo.setEstado(new Encendido());
+		dispositivo = new Modulo(dispositivoEstandar,new Encendido());
 	}
 	
 	

@@ -13,6 +13,7 @@ import categoria.CategoriaResidencial;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 import dispositivo.Modulo;
+import dispositivo.estados.EstadoDispositivo;
 
 public class Cliente extends Usuario {
 
@@ -82,9 +83,11 @@ public class Cliente extends Usuario {
 		return this.getCantidadDispositivosEncendidos() > 0;
 	}
 
-	public void agregarModulo(DispositivoEstandar dispositivo) {
+	// AL AGREGAR UN MODULO A UN DISPOTIVO ESTANDAR DEBE ESPECIFICARSE EL ESTADO INICIAL
+
+	public void agregarModulo(DispositivoEstandar dispositivo, EstadoDispositivo estadoDispositivo) {
 		if (dispositivosEstandar().contains(dispositivo)) {
-		dispositivos.add(new Modulo(dispositivo));
+		dispositivos.add(new Modulo(dispositivo,estadoDispositivo));
 		dispositivosEstandars.remove(dispositivo);
 		this.puntos += 10;
 		}

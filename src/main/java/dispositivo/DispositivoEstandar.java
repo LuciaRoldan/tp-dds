@@ -2,9 +2,7 @@ package dispositivo;
 
 import java.time.LocalDateTime;
 
-import dispositivo.estados.EstadoDispositivo;
-import exceptionDispositivo.NoSePuedeCalcularElConsumoException;
-import exceptionDispositivo.NoSePuedeConocerElEstadoDelEstandarException;
+import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
 public class DispositivoEstandar  {
 	
