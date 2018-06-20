@@ -4,6 +4,7 @@ import static usuario.TipoDeUsuario.CLIENTE;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -101,7 +102,20 @@ public class Cliente extends Usuario {
 		return this.dispositivosEstandars;
 	}
 	
-
+	//CONFIGURACION OPTIMA DE DISPOSITIVOS
+	
+	public HashMap<DispositivoInteligente, Integer> configuracionOptima(){ //falta implementacion
+		HashMap<DispositivoInteligente, Integer> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
+		return configuracionOptima;
+	}
+	
+	public void ejecutarSimplex() {
+		SimplexAdapter.chequearConsumoMensual(this.dispositivos);
+	}
+	
+	
+	
+	
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
