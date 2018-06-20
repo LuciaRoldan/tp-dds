@@ -11,12 +11,14 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	private String name;
 	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 	private Long kWh;
+	private double consumoIdeal;
 
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligenteConcreto(String name,EstadoDispositivo estadoInicial,Long kWh) {
 		this.name = name;
 		this.estado = estadoInicial;
 		this.kWh = kWh;
+		this.setConsumoIdeal(0);
 	}
 	
 	//////////////// SETTERS Y GETTERS ////////////////
@@ -88,11 +90,18 @@ public class DispositivoInteligenteConcreto implements DispositivoInteligente {
 	public Long getkWh() {
 		return this.kWh;
 	}
+	public double getConsumoIdeal() {
+		return consumoIdeal;
+	}
 
 	//////////////////////////////////// SETTERS ////////////////////////////////////
 
 	public void setName(String name) 	 	{ this.name = name; 		}
 	public void setkWh(Long kWh) 			 {this.kWh = kWh;}
+	public void setConsumoIdeal(double consumoIdeal) {this.consumoIdeal = consumoIdeal;}
+
+
+	
 
 }
 

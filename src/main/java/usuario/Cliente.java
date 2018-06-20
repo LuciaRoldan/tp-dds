@@ -102,6 +102,7 @@ public class Cliente extends Usuario {
 		return this.dispositivosEstandars;
 	}
 	
+	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
 	public HashMap<DispositivoInteligente, Integer> configuracionOptima(){ //falta implementacion
