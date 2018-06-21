@@ -30,10 +30,10 @@ public class Modulo implements DispositivoInteligente {
     public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
-    public void setkWh(Long kWh){this.dispositivoEstandar.setHorasDeUsoPorDia(kWh);}
+    public void setkWh(Long kWh){this.dispositivoEstandar.setConsumoPorHora(kWh);}
 
 
-    public Long getkWh(){return this.dispositivoEstandar.getHorasDeUsoPorDia();}
+    public Long getkWh(){return this.dispositivoEstandar.getConsumoPorHora();}
 
 
     ///////////////////// METODOS /////////////////////

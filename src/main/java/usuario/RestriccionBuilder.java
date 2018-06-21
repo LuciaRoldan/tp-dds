@@ -3,6 +3,7 @@ package usuario;
 import java.util.ArrayList;
 
 import org.apache.commons.math3.optim.linear.LinearConstraint;
+import org.apache.commons.math3.optim.linear.Relationship;
 
 import dispositivo.DispositivoInteligente;
 
@@ -17,12 +18,13 @@ public class RestriccionBuilder {
 	}
 
 	public void getRestricciones(ArrayList<DispositivoInteligente> dispositivos) {
-		dispositivos.forEach(dispositivo -> this.crearRestriccion(dispositivo));
+		dispositivos.forEach(dispositivo -> this.crearRestricciones(dispositivo));
 		
 	}
 
-	private LinearConstraint crearRestriccion(DispositivoInteligente dispositivo) {
-		LinearConstraint restriccion = new LinearConstraint(dispositivo.getConsumoIdeal(), )
+	private LinearConstraint crearRestricciones(DispositivoInteligente dispositivo) {
+		LinearConstraint restriccionMayorA = new LinearConstraint(dispositivo.getConsumoIdeal(), Relationship.GEQ, dispositivo.getConsumoMinimo());
+		LinearConstraint restriccionMenosA = new LinearConstraint(dispositivo.getConsumoIdeal(), Relationship.LEQ, dispositivo.getConsumoMaximo());
 	}
 
 	public void getVariables(ArrayList<DispositivoInteligente> dispositivos) {
