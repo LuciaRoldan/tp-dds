@@ -8,7 +8,7 @@
 </h1>
 
 <h4>
- <div class="column" align= "right">PROXIMA ENTREGA 29/06</div>
+ <div class="column" align= "right">PROXIMA ENTREGA 06/07</div>
 </h4>
 
 #### COVERAGE REPORT MAVEN :
