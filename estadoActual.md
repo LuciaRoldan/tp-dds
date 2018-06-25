@@ -11,24 +11,6 @@
 - [Github Branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 
 
-### ESTADO ACTUAL :
-- [ ] Aplicar Adapter para cambiar de Estandar a Inteligente
-- [ ] Realizar tests de sensores, reglas y actuadores
-- [ ] Ver historial de estado y calculo de consumo historico
-- [X] Implementar cambio de Estandar a Inteligente
-- [X] Modelar y crear sensores, reglas y actuadores
-- [X] Testear sensores, reglas y actuadores
-- [X] Tests Usuario Cliente (parte 1)
-- [X] Tests Usuarios Administradores (parte 1)
-- [X] Tests Categorias 1, 5 y 9
-- [X] Tests Parser Usuario Cliente
-- [X] Tests Parser Usuario Administrador
-- [X] Cliente se recategoriza (parte 2)
-- [X] Cliente calcula su consumo mensual (parte 2)
-- [X] Test Cliente (parte 2)
-
-
-
 | **ACTUADORES:** | **SENSORES:** | **REGLAS:** |
 | :-------------: | :-----------: | :---------: |
 | Envío acciones a los dispositivos (aparte de prender/apagar), como ser subir/bajar intensidad, cambiar modo de operación, agendar acción o configurar timers, etc. | Tienen la capacidad de tomar una determinada medición y comunicarla. | Determinación de reglas, para que dado un conjunto de mediciones se disparen determinadas acciones. |
