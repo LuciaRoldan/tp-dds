@@ -1,6 +1,6 @@
-package reglas;
+package regla;
 
-import actuadores.Actuador;
+import actuador.Actuador;
 
 import java.util.ArrayList;
 import java.util.List;
