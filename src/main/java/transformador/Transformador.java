@@ -18,8 +18,8 @@ public class Transformador {
     private List<Cliente> listaDeClientes = new ArrayList<Cliente>();
 
     ///////////////////////////////// METODOS ///////////////////////////////////////////////
-
-
+    public Transformador() {}
+    
     public Long energiaSuministrada(){
         return   listaDeClientes.stream().mapToLong(cliente -> cliente.calcularConsumoAhora()).sum();
     }

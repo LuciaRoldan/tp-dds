@@ -17,6 +17,8 @@ public class Zona {
 
 
     ///////////////////////////////// METODOS ///////////////////////////////////////////////
+    public Zona() {}
+    
     public Long energiaSuministrada(){
         return   listaDeTransformadores.stream().mapToLong(transformador -> transformador.energiaSuministrada()).sum();
     }
