@@ -1,14 +1,14 @@
 package dispositivo;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public interface DispositivoInteligente extends DispositivoBase{
-
+public interface DispositivoBase {
+	
     public Long consumoMensual();
     public void activarAhorroDeEnergia();
-    public void agregarEstado(EstadoDispositivo estado);
     public void setEstado(EstadoDispositivo estado);
     public void apagate();
     public void encendete();
@@ -17,14 +17,20 @@ public interface DispositivoInteligente extends DispositivoBase{
     public EstadoDispositivo getEstado() ;
     public Long calcularConsumoUltimasNHoras(Long horas);
     public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
-
-    ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
-
-    public Long 					getkWh();
-    public String 					getName();
-
-    //////////////////////////////////// SETTERS ////////////////////////////////////
-
+    public boolean esInteligente();	
+    
+    
+    //////////GETTERS//////////
+    
+    public Long getkWh();
+    public String getName();
+    
+    //////////SETTERS//////////
+    
     public void setName(String name);
-    public void 					setkWh(Long kWh);
+    public void setkWh(Long kWh);
+	public void setBajoConsumo(boolean bajoConsumo);
+	public void agregarEstado(EstadoDispositivo estado);
+	
+
 }

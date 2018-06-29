@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public abstract class DispositivoInteligenteConcreto implements DispositivoInteligente, Dispositivo {
+public abstract class DispositivoInteligenteConcreto implements DispositivoInteligente {
 
 	private EstadoDispositivo estado;
 	private String name;
@@ -18,14 +18,16 @@ public abstract class DispositivoInteligenteConcreto implements DispositivoIntel
 	
 
 	////////////////// CONSTRUCTORES //////////////////
-	public DispositivoInteligenteConcreto(String name, EstadoDispositivo estadoInicial, Long kWh,
-			double usoMensualMinimo, double usoMensualMaximo, boolean esBajoConsumo) {
+	public DispositivoInteligenteConcreto(String name, EstadoDispositivo estadoInicial,
+			double usoMensualMinimo, double usoMensualMaximo) {
 		this.name = name;
 		this.estado = estadoInicial;
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.setConsumoIdeal(0);
 		this.setEsBajoConsumo(esBajoConsumo);
+		this.kWh = (long) 0;
+		this.esBajoConsumo = false;
 	}
 
 	///////////////////// METODOS /////////////////////
@@ -73,9 +75,6 @@ public abstract class DispositivoInteligenteConcreto implements DispositivoIntel
 	public void activarAhorroDeEnergia() {
 		estado.activarAhorroDeEnergia(this);
 	}
-
-	public void agregarModulo() {}
-
 
 
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////

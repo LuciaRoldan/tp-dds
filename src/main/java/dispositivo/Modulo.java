@@ -30,10 +30,11 @@ public class Modulo implements DispositivoInteligente {
     public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
-    public void setkWh(Long kWh){this.dispositivoEstandar.setConsumoPorHora(kWh);}
+    public void setkWh(Long kWh){this.dispositivoEstandar.setkWh(kWh);}
+    public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoEstandar.setBajoConsumo(bajoConsumo);}
 
 
-    public Long getkWh(){return this.dispositivoEstandar.getConsumoPorHora();}
+    public Long getkWh(){return this.dispositivoEstandar.getkWh();}
 
 
     ///////////////////// METODOS /////////////////////
@@ -47,7 +48,7 @@ public class Modulo implements DispositivoInteligente {
     public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
         ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
         ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
-        Long kWh = this.dispositivoEstandar.getConsumoPorHora();
+        Long kWh = this.dispositivoEstandar.getkWh();
 
         estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
                 .forEach(estado -> estadosCompletosPeriodo.add(estado));
@@ -70,9 +71,12 @@ public class Modulo implements DispositivoInteligente {
     public boolean estaApagado() {return estado.estaApagado();  }
 
     public void encendete() { estado.encendete(this); }
+    
     public void apagate() {estado.apagate(this);}
 
     public void activarAhorroDeEnergia() { estado.activarAhorroDeEnergia(this); }
+    
+    public boolean esInteligente() {return true;}
 
 
 
