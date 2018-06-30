@@ -31,6 +31,5 @@ public interface DispositivoBase {
     public void setkWh(Long kWh);
 	public void setBajoConsumo(boolean bajoConsumo);
 	public void agregarEstado(EstadoDispositivo estado);
-	
 
 }

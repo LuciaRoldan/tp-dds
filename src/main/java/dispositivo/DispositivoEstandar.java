@@ -118,6 +118,6 @@ public class DispositivoEstandar implements DispositivoBase {
 
 
 	@Override
-	public void agregarEstado(EstadoDispositivo estado) {
-	}
+	public void agregarEstado(EstadoDispositivo estado) {}
+
 }

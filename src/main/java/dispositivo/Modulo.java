@@ -5,18 +5,19 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
+import dispositivosConcretos.DispositivoConcreto;
 
 public class Modulo implements DispositivoInteligenteInterfaz {
 
-    DispositivoEstandar dispositivoEstandar;
+    DispositivoBase dispositivoEstandar;
     private EstadoDispositivo estado;
     private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
 
-    public Modulo(DispositivoEstandar de,EstadoDispositivo estadoDispositivo){
-        this.dispositivoEstandar = de;
+    public Modulo(DispositivoBase dispositivoEstandar,EstadoDispositivo estadoDispositivo){
+        this.dispositivoEstandar = dispositivoEstandar;
         this.setEstado(estadoDispositivo);
     }
 

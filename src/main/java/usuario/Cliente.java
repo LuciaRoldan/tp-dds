@@ -15,6 +15,7 @@ import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
+import dispositivosConcretos.DispositivoConcreto;
 
 public class Cliente extends Usuario {
 
@@ -22,8 +23,7 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<DispositivoInteligenteInterfaz> dispositivos = new ArrayList<DispositivoInteligenteInterfaz>();
-	private ArrayList<DispositivoEstandar> dispositivosEstandars = new ArrayList<DispositivoEstandar>();
+	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	private int puntos = 0;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
@@ -32,7 +32,7 @@ public class Cliente extends Usuario {
 
 	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoInteligenteInterfaz> dispositivos,ArrayList<DispositivoEstandar> dispositivosEstandar) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos) {
 
 		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
 		this.tipoDocumento = tipoDocumento;
@@ -61,10 +61,10 @@ public class Cliente extends Usuario {
 	}
 	
 	public int cantidadDipositivosInteligentes() {
-		return this.dispositivosInteligentes().size();
+		return this.getDispositivosInteligentes().size();
 	}
 
-	public List<DispositivoInteligenteInterfaz> getDispositivosEncendidos() {
+	public List<DispositivoConcreto> getDispositivosEncendidos() {
 		return this.dispositivos.stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
@@ -76,7 +76,7 @@ public class Cliente extends Usuario {
 		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
-	public DispositivoInteligenteInterfaz getPrimerDispositivo() {
+	public DispositivoConcreto getPrimerDispositivo() {
 		return this.dispositivos.get(0);
 	}
 	
@@ -86,20 +86,11 @@ public class Cliente extends Usuario {
 
 	// AL AGREGAR UN MODULO A UN DISPOTIVO ESTANDAR DEBE ESPECIFICARSE EL ESTADO INICIAL
 
-	public void agregarModulo(DispositivoEstandar dispositivo, EstadoDispositivo estadoDispositivo) {
-		if (dispositivosEstandar().contains(dispositivo)) {
-		dispositivos.add(new Modulo(dispositivo,estadoDispositivo));
-		dispositivosEstandars.remove(dispositivo);
+	public void agregarModulo(DispositivoConcreto dispositivo, EstadoDispositivo estadoDispositivo) {
+		if (this.getDispositivos().contains(dispositivo) && !dispositivo.esInteligente()) {
+		dispositivo.agregarModulo(estadoDispositivo);
 		this.puntos += 10;
 		}
-	}
-	
-	public List<DispositivoInteligenteInterfaz> dispositivosInteligentes(){
-		return this.dispositivos;
-	}
-	
-	public List<DispositivoEstandar> dispositivosEstandar() {
-		return this.dispositivosEstandars;
 	}
 	
 	
@@ -128,7 +119,6 @@ public class Cliente extends Usuario {
 		return documento;
 	}
 
-
 	public CategoriaResidencial getCategoriaResidencial() {
 		return categoriaResidencial;
 	}
@@ -141,13 +131,19 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<DispositivoInteligenteInterfaz> getDispositivosInteligentes() {
+	public ArrayList<DispositivoConcreto> getDispositivos() {
 		return this.dispositivos;
 	}
-
-	public ArrayList<DispositivoEstandar> getDispositivosEstandar() {
-		return this.dispositivosEstandars;
+	
+	public List<DispositivoConcreto> getDispositivosInteligentes(){
+		return this.dispositivos.stream().filter(dispositivo -> dispositivo.esInteligente()).collect(Collectors.toList());
 	}
+	
+	public List<DispositivoConcreto> getDispositivosEstandar() {
+		return this.dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
+	}
+	
+
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
@@ -167,12 +163,7 @@ public class Cliente extends Usuario {
 		this.documento = documento;
 	}
 
-	public void setDispositivosInteligentes(ArrayList<DispositivoInteligenteInterfaz> dispositivos) {
+	public void setDispositivos(ArrayList<DispositivoConcreto> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
-
-	public void setDispositivosEstandars(ArrayList<DispositivoEstandar> dispositivos) {
-		this.dispositivosEstandars = dispositivos;
-	}
-
 }

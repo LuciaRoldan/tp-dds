@@ -59,6 +59,15 @@ public class SimplexAdapter {
 			restricciones.add(new LinearConstraint(vector, Relationship.LEQ, dispositivoInteligente));
 		}
 		
+	double[] arrayConsumosOptiomos = resultado.getPoint();
+	Double horasTotales = resultado.getValue();
+	
+	int posicion = 0;
+	
+	for(double consumosOptimo : arrayConsumosOptimos) {
+		dispositivos.get(posicion).setConsumoIdeal(consumoOptimo);
+	}
+	
 	}
 	
 //	private ArrayList<Double> armaRestriccion(ArrayList<DispositivoInteligente> dispositivos) {
