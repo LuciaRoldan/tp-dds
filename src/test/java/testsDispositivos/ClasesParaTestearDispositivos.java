@@ -5,20 +5,20 @@ import java.time.temporal.ChronoUnit;
 
 import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 import dispositivo.estados.Apagado;
 import mock.EncendidoMock;
 
 public class ClasesParaTestearDispositivos {
 
-	public static DispositivoInteligente unDispositivoInteligente() {
+	public static DispositivoInteligenteInterfaz unDispositivoInteligente() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
 		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.DAYS);
 		
 
-		DispositivoInteligente dispositivo = new DispositivoInteligenteConcreto("Aire Acondicionado",new Apagado(),10L);
+		DispositivoInteligenteInterfaz dispositivo = new DispositivoInteligente("Aire Acondicionado",new Apagado(),10L);
 		dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
 		return dispositivo;

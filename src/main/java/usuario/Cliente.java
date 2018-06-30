@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
 
@@ -22,7 +22,7 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
+	private ArrayList<DispositivoInteligenteInterfaz> dispositivos = new ArrayList<DispositivoInteligenteInterfaz>();
 	private ArrayList<DispositivoEstandar> dispositivosEstandars = new ArrayList<DispositivoEstandar>();
 	private int puntos = 0;
 
@@ -32,7 +32,7 @@ public class Cliente extends Usuario {
 
 	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoInteligente> dispositivos,ArrayList<DispositivoEstandar> dispositivosEstandar) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoInteligenteInterfaz> dispositivos,ArrayList<DispositivoEstandar> dispositivosEstandar) {
 
 		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
 		this.tipoDocumento = tipoDocumento;
@@ -64,7 +64,7 @@ public class Cliente extends Usuario {
 		return this.dispositivosInteligentes().size();
 	}
 
-	public List<DispositivoInteligente> getDispositivosEncendidos() {
+	public List<DispositivoInteligenteInterfaz> getDispositivosEncendidos() {
 		return this.dispositivos.stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
@@ -76,7 +76,7 @@ public class Cliente extends Usuario {
 		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
-	public DispositivoInteligente getPrimerDispositivo() {
+	public DispositivoInteligenteInterfaz getPrimerDispositivo() {
 		return this.dispositivos.get(0);
 	}
 	
@@ -94,7 +94,7 @@ public class Cliente extends Usuario {
 		}
 	}
 	
-	public List<DispositivoInteligente> dispositivosInteligentes(){
+	public List<DispositivoInteligenteInterfaz> dispositivosInteligentes(){
 		return this.dispositivos;
 	}
 	
@@ -105,8 +105,8 @@ public class Cliente extends Usuario {
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
-	public HashMap<DispositivoInteligente, Integer> configuracionOptima(){ //falta implementacion
-		HashMap<DispositivoInteligente, Integer> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
+	public HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima(){ //falta implementacion
+		HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
 		return configuracionOptima;
 	}
 	
@@ -141,7 +141,7 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<DispositivoInteligente> getDispositivosInteligentes() {
+	public ArrayList<DispositivoInteligenteInterfaz> getDispositivosInteligentes() {
 		return this.dispositivos;
 	}
 
@@ -167,7 +167,7 @@ public class Cliente extends Usuario {
 		this.documento = documento;
 	}
 
-	public void setDispositivosInteligentes(ArrayList<DispositivoInteligente> dispositivos) {
+	public void setDispositivosInteligentes(ArrayList<DispositivoInteligenteInterfaz> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
 

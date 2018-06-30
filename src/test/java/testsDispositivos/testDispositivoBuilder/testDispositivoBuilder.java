@@ -2,8 +2,8 @@ package testsDispositivos.testDispositivoBuilder;
 
 import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 import dispositivo.estados.Apagado;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +18,7 @@ public class testDispositivoBuilder {
 
     public void setUp() throws Exception {
 
-        DispositivoInteligente dispositivoInteligente = new DispositivoInteligenteConcreto("Microondas",new Apagado(),20L);
+        DispositivoInteligenteInterfaz dispositivoInteligente = new DispositivoInteligente("Microondas",new Apagado(),20L);
         DispositivoEstandar dispositivoEstandar = new DispositivoEstandar(10L,"Termotanque",5L);
     }
 
@@ -46,7 +46,7 @@ public class testDispositivoBuilder {
         builder.setName("Calefon");
         builder.setHorasUsoDia(10L);
         builder.setEstadoInicial(new Apagado());
-        DispositivoInteligente dispositivoInteligente = builder.construirInteligente();
+        DispositivoInteligenteInterfaz dispositivoInteligente = builder.construirInteligente();
 
         assertEquals("Calefon", dispositivoInteligente.getName());
         assertEquals(Long.valueOf(20), dispositivoInteligente.getkWh());
@@ -60,7 +60,7 @@ public class testDispositivoBuilder {
         builder.setHorasUsoDia(10L);
         builder.setEstadoInicial(new Apagado());
         builder.agregarModulo();
-        DispositivoInteligente dispositivoInteligente = builder.construirInteligente();
+        DispositivoInteligenteInterfaz dispositivoInteligente = builder.construirInteligente();
 
         assertEquals("Calefon", dispositivoInteligente.getName());
         assertEquals(Long.valueOf(20), dispositivoInteligente.getkWh());

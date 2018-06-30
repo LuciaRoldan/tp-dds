@@ -7,13 +7,13 @@ import org.apache.commons.math3.optim.linear.LinearConstraintSet;
 import org.apache.commons.math3.optim.linear.LinearObjectiveFunction;
 import org.apache.commons.math3.optim.linear.SimplexSolver;
 
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 
 public class SimplexAdapter {
 	
-	public static HashMap<DispositivoInteligente, Integer> configuracionOptima(ArrayList<DispositivoInteligente> dispositivos){
+	public static HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima(ArrayList<DispositivoInteligenteInterfaz> dispositivos){
 		
-		HashMap<DispositivoInteligente, Integer> configuracionOptima = new HashMap<DispositivoInteligente, Integer>();
+		HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima = new HashMap<DispositivoInteligenteInterfaz, Integer>();
 		
 		SimplexAdapter solver = new SimplexAdapter();
 		
@@ -29,9 +29,9 @@ public class SimplexAdapter {
 		return configuracionOptima;
 	}
 	
-	public static void chequearConsumoMensual(ArrayList<DispositivoInteligente> dispositivos) {
+	public static void chequearConsumoMensual(ArrayList<DispositivoInteligenteInterfaz> dispositivos) {
 		
-		HashMap<DispositivoInteligente, Integer> configuracionOptima = configuracionOptima(dispositivos);
+		HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima = configuracionOptima(dispositivos);
 		
 	}
 }

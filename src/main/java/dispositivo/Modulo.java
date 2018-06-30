@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public class Modulo implements DispositivoInteligente {
+public class Modulo implements DispositivoInteligenteInterfaz {
 
     DispositivoEstandar dispositivoEstandar;
     private EstadoDispositivo estado;

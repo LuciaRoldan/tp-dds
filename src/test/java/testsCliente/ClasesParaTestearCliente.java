@@ -3,7 +3,7 @@ package testsCliente;
 import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 import testsDispositivos.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
@@ -11,7 +11,7 @@ import usuario.TipoDocumento;
 public class ClasesParaTestearCliente {
 
 	public static Cliente clienteEstandar() {
-		ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
+		ArrayList<DispositivoInteligenteInterfaz> dispositivos = new ArrayList<DispositivoInteligenteInterfaz>();
 		Cliente cliente = new Cliente("Juan Perez",
 				"Calle Falsa 123",
 				"01012001",
@@ -26,13 +26,13 @@ public class ClasesParaTestearCliente {
 		return cliente;			
 	}
 	
-	public static ArrayList<DispositivoInteligente> cincoDispositivos(){
-		ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
-		DispositivoInteligente	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente  dispositivo4 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente  dispositivo5 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+	public static ArrayList<DispositivoInteligenteInterfaz> cincoDispositivos(){
+		ArrayList<DispositivoInteligenteInterfaz> dispositivos = new ArrayList<DispositivoInteligenteInterfaz>();
+		DispositivoInteligenteInterfaz	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+		DispositivoInteligenteInterfaz	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+		DispositivoInteligenteInterfaz	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+		DispositivoInteligenteInterfaz  dispositivo4 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+		DispositivoInteligenteInterfaz  dispositivo5 = ClasesParaTestearDispositivos.unDispositivoInteligente();
 		dispositivo1.encendete();
 		dispositivo2.encendete();
 		dispositivo3.encendete();

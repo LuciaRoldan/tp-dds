@@ -3,7 +3,7 @@ package testsCliente;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 import org.junit.Before;
 import org.junit.Test;
 import categoria.CategoriaResidencial;
@@ -11,7 +11,7 @@ import usuario.Cliente;
 import usuario.TipoDocumento;
 
 public class TestsCliente {
-	ArrayList<DispositivoInteligente> dispositivos;
+	ArrayList<DispositivoInteligenteInterfaz> dispositivos;
 	Cliente cliente;
 
 
@@ -33,7 +33,7 @@ public class TestsCliente {
 	@Test
 	public void testGetDispositivosEncendidos() {
 		//sigue quedando feo porque queda hardcodeado pero oh well
-		ArrayList<DispositivoInteligente> dispositivosEncendidos = new ArrayList <DispositivoInteligente>();
+		ArrayList<DispositivoInteligenteInterfaz> dispositivosEncendidos = new ArrayList <DispositivoInteligenteInterfaz>();
 		dispositivosEncendidos.add(dispositivos.get(0));
 		dispositivosEncendidos.add(dispositivos.get(1));
 		dispositivosEncendidos.add(dispositivos.get(2));
@@ -93,8 +93,8 @@ public class TestsCliente {
 
 	@Test
 	public void testSetDispositivos() {
-		ArrayList<DispositivoInteligente> otrosDispositivos;
-		otrosDispositivos = new ArrayList <DispositivoInteligente>();
+		ArrayList<DispositivoInteligenteInterfaz> otrosDispositivos;
+		otrosDispositivos = new ArrayList <DispositivoInteligenteInterfaz>();
 		otrosDispositivos.add(dispositivos.get(0));
 		otrosDispositivos.add(dispositivos.get(2));
 		

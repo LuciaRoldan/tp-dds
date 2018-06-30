@@ -61,10 +61,10 @@ public class DispositivoEstandar implements DispositivoBase {
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
 		throw new NoSePuedeCalcularElConsumoException(this);
 	}
-
-	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
-		throw new NoSePuedeCalcularElConsumoException(this);
-	}
+//
+//	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
+//		throw new NoSePuedeCalcularElConsumoException(this);
+//	}
 
 
 	@Override

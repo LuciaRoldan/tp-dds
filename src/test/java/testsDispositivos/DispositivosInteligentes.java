@@ -6,8 +6,8 @@ import static org.junit.Assert.assertTrue;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 
 import org.junit.Test;
 
@@ -15,8 +15,8 @@ import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
 
-	DispositivoInteligente dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
-	DispositivoInteligente dispositivo;
+	DispositivoInteligenteInterfaz dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
+	DispositivoInteligenteInterfaz dispositivo;
 	
 
 	@Test
