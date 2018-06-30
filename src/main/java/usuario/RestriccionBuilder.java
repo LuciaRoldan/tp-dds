@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.apache.commons.math3.optim.linear.LinearConstraint;
 import org.apache.commons.math3.optim.linear.Relationship;
 
-import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivosConcretos.DispositivoConcreto;
 
 public class RestriccionBuilder {
@@ -13,11 +12,12 @@ public class RestriccionBuilder {
 	ArrayList<DispositivoConcreto> dispositivos;
 	ArrayList<LinearConstraint> restricciones;
 	LinearConstraint restriccionkWh;
-	//ArrayList<Double> variables;
+	double maximoConsumo;
 	int posicion;
 	
-	public RestriccionBuilder(ArrayList<DispositivoConcreto> dispositivos) {
+	public RestriccionBuilder(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		this.dispositivos = dispositivos;
+		this.maximoConsumo = maximoConsumo;
 		this.posicion = 0;
 	}
 	
@@ -25,8 +25,22 @@ public class RestriccionBuilder {
 		this.crearRestricciones();
 		return restricciones;
 	}
+	
+	private void crearRestriccionPrincipal() {
+		double coeficientes[] = new double[dispositivos.size()];
+		int i=0;
+		for (DispositivoConcreto dispositivo : dispositivos) {
+			coeficientes[i]=dispositivo.getPotencia();
+			i++;			
+		}
+		
+		restricciones.add(new LinearConstraint(coeficientes,Relationship.LEQ, maximoConsumo));
+	}
 
 	public void crearRestricciones() {
+		
+		this.crearRestriccionPrincipal();
+		
 		dispositivos.forEach(dispositivo -> {
 			LinearConstraint restriccionMayorA = new LinearConstraint(prepararArray(dispositivo, posicion), Relationship.GEQ, dispositivo.getUsoMensualMinimo());
 			LinearConstraint restriccionMenorA = new LinearConstraint(prepararArray(dispositivo, posicion), Relationship.LEQ, dispositivo.getUsoMensualMaximo());
@@ -42,13 +56,13 @@ public class RestriccionBuilder {
 		return array;
 	}
 	
-	public LinearConstraint getRestriccionkWh() {
-		this.crearRestriccionkWh();
-		return this.restriccionConsumo;
-	}
-	
-	private crearRestriccionkWh() {
-		
-	}
+//	public LinearConstraint getRestriccionkWh() {
+//		this.crearRestriccionkWh();
+//		return this.restriccionConsumo;
+//	}
+//	
+//	private crearRestriccionkWh() {
+//		
+//	}
 	
 }

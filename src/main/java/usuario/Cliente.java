@@ -2,18 +2,12 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import categoria.CategoriaResidencial;
-import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligenteInterfaz;
-import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
@@ -25,6 +19,7 @@ public class Cliente extends Usuario {
 	private CategoriaResidencial categoriaResidencial;
 	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	private int puntos = 0;
+	private double maximoConsumo;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -96,13 +91,13 @@ public class Cliente extends Usuario {
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
-	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
-		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
-		return configuracionOptima;
-	}
+//	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
+//		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
+//		return configuracionOptima;
+//	}
 	
-	public void ejecutarSimplex() {
-		SimplexAdapter.chequearConsumoMensual(this.dispositivos);
+	public double[] ejecutarSimplex() {
+		return SimplexAdapter.chequearConsumoMensual(this.dispositivos, this.maximoConsumo);
 	}
 	
 	
@@ -143,7 +138,10 @@ public class Cliente extends Usuario {
 		return this.dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
 	}
 	
-
+	public double getMaximoConsumo() {
+		return maximoConsumo;
+	}
+	
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
@@ -166,4 +164,10 @@ public class Cliente extends Usuario {
 	public void setDispositivos(ArrayList<DispositivoConcreto> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
+
+	public void setMaximoConsumo(double maximoConsumo) {
+		this.maximoConsumo = maximoConsumo;
+	}
+	
+	
 }

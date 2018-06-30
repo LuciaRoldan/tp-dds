@@ -13,9 +13,9 @@ public class Heladera extends DispositivoConcreto {
 		}
 		dispositivoBase.setBajoConsumo(true);
 		if(tieneFreezer) {
-			dispositivoBase.setkWh((long) 0.09);
+			dispositivoBase.setPotencia(0.09);
 		} else {
-			dispositivoBase.setkWh((long) 0.075);
+			dispositivoBase.setPotencia(0.075);
 		}
 	}
 	

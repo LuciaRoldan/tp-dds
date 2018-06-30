@@ -52,14 +52,14 @@ public class Encendido implements EstadoDispositivo {
 	}
 	
 	@Override
-	public Long calcularConsumo(Long kWh) {
-		return inicio.until(fin, ChronoUnit.HOURS) * kWh;
+	public double calcularConsumo(double potencia) {
+		return inicio.until(fin, ChronoUnit.HOURS) * potencia;
 	}
 	
 	@Override
-	public Long calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
+	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {
 		return this.maximo(inicio, this.getInicio())
-				.until(this.minimo(fin, this.getFin()), ChronoUnit.HOURS) * kWh;
+				.until(this.minimo(fin, this.getFin()), ChronoUnit.HOURS) * potencia;
 	}
 
 	public LocalDateTime minimo(LocalDateTime fechaMin, LocalDateTime fechaMax) {

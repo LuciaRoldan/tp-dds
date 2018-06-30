@@ -51,8 +51,8 @@ public class Apagado implements EstadoDispositivo {
 	}
 	
 	@Override
-	public Long calcularConsumo(Long kWh) {
-		return Long.valueOf(0);
+	public double calcularConsumo(double kWh) {
+		return 0;
 	}
 
 	@Override
@@ -78,8 +78,8 @@ public class Apagado implements EstadoDispositivo {
 	}
 
 	@Override
-	public Long calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
-		return Long.valueOf(0);
+	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {
+		return 0;
 	}
 
 }

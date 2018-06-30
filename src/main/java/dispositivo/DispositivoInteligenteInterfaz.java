@@ -6,7 +6,7 @@ import dispositivo.estados.EstadoDispositivo;
 
 public interface DispositivoInteligenteInterfaz extends DispositivoBase{
 
-    public Long consumoMensual();
+    public double consumoMensual();
     public void activarAhorroDeEnergia();
     public void agregarEstado(EstadoDispositivo estado);
     public void setEstado(EstadoDispositivo estado);
@@ -15,16 +15,16 @@ public interface DispositivoInteligenteInterfaz extends DispositivoBase{
     public boolean estaEncendido();
     public boolean estaApagado() ;
     public EstadoDispositivo getEstado() ;
-    public Long calcularConsumoUltimasNHoras(Long horas);
-    public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
+    public double calcularConsumoUltimasNHoras(int horas);
+    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
 
     ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
-    public Long 					getkWh();
+    public double 					getPotencia();
     public String 					getName();
 
     //////////////////////////////////// SETTERS ////////////////////////////////////
 
     public void setName(String name);
-    public void 					setkWh(Long kWh);
+    public void setPotencia(double potencia);
 }

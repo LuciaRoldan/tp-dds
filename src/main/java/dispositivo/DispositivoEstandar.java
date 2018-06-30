@@ -11,6 +11,7 @@ public class DispositivoEstandar implements DispositivoBase {
 	private Long kWh;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
+	private double potencia;
 	private boolean esBajoConsumo;
 	
 
@@ -68,8 +69,8 @@ public class DispositivoEstandar implements DispositivoBase {
 
 
 	@Override
-	public Long consumoMensual() {
-		return null;
+	public double consumoMensual() {
+		return 0;
 	}
 
 	@Override
@@ -104,13 +105,13 @@ public class DispositivoEstandar implements DispositivoBase {
 	}
 
 	@Override
-	public Long calcularConsumoUltimasNHoras(Long horas) {
-		return null;
+	public double calcularConsumoUltimasNHoras(int horas) {
+		return 0;
 	}
 
 	@Override
-	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
-		return null;
+	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+		return 0;
 	}
 	
 	@Override
@@ -119,5 +120,23 @@ public class DispositivoEstandar implements DispositivoBase {
 
 	@Override
 	public void agregarEstado(EstadoDispositivo estado) {}
+
+
+	@Override
+	public double getPotencia() {
+		return this.getPotencia();
+	}
+
+
+	@Override
+	public double getHorasDeUsoIdeal() {
+		return this.getHorasDeUsoIdeal();
+	}
+
+
+	@Override
+	public void setPotencia(double potencia) {
+		this.potencia = potencia;
+	}
 
 }

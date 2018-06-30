@@ -25,16 +25,17 @@ public class Modulo implements DispositivoInteligenteInterfaz {
 
     //GETTERS
     public EstadoDispositivo getEstado() {      return this.estado;  }
-    public Long getkWh(){return this.dispositivoEstandar.getkWh();}
+    public double getPotencia(){return this.dispositivoEstandar.getPotencia();}
    	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
    	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
+   	public double getHorasDeUsoIdeal() {return this.dispositivoEstandar.getHorasDeUsoIdeal();}
     public boolean esInteligente() {return true;}
     
     //SETTERS
     public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
-    public void setkWh(Long kWh){this.dispositivoEstandar.setkWh(kWh);}
+    public void setPotencia(double potencia){this.dispositivoEstandar.setPotencia(potencia);}
     public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoEstandar.setBajoConsumo(bajoConsumo);}
 
 
@@ -44,26 +45,26 @@ public class Modulo implements DispositivoInteligenteInterfaz {
 
     public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
     
-    public Long consumoMensual() {
+    public double consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
     }
 
-    public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
         ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
         ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
-        Long kWh = this.dispositivoEstandar.getkWh();
+        double potencia = this.dispositivoEstandar.getPotencia();
 
         estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
                 .forEach(estado -> estadosCompletosPeriodo.add(estado));
         estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
                 .forEach(estado -> estadosBordePeriodo.add(estado));
 
-        return estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(kWh)).sum()
-                + estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, kWh)).sum();
+        return estadosCompletosPeriodo.stream().mapToDouble(estado -> estado.calcularConsumo(potencia)).sum()
+                + estadosBordePeriodo.stream().mapToDouble(estado -> estado.calcularConsumoBorder(inicio, fin, potencia)).sum();
     }
 
 
-    public Long calcularConsumoUltimasNHoras(Long horas) {
+    public double calcularConsumoUltimasNHoras(int horas) {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
 

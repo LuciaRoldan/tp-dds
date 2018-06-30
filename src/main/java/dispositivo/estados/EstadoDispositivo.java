@@ -17,7 +17,7 @@ public interface EstadoDispositivo {
 
 	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivoInteligenteConcreto);
 	
-	public Long calcularConsumo(Long kWh);
+	public double calcularConsumo(double potencia);
 
 	public LocalDateTime getFin();
 
@@ -25,7 +25,7 @@ public interface EstadoDispositivo {
 	
 	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin);
 
-	public Long calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, Long kWh);
+	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia);
 
 	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin);
 

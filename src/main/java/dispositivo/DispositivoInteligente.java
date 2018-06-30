@@ -10,12 +10,12 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 	private EstadoDispositivo estado;
 	private String name;
 	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
-	private Long kWh;
+	private double potencia;
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
+	private double HorasDeUsoIdeal;
 	private boolean esBajoConsumo;
-	
 
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente(String name, EstadoDispositivo estadoInicial,
@@ -26,18 +26,18 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.setConsumoIdeal(0);
 		this.setEsBajoConsumo(esBajoConsumo);
-		this.kWh = (long) 0;
+		this.potencia = 0;
 		this.esBajoConsumo = false;
 	}
 
 	///////////////////// METODOS /////////////////////
 
-	public Long consumoMensual() {
+	public double consumoMensual() {
 		return this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
 	}
 	
 
-	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
 		ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
 		ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
 		
@@ -46,12 +46,12 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 		estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
 		.forEach(estado -> estadosBordePeriodo.add(estado));
 		
-		return (estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(this.kWh)).sum()
-		+ estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, this.kWh)).sum());
+		return (estadosCompletosPeriodo.stream().mapToDouble(estado -> estado.calcularConsumo(this.potencia)).sum()
+		+ estadosBordePeriodo.stream().mapToDouble(estado -> estado.calcularConsumoBorder(inicio, fin, this.potencia)).sum());
 	}
 	
 
-	public Long calcularConsumoUltimasNHoras(Long horas) {
+	public double calcularConsumoUltimasNHoras(int horas) {
 		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
 	}
 	
@@ -79,8 +79,8 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 
 	///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 
-	public Long getkWh() {
-		return this.kWh;
+	public double getPotencia() {
+		return this.potencia;
 	}
 	public double getConsumoIdeal() {
 		return consumoIdeal;
@@ -108,7 +108,7 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 
 	public void setName(String name) 	 	{ this.name = name; 		}
 	
-	public void setkWh(Long kWh) 			 {this.kWh = kWh;}
+	public void setPotencia(double potencia) 			 {this.potencia = potencia;}
 	
 	public void setConsumoIdeal(double consumoIdeal) {this.consumoIdeal = consumoIdeal;}
 	
