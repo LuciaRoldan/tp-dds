@@ -11,22 +11,26 @@ import org.apache.commons.math3.optim.linear.LinearObjectiveFunction;
 import org.apache.commons.math3.optim.linear.Relationship;
 import org.apache.commons.math3.optim.linear.SimplexSolver;
 import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivosConcretos.DispositivoConcreto;
 import dispositivo.DispositivoBase;
 import dispositivo.DispositivoInteligente;
 
 public class SimplexAdapter {
 	
-	public static HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima(ArrayList<DispositivoInteligenteInterfaz> dispositivos){
+	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos){
 		
-		HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima = new HashMap<DispositivoInteligenteInterfaz, Integer>();
+		HashMap<DispositivoConcreto, Double> configuracionOptima = new HashMap<DispositivoConcreto, Double>();
 		
-		
+		//inicializo cosas
+		SimplexSolver simplex = new SimplexSolver();
 		List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
-		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(new double[] {200, 400}, 0);
+		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(new double[] {}, 0);
 		RestriccionBuilder restriccionBuilder = new RestriccionBuilder(dispositivos);
 		
-		restriccionBuilder.getRestricciones(dispositivos);
+		restricciones = restriccionBuilder.getRestricciones();
 		restriccionBuilder.getVariables(dispositivos);
+		
+		
 		
 		
 		

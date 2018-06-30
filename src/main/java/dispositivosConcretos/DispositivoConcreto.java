@@ -34,6 +34,8 @@ public abstract class DispositivoConcreto {
 	public void setName(String name) {this.dispositivoBase.setName(name);}
 	public Long getkWh() {return this.dispositivoBase.getkWh();}
 	public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoBase.setBajoConsumo(bajoConsumo);}
-	
+	public double getUsoMensualMaximo() {return this.dispositivoBase.getUsoMensualMaximo();}
+	public double getUsoMensualMinimo() {return this.dispositivoBase.getUsoMensualMinimo();}
+
 }
 

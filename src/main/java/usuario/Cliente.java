@@ -96,8 +96,8 @@ public class Cliente extends Usuario {
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
-	public HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima(){ //falta implementacion
-		HashMap<DispositivoInteligenteInterfaz, Integer> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
+	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
+		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
 		return configuracionOptima;
 	}
 	

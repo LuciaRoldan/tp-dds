@@ -23,25 +23,27 @@ public class Modulo implements DispositivoInteligenteInterfaz {
 
     //////////////// SETTERS Y GETTERS ////////////////
 
-
+    //GETTERS
     public EstadoDispositivo getEstado() {      return this.estado;  }
-
-    public void setEstado(EstadoDispositivo estado) {    this.estado = estado;  }
-
-    public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
+    public Long getkWh(){return this.dispositivoEstandar.getkWh();}
+   	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
+   	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
+    public boolean esInteligente() {return true;}
+    
+    //SETTERS
+    public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
     public void setkWh(Long kWh){this.dispositivoEstandar.setkWh(kWh);}
     public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoEstandar.setBajoConsumo(bajoConsumo);}
 
 
-    public Long getkWh(){return this.dispositivoEstandar.getkWh();}
-
-
     ///////////////////// METODOS /////////////////////
 
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicionalException(this);}
 
+    public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
+    
     public Long consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
     }
@@ -65,8 +67,6 @@ public class Modulo implements DispositivoInteligenteInterfaz {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
 
-
-
     public boolean estaEncendido() {  return estado.estaEncendido(); }
 
     public boolean estaApagado() {return estado.estaApagado();  }
@@ -76,9 +76,5 @@ public class Modulo implements DispositivoInteligenteInterfaz {
     public void apagate() {estado.apagate(this);}
 
     public void activarAhorroDeEnergia() { estado.activarAhorroDeEnergia(this); }
-    
-    public boolean esInteligente() {return true;}
-
-
 
 }
