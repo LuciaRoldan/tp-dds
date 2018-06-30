@@ -1,6 +1,7 @@
 package usuario;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -19,15 +20,21 @@ public class SimplexAdapter {
 	
 	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos){
 		
-		HashMap<DispositivoConcreto, Double> configuracionOptima = new HashMap<DispositivoConcreto, Double>();
-		
 		//inicializo cosas
-		SimplexSolver simplex = new SimplexSolver();
-		List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
-		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(new double[] {}, 0);
+		HashMap<DispositivoConcreto, Double> configuracionOptima = new HashMap<DispositivoConcreto, Double>();
 		RestriccionBuilder restriccionBuilder = new RestriccionBuilder(dispositivos);
+		SimplexSolver simplex = new SimplexSolver();
 		
+		//preparo cosas
+		
+		double array[] = new double[dispositivos.size()];
+		Arrays.fill(array,  1);
+		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(array, 0);
+		
+		List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 		restricciones = restriccionBuilder.getRestricciones();
+		restricciones = restriccionBuilder.getRestriccionkWh();
+		
 		restriccionBuilder.getVariables(dispositivos);
 		
 		

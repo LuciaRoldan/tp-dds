@@ -12,7 +12,8 @@ public class RestriccionBuilder {
 	
 	ArrayList<DispositivoConcreto> dispositivos;
 	ArrayList<LinearConstraint> restricciones;
-	ArrayList<Double> variables;
+	LinearConstraint restriccionkWh;
+	//ArrayList<Double> variables;
 	int posicion;
 	
 	public RestriccionBuilder(ArrayList<DispositivoConcreto> dispositivos) {
@@ -41,5 +42,13 @@ public class RestriccionBuilder {
 		return array;
 	}
 	
-
+	public LinearConstraint getRestriccionkWh() {
+		this.crearRestriccionkWh();
+		return this.restriccionConsumo;
+	}
+	
+	private crearRestriccionkWh() {
+		
+	}
+	
 }
