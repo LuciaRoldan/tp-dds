@@ -22,7 +22,8 @@ public class RestriccionBuilder {
 	}
 	
 	public ArrayList<LinearConstraint> getRestricciones(){
-		this.crearRestricciones();
+		this.crearRestriccionHoras();
+		this.crearRestriccionPrincipal();
 		return restricciones;
 	}
 	
@@ -33,13 +34,10 @@ public class RestriccionBuilder {
 			coeficientes[i]=dispositivo.getPotencia();
 			i++;			
 		}
-		
-		restricciones.add(new LinearConstraint(coeficientes,Relationship.LEQ, maximoConsumo));
+		restricciones.add(new LinearConstraint(coeficientes, Relationship.LEQ, maximoConsumo));
 	}
 
-	public void crearRestricciones() {
-		
-		this.crearRestriccionPrincipal();
+	public void crearRestriccionHoras() {
 		
 		dispositivos.forEach(dispositivo -> {
 			LinearConstraint restriccionMayorA = new LinearConstraint(prepararArray(dispositivo, posicion), Relationship.GEQ, dispositivo.getUsoMensualMinimo());
@@ -55,14 +53,5 @@ public class RestriccionBuilder {
 		array[posicion] = 1;
 		return array;
 	}
-	
-//	public LinearConstraint getRestriccionkWh() {
-//		this.crearRestriccionkWh();
-//		return this.restriccionConsumo;
-//	}
-//	
-//	private crearRestriccionkWh() {
-//		
-//	}
 	
 }

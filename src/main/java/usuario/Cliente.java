@@ -91,13 +91,13 @@ public class Cliente extends Usuario {
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
-//	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
-//		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos);
-//		return configuracionOptima;
-//	}
+	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
+		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos, this.maximoConsumo);
+		return configuracionOptima;
+	}
 	
-	public double[] ejecutarSimplex() {
-		return SimplexAdapter.chequearConsumoMensual(this.dispositivos, this.maximoConsumo);
+	public void ejecutarSimplex() {
+		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
 	
 	

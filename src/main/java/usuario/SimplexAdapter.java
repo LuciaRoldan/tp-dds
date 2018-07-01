@@ -1,5 +1,6 @@
 package usuario;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -20,29 +21,47 @@ public class SimplexAdapter {
 
 	static List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 
-	public static double[] chequearConsumoMensual(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 
+		SimplexSolver simplex = new SimplexSolver();
+		
+		HashMap<DispositivoConcreto, Double> configuracionOptima = new HashMap<DispositivoConcreto, Double>();
+		
 		double array[] = new double[dispositivos.size()];
 		Arrays.fill(array, 1);
 		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(array, 0);
+		
 		RestriccionBuilder restriccionBuilder = new RestriccionBuilder(dispositivos, maximoConsumo);
-		SimplexSolver simplex = new SimplexSolver();
-
 		restricciones = restriccionBuilder.getRestricciones();
 
 		PointValuePair resultado = simplex.optimize(new MaxIter(100), funcionAOptimizar,
 				new LinearConstraintSet(restricciones), GoalType.MAXIMIZE, new NonNegativeConstraint(true));
 
-		double[] arrayConsumosOptimos = resultado.getPoint();
 		double horasTotales = resultado.getValue();
+		
+		double[] arrayConsumosOptimos = resultado.getPoint();
 		int posicion = 0;
-
 		for (double consumoOptimo : arrayConsumosOptimos) {
 			dispositivos.get(posicion).setConsumoIdeal(consumoOptimo);
+			configuracionOptima.put(dispositivos.get(posicion), consumoOptimo);
+			posicion++;
 		}
 
-		return arrayConsumosOptimos;
+		return configuracionOptima;
 
+	}
+	
+	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+		
+		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
+		
+		for (DispositivoConcreto dispositivo : dispositivos) {
+			if(dispositivo.getConsumoIdeal() < dispositivo.calcularConsumoPeriodo(
+					LocalDateTime.of(LocalDateTime.now().getYear() , LocalDateTime.now().getMonthValue(), 1, 0, 0),
+					LocalDateTime.now())) {
+				dispositivo.apagate();
+			}
+		}
 	}
 
 }
