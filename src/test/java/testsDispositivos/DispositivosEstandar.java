@@ -11,7 +11,7 @@ public class DispositivosEstandar {
 	
 	@Test
 	public void testConsumoMensual() {
-		assertEquals(Long.valueOf(60000), dispositivoEstandar.consumoMensual());
+		assertEquals(60000, dispositivoEstandar.consumoMensual());
 	}
 	
 }

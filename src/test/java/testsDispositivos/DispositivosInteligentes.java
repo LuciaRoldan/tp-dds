@@ -53,13 +53,13 @@ public class DispositivosInteligentes {
 	@Test
 	public void testConsumoEnPeriodo() {
 		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
+		LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
 		
 		//dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
 		
-		Long consumo = dispositivoInteligente.calcularConsumoPeriodo(hoy, manana);
+		double consumo = dispositivoInteligente.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(Long.valueOf(0), consumo);
+		assertEquals(0, consumo);
 	}
 	
 	@Test
@@ -70,11 +70,11 @@ public class DispositivosInteligentes {
 		
 		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
-		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3L);
+		double consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(Long.valueOf(30), consumo);
+		assertEquals(30, consumo);
 	}
 
 }

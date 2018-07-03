@@ -23,7 +23,7 @@ public class testModuloEstandar {
 		DispositivoEstandar dispositivoEstandar = ClasesParaTestearDispositivos.unDispositivoEstandar();
 		// DispositivoEstandar(2000L, "Microondas", 1L
 		
-		dispositivo = new Modulo(dispositivoEstandar,new Encendido());
+		dispositivo = new Modulo(dispositivoEstandar,ClasesParaTestearDispositivos.unEstadoEncendido());
 	}
 	
 	
@@ -52,9 +52,9 @@ public class testModuloEstandar {
 		
 		//dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
 		
-		Long consumo = dispositivo.calcularConsumoPeriodo(ayer, hoy);
+		double consumo = dispositivo.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(Long.valueOf(0), consumo);
+		assertEquals(0, consumo);
 	}
 	
 	@Test
@@ -65,10 +65,10 @@ public class testModuloEstandar {
 		
 		dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
-		Long consumo = dispositivo.calcularConsumoUltimasNHoras(24L);
+		double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
 	
 		// 2,000*24 = 48,000
-		assertEquals(Long.valueOf(48000), consumo);
+		assertEquals(48000, consumo);
 		//me da 46000 osea que le esta errando por 1 hora
 
 	}

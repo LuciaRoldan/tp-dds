@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public abstract class DispositivoInteligente implements DispositivoInteligenteInterfaz {
+public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 
 	private EstadoDispositivo estado;
 	private String name;
@@ -133,6 +133,23 @@ public abstract class DispositivoInteligente implements DispositivoInteligenteIn
 	
 	public String getName(){
 		return this.name;
+	}
+
+	@Override
+	public boolean esInteligente() {
+		return true;
+	}
+
+	@Override
+	public double getHorasDeUsoIdeal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setBajoConsumo(boolean bajoConsumo) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
