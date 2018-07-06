@@ -36,7 +36,7 @@ public class ClasesParaTestearDispositivos {
 	
 	public static DispositivoConcreto unDispositivoConcreto() {
 		
-		DispositivoEstandar base = unDispositivoEstandar();
+		DispositivoInteligente base = unDispositivoInteligente();
 		DispositivoConcreto dispositivo = new Heladera(base, false);
 		return dispositivo;
 		

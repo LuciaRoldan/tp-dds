@@ -70,7 +70,7 @@ public class DispositivoEstandar implements DispositivoBase {
 
 	@Override
 	public double consumoMensual() {
-		return 0;
+		return 0; //xd ? 
 	}
 
 	@Override

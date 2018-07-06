@@ -59,7 +59,7 @@ public class DispositivosInteligentes {
 		
 		double consumo = dispositivoInteligente.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(0, consumo);
+		assertEquals(0, consumo,0.05);
 	}
 	
 	@Test
@@ -74,7 +74,7 @@ public class DispositivosInteligentes {
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(30, consumo);
+		assertEquals(30, consumo,0.05);
 	}
 
 }
