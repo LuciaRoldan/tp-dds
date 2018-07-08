@@ -5,6 +5,13 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import parserTransformadorYZona.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
 import transformador.Transformador;
@@ -15,9 +22,9 @@ public class testsParser {
 	ParserTransformadorYZona parser;
 	
 	@Before
-	public void inicializar() throws NoSePudoAbrirElArchivoException{
+	public void inicializar() throws NoSePudoAbrirElArchivoException, IOException {
 		parser = new ParserTransformadorYZona();
-		transformador = parser.parsearTransformador("src/test/java/testsTransformadorYZona/transformador.json");
+		transformador = parser.parsearTransformador("src/xd.json");
 	}
 	
 	@Test
