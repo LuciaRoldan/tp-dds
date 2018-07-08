@@ -54,7 +54,7 @@ public class testModuloEstandar {
 		
 		double consumo = dispositivo.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(0, consumo);
+		assertEquals(0, consumo,0.05);
 	}
 	
 	@Test
@@ -68,7 +68,7 @@ public class testModuloEstandar {
 		double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
 	
 		// 2,000*24 = 48,000
-		assertEquals(48000, consumo);
+		assertEquals(48000, consumo,0.05);
 		//me da 46000 osea que le esta errando por 1 hora
 
 	}

@@ -15,8 +15,8 @@ import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
 
-	DispositivoInteligenteInterfaz dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
-	DispositivoInteligenteInterfaz dispositivo;
+	DispositivoInteligente dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
+	DispositivoInteligente dispositivo;
 	
 
 	@Test

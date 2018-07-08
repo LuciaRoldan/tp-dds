@@ -124,7 +124,7 @@ public class DispositivoEstandar implements DispositivoBase {
 
 	@Override
 	public double getPotencia() {
-		return this.getPotencia();
+		return this.potencia;
 	}
 
 

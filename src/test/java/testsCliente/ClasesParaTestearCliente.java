@@ -38,6 +38,7 @@ public class ClasesParaTestearCliente {
 		dispositivo1.encendete();
 		dispositivo2.encendete();
 		dispositivo3.encendete();
+		dispositivo4.apagate();
 		dispositivo5.encendete();
 		dispositivos.add(dispositivo1);
 		dispositivos.add(dispositivo2);
