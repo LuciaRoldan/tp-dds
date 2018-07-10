@@ -22,11 +22,11 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 			double usoMensualMinimo, double usoMensualMaximo) {
 		this.name = name;
 		this.estado = estadoInicial;
+		this.estadosAnteriores.add(estadoInicial);
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.setConsumoIdeal(0);
 		this.setEsBajoConsumo(esBajoConsumo);
-		this.potencia = 0;
 		this.esBajoConsumo = false;
 	}
 
