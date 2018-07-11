@@ -1,4 +1,4 @@
-package actuadores;
+package actuador;
 
 import dispositivo.DispositivoInteligente;
 

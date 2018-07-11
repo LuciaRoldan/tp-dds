@@ -58,6 +58,13 @@ public class Cliente extends Usuario {
 	public int getCantidadDispositivos() {
 		return dispositivos.size();
 	}
+
+	///////////////////////////// CORREGIR ESTA FUNCION /////////////////////////////////////
+	public Long calcularConsumoAhora(){
+		return null;
+	}
+
+	/////////////////////////////////////////////////////////////////////////////////
 	
 	public int cantidadDipositivosInteligentes() {
 		return this.dispositivosInteligentes().size();

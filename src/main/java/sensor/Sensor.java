@@ -1,6 +1,6 @@
-package sensores;
+package sensor;
 
-import reglas.Condicion;
+import regla.Condicion;
 
 import java.util.ArrayList;
 import java.util.List;

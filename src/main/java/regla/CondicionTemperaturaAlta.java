@@ -1,6 +1,6 @@
-package reglas;
+package regla;
 
-import sensores.Sensor;
+import sensor.Sensor;
 
 public class CondicionTemperaturaAlta extends Condicion {
 	int temperaturaLimite;
