@@ -25,8 +25,7 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 		this.estadosAnteriores.add(estadoInicial);
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
-		this.setConsumoIdeal(0);
-		this.setEsBajoConsumo(esBajoConsumo);
+		this.consumoIdeal = 0;
 		this.esBajoConsumo = false;
 	}
 

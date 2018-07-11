@@ -17,9 +17,10 @@ public class DispositivoEstandar implements DispositivoBase {
 
 	public DispositivoEstandar(Long kWh,String name, double usoMensualMinimo, double usoMensualMaximo){
 		this.kWh = kWh;
-		this. name = name;
+		this.name = name;
 		this.setUsoMensualMinimo(usoMensualMinimo);
 		this.setUsoMensualMaximo(usoMensualMaximo);
+		this.esBajoConsumo = false;
 	}
 	
 

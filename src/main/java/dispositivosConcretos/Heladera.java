@@ -17,6 +17,7 @@ public class Heladera extends DispositivoConcreto {
 		} else {
 			dispositivoBase.setPotencia(0.075);
 		}
+		this.tieneFreezer = tieneFreezer;
 	}
 	
 	//GETTERS Y SETTERS
