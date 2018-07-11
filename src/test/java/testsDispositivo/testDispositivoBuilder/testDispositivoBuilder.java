@@ -1,4 +1,4 @@
-package testsDispositivos.testDispositivoBuilder;
+package testsDispositivo.testDispositivoBuilder;
 
 import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;

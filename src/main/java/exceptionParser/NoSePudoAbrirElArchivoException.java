@@ -1,4 +1,4 @@
-package parserTransformadorYZona;
+package exceptionParser;
 
 public class NoSePudoAbrirElArchivoException extends Exception {
 	public NoSePudoAbrirElArchivoException(String mensaje) {

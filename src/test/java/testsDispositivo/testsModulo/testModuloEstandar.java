@@ -1,4 +1,4 @@
-package testsDispositivos.testsModulo;
+package testsDispositivo.testsModulo;
 
 import static org.junit.Assert.*;
 import java.time.LocalDateTime;
@@ -9,7 +9,7 @@ import dispositivo.DispositivoEstandar;
 import dispositivo.Modulo;
 import dispositivo.estados.Encendido;
 import mock.EncendidoMock;
-import testsDispositivos.ClasesParaTestearDispositivos;
+import testsDispositivo.ClasesParaTestearDispositivos;
 
 public class testModuloEstandar {
 

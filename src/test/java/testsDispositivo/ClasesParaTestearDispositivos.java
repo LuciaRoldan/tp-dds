@@ -1,9 +1,8 @@
-package testsDispositivos;
+package testsDispositivo;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import dispositivo.DispositivoBuilder;
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteConcreto;

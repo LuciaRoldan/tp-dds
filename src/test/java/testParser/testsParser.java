@@ -1,4 +1,4 @@
-package testsTransformadorYZona;
+package testParser;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import parserTransformadorYZona.NoSePudoAbrirElArchivoException;
+import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
 import transformador.Transformador;
 import zona.Zona;

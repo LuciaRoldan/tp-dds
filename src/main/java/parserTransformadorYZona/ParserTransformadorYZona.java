@@ -1,6 +1,7 @@
 package parserTransformadorYZona;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import exceptionParser.NoSePudoAbrirElArchivoException;
 import org.json.simple.parser.JSONParser;
 import java.io.File;
 import transformador.Transformador;
@@ -20,7 +21,9 @@ public class ParserTransformadorYZona {
 //		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	
 	 public ParserTransformadorYZona(){
-	        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+
+	 	mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 	    }
 	 public Transformador parsearTransformador(String archivo) throws NoSePudoAbrirElArchivoException, IOException {
 		try {

@@ -1,4 +1,4 @@
-package testsDispositivos;
+package testsDispositivo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -7,11 +7,8 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 
 import org.junit.Test;
-
-import mock.EncendidoMock;
 
 public class DispositivosInteligentes {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoInteligente;
-import testsDispositivos.ClasesParaTestearDispositivos;
+import testsDispositivo.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
