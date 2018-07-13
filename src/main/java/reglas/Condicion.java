@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class Condicion {
 	
 	List<Regla> reglas = new ArrayList<Regla>();
-	boolean seCumple;
+	boolean seCumple = false;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
 	
 	public Condicion(Sensor sensor) {
