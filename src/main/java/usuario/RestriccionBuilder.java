@@ -1,5 +1,6 @@
 package usuario;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.apache.commons.math3.optim.linear.LinearConstraint;
@@ -10,8 +11,7 @@ import dispositivosConcretos.DispositivoConcreto;
 public class RestriccionBuilder {
 	
 	ArrayList<DispositivoConcreto> dispositivos;
-	ArrayList<LinearConstraint> restricciones;
-	LinearConstraint restriccionkWh;
+	ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 	double maximoConsumo;
 	int posicion;
 	
@@ -48,6 +48,7 @@ public class RestriccionBuilder {
 		});
 	}
 	
+
 	private double[] prepararArray(DispositivoConcreto dispositivo, int posicion) {
 		double array[] = new double[dispositivos.size()];
 		array[posicion] = 1;

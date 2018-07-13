@@ -31,7 +31,7 @@ public class ClasesParaTestearDispositivos {
 	
 	public static DispositivoEstandar unDispositivoEstandar() {
 
-		return (new DispositivoEstandar(2000L, "Nombre loco", 200, 2000));
+		return (new DispositivoEstandar("Nombre loco", 200, 2000));
 	}
 	
 	public static DispositivoConcreto unDispositivoConcreto() {

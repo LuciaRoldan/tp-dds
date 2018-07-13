@@ -35,6 +35,7 @@ public class Cliente extends Usuario {
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
+		this.maximoConsumo = 612;
 	}
 	
 	public Double calcularConsumoMensual() {
