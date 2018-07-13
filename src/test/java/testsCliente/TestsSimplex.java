@@ -1,11 +1,13 @@
 package testsCliente;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -100,15 +102,16 @@ public class TestsSimplex {
 		
 		ariel.ejecutarSimplex();
 		
-		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
+		//LocalDateTime hoy = LocalDateTime.now();
+		//LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
 		
-		dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
+		//dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
-		double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
+		//double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
 	
 		// 2,000*24 = 48,000
-		assertEquals(0, consumo,0.05);
+		Assert.assertTrue(lavarropas.estaApagado());
+		
 	}
 }
 

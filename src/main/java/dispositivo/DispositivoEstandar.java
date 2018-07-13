@@ -1,5 +1,6 @@
 package dispositivo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import dispositivo.estados.EstadoDispositivo;
@@ -62,10 +63,14 @@ public class DispositivoEstandar implements DispositivoBase {
 	public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
 		throw new NoSePuedeCalcularElConsumoException(this);
 	}
-//
-//	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
-//		throw new NoSePuedeCalcularElConsumoException(this);
-//	}
+
+	public Long calcularConsumoUltimasNHoras(int horas, Long kWh) {
+		return 0L;
+	}
+	
+	public double consumoCorriente() {
+		return 0;		
+	}
 
 
 	@Override

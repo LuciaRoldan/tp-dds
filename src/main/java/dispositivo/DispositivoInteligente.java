@@ -1,6 +1,8 @@
 package dispositivo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
@@ -134,6 +136,13 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	public String getName(){
 		return this.name;
 	}
+	
+	public double consumoCorriente() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
 
 	@Override
 	public boolean esInteligente() {
@@ -143,13 +152,13 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	@Override
 	public double getHorasDeUsoIdeal() {
 		// TODO Auto-generated method stub
-		return 0;
+		return consumoIdeal;
 	}
 
 	@Override
 	public void setBajoConsumo(boolean bajoConsumo) {
 		// TODO Auto-generated method stub
-		
+		this.esBajoConsumo = bajoConsumo;
 	}
 
 }

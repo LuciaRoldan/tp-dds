@@ -1,4 +1,5 @@
 package dispositivosConcretos;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import dispositivo.DispositivoBase;
@@ -37,6 +38,7 @@ public abstract class DispositivoConcreto {
 	public double getUsoMensualMaximo() {return this.dispositivoBase.getUsoMensualMaximo();}
 	public double getUsoMensualMinimo() {return this.dispositivoBase.getUsoMensualMinimo();}
 	public double getHorasDeUsoIdeal() {return this.dispositivoBase.getHorasDeUsoIdeal();}
+	public double consumoCorriente() { return this.dispositivoBase.consumoCorriente();}
 
 }
 

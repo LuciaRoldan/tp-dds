@@ -1,5 +1,6 @@
 package dispositivo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import dispositivo.estados.EstadoDispositivo;
@@ -17,6 +18,7 @@ public interface DispositivoInteligenteInterfaz extends DispositivoBase{
     public EstadoDispositivo getEstado() ;
     public double calcularConsumoUltimasNHoras(int horas);
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
+    public double consumoCorriente();
 
     ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 

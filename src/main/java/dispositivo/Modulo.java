@@ -1,6 +1,8 @@
 package dispositivo;
 
 import exceptionDispositivo.dispositivoInteligente.NoSePuedeAgregarOtroModuloAdicionalException;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -68,6 +70,13 @@ public class Modulo implements DispositivoInteligenteInterfaz {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
 
+    public double consumoCorriente() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
+    
     public boolean estaEncendido() {  return estado.estaEncendido(); }
 
     public boolean estaApagado() {return estado.estaApagado();  }
@@ -77,5 +86,7 @@ public class Modulo implements DispositivoInteligenteInterfaz {
     public void apagate() {estado.apagate(this);}
 
     public void activarAhorroDeEnergia() { estado.activarAhorroDeEnergia(this); }
+    
+    
 
 }
