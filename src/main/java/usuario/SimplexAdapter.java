@@ -23,7 +23,7 @@ public class SimplexAdapter {
 
 	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 
-		SimplexSolver simplex = new SimplexSolver();
+		SimplexSolver simplex = new SimplexSolver();		
 		
 		HashMap<DispositivoConcreto, Double> configuracionOptima = new HashMap<DispositivoConcreto, Double>();
 		
@@ -51,7 +51,7 @@ public class SimplexAdapter {
 
 	}
 	
-	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+	public static void ejecutarSimplexTest(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
 		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
