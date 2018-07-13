@@ -1,7 +1,7 @@
 package dispositivo.estados;
 
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteConcreto;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -34,32 +34,32 @@ public class Encendido implements EstadoDispositivo {
 	}
 
 	@Override
-	public void apagate(DispositivoInteligente dispositivo) {
-		fin = LocalDateTime.now();	
+	public void apagate(DispositivoInteligenteInterfaz dispositivo) {
+		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Apagado());
 	}
 
 	@Override
-	public void encendete(DispositivoInteligente dispositivo) {
+	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
 	}
 	
 	@Override
-	public void activarAhorroDeEnergia(DispositivoInteligente dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new AhorroDeEnergia());
 	}
 	
 	@Override
-	public Long calcularConsumo(Long kWh) {
-		return inicio.until(fin, ChronoUnit.HOURS) * kWh;
+	public double calcularConsumo(double potencia) {
+		return inicio.until(fin, ChronoUnit.HOURS) * potencia;
 	}
 	
 	@Override
-	public Long calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, Long kWh) {
+	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {
 		return this.maximo(inicio, this.getInicio())
-				.until(this.minimo(fin, this.getFin()), ChronoUnit.HOURS) * kWh;
+				.until(this.minimo(fin, this.getFin()), ChronoUnit.HOURS) * potencia;
 	}
 
 	public LocalDateTime minimo(LocalDateTime fechaMin, LocalDateTime fechaMax) {

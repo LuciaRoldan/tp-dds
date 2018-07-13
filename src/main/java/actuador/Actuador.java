@@ -1,13 +1,13 @@
 package actuador;
 
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 
 
 public abstract class Actuador {
 	
-    DispositivoInteligente dispositivo;
+    DispositivoInteligenteInterfaz dispositivo;
 
-    public Actuador(DispositivoInteligente dispositivo) {
+    public Actuador(DispositivoInteligenteInterfaz dispositivo) {
     	this.dispositivo = dispositivo;
     }
 

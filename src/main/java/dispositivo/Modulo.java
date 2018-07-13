@@ -5,75 +5,77 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
+import dispositivosConcretos.DispositivoConcreto;
 
-public class Modulo implements DispositivoInteligente {
+public class Modulo implements DispositivoInteligenteInterfaz {
 
-    DispositivoEstandar dispositivoEstandar;
+    DispositivoBase dispositivoEstandar;
     private EstadoDispositivo estado;
     private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
 
-    public Modulo(DispositivoEstandar de,EstadoDispositivo estadoDispositivo){
-        this.dispositivoEstandar = de;
+    public Modulo(DispositivoBase dispositivoEstandar,EstadoDispositivo estadoDispositivo){
+        this.dispositivoEstandar = dispositivoEstandar;
         this.setEstado(estadoDispositivo);
     }
 
     //////////////// SETTERS Y GETTERS ////////////////
 
-
+    //GETTERS
     public EstadoDispositivo getEstado() {      return this.estado;  }
-
-    public void setEstado(EstadoDispositivo estado) {    this.estado = estado;  }
-
-    public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
+    public double getPotencia(){return this.dispositivoEstandar.getPotencia();}
+   	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
+   	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
+   	public double getHorasDeUsoIdeal() {return this.dispositivoEstandar.getHorasDeUsoIdeal();}
+    public boolean esInteligente() {return true;}
+    
+    //SETTERS
+    public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
-    public void setkWh(Long kWh){this.dispositivoEstandar.setHorasDeUsoPorDia(kWh);}
-
-
-    public Long getkWh(){return this.dispositivoEstandar.getHorasDeUsoPorDia();}
+    public void setPotencia(double potencia){this.dispositivoEstandar.setPotencia(potencia);}
+    public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoEstandar.setBajoConsumo(bajoConsumo);}
 
 
     ///////////////////// METODOS /////////////////////
 
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicionalException(this);}
 
-    public Long consumoMensual() {
+    public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
+    
+    public double consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
     }
 
-    public Long calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
         ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
         ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
-        Long kWh = this.dispositivoEstandar.getConsumoPorHora();
+        double potencia = this.dispositivoEstandar.getPotencia();
 
         estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
                 .forEach(estado -> estadosCompletosPeriodo.add(estado));
         estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
                 .forEach(estado -> estadosBordePeriodo.add(estado));
 
-        return estadosCompletosPeriodo.stream().mapToLong(estado -> estado.calcularConsumo(kWh)).sum()
-                + estadosBordePeriodo.stream().mapToLong(estado -> estado.calcularConsumoBorder(inicio, fin, kWh)).sum();
+        return estadosCompletosPeriodo.stream().mapToDouble(estado -> estado.calcularConsumo(potencia)).sum()
+                + estadosBordePeriodo.stream().mapToDouble(estado -> estado.calcularConsumoBorder(inicio, fin, potencia)).sum();
     }
 
 
-    public Long calcularConsumoUltimasNHoras(Long horas) {
+    public double calcularConsumoUltimasNHoras(int horas) {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
-
-
 
     public boolean estaEncendido() {  return estado.estaEncendido(); }
 
     public boolean estaApagado() {return estado.estaApagado();  }
 
     public void encendete() { estado.encendete(this); }
+    
     public void apagate() {estado.apagate(this);}
 
     public void activarAhorroDeEnergia() { estado.activarAhorroDeEnergia(this); }
-
-
 
 }

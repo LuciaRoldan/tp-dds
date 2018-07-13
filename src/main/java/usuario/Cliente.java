@@ -2,18 +2,14 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import categoria.CategoriaResidencial;
-import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligente;
-import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
+import dispositivosConcretos.DispositivoConcreto;
 
 public class Cliente extends Usuario {
 
@@ -21,9 +17,9 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
-	private ArrayList<DispositivoEstandar> dispositivosEstandars = new ArrayList<DispositivoEstandar>();
+	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	private int puntos = 0;
+	private double maximoConsumo;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -31,7 +27,7 @@ public class Cliente extends Usuario {
 
 	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoInteligente> dispositivos,ArrayList<DispositivoEstandar> dispositivosEstandar) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos) {
 
 		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
 		this.tipoDocumento = tipoDocumento;
@@ -39,6 +35,7 @@ public class Cliente extends Usuario {
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
+		this.maximoConsumo = 612;
 	}
 	
 	public Double calcularConsumoMensual() {
@@ -67,10 +64,10 @@ public class Cliente extends Usuario {
 	/////////////////////////////////////////////////////////////////////////////////
 	
 	public int cantidadDipositivosInteligentes() {
-		return this.dispositivosInteligentes().size();
+		return this.getDispositivosInteligentes().size();
 	}
 
-	public List<DispositivoInteligente> getDispositivosEncendidos() {
+	public List<DispositivoConcreto> getDispositivosEncendidos() {
 		return this.dispositivos.stream().filter(dispositivo -> dispositivo.estaEncendido()).collect(Collectors.toList());
 	}
 
@@ -82,7 +79,7 @@ public class Cliente extends Usuario {
 		return (this.cantidadDipositivosInteligentes() - this.getCantidadDispositivosEncendidos());
 	}
 
-	public DispositivoInteligente getPrimerDispositivo() {
+	public DispositivoConcreto getPrimerDispositivo() {
 		return this.dispositivos.get(0);
 	}
 	
@@ -92,23 +89,28 @@ public class Cliente extends Usuario {
 
 	// AL AGREGAR UN MODULO A UN DISPOTIVO ESTANDAR DEBE ESPECIFICARSE EL ESTADO INICIAL
 
-	public void agregarModulo(DispositivoEstandar dispositivo, EstadoDispositivo estadoDispositivo) {
-		if (dispositivosEstandar().contains(dispositivo)) {
-		dispositivos.add(new Modulo(dispositivo,estadoDispositivo));
-		dispositivosEstandars.remove(dispositivo);
+	public void agregarModulo(DispositivoConcreto dispositivo, EstadoDispositivo estadoDispositivo) {
+		if (this.getDispositivos().contains(dispositivo) && !dispositivo.esInteligente()) {
+		dispositivo.agregarModulo(estadoDispositivo);
 		this.puntos += 10;
 		}
 	}
 	
-	public List<DispositivoInteligente> dispositivosInteligentes(){
-		return this.dispositivos;
+	
+	//CONFIGURACION OPTIMA DE DISPOSITIVOS
+	
+	public HashMap<DispositivoConcreto, Double> configuracionOptima(){ //falta implementacion
+		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(this.dispositivos, this.maximoConsumo);
+		return configuracionOptima;
 	}
 	
-	public List<DispositivoEstandar> dispositivosEstandar() {
-		return this.dispositivosEstandars;
+	public void ejecutarSimplex() {
+		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
 	
-
+	
+	
+	
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
@@ -119,7 +121,6 @@ public class Cliente extends Usuario {
 	public int getDocumento() {
 		return documento;
 	}
-
 
 	public CategoriaResidencial getCategoriaResidencial() {
 		return categoriaResidencial;
@@ -133,13 +134,22 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<DispositivoInteligente> getDispositivosInteligentes() {
+	public ArrayList<DispositivoConcreto> getDispositivos() {
 		return this.dispositivos;
 	}
-
-	public ArrayList<DispositivoEstandar> getDispositivosEstandar() {
-		return this.dispositivosEstandars;
+	
+	public List<DispositivoConcreto> getDispositivosInteligentes(){
+		return this.dispositivos.stream().filter(dispositivo -> dispositivo.esInteligente()).collect(Collectors.toList());
 	}
+	
+	public List<DispositivoConcreto> getDispositivosEstandar() {
+		return this.dispositivos.stream().filter(dispositivo -> !dispositivo.esInteligente()).collect(Collectors.toList());
+	}
+	
+	public double getMaximoConsumo() {
+		return maximoConsumo;
+	}
+	
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
@@ -159,12 +169,13 @@ public class Cliente extends Usuario {
 		this.documento = documento;
 	}
 
-	public void setDispositivosInteligentes(ArrayList<DispositivoInteligente> dispositivos) {
+	public void setDispositivos(ArrayList<DispositivoConcreto> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
 
-	public void setDispositivosEstandars(ArrayList<DispositivoEstandar> dispositivos) {
-		this.dispositivosEstandars = dispositivos;
+	public void setMaximoConsumo(double maximoConsumo) {
+		this.maximoConsumo = maximoConsumo;
 	}
-
+	
+	
 }

@@ -1,12 +1,12 @@
 package exceptionDispositivo.dispositivoInteligente;
 
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 import exceptionDispositivo.dispositivoInteligente.DispositivoInteligenteExeption;
 
 public class NoSePuedeAgregarOtroModuloAdicionalException extends DispositivoInteligenteExeption {
 
 
-    public NoSePuedeAgregarOtroModuloAdicionalException(DispositivoInteligente de){
+    public NoSePuedeAgregarOtroModuloAdicionalException(DispositivoInteligenteInterfaz de){
         super(de,"ESTE DISPOSITIVO YA TIENE UN MODULO");
     }
 

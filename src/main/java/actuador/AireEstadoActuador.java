@@ -1,12 +1,12 @@
 package actuador;
 
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteInterfaz;
 
 public class AireEstadoActuador extends Actuador {
 	
 	boolean encender; //la accion es cambiar la temperatura del aire
 	
-	public AireEstadoActuador(DispositivoInteligente dispositivo, boolean encender) {
+	public AireEstadoActuador(DispositivoInteligenteInterfaz dispositivo, boolean encender) {
 		super(dispositivo);
 		this.encender = encender;
 	}

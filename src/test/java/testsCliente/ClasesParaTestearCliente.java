@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoInteligente;
-import testsDispositivo.ClasesParaTestearDispositivos;
+import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivosConcretos.DispositivoConcreto;
+import testsDispositivos.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
 public class ClasesParaTestearCliente {
 
 	public static Cliente clienteEstandar() {
-		ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
+		ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 		Cliente cliente = new Cliente("Juan Perez",
 				"Calle Falsa 123",
 				"01012001",
@@ -21,21 +23,22 @@ public class ClasesParaTestearCliente {
 				12345678,
 				12345678,
 				CategoriaResidencial.CATEGORIAR2,
-				dispositivos,null);
+				dispositivos);
 				
 		return cliente;			
 	}
-	
-	public static ArrayList<DispositivoInteligente> cincoDispositivos(){
-		ArrayList<DispositivoInteligente> dispositivos = new ArrayList<DispositivoInteligente>();
-		DispositivoInteligente	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente  dispositivo4 = ClasesParaTestearDispositivos.unDispositivoInteligente();
-		DispositivoInteligente  dispositivo5 = ClasesParaTestearDispositivos.unDispositivoInteligente();
+
+	public  static ArrayList<DispositivoConcreto> cincoDispositivosConcretos(){
+		ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
+		DispositivoConcreto	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto  dispositivo4 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto  dispositivo5 = ClasesParaTestearDispositivos.unDispositivoConcreto();
 		dispositivo1.encendete();
 		dispositivo2.encendete();
 		dispositivo3.encendete();
+		dispositivo4.apagate();
 		dispositivo5.encendete();
 		dispositivos.add(dispositivo1);
 		dispositivos.add(dispositivo2);

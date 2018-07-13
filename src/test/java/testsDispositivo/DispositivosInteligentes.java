@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
 
 import org.junit.Test;
@@ -50,16 +51,16 @@ public class DispositivosInteligentes {
 	@Test
 	public void testConsumoEnPeriodo() {
 		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime manana = hoy.plus(1, ChronoUnit.DAYS);
+		LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
 		
 		//dispositivoInteligente.getEstado().encendete(dispositivoInteligente.getTipoDeDispositivo());
 		
-		Long consumo = dispositivoInteligente.calcularConsumoPeriodo(hoy, manana);
+		double consumo = dispositivoInteligente.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(Long.valueOf(0), consumo);
+		assertEquals(0, consumo,0.05);
 	}
 	
-	@Test
+	@Test//Los dispositivos inteligentes ya no pueden calcular el consumo (solo los concretos pueden) porque no tienen el valor de la potencia
 	public void testConsumoEnUltimasTresHoras() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
@@ -67,11 +68,12 @@ public class DispositivosInteligentes {
 		
 		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
-		Long consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3L);
+		double consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3);
+//		double consumo = dispositivoInteligente.calcularConsumoPeriodo(hace3horas, hoy);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(Long.valueOf(30), consumo);
+		assertEquals(0, consumo,0.1);
 	}
 
 }
