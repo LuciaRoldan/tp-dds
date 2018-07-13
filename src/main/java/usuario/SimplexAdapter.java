@@ -51,7 +51,7 @@ public class SimplexAdapter {
 
 	}
 	
-	public static void ejecutarSimplexTest(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
 		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
