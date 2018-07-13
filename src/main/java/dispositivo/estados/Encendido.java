@@ -35,7 +35,7 @@ public class Encendido implements EstadoDispositivo {
 
 	@Override
 	public void apagate(DispositivoInteligente dispositivo) {
-		fin = LocalDateTime.now();		
+		fin = LocalDateTime.now();	
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Apagado());
 	}
