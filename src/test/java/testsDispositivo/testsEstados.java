@@ -1,4 +1,4 @@
-package testsDispositivos;
+package testsDispositivo;
 
 import static org.junit.Assert.*;
 

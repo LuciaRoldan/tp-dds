@@ -1,13 +1,13 @@
 package testsActuadroesSensoresReglas;
 
-import sensores.Sensor;
-import reglas.CondicionTemperaturaAlta;
-import reglas.CondicionVentanaAbierta;
-import reglas.Regla;
-import actuadores.AireEstadoActuador;
-import reglas.Condicion;
-import actuadores.Actuador;
-import dispositivo.DispositivoInteligenteConcreto;
+import sensor.Sensor;
+import regla.CondicionTemperaturaAlta;
+import regla.CondicionVentanaAbierta;
+import regla.Regla;
+import actuador.AireEstadoActuador;
+import regla.Condicion;
+import actuador.Actuador;
+import dispositivo.DispositivoInteligente;
 import dispositivo.estados.Apagado;
 
 import static org.junit.Assert.*;
@@ -24,7 +24,7 @@ public class PrendemeElAire {
 		Sensor sensorVentana = new Sensor();
 		CondicionTemperaturaAlta hacen30Grados = new CondicionTemperaturaAlta(sensorTemperatura, 30);
 		CondicionVentanaAbierta estaCerrada = new CondicionVentanaAbierta(sensorVentana, false);
-		DispositivoInteligenteConcreto aire = new DispositivoInteligenteConcreto("Aire acondicionado", new Apagado(), 10L);
+		DispositivoInteligente aire = new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
 		AireEstadoActuador actuadorAire = new AireEstadoActuador(aire,true);
 		
 		ArrayList<Actuador> actuadores = new ArrayList <Actuador>();

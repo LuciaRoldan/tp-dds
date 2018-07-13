@@ -4,9 +4,15 @@ import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoInteligente;
+<<<<<<< HEAD
+import testsDispositivo.ClasesParaTestearDispositivos;
+||||||| merged common ancestors
+import testsDispositivos.ClasesParaTestearDispositivos;
+=======
 import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivosConcretos.DispositivoConcreto;
-import testsDispositivo.ClasesParaTestearDispositivos;
+import testsDispositivos.ClasesParaTestearDispositivos;
+>>>>>>> adapter-simplex
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
