@@ -31,8 +31,9 @@ public class Transformador {
     public Float getCoordenadaX() {
         return this.coordenadaX;
     }
+
 ///////////////////////////////// METODOS ///////////////////////////////////////////////
-    
+
     public Long energiaSuministrada(){
         return   listaDeClientes.stream().mapToLong(cliente -> cliente.calcularConsumoAhora()).sum();
     }

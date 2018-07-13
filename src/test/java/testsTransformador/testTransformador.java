@@ -1,6 +1,7 @@
 package testsTransformador;
 
 import dispositivo.DispositivoInteligente;
+import mock.ClienteMock;
 import org.junit.Before;
 import org.junit.Test;
 import testsCliente.ClasesParaTestearCliente;
@@ -15,19 +16,18 @@ import static junit.framework.TestCase.assertEquals;
 public class testTransformador {
 
     ArrayList<Cliente> listaDeClientes;
-    Cliente cliente;
+    ClienteMock cliente;
     ArrayList<DispositivoInteligente> dispositivos;
     Zona zona = new Zona();
     Transformador transformador1 = new Transformador();
+    Transformador transformador2 = new Transformador();
 
 
     @Before
 
     public void setUp() throws Exception {
 
-        cliente = ClasesParaTestearCliente.clienteEstandar();
-        dispositivos = ClasesParaTestearCliente.cincoDispositivos();
-        cliente.setDispositivosInteligentes(dispositivos);
+        cliente = new ClienteMock();
         transformador1.addCliente(cliente);
 
     }
@@ -35,6 +35,17 @@ public class testTransformador {
 
     @Test
     public void testConsumo1Cliente() {
-        assertEquals(java.util.Optional.of(500L), transformador1.energiaSuministrada());
+        assertEquals(200L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+    }
+
+    @Test
+    public void testConsumo2Cliente() {
+        transformador1.addCliente(cliente);
+        assertEquals(400L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+    }
+
+    @Test
+    public void testConsumo0Clientes() {
+        assertEquals(java.util.Optional.of(0), transformador2.energiaSuministrada());
     }
 }

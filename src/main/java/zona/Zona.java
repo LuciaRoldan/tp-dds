@@ -44,9 +44,13 @@ public class Zona {
         this.coordenadaY = coordenadaY;
         this.listaDeTransformadores = listaDeTransformadores;
     }
-    
+
+
     public Long energiaSuministrada(){
-        return   listaDeTransformadores.stream().mapToLong(transformador -> transformador.energiaSuministrada()).sum();
+        return   this.listaDeTransformadores.stream().mapToLong(transformador -> transformador.energiaSuministrada()).sum();
     }
+
+
+
 
 }
