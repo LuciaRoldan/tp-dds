@@ -5,7 +5,7 @@ import actuador.Actuador;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Regla {
+public class Regla {
 	
 	List<Actuador> actuadores = new ArrayList<Actuador>();
 	List<Condicion> condiciones = new ArrayList<Condicion>();
@@ -21,7 +21,7 @@ public abstract class Regla {
 		return condiciones.stream().allMatch(condicion -> condicion.seCumple());
 	}
 	
-	void ejecutarRegla() {
+	public void ejecutarRegla() {
 		if (this.verificarCumplimiento()) {
 			this.ejecutar();
 		}

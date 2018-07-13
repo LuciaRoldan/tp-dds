@@ -22,7 +22,7 @@ public class Sensor {
 	}
 	
 	public void notificarMedicion() {
-		condiciones.forEach(condicion -> condicion.evaluarCumplimiento(medicion));
+		condiciones.forEach(condicion -> condicion.notificarMedicion(medicion));
 	}	
 }
 
