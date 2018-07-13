@@ -9,7 +9,7 @@ import java.time.temporal.ChronoUnit;
 public class Encendido implements EstadoDispositivo {
 	
 	public LocalDateTime inicio;
-	public LocalDateTime fin;
+	public LocalDateTime fin = LocalDateTime.of(2050, 9, 9, 00, 00);
 	
 	public Encendido() {
 		inicio = LocalDateTime.now();

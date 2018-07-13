@@ -110,7 +110,7 @@ public class TestsSimplex {
 		//double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
 	
 		// 2,000*24 = 48,000
-		Assert.assertTrue(lavarropas.estaApagado());
+		assertEquals(312, lavarropas.consumoCorriente(),0.1);
 		
 	}
 }
