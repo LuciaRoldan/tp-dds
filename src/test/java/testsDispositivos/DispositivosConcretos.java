@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import dispositivosConcretos.DispositivoConcreto;
+import testsDispositivo.ClasesParaTestearDispositivos;
 
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
 package dispositivo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ public interface DispositivoBase {
     public double calcularConsumoUltimasNHoras(int horas);
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
     public boolean esInteligente();	
-    
+    public double consumoCorriente();
     
     //////////GETTERS//////////
     

@@ -56,9 +56,7 @@ public class SimplexAdapter {
 		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
 		for (DispositivoConcreto dispositivo : dispositivos) {
-			if(dispositivo.getConsumoIdeal() < dispositivo.calcularConsumoPeriodo(
-					LocalDateTime.of(LocalDateTime.now().getYear() , LocalDateTime.now().getMonthValue(), 1, 0, 0),
-					LocalDateTime.now())) {
+			if(dispositivo.getConsumoIdeal() < dispositivo.consumoCorriente()/dispositivo.getPotencia()) {
 				dispositivo.apagate();
 			}
 		}
