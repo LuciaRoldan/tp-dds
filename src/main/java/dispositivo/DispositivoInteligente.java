@@ -51,7 +51,8 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	
 
 	public double calcularConsumoUltimasNHoras(int horas) {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
+		double consumo = this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
+		return consumo;
 	}
 	
 

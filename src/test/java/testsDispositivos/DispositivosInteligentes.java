@@ -62,7 +62,7 @@ public class DispositivosInteligentes {
 		assertEquals(0, consumo,0.05);
 	}
 	
-	@Test
+	@Test//Los dispositivos inteligentes ya no pueden calcular el consumo (solo los concretos pueden) porque no tienen el valor de la potencia
 	public void testConsumoEnUltimasTresHoras() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
@@ -71,10 +71,11 @@ public class DispositivosInteligentes {
 		//dispositivoInteligente.agregarEstado(new EncendidoMock(hoy, manana));
 		
 		double consumo = dispositivoInteligente.calcularConsumoUltimasNHoras(3);
+//		double consumo = dispositivoInteligente.calcularConsumoPeriodo(hace3horas, hoy);
 		
 		//Long consum = hoy.until(manana, ChronoUnit.HOURS) * dispositivoInteligente.getkWh();
 		
-		assertEquals(30, consumo,0.05);
+		assertEquals(0, consumo,0.1);
 	}
 
 }

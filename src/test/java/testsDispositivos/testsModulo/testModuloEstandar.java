@@ -57,7 +57,7 @@ public class testModuloEstandar {
 		assertEquals(0, consumo,0.05);
 	}
 	
-	@Test
+	@Test //no puede calcular mas por no ser dispositivo concreto y no tener la potencia
 	public void testConsumoEnUltimasTresHoras() {
 		
 		LocalDateTime hoy = LocalDateTime.now();
@@ -68,8 +68,7 @@ public class testModuloEstandar {
 		double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
 	
 		// 2,000*24 = 48,000
-		assertEquals(48000, consumo,0.05);
-		//me da 46000 osea que le esta errando por 1 hora
+		assertEquals(0, consumo,0.05);
 
 	}
 

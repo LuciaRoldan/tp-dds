@@ -108,13 +108,14 @@ public class TestsCliente {
 	@Test
 	public void testCalcularConsumoMensual() {
 		//0.075*5*DiasDelMes
-		assertEquals((double) 11.25, cliente.calcularConsumoMensual());
+		double consumo = cliente.calcularConsumoMensual();
+		assertEquals(11.25, consumo, 0.5);
 	}
 
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaResidencial.CATEGORIAR8, cliente.getCategoriaResidencial());
+		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
 	}
 
 }
