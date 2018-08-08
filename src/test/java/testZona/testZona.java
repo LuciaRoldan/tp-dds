@@ -2,9 +2,11 @@ package testZona;
 
 import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
+import testsClienteFactory.ClasesParaTestearCliente;
+
 import org.junit.Before;
 import org.junit.Test;
-import testsCliente.ClasesParaTestearCliente;
+
 import transformador.Transformador;
 import usuario.Cliente;
 import zona.Zona;

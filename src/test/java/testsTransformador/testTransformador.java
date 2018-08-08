@@ -2,9 +2,11 @@ package testsTransformador;
 
 import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
+import testsClienteFactory.ClasesParaTestearCliente;
+
 import org.junit.Before;
 import org.junit.Test;
-import testsCliente.ClasesParaTestearCliente;
+
 import transformador.Transformador;
 import usuario.Cliente;
 import zona.Zona;
@@ -35,13 +37,13 @@ public class testTransformador {
 
     @Test
     public void testConsumo1Cliente() {
-        assertEquals(200L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(Long.valueOf(200), transformador1.energiaSuministrada());
     }
 
     @Test
     public void testConsumo2Cliente() {
         transformador1.addCliente(cliente);
-        assertEquals(400L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(Long.valueOf(400), transformador1.energiaSuministrada());
     }
 
     @Test

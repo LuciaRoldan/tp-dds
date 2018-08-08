@@ -1,21 +1,12 @@
-package testsCliente;
+package testsClienteFactory;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import categoria.CategoriaResidencial;
-import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligente;
-import dispositivo.estados.Encendido;
-import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
 import dispositivosConcretos.Lampara;
@@ -24,46 +15,45 @@ import dispositivosConcretos.Microondas;
 import dispositivosConcretos.PC;
 import dispositivosConcretos.Plancha;
 import dispositivosConcretos.Televisor;
-import dispositivosConcretos.TipoPantalla;
 import dispositivosConcretos.Ventilador;
-import mock.EncendidoMock;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+import dispositivo.DispositivoFactory;
 
 public class TestsSimplex {
 	
 			//-----ARIEL-----//
 	
 			//Dispositivos de Ariel//
+	
+			DispositivoFactory factory = new DispositivoFactory();
 					
 			ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
-					
-			DispositivoInteligente tvBase = new DispositivoInteligente("tvBase", new Encendido(), 90, 360);
-			Televisor tv = new Televisor(tvBase, TipoPantalla.LED, 40);
-					
-			DispositivoInteligente lamparaBase = new DispositivoInteligente("lamparaBase", new Encendido(), 90, 360);
-			Lampara lampara = new Lampara(lamparaBase, false, 11);
-					
-			DispositivoEstandar lavarropasBase = new DispositivoEstandar("lavarropasBase", 6, 30);
-			Lavarropas lavarropas = new Lavarropas(lavarropasBase, false, false, 5);
-					
-			DispositivoInteligente pcBase = new DispositivoInteligente("pcBase", new Encendido(), 60, 360);
-			PC pc = new PC(pcBase, true);
-					
-			DispositivoInteligente aireBase = new DispositivoInteligente("aireBase", new Encendido(), 90, 360);
-			AireAcondicionado aireAcondicionado = new AireAcondicionado(aireBase, 2200);
-
-			DispositivoEstandar microondasBase = new DispositivoEstandar("microondasBase", 3, 15);
-			Microondas microondas = new Microondas(microondasBase, true);
-					
-			DispositivoEstandar planchaBase = new DispositivoEstandar("planchaBase", 30, 30);
-			Plancha plancha = new Plancha(planchaBase, true);
-					
-			DispositivoInteligente ventiladorBase = new DispositivoInteligente("ventiladorBase", new Encendido(), 120, 360);
-			Ventilador ventilador = new Ventilador(ventiladorBase, true);
+			Televisor tv;	
+			Lampara lampara;
+			Lavarropas lavarropas;
+			PC pc;
+			AireAcondicionado aireAcondicionado;
+			Microondas microondas;
+			Plancha plancha;
+			Ventilador ventilador;
 			
 	@Before		
 	public void antesQueNada() {
+				factory.setNombre("tvBase");
+				tv = factory.crearTelevisorLED(40);
+				factory.setNombre("lavarropasBase");
+				lavarropas = factory.crearLavarropasSemiAutomatico(false, 5);
+				factory.setNombre("pcBase");
+				pc = factory.crearPC();
+				factory.setNombre("aireBase");
+				aireAcondicionado = factory.crearAireAcondicionado(2200);
+				factory.setNombre("microondasBase");
+				microondas = factory.crearMicroondas();
+				factory.setNombre("planchaBase");
+				plancha = factory.crearPlancha();
+				factory.setNombre("ventiladorBase");
+				ventilador = factory.crearVentiladorDeTecho();
 				dispositivos.add(tv);
 				dispositivos.add(lampara);
 				dispositivos.add(lavarropas);

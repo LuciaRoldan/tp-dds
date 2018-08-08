@@ -66,7 +66,7 @@ public class DispositivoFactory {
 		return new Lampara(dispositivo, false, w);
 	}
 	
-	public Lavarropas crearLavarropasAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
+	public Lavarropas crearLavarropasAutomatico(boolean tieneCalentamiento, int capacidad) {
 		DispositivoBase dispositivo;
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
@@ -83,7 +83,7 @@ public class DispositivoFactory {
 		return new Lavarropas(dispositivo, true, tieneCalentamiento, capacidad);
 	}
 	
-	public Lavarropas crearLavarropasSemiAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
+	public Lavarropas crearLavarropasSemiAutomatico(boolean tieneCalentamiento, int capacidad) {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 6, 30);
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 

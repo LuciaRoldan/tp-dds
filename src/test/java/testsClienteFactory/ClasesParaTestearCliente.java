@@ -1,12 +1,10 @@
-package testsCliente;
+package testsClienteFactory;
 
 import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
-import dispositivo.DispositivoInteligente;
-import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivosConcretos.DispositivoConcreto;
-import testsDispositivo.ClasesParaTestearDispositivos;
+import testsDispositivoFactory.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 

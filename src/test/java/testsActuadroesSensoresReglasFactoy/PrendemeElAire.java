@@ -1,14 +1,14 @@
-package testsActuadroesSensoresReglas;
+package testsActuadroesSensoresReglasFactoy;
 
 import sensor.Sensor;
+import dispositivo.DispositivoFactory;
 import regla.CondicionTemperaturaAlta;
 import regla.CondicionVentanaAbierta;
 import regla.Regla;
 import actuador.AireEstadoActuador;
 import regla.Condicion;
 import actuador.Actuador;
-import dispositivo.DispositivoInteligente;
-import dispositivo.estados.Apagado;
+import dispositivosConcretos.AireAcondicionado;
 
 import static org.junit.Assert.*;
 
@@ -20,11 +20,12 @@ public class PrendemeElAire {
 
 	@Test
 	public void test() {
+		DispositivoFactory factory = new DispositivoFactory();
 		Sensor sensorTemperatura = new Sensor();
 		Sensor sensorVentana = new Sensor();
 		CondicionTemperaturaAlta hacen30Grados = new CondicionTemperaturaAlta(sensorTemperatura, 30);
 		CondicionVentanaAbierta estaCerrada = new CondicionVentanaAbierta(sensorVentana, false);
-		DispositivoInteligente aire = new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
+		AireAcondicionado aire = factory.crearAireAcondicionado(2200); //new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
 		AireEstadoActuador actuadorAire = new AireEstadoActuador(aire,true);
 		
 		ArrayList<Actuador> actuadores = new ArrayList <Actuador>();

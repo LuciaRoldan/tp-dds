@@ -1,4 +1,4 @@
-package testsDispositivo;
+package testsDispositivoFactory;
 
 import static org.junit.Assert.assertEquals;
 
