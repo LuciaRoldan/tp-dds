@@ -10,46 +10,56 @@ import dispositivosConcretos.DispositivoConcreto;
 
 public class RestriccionBuilder {
 	
-	ArrayList<DispositivoConcreto> dispositivos;
-	ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
+	private static int i;
+	private static int posicion;
 	double maximoConsumo;
-	int posicion;
 	
-	public RestriccionBuilder(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
-		this.dispositivos = dispositivos;
-		this.maximoConsumo = maximoConsumo;
-		this.posicion = 0;
-	}
-	
-	public ArrayList<LinearConstraint> getRestricciones(){
-		this.crearRestriccionHoras();
-		this.crearRestriccionPrincipal();
+	public static ArrayList<LinearConstraint> getRestricciones(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo){
+		
+		ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
+		
+		ArrayList<LinearConstraint> restriccionesHoras = crearRestriccionHoras(dispositivos);
+		LinearConstraint restriccionPrincipal = crearRestriccionPrincipal(dispositivos, maximoConsumo);
+		
+		restricciones.addAll(restriccionesHoras);
+		restricciones.add(restriccionPrincipal);
+		
 		return restricciones;
 	}
 	
-	private void crearRestriccionPrincipal() {
-		double coeficientes[] = new double[dispositivos.size()];
-		int i=0;
-		for (DispositivoConcreto dispositivo : dispositivos) {
-			coeficientes[i]=dispositivo.getPotencia();
-			i++;			
-		}
-		restricciones.add(new LinearConstraint(coeficientes, Relationship.LEQ, maximoConsumo));
-	}
+	private static LinearConstraint crearRestriccionPrincipal(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo){
 
-	public void crearRestriccionHoras() {
+		i = 0;
+		double coeficientes[] = new double[dispositivos.size()];	
 		
 		dispositivos.forEach(dispositivo -> {
-			LinearConstraint restriccionMayorA = new LinearConstraint(prepararArray(dispositivo, posicion), Relationship.GEQ, dispositivo.getUsoMensualMinimo());
-			LinearConstraint restriccionMenorA = new LinearConstraint(prepararArray(dispositivo, posicion), Relationship.LEQ, dispositivo.getUsoMensualMaximo());
+							coeficientes[i]=dispositivo.getPotencia();
+							i++;
+							});
+		
+		LinearConstraint restriccionPrincipal = new LinearConstraint(coeficientes, Relationship.LEQ, maximoConsumo);
+
+		return restriccionPrincipal;
+	}
+
+	private static ArrayList<LinearConstraint> crearRestriccionHoras(ArrayList<DispositivoConcreto> dispositivos) {
+		
+		posicion = 0;
+		ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
+		
+		dispositivos.forEach(dispositivo -> {
+			LinearConstraint restriccionMayorA = new LinearConstraint(prepararArray(dispositivo, posicion, dispositivos), Relationship.GEQ, dispositivo.getUsoMensualMinimo());
+			LinearConstraint restriccionMenorA = new LinearConstraint(prepararArray(dispositivo, posicion, dispositivos), Relationship.LEQ, dispositivo.getUsoMensualMaximo());
 			restricciones.add(restriccionMenorA);
 			restricciones.add(restriccionMayorA);
-			posicion +=1;
+			posicion++;
 		});
+		
+		return restricciones;
 	}
 	
 
-	private double[] prepararArray(DispositivoConcreto dispositivo, int posicion) {
+	private static double[] prepararArray(DispositivoConcreto dispositivo, int posicion, ArrayList<DispositivoConcreto> dispositivos) {
 		double array[] = new double[dispositivos.size()];
 		array[posicion] = 1;
 		return array;
