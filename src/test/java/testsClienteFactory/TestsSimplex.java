@@ -43,14 +43,17 @@ public class TestsSimplex {
 				factory.setNombre("tvBase");
 				tv = factory.crearTelevisorLED(40);
 				factory.setNombre("lavarropasBase");
+				factory.setHorasUsoMensuales(30);
 				lavarropas = factory.crearLavarropasSemiAutomatico(false, 5);
 				factory.setNombre("pcBase");
 				pc = factory.crearPC();
 				factory.setNombre("aireBase");
 				aireAcondicionado = factory.crearAireAcondicionado(2200);
 				factory.setNombre("microondasBase");
+				factory.setHorasUsoMensuales(5);
 				microondas = factory.crearMicroondas();
 				factory.setNombre("planchaBase");
+				factory.setHorasUsoMensuales(15);
 				plancha = factory.crearPlancha();
 				factory.setNombre("ventiladorBase");
 				ventilador = factory.crearVentiladorDeTecho();

@@ -7,13 +7,24 @@ import dispositivosConcretos.*;
 
 public class DispositivoFactory {
 	private String nombre = null;
+	double horasUsoMensuales = -1;
 	
 	public void setNombre(String unNombre) {
 		this.nombre = unNombre;
 	}
 	
+	public void setHorasUsoMensuales(double horasUsoMensuales) {
+		this.horasUsoMensuales = horasUsoMensuales;
+	}
+	
 	public void verificarNombre() {
 		if(this.nombre == null) {
+			throw new DispositivoBaseInvalidoException();
+		}
+	}
+	
+	public void verificarHorasUsoMensuales() {
+		if(this.horasUsoMensuales == -1) {
 			throw new DispositivoBaseInvalidoException();
 		}
 	}
@@ -84,7 +95,8 @@ public class DispositivoFactory {
 			throw new DispositivoConcretoInvalidoException(); 
 		}
 		if (tieneCalentamiento) {
-			dispositivo = new DispositivoEstandar(nombre, 6, 30);
+			verificarHorasUsoMensuales();
+			dispositivo = new DispositivoEstandar(nombre, 6, 30, horasUsoMensuales);
 			dispositivo.setBajoConsumo(false);
 			dispositivo.setPotencia(0.875);
 		} else {
@@ -97,7 +109,8 @@ public class DispositivoFactory {
 	
 	public Lavarropas crearLavarropasSemiAutomatico(boolean tieneCalentamiento, int capacidad) {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 6, 30);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 6, 30, horasUsoMensuales);
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
 		}
@@ -108,7 +121,8 @@ public class DispositivoFactory {
 	
 	public Microondas crearMicroondas() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 15);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 15, horasUsoMensuales);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.64);
 		return new Microondas(dispositivo, true);
@@ -116,7 +130,8 @@ public class DispositivoFactory {
 	
 	public PC crearPC() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 60, 360);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 60, 360, horasUsoMensuales);
 		dispositivo.setPotencia(0.4);
 		dispositivo.setBajoConsumo(true);
 		return new PC(dispositivo, true);
@@ -124,7 +139,8 @@ public class DispositivoFactory {
 	
 	public Plancha crearPlancha() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 30);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 30, horasUsoMensuales);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.75);
 		return new Plancha(dispositivo, true);
@@ -132,7 +148,8 @@ public class DispositivoFactory {
 
 	public Televisor crearTelevisorDeTubo(int pulgadas) {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 90, 360);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 90, 360, horasUsoMensuales);
 		dispositivo.setBajoConsumo(false);
 		if (pulgadas == 21) {
 			dispositivo.setPotencia(0.075);
@@ -148,7 +165,8 @@ public class DispositivoFactory {
 		this.verificarNombre();
 		DispositivoBase dispositivo;
 			if(pulgadas == 40) {
-				dispositivo = new DispositivoEstandar(nombre, 90, 360);
+				verificarHorasUsoMensuales();
+				dispositivo = new DispositivoEstandar(nombre, 90, 360, horasUsoMensuales);
 				dispositivo.setPotencia(0.18);
 			} else {
 				throw new DispositivoBaseInvalidoException();
@@ -182,7 +200,8 @@ public class DispositivoFactory {
 	
 	public Ventilador crearVentiladorDePie() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 120, 360);
+		verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 120, 360, horasUsoMensuales);
 		dispositivo.setPotencia(0.09);
 		dispositivo.setBajoConsumo(true);
 		return new Ventilador(dispositivo, false);
