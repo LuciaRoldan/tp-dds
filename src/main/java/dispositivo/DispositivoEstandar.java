@@ -9,7 +9,7 @@ import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoExcept
 public class DispositivoEstandar implements DispositivoBase {
 	
 	private String name;
-	private Long kWh;
+	private Long kWh; //borrar
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
 	private double potencia;

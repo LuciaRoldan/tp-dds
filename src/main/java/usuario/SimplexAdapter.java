@@ -18,7 +18,9 @@ import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
 import dispositivosConcretos.DispositivoConcreto;
 
 public class SimplexAdapter {
-
+	
+	private static int posicion;
+	private static double horasCorrientes;
 	static List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 
 	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
@@ -31,8 +33,7 @@ public class SimplexAdapter {
 		Arrays.fill(array, 1);
 		LinearObjectiveFunction funcionAOptimizar = new LinearObjectiveFunction(array, 0);
 		
-		RestriccionBuilder restriccionBuilder = new RestriccionBuilder(dispositivos, maximoConsumo);
-		restricciones = restriccionBuilder.getRestricciones();
+		restricciones = RestriccionBuilder.getRestricciones(dispositivos, maximoConsumo);
 
 		PointValuePair resultado = simplex.optimize(new MaxIter(100), funcionAOptimizar,
 				new LinearConstraintSet(restricciones), GoalType.MAXIMIZE, new NonNegativeConstraint(true));
@@ -40,12 +41,15 @@ public class SimplexAdapter {
 		double horasTotales = resultado.getValue();
 		
 		double[] arrayConsumosOptimos = resultado.getPoint();
-		int posicion = 0;
-		for (double consumoOptimo : arrayConsumosOptimos) {
-			dispositivos.get(posicion).setConsumoIdeal(consumoOptimo);
-			configuracionOptima.put(dispositivos.get(posicion), consumoOptimo);
-			posicion++;
-		}
+		
+		posicion = 0;
+		
+		dispositivos.forEach(dispositivo -> {
+							double consumoOptimo = arrayConsumosOptimos[posicion];
+							dispositivo.setConsumoIdeal(consumoOptimo);
+							configuracionOptima.put(dispositivos.get(posicion), consumoOptimo);
+							posicion++;
+							});
 
 		return configuracionOptima;
 
@@ -54,14 +58,14 @@ public class SimplexAdapter {
 	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
 		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
-		double horasCorrientes; 
 		
-		for (DispositivoConcreto dispositivo : dispositivos) {
-			horasCorrientes = dispositivo.consumoCorriente()/ dispositivo.getPotencia();
-			if(dispositivo.getConsumoIdeal() < horasCorrientes) {
-				dispositivo.apagate();
-			}
-		}
+		dispositivos.forEach(dispositivo -> {
+							horasCorrientes = dispositivo.consumoCorriente()/ dispositivo.getPotencia();
+							if(dispositivo.getConsumoIdeal() < horasCorrientes) {
+								dispositivo.apagate();
+							}
+							});
+		
 	}
 
 }
