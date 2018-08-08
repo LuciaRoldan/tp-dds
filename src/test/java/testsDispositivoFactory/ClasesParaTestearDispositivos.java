@@ -34,6 +34,7 @@ public class ClasesParaTestearDispositivos {
 	
 	public static DispositivoConcreto unDispositivoConcreto() {
 		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("Heladera");
 		DispositivoConcreto dispositivo = factory.crearHeladeraSinFreezer();
 		return dispositivo;
 		

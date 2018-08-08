@@ -48,6 +48,6 @@ public class testTransformador {
 
     @Test
     public void testConsumo0Clientes() {
-        assertEquals(java.util.Optional.of(0), transformador2.energiaSuministrada());
+        assertEquals(Long.valueOf(0), transformador2.energiaSuministrada());
     }
 }

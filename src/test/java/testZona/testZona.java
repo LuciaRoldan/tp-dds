@@ -1,17 +1,12 @@
 package testZona;
 
-import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
-import testsClienteFactory.ClasesParaTestearCliente;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import transformador.Transformador;
-import usuario.Cliente;
 import zona.Zona;
-
-import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -42,11 +37,11 @@ public class testZona {
 
     @Test
     public void testEnergiaSuministrada() {
-        assertEquals(java.util.Optional.of(800L), zona.energiaSuministrada());
+        assertEquals(Long.valueOf(800), zona.energiaSuministrada());
     }
     
     @Test
     public void testZonaVacia(){
-        assertEquals(java.util.Optional.of(0),zonaVacia.energiaSuministrada());
+        assertEquals(Long.valueOf(0),zonaVacia.energiaSuministrada());
     }
 }

@@ -25,6 +25,7 @@ public class PrendemeElAire {
 		Sensor sensorVentana = new Sensor();
 		CondicionTemperaturaAlta hacen30Grados = new CondicionTemperaturaAlta(sensorTemperatura, 30);
 		CondicionVentanaAbierta estaCerrada = new CondicionVentanaAbierta(sensorVentana, false);
+		factory.setNombre("Aire");
 		AireAcondicionado aire = factory.crearAireAcondicionado(2200); //new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
 		AireEstadoActuador actuadorAire = new AireEstadoActuador(aire,true);
 		

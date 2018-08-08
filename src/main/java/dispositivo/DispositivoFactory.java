@@ -6,13 +6,20 @@ import dispositivo.estados.*;
 import dispositivosConcretos.*;
 
 public class DispositivoFactory {
-	private String nombre;
+	private String nombre = null;
 	
 	public void setNombre(String unNombre) {
 		this.nombre = unNombre;
 	}
 	
+	public void verificarNombre() {
+		if(this.nombre == null) {
+			throw new DispositivoBaseInvalidoException();
+		}
+	}
+	
 	public AireAcondicionado crearAireAcondicionado(int frigorias) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 90, 360);
 		if(frigorias == 2200) {
 			dispositivo.setPotencia(1.013);
@@ -27,6 +34,7 @@ public class DispositivoFactory {
 	}
 	
 	public Heladera crearHeladeraConFreezer() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.09);
@@ -34,6 +42,7 @@ public class DispositivoFactory {
 	}
 	
 	public Heladera crearHeladeraSinFreezer() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.075);
@@ -41,6 +50,7 @@ public class DispositivoFactory {
 	}
 	
 	public Lampara crearLamparaHalogena(int w) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(false);
 		if (w == 40) {
@@ -54,6 +64,7 @@ public class DispositivoFactory {
 	}
 	
 	public Lampara crearLamparaComun(int w) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		if(w == 11) {
@@ -67,6 +78,7 @@ public class DispositivoFactory {
 	}
 	
 	public Lavarropas crearLavarropasAutomatico(boolean tieneCalentamiento, int capacidad) {
+		this.verificarNombre();
 		DispositivoBase dispositivo;
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
@@ -84,6 +96,7 @@ public class DispositivoFactory {
 	}
 	
 	public Lavarropas crearLavarropasSemiAutomatico(boolean tieneCalentamiento, int capacidad) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 6, 30);
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
@@ -94,6 +107,7 @@ public class DispositivoFactory {
 	}
 	
 	public Microondas crearMicroondas() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 15);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.64);
@@ -101,6 +115,7 @@ public class DispositivoFactory {
 	}
 	
 	public PC crearPC() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 60, 360);
 		dispositivo.setPotencia(0.4);
 		dispositivo.setBajoConsumo(true);
@@ -108,6 +123,7 @@ public class DispositivoFactory {
 	}
 	
 	public Plancha crearPlancha() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 30);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.75);
@@ -115,6 +131,7 @@ public class DispositivoFactory {
 	}
 
 	public Televisor crearTelevisorDeTubo(int pulgadas) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 90, 360);
 		dispositivo.setBajoConsumo(false);
 		if (pulgadas == 21) {
@@ -128,6 +145,7 @@ public class DispositivoFactory {
 	}
 	
 	public Televisor crearTelevisorLCD(int pulgadas) {
+		this.verificarNombre();
 		DispositivoBase dispositivo;
 			if(pulgadas == 40) {
 				dispositivo = new DispositivoEstandar(nombre, 90, 360);
@@ -139,6 +157,7 @@ public class DispositivoFactory {
 	}
 	
 	public Televisor crearTelevisorLED(int pulgadas) {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 90, 360);
 			dispositivo.setBajoConsumo(true);
 			if (pulgadas == 24) {
@@ -154,6 +173,7 @@ public class DispositivoFactory {
 	}
 	
 	public Ventilador crearVentiladorDeTecho() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 120, 360);
 		dispositivo.setPotencia(0.06);
 		dispositivo.setBajoConsumo(true);
@@ -161,6 +181,7 @@ public class DispositivoFactory {
 	}
 	
 	public Ventilador crearVentiladorDePie() {
+		this.verificarNombre();
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 120, 360);
 		dispositivo.setPotencia(0.09);
 		dispositivo.setBajoConsumo(true);
