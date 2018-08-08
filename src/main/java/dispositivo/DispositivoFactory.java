@@ -3,6 +3,7 @@ package dispositivo;
 import exceptionDispositivo.DispositivoBaseInvalidoException;
 import exceptionDispositivo.DispositivoConcretoInvalidoException;
 import dispositivo.estados.*;
+import dispositivosConcretos.*;
 
 public class DispositivoFactory {
 	private String nombre;
@@ -11,7 +12,7 @@ public class DispositivoFactory {
 		this.nombre = unNombre;
 	}
 	
-	public DispositivoBase crearAireAcondicionado(int frigorias) {
+	public AireAcondicionado crearAireAcondicionado(int frigorias) {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 90, 360);
 		if(frigorias == 2200) {
 			dispositivo.setPotencia(1.013);
@@ -22,24 +23,24 @@ public class DispositivoFactory {
 		} else {
 			throw new DispositivoConcretoInvalidoException();
 		}
-		return dispositivo;
+		return new AireAcondicionado(dispositivo, frigorias);
 	}
 	
-	public DispositivoBase crearHeladeraConFreezer() {
+	public Heladera crearHeladeraConFreezer() {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.09);
-		return dispositivo;
+		return new Heladera(dispositivo, true);
 	}
 	
-	public DispositivoBase crearHeladeraSinFreezer() {
+	public Heladera crearHeladeraSinFreezer() {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.075);
-		return dispositivo;
+		return new Heladera(dispositivo, false);
 	}
 	
-	public DispositivoBase crearLamparaHalogena(int w) {
+	public Lampara crearLamparaHalogena(int w) {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(false);
 		if (w == 40) {
@@ -49,10 +50,10 @@ public class DispositivoFactory {
 		} else if (w == 100) {
 			dispositivo.setPotencia(0.015);
 		}
-		return dispositivo;
+		return new Lampara(dispositivo, true, w);
 	}
 	
-	public DispositivoBase crearLamparaComun(int w) {
+	public Lampara crearLamparaComun(int w) {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
 		dispositivo.setBajoConsumo(true);
 		if(w == 11) {
@@ -62,10 +63,10 @@ public class DispositivoFactory {
 		} else if (w == 20) {
 			dispositivo.setPotencia(0.2);
 		}
-		return dispositivo;
+		return new Lampara(dispositivo, false, w);
 	}
 	
-	public DispositivoBase crearLavarropasAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
+	public Lavarropas crearLavarropasAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
 		DispositivoBase dispositivo;
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
@@ -79,41 +80,41 @@ public class DispositivoFactory {
 			dispositivo.setPotencia(0.175);
 			dispositivo.setBajoConsumo(true);
 		}
-		return dispositivo;
+		return new Lavarropas(dispositivo, true, tieneCalentamiento, capacidad);
 	}
 	
-	public DispositivoBase crearLavarropasSemiAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
+	public Lavarropas crearLavarropasSemiAutomatico(boolean esAutomatico, boolean tieneCalentamiento, int capacidad) {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 6, 30);
 		if (capacidad != 5) { 
 			throw new DispositivoConcretoInvalidoException(); 
 		}
 		dispositivo.setPotencia(0.1275);
 		dispositivo.setBajoConsumo(false);
-		return dispositivo;
+		return new Lavarropas(dispositivo, true, tieneCalentamiento, capacidad);
 	}
 	
-	public DispositivoBase crearMicroondas() {
+	public Microondas crearMicroondas() {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 15);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.64);
-		return dispositivo;
+		return new Microondas(dispositivo, true);
 	}
 	
-	public DispositivoBase crearPC() {
+	public PC crearPC() {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 60, 360);
 		dispositivo.setPotencia(0.4);
 		dispositivo.setBajoConsumo(true);
-		return dispositivo;
+		return new PC(dispositivo, true);
 	}
 	
-	public DispositivoBase crearPlancha() {
+	public Plancha crearPlancha() {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 3, 30);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.75);
-		return dispositivo;
+		return new Plancha(dispositivo, true);
 	}
 
-	public DispositivoBase crearTelevisorDeTubo(int pulgadas) {
+	public Televisor crearTelevisorDeTubo(int pulgadas) {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 90, 360);
 		dispositivo.setBajoConsumo(false);
 		if (pulgadas == 21) {
@@ -123,10 +124,10 @@ public class DispositivoFactory {
 		} else {
 			throw new DispositivoBaseInvalidoException();
 		}
-		return dispositivo;
+		return new Televisor(dispositivo, TipoPantalla.TF, pulgadas);
 	}
 	
-	public DispositivoBase crearTelevisorLCD(int pulgadas) {
+	public Televisor crearTelevisorLCD(int pulgadas) {
 		DispositivoBase dispositivo;
 			if(pulgadas == 40) {
 				dispositivo = new DispositivoEstandar(nombre, 90, 360);
@@ -134,10 +135,10 @@ public class DispositivoFactory {
 			} else {
 				throw new DispositivoBaseInvalidoException();
 			}
-		return dispositivo;
+		return new Televisor(dispositivo, TipoPantalla.LCD, pulgadas);
 	}
 	
-	public DispositivoBase crearTelevisorLED(int pulgadas) {
+	public Televisor crearTelevisorLED(int pulgadas) {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 90, 360);
 			dispositivo.setBajoConsumo(true);
 			if (pulgadas == 24) {
@@ -149,21 +150,21 @@ public class DispositivoFactory {
 			} else {
 				throw new DispositivoBaseInvalidoException();
 			}
-		return dispositivo;
+		return new Televisor(dispositivo, TipoPantalla.LED, pulgadas);
 	}
 	
-	public DispositivoBase crearVentiladorDeTecho() {
+	public Ventilador crearVentiladorDeTecho() {
 		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 120, 360);
 		dispositivo.setPotencia(0.06);
 		dispositivo.setBajoConsumo(true);
-		return dispositivo;
+		return new Ventilador(dispositivo, true);
 	}
 	
-	public DispositivoBase crearVentiladorDePie() {
+	public Ventilador crearVentiladorDePie() {
 		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 120, 360);
 		dispositivo.setPotencia(0.09);
 		dispositivo.setBajoConsumo(true);
-		return dispositivo;
+		return new Ventilador(dispositivo, false);
 	}
 
 }

@@ -1,6 +1,5 @@
 package dispositivo;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import dispositivo.estados.EstadoDispositivo;

@@ -8,15 +8,6 @@ public class Heladera extends DispositivoConcreto {
 	
 	public Heladera(DispositivoBase dispositivoBase, boolean tieneFreezer) {
 		super(dispositivoBase);
-		if (!dispositivoBase.esInteligente()) {
-			throw new DispositivoBaseInvalidoException();
-		}
-		dispositivoBase.setBajoConsumo(true);
-		if(tieneFreezer) {
-			dispositivoBase.setPotencia(0.09);
-		} else {
-			dispositivoBase.setPotencia(0.075);
-		}
 		this.tieneFreezer = tieneFreezer;
 	}
 	
