@@ -65,6 +65,11 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		return consumo;
 	}
 	
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) {
+		double cantidadHoras = inicio.until(fin, ChronoUnit.HOURS);
+		return this.calcularConsumoPeriodo(inicio, fin) / cantidadHoras;
+	}
+	
 
 	public boolean estaEncendido() {
 		return estado.estaEncendido();

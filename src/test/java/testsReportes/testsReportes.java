@@ -41,12 +41,12 @@ public class testsReportes {
 	@Test
 	public void testConsumoHogarPeriodo() {
 		
-		//Cliente cliente = ClasesParaTestearCliente.clienteEstandar();
-		//ArrayList<DispositivoConcreto> dispositivos = ClasesParaTestearCliente.cincoDispositivosConcretos();
+		/*Cliente cliente = ClasesParaTestearCliente.clienteEstandar();
+		ArrayList<DispositivoConcreto> dispositivos = ClasesParaTestearCliente.cincoDispositivosConcretos();
 		//5 heladeras, prendidas hace un mes y una ahora apagada
-		//cliente.setDispositivos(dispositivos);
+		cliente.setDispositivos(dispositivos);
 		
-		/*DispositivoConcreto he = dispositivos.get(0);
+		DispositivoConcreto he = dispositivos.get(0);
 		DispositivoConcreto he2 = dispositivos.get(1);
 		DispositivoConcreto he3 = dispositivos.get(2);
 		DispositivoConcreto he4 = dispositivos.get(3);
@@ -56,20 +56,20 @@ public class testsReportes {
 		double consumoHe3 = he3.calcularConsumoPeriodo(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now());
 		double consumoHe4 = he4.calcularConsumoPeriodo(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now());
 		double consumoHe5 = he5.calcularConsumoPeriodo(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now());
-		System.out.print(consumoHe);
-		System.out.print(consumoHe2);
-		System.out.print(consumoHe3);
-		System.out.print(consumoHe4);
-		System.out.print(consumoHe5);*/
+		System.out.println(consumoHe);
+		System.out.println(consumoHe2);
+		System.out.println(consumoHe3);
+		System.out.println(consumoHe4);
+		System.out.println(consumoHe5);*/
 		
 		//el consumo mensual es 54
-		assertEquals(270, cliente1.consumoHogarPeriodo(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now()), 1);
+		assertEquals(270, cliente1.consumoHogarPeriodo(LocalDateTime.now().minus(43199, ChronoUnit.MINUTES), LocalDateTime.now()), 10);
 	}
 	
 	@Test
 	public void testConsumoPromedioDispositivo() {
 		DispositivoConcreto elPrimerDispositivo = dispositivos1.get(0);
-		assertEquals(0.075, elPrimerDispositivo.consumoPromedioPorHora(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now()), 0.1);
+		assertEquals(0.075, elPrimerDispositivo.consumoPromedioPorHora(LocalDateTime.now().minus(43195, ChronoUnit.MINUTES), LocalDateTime.now()), 0.1);
 	}
 	
 	@Test
@@ -79,8 +79,7 @@ public class testsReportes {
 		clientes.add(cliente2);
 		Zona zona1 = new Zona();
 		Transformador transformador = new Transformador(clientes, "Transformador1", zona1, (float) 100, (float) 200);
-		assertEquals(540, transformador.consumoPromedio(LocalDateTime.now().minus(1, ChronoUnit.MONTHS), LocalDateTime.now()), 1);
-		
+		assertEquals(540, transformador.consumoPromedio(LocalDateTime.now().minus(43199, ChronoUnit.MINUTES), LocalDateTime.now()), 20);
 		
 	}
 }

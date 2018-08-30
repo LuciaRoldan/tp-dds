@@ -17,10 +17,9 @@ public class PersistenciaUsuario {
 		RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
 		repositorioDeUsuarios.agregarUsuario(cliente);
 		
-		
 		Cliente cliente2 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
 		
-		assertEquals(cliente, cliente2);
+		assertEquals(cliente.getId(), cliente2.getId());
 	}
 
 }
