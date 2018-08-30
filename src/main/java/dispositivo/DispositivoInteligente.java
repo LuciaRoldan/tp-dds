@@ -34,7 +34,7 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	///////////////////// METODOS /////////////////////
 
 	public double consumoMensual() {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minusDays(30), LocalDateTime.now());
 	}
 	
 

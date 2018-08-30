@@ -58,8 +58,12 @@ public class Encendido implements EstadoDispositivo {
 	
 	@Override
 	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {
+		if (this.getFin() == null) {
+			return inicio.until(LocalDateTime.now(), ChronoUnit.HOURS) * potencia;
+		} else {
 		return this.maximo(inicio, this.getInicio())
 				.until(this.minimo(fin, this.getFin()), ChronoUnit.HOURS) * potencia;
+		}
 	}
 
 	public LocalDateTime minimo(LocalDateTime fechaMin, LocalDateTime fechaMax) {
@@ -90,14 +94,21 @@ public class Encendido implements EstadoDispositivo {
 	
 	@Override
 	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin) {
+		if (this.getFin() == null) {
+			return false;
+		} else {
 		return this.getInicio().isAfter(inicio) && this.getFin().isBefore(fin);
+		}
 	}
 	
 	@Override
 	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin) {
+		if (this.getFin() == null) {
+			return true;
+		} else {
 		return 		(this.getInicio().isBefore(inicio) && this.getFin().isBefore(fin))
 				|| (this.getInicio().isAfter(inicio) && this.getFin().isAfter(fin))
 				|| (this.getInicio().isBefore(inicio) && this.getFin().isAfter(fin));
+		}
 	}
-
 }

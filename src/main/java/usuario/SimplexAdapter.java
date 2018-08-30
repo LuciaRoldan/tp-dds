@@ -57,13 +57,13 @@ public class SimplexAdapter {
 	
 	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
-		HashMap<DispositivoConcreto, Double> configuracionOptima = SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
+		SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
 		dispositivos.forEach(dispositivo -> {
 							horasCorrientes = dispositivo.consumoCorriente()/ dispositivo.getPotencia();
-							if(dispositivo.getConsumoIdeal() < horasCorrientes) {
+								if(dispositivo.getConsumoIdeal() < horasCorrientes) {
 								dispositivo.apagate();
-							}
+								}
 							});
 		
 	}

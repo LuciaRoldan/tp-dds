@@ -69,15 +69,23 @@ public class Apagado implements EstadoDispositivo {
 	
 	@Override
 	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin) {
+		if (this.getFin() == null) {
+			return false;
+		} else {
 		return this.getInicio().isAfter(inicio) && this.getFin().isBefore(fin);
+		}
 	}
 	
 	@Override
 	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin) {
+		if (this.getFin() == null) {
+			return true;
+		} else {
 		return 		(this.getInicio().isBefore(inicio) && this.getFin().isBefore(fin))
 				|| (this.getInicio().isAfter(inicio) && this.getFin().isAfter(fin))
 				|| (this.getInicio().isBefore(inicio) && this.getFin().isAfter(fin));
 	}
+}
 
 	@Override
 	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {

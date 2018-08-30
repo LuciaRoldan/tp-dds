@@ -2,6 +2,7 @@ package testsCliente;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -107,10 +108,22 @@ public class TestsSimplex {
 		
 		//dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
-		//double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
-	
-		// 2,000*24 = 48,000
-		assertEquals(312, lavarropas.consumoCorriente(),0.1);
+		
+		
+		//anda
+		//double consumoUltimasN = lampara.calcularConsumoUltimasNHoras(24);
+		//assertEquals(consumoUltimasN, 0,264);
+		
+		lampara.apagate();
+		double consumoMensual = lampara.consumoMensual();
+		assertEquals(7.92, consumoMensual, 0.01);
+		
+		//0.011potencia*24horasXdia*
+		//assertEquals(7.92, lampara.consumoCorriente(), 0.1);
+		
+		
+		//El Assert posta.
+		//assertTrue(tv.estaApagado());
 		
 	}
 }
