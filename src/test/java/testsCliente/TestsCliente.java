@@ -107,9 +107,9 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		//0.075*4*HorasDelDia*DiasDelMes un dispo se apaga al principio
+		//0.075*5*HorasDelDia*DiasDelMes
 		double consumo = cliente.calcularConsumoMensual();
-		assertEquals(216, consumo, 0.5);
+		assertEquals(270, consumo, 1);
 	}
 
 	@Test
