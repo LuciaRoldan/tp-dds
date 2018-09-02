@@ -9,6 +9,7 @@ import transformador.Transformador;
 import usuario.Cliente;
 import zona.Zona;
 
+import java.security.cert.PKIXRevocationChecker;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;
@@ -35,13 +36,13 @@ public class testTransformador {
 
     @Test
     public void testConsumo1Cliente() {
-        assertEquals(200L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(200, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
     }
 
     @Test
     public void testConsumo2Cliente() {
         transformador1.addCliente(cliente);
-        assertEquals(400L, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(Long.valueOf(400), java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
     }
 
     @Test
