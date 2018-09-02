@@ -36,17 +36,17 @@ public class testTransformador {
 
     @Test
     public void testConsumo1Cliente() {
-        assertEquals(200, java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(Long.valueOf(200), transformador1.energiaSuministrada());
     }
 
     @Test
     public void testConsumo2Cliente() {
         transformador1.addCliente(cliente);
-        assertEquals(Long.valueOf(400), java.util.Optional.ofNullable(transformador1.energiaSuministrada()));
+        assertEquals(Long.valueOf(400), transformador1.energiaSuministrada());
     }
 
     @Test
     public void testConsumo0Clientes() {
-        assertEquals(java.util.Optional.of(0), transformador2.energiaSuministrada());
+        assertEquals(Long.valueOf(0), transformador2.energiaSuministrada());
     }
 }
