@@ -7,7 +7,8 @@
 - [Enunciado 1](https://drive.google.com/file/d/1BHh48SeMvcho4KQWGol4tHxSo9HhxuIO/view)
 - [Enunciado 0](https://drive.google.com/open?id=1D570yECoNfgmJXOuC5YCMI9YVedC4asO)
 - [Presentacion](https://drive.google.com/open?id=1YK65lbUqhRfKhlexOBqdMXJsvZBs6ZXO)
-- [Diagrama de clases](https://www.lucidchart.com/invitations/accept/db20d253-e096-42e4-aeca-6afe906ff74d)
+- [Diagrama de clases nuevo](https://www.lucidchart.com/documents/edit/28c0ccda-8344-44ba-8ecb-4dfa4e7fe0d1/0)
+- [Diagrama de clases -old](https://www.lucidchart.com/invitations/accept/db20d253-e096-42e4-aeca-6afe906ff74d)
 - [Github Branches](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell)
 
 
