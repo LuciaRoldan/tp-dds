@@ -15,7 +15,13 @@ import org.apache.commons.math3.optim.linear.NonNegativeConstraint;
 import org.apache.commons.math3.optim.linear.SimplexSolver;
 import org.apache.commons.math3.optim.nonlinear.scalar.GoalType;
 
+import actuador.EncenderActuador;
 import dispositivosConcretos.DispositivoConcreto;
+import regla.CondicionConsumoSuperior;
+import regla.Regla;
+import sensor.Sensor;
+import actuador.Actuador;
+import regla.Condicion;
 
 public class SimplexAdapter {
 	
@@ -59,12 +65,29 @@ public class SimplexAdapter {
 		
 		SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
-		dispositivos.forEach(dispositivo -> {
+		/*dispositivos.forEach(dispositivo -> {
 							horasCorrientes = dispositivo.consumoCorriente()/ dispositivo.getPotencia();
 								if(dispositivo.getConsumoIdeal() < horasCorrientes) {
 								dispositivo.apagate();
 								}
-							});
+		});*/
+		
+		dispositivos.forEach(dispositivo -> {
+			EncenderActuador actuador = new EncenderActuador(dispositivo, false);
+			List<Actuador> actuadores = new ArrayList<Actuador>();
+			actuadores.add(actuador);
+			
+			Sensor sensor = new Sensor();
+			
+			CondicionConsumoSuperior condicion = new CondicionConsumoSuperior(sensor, dispositivo.getConsumoIdeal());
+			List<Condicion> condiciones = new ArrayList<Condicion>();
+			condiciones.add(condicion);
+			
+			new Regla(actuadores, condiciones);
+			
+			sensor.cambiarMedicion(dispositivo.consumoCorriente() / dispositivo.getPotencia());
+			
+});
 		
 	}
 

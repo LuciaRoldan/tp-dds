@@ -9,6 +9,8 @@ import regla.Condicion;
 import actuador.Actuador;
 import dispositivo.DispositivoInteligente;
 import dispositivo.estados.Apagado;
+import dispositivosConcretos.AireAcondicionado;
+import dispositivosConcretos.DispositivoConcreto;
 
 import static org.junit.Assert.*;
 
@@ -24,7 +26,8 @@ public class PrendemeElAire {
 		Sensor sensorVentana = new Sensor();
 		CondicionTemperaturaAlta hacen30Grados = new CondicionTemperaturaAlta(sensorTemperatura, 30);
 		CondicionVentanaAbierta estaCerrada = new CondicionVentanaAbierta(sensorVentana, false);
-		DispositivoInteligente aire = new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
+		DispositivoInteligente aireBase = new DispositivoInteligente("Aire acondicionado", new Apagado(), 10,100);
+		DispositivoConcreto aire = new AireAcondicionado(aireBase, 2200);
 		AireEstadoActuador actuadorAire = new AireEstadoActuador(aire,true);
 		
 		ArrayList<Actuador> actuadores = new ArrayList <Actuador>();
