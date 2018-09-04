@@ -1,12 +1,18 @@
-package testsClienteFactory;
+package testsCliente;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import categoria.CategoriaResidencial;
+import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoInteligente;
+import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
 import dispositivosConcretos.Lampara;
@@ -15,7 +21,10 @@ import dispositivosConcretos.Microondas;
 import dispositivosConcretos.PC;
 import dispositivosConcretos.Plancha;
 import dispositivosConcretos.Televisor;
+import dispositivosConcretos.TipoPantalla;
 import dispositivosConcretos.Ventilador;
+import mock.EncendidoMock;
+import testsDispositivo.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 import dispositivo.DispositivoFactory;
@@ -100,10 +109,25 @@ public class TestsSimplex {
 		
 		//dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
 		
-		//double consumo = dispositivo.calcularConsumoUltimasNHoras(24);
-	
-		// 2,000*24 = 48,000
-		assertEquals(312, lavarropas.consumoCorriente(),0.1);
+		
+		
+		//anda
+		//double consumoUltimasN = lampara.calcularConsumoUltimasNHoras(24);
+		//assertEquals(consumoUltimasN, 0,264);
+		
+		//lampara.apagate();
+		double consumoMensual = lampara.consumoMensual();
+		assertEquals(7.92, consumoMensual, 0.1);
+		
+		//0.011potencia*24horasXdia*DiaDelMesEnElQueEstoy
+		double consumoCorriente = lampara.consumoCorriente();
+		//assertEquals(7.92, consumoCorriente, 0.1);
+		
+		
+		//El Assert posta.
+		double consumoCorrienteTV = tv.consumoCorriente();
+		//assertEquals(200, consumoCorrienteTV, 0.1);
+		//assertTrue(tv.estaApagado());
 		
 	}
 }

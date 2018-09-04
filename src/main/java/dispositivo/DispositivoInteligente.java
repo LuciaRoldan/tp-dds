@@ -3,6 +3,7 @@ package dispositivo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Month;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
@@ -34,7 +35,7 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	///////////////////// METODOS /////////////////////
 
 	public double consumoMensual() {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minus(30, ChronoUnit.DAYS), LocalDateTime.now());
 	}
 	
 

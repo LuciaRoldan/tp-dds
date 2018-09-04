@@ -1,4 +1,4 @@
-package testsActuadroesSensoresReglasFactoy;
+package testsActuadroesSensoresReglas;
 
 import sensor.Sensor;
 import dispositivo.DispositivoFactory;

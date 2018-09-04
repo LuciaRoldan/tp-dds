@@ -62,7 +62,7 @@ public class DispositivoFactory {
 	
 	public Lampara crearLamparaHalogena(int w) {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 0, 0);
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 0, 100, 50);
 		dispositivo.setBajoConsumo(false);
 		if (w == 40) {
 			dispositivo.setPotencia(0.4);

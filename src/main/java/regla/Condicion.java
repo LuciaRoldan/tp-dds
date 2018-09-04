@@ -16,9 +16,9 @@ public abstract class Condicion {
 		sensor.agregarCondicion(this);
 	}
 	
-	public abstract boolean evaluarCumplimiento(Integer medicion); //va a cambiar el estado de la variable seCumple
+	public abstract boolean evaluarCumplimiento(double medicion); //va a cambiar el estado de la variable seCumple
 	
-	public void notificarMedicion(Integer medicion) {
+	public void notificarMedicion(double medicion) {
 		boolean nuevoCumplimiento = this.evaluarCumplimiento(medicion);
 		if (nuevoCumplimiento != this.seCumple) {
 			seCumple = nuevoCumplimiento;

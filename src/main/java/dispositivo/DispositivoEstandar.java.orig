@@ -10,6 +10,10 @@ import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoExcept
 public class DispositivoEstandar implements DispositivoBase {
 	
 	private String name;
+<<<<<<< HEAD
+=======
+	private Long kWh; //borrar
+>>>>>>> 036e03511a58ff4402a66f3854e556d8b082256b
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
 	private double potencia;
@@ -29,8 +33,6 @@ public class DispositivoEstandar implements DispositivoBase {
 	///////////// GETTERS/////////////
 
 	public String getName() {return this.name;}
-
-	//public Long getkWh(){return this.kWh;}
 	
 	public double getUsoMensualMaximo() {
 		return usoMensualMaximo;
@@ -44,8 +46,6 @@ public class DispositivoEstandar implements DispositivoBase {
 	///////////// SETTERS/////////////
 
 	public void setName(String name){this.name = name;}
-	
-	//public void setkWh(Long kWh) {this.kWh = kWh;}
 	
 	public void setUsoMensualMaximo(double usoMensualMaximo) {
 		this.usoMensualMaximo = usoMensualMaximo;

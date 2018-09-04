@@ -1,5 +1,6 @@
-package testsDispositivoFactory;
+package testsDispositivo;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -12,10 +13,7 @@ import dispositivo.DispositivoFactory;
 public class ClasesParaTestearDispositivos {
 	
 	public static EstadoDispositivo unEstadoEncendido() {
-		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.DAYS);
-		
-		return new EncendidoMock(ayer, hoy);
+		return new EncendidoMock(LocalDateTime.now().minus(30, ChronoUnit.DAYS), LocalDateTime.now());
 	}
 
 	public static DispositivoInteligente unDispositivoInteligente() {
@@ -28,9 +26,17 @@ public class ClasesParaTestearDispositivos {
 	
 	public static DispositivoEstandar unDispositivoEstandar() {
 
-		return (new DispositivoEstandar("Nombre loco", 200, 2000));
+		return (new DispositivoEstandar("Nombre loco", 200, 2000, 40));
 	}
 	//Se deberian poder crear estos sin que no sean concretos?
+	
+	/*public static DispositivoConcreto unDispositivoConcreto() {
+		
+		DispositivoInteligente base = unDispositivoInteligente();
+		DispositivoConcreto dispositivo = new Heladera(base, false);
+		return dispositivo;
+		
+	}*/
 	
 	public static DispositivoConcreto unDispositivoConcreto() {
 		DispositivoFactory factory = new DispositivoFactory();

@@ -1,4 +1,4 @@
-package testsDispositivoFactory;
+package testsDispositivo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import dispositivosConcretos.DispositivoConcreto;
-import testsDispositivoFactory.ClasesParaTestearDispositivos;
+import testsDispositivo.ClasesParaTestearDispositivos;
 
 import org.junit.Test;
 

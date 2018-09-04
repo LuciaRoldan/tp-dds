@@ -2,9 +2,6 @@ package zona;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import transformador.Transformador;
-import usuario.Cliente;
-
-import java.nio.channels.FileLock;
 import java.util.ArrayList;
 import java.util.List;
 

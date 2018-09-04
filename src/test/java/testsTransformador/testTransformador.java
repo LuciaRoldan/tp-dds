@@ -2,7 +2,7 @@ package testsTransformador;
 
 import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
-import testsClienteFactory.ClasesParaTestearCliente;
+import testsCliente.ClasesParaTestearCliente;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +11,7 @@ import transformador.Transformador;
 import usuario.Cliente;
 import zona.Zona;
 
+import java.security.cert.PKIXRevocationChecker;
 import java.util.ArrayList;
 
 import static junit.framework.TestCase.assertEquals;

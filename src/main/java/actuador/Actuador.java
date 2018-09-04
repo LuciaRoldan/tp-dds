@@ -12,5 +12,5 @@ public abstract class Actuador {
     }
 
     public abstract void actuar();
-    
+
 }

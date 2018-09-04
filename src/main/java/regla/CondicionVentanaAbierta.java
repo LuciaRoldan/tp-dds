@@ -12,7 +12,7 @@ public class CondicionVentanaAbierta extends Condicion {
 	}
 
 	@Override
-	public boolean evaluarCumplimiento(Integer medicionPorcentajeAbierta) { //porcentaje de abierta de la ventana lol
+	public boolean evaluarCumplimiento(double medicionPorcentajeAbierta) { //porcentaje de abierta de la ventana lol
 		if(abierta) { //Si esta mas del 1% se considera abierta
 			return medicionPorcentajeAbierta > 1;
 		}else {

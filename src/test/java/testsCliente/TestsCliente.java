@@ -1,4 +1,4 @@
-package testsClienteFactory;
+package testsCliente;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -105,9 +105,9 @@ public class TestsCliente {
 
 	@Test
 	public void testCalcularConsumoMensual() {
-		//0.075*5*DiasDelMes
+		//0.075*5*HorasDelDia*DiasDelMes
 		double consumo = cliente.calcularConsumoMensual();
-		assertEquals(11.25, consumo, 0.5);
+		assertEquals(270, consumo, 1);
 	}
 
 	@Test

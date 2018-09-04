@@ -11,7 +11,7 @@ public class CondicionTemperaturaAlta extends Condicion {
 	}
 
 	@Override
-	public boolean evaluarCumplimiento(Integer medicion) {
+	public boolean evaluarCumplimiento(double medicion) {
 		return medicion > this.temperaturaLimite;
 	}
 }

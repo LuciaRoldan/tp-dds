@@ -1,4 +1,4 @@
-package testsDispositivoFactory;
+package testsDispositivo;
 
 import static org.junit.Assert.*;
 
@@ -17,6 +17,7 @@ public class TestDispositivoFactory {
 	public void testCrearLampara() {
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("Lampaita");
+		factory.setHorasUsoMensuales(0);
 		assertEquals(Lampara.class, factory.crearLamparaComun(11).getClass());
 	}
 	
@@ -24,6 +25,7 @@ public class TestDispositivoFactory {
 	public void testVerificarCapacidadLavarropas() {
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("Lavarropas");
+		factory.setHorasUsoMensuales(0);
 		Lavarropas lavarropas = factory.crearLavarropasAutomatico(true, 5);
 		assertEquals(5, lavarropas.getCapacidad());
 	}
@@ -32,6 +34,7 @@ public class TestDispositivoFactory {
 	public void testVerificarPotencia() {
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("Microondas");
+		factory.setHorasUsoMensuales(0);
 		Microondas microondas = factory.crearMicroondas();
 		assertEquals(0.64, microondas.getPotencia(), 0.1);
 	}

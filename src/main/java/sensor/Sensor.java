@@ -10,13 +10,15 @@ public class Sensor {
 	
 	//interesados
 	List<Condicion> condiciones = new ArrayList<Condicion>();
-	Integer medicion;
+	double medicion;
+	
+	public Sensor() {}
 	
 	public void agregarCondicion(Condicion unaCondicion){
 	      condiciones.add(unaCondicion);
 	}
 	
-	public void cambiarMedicion(Integer medicion) {
+	public void cambiarMedicion(double medicion) {
 		this.medicion = medicion;
 		this.notificarMedicion();
 	}

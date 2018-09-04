@@ -9,7 +9,7 @@ import dispositivo.DispositivoEstandar;
 import dispositivo.Modulo;
 import dispositivo.estados.Encendido;
 import mock.EncendidoMock;
-import testsDispositivoFactory.ClasesParaTestearDispositivos;
+import testsDispositivo.ClasesParaTestearDispositivos;
 
 public class testModuloEstandar {
 

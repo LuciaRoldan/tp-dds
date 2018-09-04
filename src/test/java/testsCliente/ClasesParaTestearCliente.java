@@ -1,10 +1,10 @@
-package testsClienteFactory;
+package testsCliente;
 
 import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
 import dispositivosConcretos.DispositivoConcreto;
-import testsDispositivoFactory.ClasesParaTestearDispositivos;
+import testsDispositivo.ClasesParaTestearDispositivos;
 import usuario.Cliente;
 import usuario.TipoDocumento;
 
@@ -31,8 +31,8 @@ public class ClasesParaTestearCliente {
 		DispositivoConcreto	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoConcreto();
 		DispositivoConcreto	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoConcreto();
 		DispositivoConcreto	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto  dispositivo4 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto  dispositivo5 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto dispositivo4 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto dispositivo5 = ClasesParaTestearDispositivos.unDispositivoConcreto();
 		dispositivo1.encendete();
 		dispositivo2.encendete();
 		dispositivo3.encendete();
