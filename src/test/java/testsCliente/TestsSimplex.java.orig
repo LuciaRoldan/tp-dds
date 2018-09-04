@@ -1,18 +1,24 @@
-package testsCliente;
+package testsClienteFactory;
 
 import static org.junit.Assert.assertEquals;
+<<<<<<< HEAD:src/test/java/testsClienteFactory/TestsSimplex.java
+=======
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
+>>>>>>> 036e03511a58ff4402a66f3854e556d8b082256b:src/test/java/testsCliente/TestsSimplex.java
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import categoria.CategoriaResidencial;
+<<<<<<< HEAD:src/test/java/testsClienteFactory/TestsSimplex.java
+=======
 import dispositivo.DispositivoEstandar;
 import dispositivo.DispositivoInteligente;
 import dispositivo.estados.EstadoDispositivo;
+>>>>>>> 036e03511a58ff4402a66f3854e556d8b082256b:src/test/java/testsCliente/TestsSimplex.java
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
 import dispositivosConcretos.Lampara;
@@ -21,10 +27,12 @@ import dispositivosConcretos.Microondas;
 import dispositivosConcretos.PC;
 import dispositivosConcretos.Plancha;
 import dispositivosConcretos.Televisor;
-import dispositivosConcretos.TipoPantalla;
 import dispositivosConcretos.Ventilador;
+<<<<<<< HEAD:src/test/java/testsClienteFactory/TestsSimplex.java
+=======
 import mock.EncendidoMock;
 import testsDispositivo.ClasesParaTestearDispositivos;
+>>>>>>> 036e03511a58ff4402a66f3854e556d8b082256b:src/test/java/testsCliente/TestsSimplex.java
 import usuario.Cliente;
 import usuario.TipoDocumento;
 import dispositivo.DispositivoFactory;
@@ -38,6 +46,7 @@ public class TestsSimplex {
 			DispositivoFactory factory = new DispositivoFactory();
 					
 			ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
+<<<<<<< HEAD:src/test/java/testsClienteFactory/TestsSimplex.java
 			Televisor tv;	
 			Lampara lampara;
 			Lavarropas lavarropas;
@@ -46,6 +55,33 @@ public class TestsSimplex {
 			Microondas microondas;
 			Plancha plancha;
 			Ventilador ventilador;
+=======
+			EstadoDispositivo encendido = ClasesParaTestearDispositivos.unEstadoEncendido();
+			
+			DispositivoInteligente tvBase = new DispositivoInteligente("tvBase", encendido, 90, 360);
+			Televisor tv = new Televisor(tvBase, TipoPantalla.LED, 40);
+					
+			DispositivoInteligente lamparaBase = new DispositivoInteligente("lamparaBase", encendido, 90, 360);
+			Lampara lampara = new Lampara(lamparaBase, false, 11);
+					
+			DispositivoEstandar lavarropasBase = new DispositivoEstandar("lavarropasBase", 6, 30);
+			Lavarropas lavarropas = new Lavarropas(lavarropasBase, false, false, 5);
+					
+			DispositivoInteligente pcBase = new DispositivoInteligente("pcBase", encendido, 60, 360);
+			PC pc = new PC(pcBase, true);
+					
+			DispositivoInteligente aireBase = new DispositivoInteligente("aireBase", encendido, 90, 360);
+			AireAcondicionado aireAcondicionado = new AireAcondicionado(aireBase, 2200);
+
+			DispositivoEstandar microondasBase = new DispositivoEstandar("microondasBase", 3, 15);
+			Microondas microondas = new Microondas(microondasBase, true);
+					
+			DispositivoEstandar planchaBase = new DispositivoEstandar("planchaBase", 30, 30);
+			Plancha plancha = new Plancha(planchaBase, true);
+					
+			DispositivoInteligente ventiladorBase = new DispositivoInteligente("ventiladorBase", encendido, 120, 360);
+			Ventilador ventilador = new Ventilador(ventiladorBase, true);
+>>>>>>> 036e03511a58ff4402a66f3854e556d8b082256b:src/test/java/testsCliente/TestsSimplex.java
 			
 	@Before		
 	public void antesQueNada() {

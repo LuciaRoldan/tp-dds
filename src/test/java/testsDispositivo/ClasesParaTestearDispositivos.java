@@ -4,14 +4,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligenteInterfaz;
-import dispositivo.DispositivoInteligente;
-import dispositivo.estados.Apagado;
+import dispositivo.*;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
-import dispositivosConcretos.Heladera;
 import mock.EncendidoMock;
+import dispositivo.DispositivoFactory;
 
 public class ClasesParaTestearDispositivos {
 	
@@ -29,8 +26,9 @@ public class ClasesParaTestearDispositivos {
 	
 	public static DispositivoEstandar unDispositivoEstandar() {
 
-		return (new DispositivoEstandar("Nombre loco", 200, 2000));
+		return (new DispositivoEstandar("Nombre loco", 200, 2000, 40));
 	}
+	//Se deberian poder crear estos sin que no sean concretos?
 	
 	/*public static DispositivoConcreto unDispositivoConcreto() {
 		
@@ -41,9 +39,9 @@ public class ClasesParaTestearDispositivos {
 	}*/
 	
 	public static DispositivoConcreto unDispositivoConcreto() {
-		
-		DispositivoInteligente base = unDispositivoInteligente();
-		DispositivoConcreto dispositivo = new Heladera(base, false);
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("Heladera");
+		DispositivoConcreto dispositivo = factory.crearHeladeraSinFreezer();
 		return dispositivo;
 		
 	}

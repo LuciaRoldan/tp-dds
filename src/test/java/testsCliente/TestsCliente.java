@@ -3,7 +3,6 @@ package testsCliente;
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
-import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivosConcretos.DispositivoConcreto;
 
 import org.junit.Before;
@@ -20,7 +19,6 @@ public class TestsCliente {
 	@Before
 
 	public void setUp() throws Exception {
-		
 		cliente = ClasesParaTestearCliente.clienteEstandar();
 		dispositivos = ClasesParaTestearCliente.cincoDispositivosConcretos();
 		cliente.setDispositivos(dispositivos);

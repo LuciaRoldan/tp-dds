@@ -2,9 +2,11 @@ package testsTransformador;
 
 import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
+import testsCliente.ClasesParaTestearCliente;
+
 import org.junit.Before;
 import org.junit.Test;
-import testsCliente.ClasesParaTestearCliente;
+
 import transformador.Transformador;
 import usuario.Cliente;
 import zona.Zona;

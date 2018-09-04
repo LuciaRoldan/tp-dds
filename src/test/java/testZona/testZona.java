@@ -1,15 +1,12 @@
 package testZona;
 
-import dispositivo.DispositivoInteligente;
 import mock.ClienteMock;
+
 import org.junit.Before;
 import org.junit.Test;
-import testsCliente.ClasesParaTestearCliente;
-import transformador.Transformador;
-import usuario.Cliente;
-import zona.Zona;
 
-import java.util.ArrayList;
+import transformador.Transformador;
+import zona.Zona;
 
 import static junit.framework.TestCase.assertEquals;
 
