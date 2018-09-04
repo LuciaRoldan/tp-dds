@@ -36,11 +36,9 @@ public class TestDispositivoFactory {
 		assertEquals(0.64, microondas.getPotencia(), 0.1);
 	}
 
-	/*@Test
+	@Test(expected = DispositivoBaseInvalidoException.class)
 	public void testVerificarExcepcion() {
 		DispositivoFactory factory = new DispositivoFactory();
-		Microondas microondas = factory.crearMicroondas();
-		ExpectedException excepcion = ExpectedException.none();
-		excepcion.expect(DispositivoBaseInvalidoException.class);
-	}*/
+		factory.crearMicroondas();
+	}
 }
