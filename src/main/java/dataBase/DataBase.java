@@ -1,24 +1,12 @@
 package dataBase;
 
-
-
-
-
-
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hsqldb.Session;
-import org.hsqldb.SessionManager;
 import sensor.Sensor;
 import transformador.Transformador;
 import usuario.Administrador;
 import usuario.Cliente;
-import usuario.Usuario;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class DataBase {
 
