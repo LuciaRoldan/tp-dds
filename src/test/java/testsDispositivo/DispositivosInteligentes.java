@@ -16,7 +16,7 @@ public class DispositivosInteligentes {
 	DispositivoInteligente dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
 	DispositivoInteligente dispositivo;
 	
-	DispositivoConcreto aire = ClasesParaTestearDispositivos.unDispositivoConcretoInteligente();
+	DispositivoConcreto aire = ClasesParaTestearDispositivos.unDispositivoConcretoConFactory();
 	
 
 	@Test

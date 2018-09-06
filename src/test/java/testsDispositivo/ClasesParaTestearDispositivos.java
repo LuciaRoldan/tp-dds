@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import dispositivo.DispositivoEstandar;
+import dispositivo.DispositivoFactory;
 import dispositivo.DispositivoInteligente;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.AireAcondicionado;
@@ -28,11 +29,13 @@ public class ClasesParaTestearDispositivos {
 		return dispositivo;
 	}
 
-	public static DispositivoConcreto unDispositivoConcretoInteligente() {
+	public static DispositivoConcreto unDispositivoConcretoConFactory() {
 		
 		EstadoDispositivo encendido = unEstadoEncendido();
-		DispositivoInteligente dispositivo = new DispositivoInteligente("nombre", encendido, 200, 2000);
-		AireAcondicionado aire = new AireAcondicionado(dispositivo, 3500);
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("aire");
+		AireAcondicionado aire = factory.crearAireAcondicionado(3500);
+		aire.setEstado(encendido);
 		
 		return aire;
 	}
@@ -42,11 +45,15 @@ public class ClasesParaTestearDispositivos {
 		return (new DispositivoEstandar("Nombre loco", 200, 2000, 40));
 	}
 	
-	public static DispositivoConcreto unDispositivoConcreto() {
+	public static DispositivoConcreto heladeraConFactory() {
 		
-		DispositivoInteligente base = unDispositivoInteligente();
-		DispositivoConcreto dispositivo = new Heladera(base, false);
-		return dispositivo;
+		EstadoDispositivo encendido = unEstadoEncendido();
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("heladera");
+		Heladera heladera = factory.crearHeladeraSinFreezer();
+		heladera.setEstado(encendido);
 		
-	}
+		return heladera;
+		
+	} 
 }

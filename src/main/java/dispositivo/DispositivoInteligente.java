@@ -2,7 +2,6 @@ package dispositivo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
@@ -129,6 +128,7 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	
 	public void setEstado(EstadoDispositivo estado) {
 		this.estado = estado;
+		this.agregarEstado(estado);
 	}
 	public void agregarEstado(EstadoDispositivo estado) {
 		estadosAnteriores.add(estado);
