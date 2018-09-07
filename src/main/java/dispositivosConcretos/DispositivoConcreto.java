@@ -3,17 +3,29 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import dispositivo.DispositivoBase;
+import dispositivo.DispositivoInteligente;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 
 public abstract class DispositivoConcreto {
 	
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
-	
+	@GeneratedValue
+	@Id
+	private Integer numeroDeDispositivoConcreto;
+
+	public DispositivoConcreto(){};
 	DispositivoConcreto(DispositivoBase dispositivoBase){
 		this.dispositivoBase = dispositivoBase;
 	}
+
+	public Integer getId(){return this.numeroDeDispositivoConcreto;}
 	
     public double consumoMensual() { return dispositivoBase.consumoMensual(); }
     public void activarAhorroDeEnergia() { this.dispositivoBase.activarAhorroDeEnergia(); }

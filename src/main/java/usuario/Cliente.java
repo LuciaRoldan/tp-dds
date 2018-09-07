@@ -8,18 +8,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import categoria.CategoriaResidencial;
+import dataBase.DataBase;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
+import javax.persistence.*;
+import javax.xml.crypto.Data;
+
+@Entity
 public class Cliente extends Usuario {
 
-	private TipoDocumento tipoDocumento;
+	private double maximoConsumo;
 	private int documento;
 	private int telefono;
-	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	private int puntos = 0;
-	private double maximoConsumo;
+	private Integer numeroDeCliente;
+	@ElementCollection
+	private List<Integer> listaDeDispositivosID = new ArrayList<Integer>();
+	@Transient
+	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
+	@Transient
+	private CategoriaResidencial categoriaResidencial;
+	@Transient
+	private TipoDocumento tipoDocumento;
+	@Transient
+	private DataBase dataBase;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -29,13 +42,21 @@ public class Cliente extends Usuario {
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos) {
 
-		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
+		dataBase = DataBase.getInstance();
+		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreDeUsuario, contrasena, CLIENTE);
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 		this.maximoConsumo = 612;
+		if (dispositivos != null) {
+			for (DispositivoConcreto dc : dispositivos) {
+				listaDeDispositivosID.add(dc.getId());
+				dispositivos.add(dataBase.getDispositivo(dc.getId()));
+			}
+		}
+
 	}
 	
 	public Double calcularConsumoMensual() {
@@ -51,6 +72,9 @@ public class Cliente extends Usuario {
 		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
 		this.setCategoriaResidencial(nuevaCategoria);
 	}
+
+	public Integer getNumeroDeCliente(){return this.numeroDeCliente;}
+
 	
 	public int getCantidadDispositivos() {
 		return dispositivos.size();

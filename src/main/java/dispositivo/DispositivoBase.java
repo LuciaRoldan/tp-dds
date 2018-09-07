@@ -4,36 +4,46 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import dispositivo.estados.Encendido;
 import dispositivo.estados.EstadoDispositivo;
 
-public interface DispositivoBase {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
+public abstract class DispositivoBase {
+
+    @Id
+    @GeneratedValue
+    private Integer numeroDeDispositivoBase;
 	
-    public double consumoMensual();
-    public void activarAhorroDeEnergia();
-    public void setEstado(EstadoDispositivo estado);
-    public void apagate();
-    public void encendete();
-    public boolean estaEncendido();
-    public boolean estaApagado() ;
-    public EstadoDispositivo getEstado() ;
-    public double calcularConsumoUltimasNHoras(int horas);
-    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
-    public boolean esInteligente();	
-    public double consumoCorriente();
+    public double consumoMensual(){return -800;};
+    public void activarAhorroDeEnergia(){};
+    public void setEstado(EstadoDispositivo estado){};
+    public void apagate(){};
+    public void encendete(){};
+    public boolean estaEncendido(){return false;};
+    public boolean estaApagado(){return false;};
+    public EstadoDispositivo getEstado(){return new Encendido();};
+    public double calcularConsumoUltimasNHoras(int horas){return -100;};
+    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin){return -200;};
+    public boolean esInteligente(){return false;};
+    public double consumoCorriente(){return -300;};
     
     //////////GETTERS//////////
     
-    public String getName();
-    public double getPotencia();
-    public double getUsoMensualMinimo();
-    public double getUsoMensualMaximo();
-    public double getHorasDeUsoIdeal();
+    public String getName(){return "ERROR";};
+    public double getPotencia(){return -400;};
+    public double getUsoMensualMinimo(){return -500;};
+    public double getUsoMensualMaximo(){return -600;};
+    public double getHorasDeUsoIdeal(){return -700;};
     
     //////////SETTERS//////////
     
-    public void setName(String name);
-    public void setPotencia(double potencia);
-	public void setBajoConsumo(boolean bajoConsumo);
-	public void agregarEstado(EstadoDispositivo estado);
+    public void setName(String name){};
+    public void setPotencia(double potencia){};
+	public void setBajoConsumo(boolean bajoConsumo){};
+	public void agregarEstado(EstadoDispositivo estado){};
 
 }

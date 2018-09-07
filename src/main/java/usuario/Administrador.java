@@ -1,8 +1,11 @@
 package usuario;
 import com.fasterxml.jackson.annotation.JsonCreator;
+
+import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import static usuario.TipoDeUsuario.ADMINISTRADOR;
+
 
 public class Administrador extends Usuario{
 
@@ -22,9 +25,12 @@ public class Administrador extends Usuario{
 
     /////////////////////////////////////////  GETTERS //////////////////////////////////////////////////////////////
 
-	public long cantidadMesesComoAdministrador() {
-    	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
+	public float cantidadMesesComoAdministrador() {
+    	//return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
+        System.out.print("Soy el colo, hice que la fecha sea un String para que Hibernate no rompa,lo tengo que areglar");
+        return -100000;
     }
+
 	public int getNumeroDeIdentificacion() {
 		return numeroDeIdentificacion;
 	}

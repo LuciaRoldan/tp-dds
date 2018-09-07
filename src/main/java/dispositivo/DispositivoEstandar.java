@@ -7,7 +7,7 @@ import java.time.temporal.ChronoUnit;
 import dispositivo.estados.EstadoDispositivo;
 import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
-public class DispositivoEstandar implements DispositivoBase {
+public class DispositivoEstandar extends DispositivoBase {
 	
 	private String name;
 	private double usoMensualMinimo;

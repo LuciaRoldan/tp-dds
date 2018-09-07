@@ -3,6 +3,7 @@ package usuario;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -11,16 +12,20 @@ import java.time.format.DateTimeFormatter;
 		@JsonSubTypes.Type(value=Cliente.class, name="CLIENTE"),
 		@JsonSubTypes.Type(value=Administrador.class, name="ADMINISTRADOR")
 })
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class Usuario {
 
-	public String 		 	 nombreYapellido ;
 	public String 		 	 domicilio;
 	public String 		 	 fechaDeAlta;
 	public String 		 	 contrasena;
 	public String 		     nombreDeUsuario;
 	public String 		     nombreYApellido;
 	public TipoDeUsuario     tipoDeUsuario;
-	public DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	public Integer           tdu;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+    public Integer           numeroDeUsuario;
 
 
 	//////////////////////////// CONSTRUCTOR /////////////////////////////////////////////////////////////
@@ -37,12 +42,12 @@ public abstract class Usuario {
 
 
 	/////////////////////////// GETTERS /////////////////////////////////////////////////////////////
-
+	public Integer       getNumeroDeUsuario()                 { return this.numeroDeUsuario;                       }
 	public String 	     getContrasena() 				      { return contrasena; 						  		   }
 	public String        getDomicilio() 					  { return domicilio;						 		   }
 	public String	     getNombreUsuario() 				  { return nombreDeUsuario; 				 		   }
 	public String        getNombreYApellido()				  { return this.nombreYApellido;			 		   }
-	public LocalDate     getFechaDeAlta() 					  { return LocalDate.parse(this.fechaDeAlta,formatter);}
+	public String        getFechaDeAlta() 					  { return this.fechaDeAlta;                           }
 	public TipoDeUsuario getTipoDeUsuario()					  { return null;							 		   }
 
 	/////////////////////////// SETTERS /////////////////////////////////////////////////////////////

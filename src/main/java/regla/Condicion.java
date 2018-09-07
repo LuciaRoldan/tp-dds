@@ -2,14 +2,23 @@ package regla;
 
 import sensor.Sensor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public abstract class Condicion {
-	
+
+
 	List<Regla> reglas = new ArrayList<Regla>();
 	boolean seCumple = false;
+	private Integer numeroDeCondicion;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
+
+	public Condicion(){}
 	
 	public Condicion(Sensor sensor) {
 		this.seCumple = false;

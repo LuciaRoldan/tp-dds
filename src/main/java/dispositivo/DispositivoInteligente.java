@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
+public class DispositivoInteligente extends DispositivoInteligenteInterfaz {
 
 	private EstadoDispositivo estado;
 	private String name;

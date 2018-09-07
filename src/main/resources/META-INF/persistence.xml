@@ -7,6 +7,9 @@
 
     <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>usuario.Cliente</class>
+        <class>usuario.Usuario</class>
+        <class>usuario.Administrador</class>
 
 
 

@@ -2,14 +2,18 @@ package regla;
 
 import actuador.Actuador;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Regla {
-	
+
 	List<Actuador> actuadores = new ArrayList<Actuador>();
 	List<Condicion> condiciones = new ArrayList<Condicion>();
-	
+	private Integer numeroDeRegla;
+
+	public Regla(){}
 	
 	public Regla(List<Actuador> actuadores, List<Condicion> condiciones) {
 		this.actuadores = actuadores;

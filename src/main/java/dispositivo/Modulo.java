@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
-public class Modulo implements DispositivoInteligenteInterfaz {
+public class Modulo extends DispositivoInteligenteInterfaz {
 
     DispositivoBase dispositivoEstandar;
     private EstadoDispositivo estado;
