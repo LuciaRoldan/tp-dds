@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class DispositivosEstandar {
 
-	DispositivoEstandar dispositivoEstandar = ClasesParaTestearDispositivos.unDispositivoEstandar();
+	DispositivoEstandar dispositivoEstandar = new ClasesParaTestearDispositivos().unDispositivoEstandar();
 	
 	@Test
 	public void testConsumoMensual() {

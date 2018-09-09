@@ -14,14 +14,14 @@ import mock.EncendidoMock;
 
 public class ClasesParaTestearDispositivos {
 	
-	public static EstadoDispositivo unEstadoEncendido() {
-		LocalDateTime hoy = LocalDateTime.now();
-		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.DAYS);
+	public EstadoDispositivo unEstadoEncendido() {
+		LocalDateTime hoy = LocalDateTime.now().plus(1,ChronoUnit.DAYS);
+		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.MONTHS);
 		
 		return new EncendidoMock(ayer, hoy);
 	}
 
-	public static DispositivoInteligente unDispositivoInteligente() {
+	public DispositivoInteligente unDispositivoInteligente() {
 		
 		EstadoDispositivo encendido = unEstadoEncendido();
 		DispositivoInteligente dispositivo = new DispositivoInteligente("nombre", encendido, 200, 2000);
@@ -29,7 +29,7 @@ public class ClasesParaTestearDispositivos {
 		return dispositivo;
 	}
 
-	public static DispositivoConcreto unDispositivoConcretoConFactory() {
+	public DispositivoConcreto unDispositivoConcretoConFactory() {
 		
 		EstadoDispositivo encendido = unEstadoEncendido();
 		DispositivoFactory factory = new DispositivoFactory();
@@ -40,18 +40,19 @@ public class ClasesParaTestearDispositivos {
 		return aire;
 	}
 	
-	public static DispositivoEstandar unDispositivoEstandar() {
+	public DispositivoEstandar unDispositivoEstandar() {
 
 		return (new DispositivoEstandar("Nombre loco", 200, 2000, 40));
 	}
 	
-	public static DispositivoConcreto heladeraConFactory() {
+	public DispositivoConcreto heladeraConFactory() {
 		
 		EstadoDispositivo encendido = unEstadoEncendido();
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("heladera");
 		Heladera heladera = factory.crearHeladeraSinFreezer();
 		heladera.setEstado(encendido);
+		heladera.setPotencia(0.075);
 		
 		return heladera;
 		

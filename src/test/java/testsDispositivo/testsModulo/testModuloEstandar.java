@@ -20,10 +20,10 @@ public class testModuloEstandar {
 	@Before
 
 	public void setUp() {
-		DispositivoEstandar dispositivoEstandar = ClasesParaTestearDispositivos.unDispositivoEstandar();
+		DispositivoEstandar dispositivoEstandar = new  ClasesParaTestearDispositivos().unDispositivoEstandar();
 		// DispositivoEstandar(2000L, "Microondas", 1L
 		
-		dispositivo = new Modulo(dispositivoEstandar,ClasesParaTestearDispositivos.unEstadoEncendido());
+		dispositivo = new Modulo(dispositivoEstandar,new ClasesParaTestearDispositivos().unEstadoEncendido());
 	}
 	
 	
