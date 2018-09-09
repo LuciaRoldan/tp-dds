@@ -3,6 +3,7 @@ package transformador;
 import usuario.Cliente;
 import zona.Zona;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,10 @@ public class Transformador {
 
     public Long energiaSuministrada(){
         return   listaDeClientes.stream().mapToLong(cliente -> cliente.calcularConsumoAhora()).sum();
+    }
+    
+    public double consumoPromedio(LocalDateTime inicio, LocalDateTime fin) {
+    	return listaDeClientes.stream().mapToDouble(cliente -> cliente.consumoHogarPeriodo(inicio, fin)).sum();
     }
     
     @JsonCreator

@@ -79,7 +79,11 @@ public class DispositivoEstandar implements DispositivoBase {
 	}
 
 	private double consumoPorHora() {
-		return horasUsoMensuales / (24 * 30);
+		return (horasUsoMensuales * this.getPotencia()) / (24 * 30);
+	}
+	
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) {
+		return this.consumoPorHora();
 	}
 
 	@Override

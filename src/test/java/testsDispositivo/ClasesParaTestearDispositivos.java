@@ -16,7 +16,7 @@ public class ClasesParaTestearDispositivos {
 	
 	public static EstadoDispositivo unEstadoEncendido() {
 		LocalDateTime hoy = LocalDateTime.now().plus(1,ChronoUnit.DAYS);
-		LocalDateTime elMesPasado = LocalDateTime.now().minus(1, ChronoUnit.MONTHS);
+		LocalDateTime elMesPasado = LocalDateTime.now().minus(30, ChronoUnit.DAYS);
 		
 		return new EncendidoMock(elMesPasado, hoy);
 	}
@@ -52,7 +52,7 @@ public class ClasesParaTestearDispositivos {
 		factory.setNombre("heladera");
 		Heladera heladera = factory.crearHeladeraSinFreezer();
 		heladera.setEstado(encendido);
-		heladera.setPotencia(0.075);
+		//heladera.setPotencia(0.075);
 		
 		return heladera;
 		

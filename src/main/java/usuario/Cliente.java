@@ -2,6 +2,8 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -108,6 +110,14 @@ public class Cliente extends Usuario {
 		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
 	
+	
+	//REPORTES
+	
+	public double consumoHogarPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+		return dispositivos.stream().
+							mapToDouble(dispositivo -> dispositivo.calcularConsumoPeriodo(inicio, fin)).
+							sum();
+	}
 	
 	
 	

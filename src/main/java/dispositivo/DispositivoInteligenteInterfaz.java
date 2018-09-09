@@ -19,6 +19,7 @@ public interface DispositivoInteligenteInterfaz extends DispositivoBase{
     public double calcularConsumoUltimasNHoras(int horas);
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
     public double consumoCorriente();
+    public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin);
 
     ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 

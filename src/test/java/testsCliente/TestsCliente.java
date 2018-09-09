@@ -12,7 +12,7 @@ import usuario.Cliente;
 import usuario.TipoDocumento;
 
 public class TestsCliente {
-	ArrayList<DispositivoConcreto> dispositivos;
+	ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	Cliente cliente;
 
 

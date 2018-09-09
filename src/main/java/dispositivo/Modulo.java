@@ -4,6 +4,7 @@ import exceptionDispositivo.dispositivoInteligente.NoSePuedeAgregarOtroModuloAdi
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
@@ -75,6 +76,11 @@ public class Modulo implements DispositivoInteligenteInterfaz {
 		int anoActual = LocalDate.now().getYear();
 		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
+    
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) {
+		double cantidadHoras = inicio.until(fin, ChronoUnit.HOURS);
+		return this.calcularConsumoPeriodo(inicio, fin) / cantidadHoras;
 	}
     
     public boolean estaEncendido() {  return estado.estaEncendido(); }

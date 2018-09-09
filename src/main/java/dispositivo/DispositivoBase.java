@@ -20,6 +20,7 @@ public interface DispositivoBase {
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin);
     public boolean esInteligente();	
     public double consumoCorriente();
+    public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin);
     
     //////////GETTERS//////////
     
