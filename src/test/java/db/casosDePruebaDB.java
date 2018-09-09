@@ -2,9 +2,20 @@ package db;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.util.List;
+
+import org.junit.Before;
 import org.junit.Test;
 
+import exceptionParser.NoSePudoAbrirElArchivoException;
+import parserTransformadorYZona.ParserTransformadorYZona;
+import repositorio.RepositorioDeTransformadores;
+import transformador.Transformador;
+
 public class casosDePruebaDB {
+	ClaseParaDB claseParaDB = new ClaseParaDB();
+	
 
 	@Test
 	public void caso1() {
@@ -28,10 +39,24 @@ public class casosDePruebaDB {
 	}
 	
 	@Test
-	public void caso4() {
+	public void caso4() throws NoSePudoAbrirElArchivoException, IOException {
 		//Recuperar todos los transformadores persistidos. Registrar la cantidad. Agregar una instancia de Transformador al JSON de 
 		//entradas. Ejecutar el método de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
-		assertTrue(true);
+		
+		Transformador transformador = ClaseParaDB.getTransformador();
+		RepositorioDeTransformadores repoTransformadores = new RepositorioDeTransformadores();
+		repoTransformadores.persistirTransformador(transformador);
+		
+		List<Transformador> transformadores = repoTransformadores.getListaTransformadores();
+		int cantidadOriginal = transformadores.size();
+		
+		ParserTransformadorYZona parser = new ParserTransformadorYZona();
+		Transformador nuevoTransformador = parser.parsearTransformador("src/test/java/db/transformador.json");
+		repoTransformadores.persistirTransformador(nuevoTransformador);
+		
+		transformadores = repoTransformadores.getListaTransformadores();
+		//cantidadOriginal +1, transformadores.size()
+		assertEquals(cantidadOriginal +1, transformadores.size());
 	}
 	
 	@Test

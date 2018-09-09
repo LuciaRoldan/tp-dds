@@ -12,11 +12,11 @@ import static org.junit.Assert.assertEquals;
 
 public class testGuardarYLeerCliente {
 
-    Cliente       cliente           = new claseParaDB().getCliente();
+    Cliente       cliente           = new ClaseParaDB().getCliente();
     DataBase      db2               = DataBase.getInstance();
-    Sensor        sensor            = new claseParaDB().getSensor();
-    Transformador transformador     = new claseParaDB().getTransformador();
-    Zona          zona              = new claseParaDB().getZona();
+    Sensor        sensor            = new ClaseParaDB().getSensor();
+    Transformador transformador     = new ClaseParaDB().getTransformador();
+    Zona          zona              = new ClaseParaDB().getZona();
     Cliente       cliente2;
     Sensor        sensor2;
     Transformador transformador2;

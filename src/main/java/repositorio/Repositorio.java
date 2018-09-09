@@ -12,4 +12,9 @@ public abstract class Repositorio {
 		return entityManager;
 	}
 
+	protected void persistir(Object x){
+        entityManager.getTransaction().begin();
+        entityManager.persist(x);
+        entityManager.getTransaction().commit();
+    }
 }

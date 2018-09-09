@@ -1,0 +1,15 @@
+{
+
+
+
+"coordenadaX" : -35.000000,
+"coordenadaY" : -58.000000,
+"nombre" : "Transformador 5000",
+"listaDeClientes" : [],
+"zona" : { "coordenadaX" : -35.010000,
+	   "coordenadaY" : -58.000000,
+	   "radio" : 1.000000,
+	   "nombre" : "La Plata",
+	   "listaDeTransformadores" : []
+	 }
+}

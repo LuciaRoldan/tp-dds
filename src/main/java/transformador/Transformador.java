@@ -27,7 +27,7 @@ public class Transformador {
     private List<Integer> listaDeClientesId = new ArrayList<Integer>();
     @GeneratedValue
     @Id
-    private Integer       numeroDeTransformador;
+    private Integer numeroDeTransformador;
 
     ///////////////////////////////////GETTERS Y SETTERS ////////////////////////////////////
 

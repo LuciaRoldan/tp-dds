@@ -10,7 +10,7 @@ import zona.Zona;
 import java.util.ArrayList;
 import java.util.List;
 
-public class claseParaDB {
+public class ClaseParaDB {
 
     static List<Cliente> listaDeClientes = new ArrayList<Cliente>();
     static Float coordenadaX = new Float(10);
@@ -20,7 +20,7 @@ public class claseParaDB {
 
 
     public static Cliente getCliente(){
-        return new Cliente("Máximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
+        return new Cliente("Maximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
                 "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545,
         CategoriaResidencial.CATEGORIAR5 ,null);
     }
@@ -34,6 +34,6 @@ public class claseParaDB {
     }
 
     public Zona getZona() {
-        return new Zona("Comuna 13",Float.valueOf(1),Float.valueOf(coordenadaX),Float.valueOf(coordenadaY),null);
+        return new Zona("Comuna 13", Float.valueOf(1), Float.valueOf(coordenadaX), Float.valueOf(coordenadaY), null);
     }
 }
