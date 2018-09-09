@@ -40,16 +40,11 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	
 
 	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
-		ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
-		ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
 		
-		estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
-		.forEach(estado -> estadosCompletosPeriodo.add(estado));
-		estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
-		.forEach(estado -> estadosBordePeriodo.add(estado));
-		
-		return (estadosCompletosPeriodo.stream().mapToDouble(estado -> estado.calcularConsumo(this.potencia)).sum()
-		+ estadosBordePeriodo.stream().mapToDouble(estado -> estado.calcularConsumoBorder(inicio, fin, this.potencia)).sum());
+		return this.estadosAnteriores
+				.stream()
+				.mapToDouble(estado -> estado.calcularConsumoPeriodo(inicio, fin, this.potencia) )
+				.sum();
 	}
 	
 
@@ -63,7 +58,8 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 		return estado.estaEncendido();
 	}
 	
-	public boolean estaApagado() {return estado.estaApagado();
+	public boolean estaApagado() {
+		return estado.estaApagado();
 	}
 	
 	public void encendete() {
@@ -73,7 +69,6 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	public void apagate() {
 		estado.apagate(this);
 	}
-	
 
 	public void activarAhorroDeEnergia() {
 		estado.activarAhorroDeEnergia(this);
@@ -128,9 +123,10 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	}
 	
 	public void setEstado(EstadoDispositivo estado) {
+		this.agregarEstadoAnterior(this.estado);
 		this.estado = estado;
 	}
-	public void agregarEstado(EstadoDispositivo estado) {
+	public void agregarEstadoAnterior(EstadoDispositivo estado) {
 		estadosAnteriores.add(estado);
 	}
 	
@@ -160,6 +156,12 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	public void setBajoConsumo(boolean bajoConsumo) {
 		// TODO Auto-generated method stub
 		this.esBajoConsumo = bajoConsumo;
+	}
+
+	@Override
+	public void agregarEstado(EstadoDispositivo estado) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
