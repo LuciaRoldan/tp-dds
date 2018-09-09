@@ -7,13 +7,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
+
 import categoria.CategoriaResidencial;
 import dataBase.DataBase;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
-
-import javax.persistence.*;
-import javax.xml.crypto.Data;
 
 @Entity
 public class Cliente extends Usuario {
@@ -40,10 +41,10 @@ public class Cliente extends Usuario {
 
 	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos, Float coordenadaX, Float coordenadaY) {
 
 		dataBase = DataBase.getInstance();
-		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreDeUsuario, contrasena, CLIENTE);
+		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreDeUsuario, contrasena, CLIENTE, coordenadaX, coordenadaY);
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 		this.telefono = telefono;

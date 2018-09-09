@@ -1,11 +1,16 @@
 package usuario;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+import org.hibernate.internal.CoreLogging;
+
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-
-import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "tipoDeUsuario")
 @JsonSubTypes({
@@ -23,6 +28,9 @@ public abstract class Usuario {
 	public String 		     nombreYApellido;
 	public TipoDeUsuario     tipoDeUsuario;
 	public Integer           tdu;
+	private Float coordenadaX;
+    private Float coordenadaY;
+    
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     public Integer           numeroDeUsuario;
@@ -31,13 +39,15 @@ public abstract class Usuario {
 	//////////////////////////// CONSTRUCTOR /////////////////////////////////////////////////////////////
 
 	public void inicializar(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
-			String contrasena,TipoDeUsuario tipoDeUsuario) {
+			String contrasena,TipoDeUsuario tipoDeUsuario, Float coordenadaX, Float coordenadaY) {
 		this.nombreYApellido = nombreYApellido;
 		this.domicilio 		 = domicilio;
 		this.fechaDeAlta	 = fechaDeAlta;
 		this.nombreDeUsuario = nombreUsuario;
 		this.contrasena 	 = contrasena;
 		this.tipoDeUsuario   = tipoDeUsuario;
+		this.coordenadaX 	 = coordenadaX;
+		this.coordenadaY 	 = coordenadaY;
 	}
 
 
@@ -49,7 +59,9 @@ public abstract class Usuario {
 	public String        getNombreYApellido()				  { return this.nombreYApellido;			 		   }
 	public String        getFechaDeAlta() 					  { return this.fechaDeAlta;                           }
 	public TipoDeUsuario getTipoDeUsuario()					  { return null;							 		   }
-
+	public Float 		 getCoordenadaX()					  { return coordenadaX;								   }
+	public Float 		 getCoordenadaY()					  { return coordenadaY;								   }
+	
 	/////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
 	public void setContrasena(String contrasena) 		     { this.contrasena = contrasena;			 		   }
@@ -57,6 +69,8 @@ public abstract class Usuario {
 	public void setNombreYApellido(String nombreYApellido)   { this.nombreYApellido = nombreYApellido;	 		   }
 	public void setNombreUsuario(String nombreUsuario) 	     { this.nombreDeUsuario = nombreUsuario;	 		   }
 	public void setFechaDeAlta(String fechaDeAlta) 		     { this.fechaDeAlta = fechaDeAlta; 			 		   }
+	public void setCoordenadaX(Float coordenadaX)			 { this.coordenadaX = coordenadaX;					   }
+	public void setCoordenadaY(Float coordenadaY)			 { this.coordenadaY = coordenadaY;					   }
 
 }
 

@@ -81,7 +81,7 @@ public class TestsSimplex {
 	public void testSimplexAriel() {
 	
 		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", "01012000", "aboghoss", 
-				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos);
+				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos, (float) 0, (float) 0);
 		ariel.configuracionOptima();
 		
 		//Checkeado con http://www.phpsimplex.com/simplex
@@ -100,7 +100,7 @@ public class TestsSimplex {
 	public void testEjecutarSimplexAriel() {
 		
 		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", "01012000", "aboghoss", 
-				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos);
+				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos, (float) 0, (float) 0);
 		
 		ariel.ejecutarSimplex();
 		

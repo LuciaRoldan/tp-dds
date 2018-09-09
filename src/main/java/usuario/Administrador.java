@@ -1,12 +1,11 @@
 package usuario;
-import com.fasterxml.jackson.annotation.JsonCreator;
-
-import javax.persistence.Entity;
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 import static usuario.TipoDeUsuario.ADMINISTRADOR;
 
+import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
+@Entity
 public class Administrador extends Usuario{
 
 	private Integer numeroDeIdentificacion;
@@ -14,11 +13,11 @@ public class Administrador extends Usuario{
 	//////////////////////////////// CONSTRUCTORES /////////////////////////////////////////////////////////////
 
 	public Administrador(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
-						 String contrasena, Integer numeroDeIdentificacion){
-					super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR);
+						 String contrasena, Integer numeroDeIdentificacion, Float coordenadaX, Float coordenadaY){
+					super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR, coordenadaX, coordenadaY);
 			this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
-
+	
 	/////////////////////////////////  SETTERS //////////////////////////////////////////////////////
 
 	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) {	this.numeroDeIdentificacion = numeroDeIdentificacion;}

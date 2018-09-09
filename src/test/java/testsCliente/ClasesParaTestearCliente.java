@@ -21,7 +21,9 @@ public class ClasesParaTestearCliente {
 				12345678,
 				12345678,
 				CategoriaResidencial.CATEGORIAR2,
-				dispositivos);
+				dispositivos,
+				(float) 0,
+				(float) 0);
 				
 		return cliente;			
 	}

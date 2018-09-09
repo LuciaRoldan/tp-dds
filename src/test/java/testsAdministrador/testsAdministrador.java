@@ -15,14 +15,14 @@ public class testsAdministrador {
 		DateTimeFormatter formatter_2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String fechaString = (haceUnMes).format(formatter_2);
 		Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123",
-				fechaString, "jperez", "123",3);
+				fechaString, "jperez", "123", 3, (float) 0 ,(float) 0);
 		
-		assertEquals(1, administrador.cantidadMesesComoAdministrador());
+		assertEquals(1, administrador.cantidadMesesComoAdministrador(), 0.1);
 	}
 	
 	@Test
 	public void cambioNumeroIdentificacion() {
-		Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123", "1/1/2018", "jperez", "123",3);
+		Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123", "1/1/2018", "jperez", "123", 3, (float) 0 ,(float) 0);
 		int id = 100;
 		administrador.setNumeroDeIdentificacion(id);
 		assertEquals(id, administrador.getNumeroDeIdentificacion());

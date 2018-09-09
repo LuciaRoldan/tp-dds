@@ -22,7 +22,7 @@ public class ClaseParaDB {
     public static Cliente getCliente(){
         return new Cliente("Maximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
                 "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545,
-        CategoriaResidencial.CATEGORIAR5 ,null);
+        CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
     }
 
     public static Sensor getSensor(){
