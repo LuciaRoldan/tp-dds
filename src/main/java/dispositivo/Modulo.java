@@ -52,17 +52,10 @@ public class Modulo implements DispositivoInteligenteInterfaz {
     }
 
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
-        ArrayList<EstadoDispositivo> estadosCompletosPeriodo = new ArrayList<EstadoDispositivo>();
-        ArrayList<EstadoDispositivo> estadosBordePeriodo = new ArrayList<EstadoDispositivo>();
-        double potencia = this.dispositivoEstandar.getPotencia();
-
-        estadosAnteriores.stream().filter(estado -> estado.estaComprendido(inicio, fin))
-                .forEach(estado -> estadosCompletosPeriodo.add(estado));
-        estadosAnteriores.stream().filter(estado -> estado.esCasoBorder(inicio, fin))
-                .forEach(estado -> estadosBordePeriodo.add(estado));
-
-        return estadosCompletosPeriodo.stream().mapToDouble(estado -> estado.calcularConsumo(potencia)).sum()
-                + estadosBordePeriodo.stream().mapToDouble(estado -> estado.calcularConsumoBorder(inicio, fin, potencia)).sum();
+    	return this.estadosAnteriores
+				.stream()
+				.mapToDouble(estado -> estado.calcularConsumoPeriodo(inicio, fin, this.getPotencia()) )
+				.sum();
     }
 
 
