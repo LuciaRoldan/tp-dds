@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
@@ -29,9 +31,9 @@ public class Cliente extends Usuario {
 	@OneToMany
 	@JoinColumn(name="numeroDeDispositivoConcreto")
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
-	@Transient
+	@Enumerated(EnumType.STRING)
 	private CategoriaResidencial categoriaResidencial;
-	@Transient
+	@Enumerated(EnumType.STRING)
 	private TipoDocumento tipoDocumento;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
