@@ -3,6 +3,7 @@ package testsCliente;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -80,7 +81,7 @@ public class TestsSimplex {
 	@Test
 	public void testSimplexAriel() {
 	
-		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", "01012000", "aboghoss", 
+		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", LocalDate.of(2000, 01, 01), "aboghoss", 
 				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos, (float) 0, (float) 0);
 		ariel.configuracionOptima();
 		
@@ -99,7 +100,7 @@ public class TestsSimplex {
 	@Test
 	public void testEjecutarSimplexAriel() {
 		
-		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", "01012000", "aboghoss", 
+		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", LocalDate.of(2000, 01, 01), "aboghoss", 
 				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos, (float) 0, (float) 0);
 		
 		ariel.ejecutarSimplex();

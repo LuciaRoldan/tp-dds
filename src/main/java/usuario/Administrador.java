@@ -1,6 +1,9 @@
 package usuario;
 import static usuario.TipoDeUsuario.ADMINISTRADOR;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -8,30 +11,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 @Entity
 public class Administrador extends Usuario{
 
-	private Integer numeroDeIdentificacion;
+	// Lo comento porque ahora es el numero de usuario private Integer numeroDeIdentificacion;
 
 	//////////////////////////////// CONSTRUCTORES /////////////////////////////////////////////////////////////
 
-	public Administrador(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreUsuario,
-						 String contrasena, Integer numeroDeIdentificacion, Float coordenadaX, Float coordenadaY){
+	public Administrador(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreUsuario,
+						 String contrasena, Float coordenadaX, Float coordenadaY){
 					super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreUsuario, contrasena, ADMINISTRADOR, coordenadaX, coordenadaY);
-			this.numeroDeIdentificacion = numeroDeIdentificacion;
 	}
 	
 	/////////////////////////////////  SETTERS //////////////////////////////////////////////////////
 
-	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) {	this.numeroDeIdentificacion = numeroDeIdentificacion;}
+   //	public void setNumeroDeIdentificacion(int numeroDeIdentificacion) { re	this.getId();}
 
     /////////////////////////////////////////  GETTERS //////////////////////////////////////////////////////////////
 
 	public float cantidadMesesComoAdministrador() {
-    	//return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
-        System.out.print("Soy el colo, hice que la fecha sea un String para que Hibernate no rompa,lo tengo que areglar");
-        return -100000;
+    	return this.getFechaDeAlta().until(LocalDate.now(), ChronoUnit.MONTHS);
+
     }
 
 	public int getNumeroDeIdentificacion() {
-		return numeroDeIdentificacion;
+		return this.getId();
 	}
 	public TipoDeUsuario getTipoDeUsuario()			 { return ADMINISTRADOR;}
 	

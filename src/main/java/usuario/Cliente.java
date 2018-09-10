@@ -2,6 +2,7 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,9 +24,6 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
-	private Integer numeroDeCliente;
-	@ElementCollection
-	private List<Integer> listaDeDispositivosID = new ArrayList<Integer>();
 	@Transient
 	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Transient
@@ -39,7 +37,7 @@ public class Cliente extends Usuario {
 
 	public Cliente() {}
 
-	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
+	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos, Float coordenadaX, Float coordenadaY) {
 
@@ -51,13 +49,7 @@ public class Cliente extends Usuario {
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 		this.maximoConsumo = 612;
-		if (dispositivos != null) {
-			for (DispositivoConcreto dc : dispositivos) {
-				listaDeDispositivosID.add(dc.getId());
-				dispositivos.add(dataBase.getDispositivo(dc.getId()));
-			}
-		}
-
+		
 	}
 	
 	public Double calcularConsumoMensual() {
@@ -74,7 +66,6 @@ public class Cliente extends Usuario {
 		this.setCategoriaResidencial(nuevaCategoria);
 	}
 
-	public Integer getNumeroDeCliente(){return this.numeroDeCliente;}
 
 	
 	public int getCantidadDispositivos() {

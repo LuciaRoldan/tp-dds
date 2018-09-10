@@ -1,5 +1,6 @@
 package testsCliente;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import categoria.CategoriaResidencial;
@@ -14,7 +15,7 @@ public class ClasesParaTestearCliente {
 		ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 		Cliente cliente = new Cliente("Juan Perez",
 				"Calle Falsa 123",
-				"01012001",
+				LocalDate.of(2001,01,01),
 				"jperez",
 				"123",
 				TipoDocumento.DNI,

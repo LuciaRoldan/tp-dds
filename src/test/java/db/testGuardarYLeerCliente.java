@@ -30,7 +30,7 @@ public class testGuardarYLeerCliente {
     public void guardarYleerUnCliente() {
         System.out.println(cliente.nombreDeUsuario);
         db2.persistirCliente(cliente);
-        Integer id = cliente.getNumeroDeUsuario();
+        Integer id = cliente.getId();
         System.out.println(id);
         cliente2 = db2.getCliente(id);
         assertEquals(cliente2,cliente);
