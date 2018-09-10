@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import transformador.Transformador;
+import zona.Zona;
 
-public class RepositorioDeTransformadores extends Repositorio{
+public class RepositorioDeTransformadoresYZonas extends Repositorio{
 	//private List<Transformador> listaDeTransformadores = new ArrayList<Transformador>();
 	
 	public void persistirTransformador(Transformador transformador){
@@ -21,5 +22,13 @@ public class RepositorioDeTransformadores extends Repositorio{
 		lista = entityManager.createQuery("SELECT t FROM Transformador t WHERE t.numeroDeTransformador > 0").getResultList();
 		return lista;
 	}
+	
+	public void persistirUnaZona(Zona zona) {
+        this.persistir(zona);
+    }
+	
+	public Zona getZona(Integer id) {
+        return entityManager.find(Zona.class,id );
+    }
 
 }

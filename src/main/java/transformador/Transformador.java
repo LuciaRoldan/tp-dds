@@ -19,7 +19,7 @@ public class Transformador {
     private Float coordenadaY;
     @Transient
     private Zona  zona;
-    private Integer zonaId;
+    private Integer zonaId; //vuela?
     private String nombre;
     @Transient
     private List<Cliente> listaDeClientes = new ArrayList<Cliente>();
@@ -43,6 +43,10 @@ public class Transformador {
 
     public Float getCoordenadaX() {
         return this.coordenadaX;
+    }
+    
+    public String getNombre() {
+    	return this.nombre;
     }
 
 ///////////////////////////////// METODOS ///////////////////////////////////////////////

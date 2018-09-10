@@ -11,8 +11,8 @@ import org.junit.Test;
 import categoria.CategoriaResidencial;
 import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
-import repositorio.RepositorioDeTransformadores;
 import repositorio.RepositorioDeUsuarios;
+import repositorio.RepositorioDeTransformadoresYZonas;
 import transformador.Transformador;
 import usuario.Cliente;
 import usuario.TipoDocumento;
@@ -24,22 +24,19 @@ public class casosDePruebaDB {
 
 	@Test
 	public void caso1() {
-		
-		ClaseParaDB dbMock = new ClaseParaDB();
-		
-		Cliente cliente=  new Cliente("Maximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
-	                				  "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545,
-	                				  CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
+		//Crear 1 usuario nuevo. Persistirlo. Recuperarlo, modificar la geolocalización y grabarlo. Recuperarlo y evaluar 
+		//que el cambio se haya realizado.
+
+		Cliente cliente = ClaseParaDB.getCliente();
 		RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
 		repositorioDeUsuarios.agregarUsuario(cliente);
-		dbMock.persistirCliente(cliente);
 		
-		Usuario clienteRecuperado = claseParaDB.obtenerUsuarioPorNombre("Emilio Ravenna");
-		assertEquals(clienteRecuperado, cliente);
-
-		dbMock.modificarGeo(clienteRecuperado, 2, 3);
+		Cliente cliente2 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
+		Float nuevaCoordenadaX = new Float(100);
+		cliente2.setCoordenadaX(nuevaCoordenadaX);
 		
-		assertEquals(new Float(2), clienteRecuperado.getCoordenadaX());
+		Cliente cliente3 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
+		assertEquals(nuevaCoordenadaX, cliente3.getCoordenadaX());
 	}
 	
 	@Test
@@ -62,7 +59,7 @@ public class casosDePruebaDB {
 		//entradas. Ejecutar el método de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
 		
 		Transformador transformador = ClaseParaDB.getTransformador();
-		RepositorioDeTransformadores repoTransformadores = new RepositorioDeTransformadores();
+		RepositorioDeTransformadoresYZonas repoTransformadores = new RepositorioDeTransformadoresYZonas();
 		repoTransformadores.persistirTransformador(transformador);
 		
 		List<Transformador> transformadores = repoTransformadores.getListaTransformadores();
@@ -73,7 +70,6 @@ public class casosDePruebaDB {
 		repoTransformadores.persistirTransformador(nuevoTransformador);
 		
 		transformadores = repoTransformadores.getListaTransformadores();
-		//cantidadOriginal +1, transformadores.size()
 		assertEquals(cantidadOriginal +1, transformadores.size());
 	}
 	

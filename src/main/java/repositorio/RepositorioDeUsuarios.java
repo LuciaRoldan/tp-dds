@@ -18,16 +18,13 @@ public class RepositorioDeUsuarios extends Repositorio {
 	}
 	
 	public void agregarUsuario(Usuario usuario) {
-		
-		entityManager.getTransaction().begin();
-		entityManager.persist(usuario);
-		entityManager.getTransaction().commit();
+		this.persistir(usuario); //Ivi usa esta funcion que ya existe!
 	}
 	
-	public Usuario recuperarUsuarioPorNombre(String nombreDeUsuario) {
+	public Usuario recuperarUsuarioPorNombreDeUsuario(String nombreDeUsuario) {
 		
 		List<Usuario> usuarios = this.obtenerEntityManager()
-				.createQuery("from Terminal where nombre = :nombreDeUsuario", Usuario.class)
+				.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.nombreDeUsuario = :nombreDeUsuario", Usuario.class)
 				.setParameter("nombreDeUsuario", nombreDeUsuario).getResultList();
 		if (!usuarios.isEmpty()) {
 			return usuarios.get(0);
@@ -35,9 +32,10 @@ public class RepositorioDeUsuarios extends Repositorio {
 		return null;
 	}
 	
+	//Ivi no se si es neceario que tengamos esta funcion
 	public void modificarGeolocalizacion(Usuario usuario, float coordenadaX, float coordenadaY) {
 		
-		if(this.recuperarUsuarioPorNombre(usuario.getNombreUsuario()) != null) {
+		if(this.recuperarUsuarioPorNombreDeUsuario(usuario.getNombreUsuario()) != null) {
 			usuario.setCoordenadaX(coordenadaX);
 			usuario.setCoordenadaY(coordenadaY);
 			

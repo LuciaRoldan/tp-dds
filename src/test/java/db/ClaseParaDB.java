@@ -18,9 +18,6 @@ public class ClaseParaDB {
     static Float coordenadaX = new Float(10);
     static Float coordenadaY = new Float(10);
 
-
-
-
     public static Cliente getCliente(){
         return new Cliente("Maximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
                 "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545,
@@ -37,27 +34,5 @@ public class ClaseParaDB {
 
     public Zona getZona() {
         return new Zona("Comuna 13", Float.valueOf(1), Float.valueOf(coordenadaX), Float.valueOf(coordenadaY), null);
-    }
-    
-    public void persistirCliente(Cliente cliente) {
-    	listaDeClientes.add(cliente);
-    }
-    
-    public Cliente obtenerUsuarioPorNombre(String nombreDeUsuario) {
-    	Cliente encontrado = listaDeClientes.stream()
-    										.filter(cliente -> cliente.getNombreUsuario() == nombreDeUsuario)
-    										.findFirst()
-    										.get();
-    	return encontrado;
-    }
-    
-    public void modificarGeo(Usuario usuario, float x, float y) {
-    	Usuario encontrado = obtenerUsuarioPorNombre(usuario.getNombreUsuario());
-    	
-    	if(encontrado != null) {
-    		encontrado.setCoordenadaX(x);
-    		encontrado.setCoordenadaY(y);
-    	}
-    	
-    }
+    }    
 }
