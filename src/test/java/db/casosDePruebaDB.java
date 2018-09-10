@@ -8,10 +8,15 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import categoria.CategoriaResidencial;
 import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
 import repositorio.RepositorioDeTransformadores;
+import repositorio.RepositorioDeUsuarios;
 import transformador.Transformador;
+import usuario.Cliente;
+import usuario.TipoDocumento;
+import usuario.Usuario;
 
 public class casosDePruebaDB {
 	ClaseParaDB claseParaDB = new ClaseParaDB();
@@ -19,9 +24,22 @@ public class casosDePruebaDB {
 
 	@Test
 	public void caso1() {
-		//Crear 1 usuario nuevo. Persistirlo. Recuperarlo, modificar la geolocalización y grabarlo. Recuperarlo y evaluar 
-		//que el cambio se haya realizado.
-		assertTrue(true);
+		
+		ClaseParaDB dbMock = new ClaseParaDB();
+		
+		Cliente cliente=  new Cliente("Maximo Cozzetti", "Calle falsa 123", "01/01/2001", "Emilio Ravenna",
+	                				  "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545,
+	                				  CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
+		RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
+		repositorioDeUsuarios.agregarUsuario(cliente);
+		dbMock.persistirCliente(cliente);
+		
+		Usuario clienteRecuperado = claseParaDB.obtenerUsuarioPorNombre("Emilio Ravenna");
+		assertEquals(clienteRecuperado, cliente);
+
+		dbMock.modificarGeo(clienteRecuperado, 2, 3);
+		
+		assertEquals(new Float(2), clienteRecuperado.getCoordenadaX());
 	}
 	
 	@Test

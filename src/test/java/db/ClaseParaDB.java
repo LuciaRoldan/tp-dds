@@ -6,9 +6,11 @@ import sensor.Sensor;
 import transformador.Transformador;
 import usuario.Cliente;
 import usuario.TipoDocumento;
+import usuario.Usuario;
 import zona.Zona;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
 
 public class ClaseParaDB {
 
@@ -35,5 +37,27 @@ public class ClaseParaDB {
 
     public Zona getZona() {
         return new Zona("Comuna 13", Float.valueOf(1), Float.valueOf(coordenadaX), Float.valueOf(coordenadaY), null);
+    }
+    
+    public void persistirCliente(Cliente cliente) {
+    	listaDeClientes.add(cliente);
+    }
+    
+    public Cliente obtenerUsuarioPorNombre(String nombreDeUsuario) {
+    	Cliente encontrado = listaDeClientes.stream()
+    										.filter(cliente -> cliente.getNombreUsuario() == nombreDeUsuario)
+    										.findFirst()
+    										.get();
+    	return encontrado;
+    }
+    
+    public void modificarGeo(Usuario usuario, float x, float y) {
+    	Usuario encontrado = obtenerUsuarioPorNombre(usuario.getNombreUsuario());
+    	
+    	if(encontrado != null) {
+    		encontrado.setCoordenadaX(x);
+    		encontrado.setCoordenadaY(y);
+    	}
+    	
     }
 }
