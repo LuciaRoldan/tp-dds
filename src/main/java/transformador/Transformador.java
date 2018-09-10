@@ -17,14 +17,12 @@ public class Transformador {
     ////////////////////////////////// ATRIBUTOS ///////////////////////////////////////////
     private Float coordenadaX;
     private Float coordenadaY;
-    @Transient
-    private Zona  zona;
-    private Integer zonaId; //vuela?
     private String nombre;
-    @Transient
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "numeroDeTransformador")
     private List<Cliente> listaDeClientes = new ArrayList<Cliente>();
-    @ElementCollection
-    private List<Integer> listaDeClientesId = new ArrayList<Integer>();
+    
     @GeneratedValue
     @Id
     private Integer numeroDeTransformador;
@@ -62,14 +60,8 @@ public class Transformador {
     public Transformador(List<Cliente> listaDeClientes,String nombre,Zona zona, Float coordenadaX, Float coordenadaY ){
         this.listaDeClientes = listaDeClientes;
         this.nombre = nombre;
-        this.zona = zona;
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
-        if (listaDeClientes != null){
-            for (Cliente cliente : listaDeClientes) {
-                listaDeClientesId.add(cliente.getNumeroDeCliente());
-            }
-        }
     }
 
     public Integer getNumeroDeTransformador() {
