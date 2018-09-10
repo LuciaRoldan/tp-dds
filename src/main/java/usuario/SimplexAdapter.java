@@ -29,7 +29,7 @@ public class SimplexAdapter {
 	private static double horasCorrientes;
 	static List<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 
-	public static HashMap<DispositivoConcreto, Double> configuracionOptima(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+	public static HashMap<DispositivoConcreto, Double> configuracionOptima(List<DispositivoConcreto> dispositivos, double maximoConsumo) {
 
 		SimplexSolver simplex = new SimplexSolver();		
 		
@@ -61,7 +61,7 @@ public class SimplexAdapter {
 
 	}
 	
-	public static void ejecutarSimplex(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo) {
+	public static void ejecutarSimplex(List<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
 		SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		

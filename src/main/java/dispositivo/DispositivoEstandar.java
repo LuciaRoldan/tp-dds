@@ -4,9 +4,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import javax.persistence.Entity;
+
 import dispositivo.estados.EstadoDispositivo;
 import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
+@Entity
 public class DispositivoEstandar extends DispositivoBase {
 	
 	private String name;

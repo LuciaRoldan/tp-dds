@@ -3,9 +3,14 @@ package dispositivo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GenerationType;
+
 import dispositivo.estados.EstadoDispositivo;
 
-public abstract class DispositivoInteligenteInterfaz extends DispositivoBase{
+@Entity
+public abstract class DispositivoInteligenteAbstracto extends DispositivoBase{
+	
 
     public double consumoMensual() {
         return 0;

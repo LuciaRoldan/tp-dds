@@ -9,14 +9,18 @@ import dispositivo.estados.EstadoDispositivo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DispositivoBase {
 
     @Id
-    @GeneratedValue
-    private Integer numeroDeDispositivoBase;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Integer numeroDeDispositivoBase;
 	
     public double consumoMensual(){return -800;};
     public void activarAhorroDeEnergia(){};

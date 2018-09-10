@@ -29,12 +29,14 @@ public class casosDePruebaDB {
 		RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
 		repositorioDeUsuarios.agregarUsuario(cliente);
 		
+		
 		Cliente cliente2 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
 		Float nuevaCoordenadaX = new Float(100);
 		cliente2.setCoordenadaX(nuevaCoordenadaX);
 		
 		Cliente cliente3 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
 		assertEquals(nuevaCoordenadaX, cliente3.getCoordenadaX());
+		assertTrue(true);
 	}
 	
 	@Test

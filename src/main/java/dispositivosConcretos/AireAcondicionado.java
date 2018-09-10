@@ -1,9 +1,13 @@
 package dispositivosConcretos;
 
+
+import javax.persistence.Entity;
+
 import dispositivo.DispositivoBase;
 import exceptionDispositivo.DispositivoBaseInvalidoException;
 import exceptionDispositivo.DispositivoConcretoInvalidoException;
 
+@Entity
 public class AireAcondicionado extends DispositivoConcreto{
 
 	int frigorias;

@@ -10,6 +10,8 @@ import java.util.stream.Collectors;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import categoria.CategoriaResidencial;
@@ -24,14 +26,13 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
-	@Transient
-	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
+	@OneToMany
+	@JoinColumn(name="numeroDeDispositivoConcreto")
+	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Transient
 	private CategoriaResidencial categoriaResidencial;
 	@Transient
 	private TipoDocumento tipoDocumento;
-	@Transient
-	private DataBase dataBase;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -41,7 +42,7 @@ public class Cliente extends Usuario {
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
 			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos, Float coordenadaX, Float coordenadaY) {
 
-		dataBase = DataBase.getInstance();
+		//dataBase = DataBase.getInstance();
 		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreDeUsuario, contrasena, CLIENTE, coordenadaX, coordenadaY);
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
@@ -150,7 +151,7 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<DispositivoConcreto> getDispositivos() {
+	public List<DispositivoConcreto> getDispositivos() {
 		return this.dispositivos;
 	}
 	

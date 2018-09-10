@@ -1,7 +1,9 @@
 package dispositivosConcretos;
 
+import javax.persistence.Entity;
 import dispositivo.DispositivoBase;
 
+@Entity
 public class Microondas extends DispositivoConcreto{
 	boolean convencional;
 	

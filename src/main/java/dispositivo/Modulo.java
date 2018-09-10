@@ -5,15 +5,30 @@ import exceptionDispositivo.dispositivoInteligente.NoSePuedeAgregarOtroModuloAdi
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
-public class Modulo extends DispositivoInteligenteInterfaz {
+@Entity
+public class Modulo extends DispositivoInteligenteAbstracto {
 
+	@OneToOne
     DispositivoBase dispositivoEstandar;
+	@OneToOne
     private EstadoDispositivo estado;
-    private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
+	
+	@JoinColumn(name = "idEstado")
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////

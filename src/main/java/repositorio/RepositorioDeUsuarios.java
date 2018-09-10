@@ -31,15 +31,4 @@ public class RepositorioDeUsuarios extends Repositorio {
 		}
 		return null;
 	}
-	
-	//Ivi no se si es neceario que tengamos esta funcion
-	public void modificarGeolocalizacion(Usuario usuario, float coordenadaX, float coordenadaY) {
-		
-		if(this.recuperarUsuarioPorNombreDeUsuario(usuario.getNombreUsuario()) != null) {
-			usuario.setCoordenadaX(coordenadaX);
-			usuario.setCoordenadaY(coordenadaY);
-			
-			entityManager.merge(usuario);
-		}
-	}
 }

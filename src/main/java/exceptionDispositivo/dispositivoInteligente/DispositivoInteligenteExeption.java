@@ -1,6 +1,6 @@
 package exceptionDispositivo.dispositivoInteligente;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,9 +8,9 @@ import java.util.Date;
 public class DispositivoInteligenteExeption extends RuntimeException {
     Date date;
     String error;
-    dispositivo.DispositivoInteligenteInterfaz dispositivoInteligente;
+    dispositivo.DispositivoInteligenteAbstracto dispositivoInteligente;
 
-    public DispositivoInteligenteExeption(dispositivo.DispositivoInteligenteInterfaz de,String error){
+    public DispositivoInteligenteExeption(dispositivo.DispositivoInteligenteAbstracto de,String error){
         this.dispositivoInteligente = de;
         this.date = new Date();
         this.error = error;

@@ -9,16 +9,22 @@ import dispositivo.estados.EstadoDispositivo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
 
-
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
+	@OneToOne
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
-	@GeneratedValue
 	@Id
-	private Integer numeroDeDispositivoConcreto;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Integer numeroDeDispositivoConcreto;
 
 	public DispositivoConcreto(){};
 	DispositivoConcreto(DispositivoBase dispositivoBase){

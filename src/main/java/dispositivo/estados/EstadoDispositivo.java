@@ -1,32 +1,64 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivo.DispositivoInteligente;
 
 import java.time.LocalDateTime;
 
-public interface EstadoDispositivo {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
-	public boolean estaEncendido();
-
-	public boolean estaApagado();
-
-	public void apagate(DispositivoInteligenteInterfaz dispositivo);
-
-	public void encendete(DispositivoInteligenteInterfaz dispositivo);
-
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivoInteligenteConcreto);
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+public abstract class EstadoDispositivo {
 	
-	public double calcularConsumo(double potencia);
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public int idEstado;
 
-	public LocalDateTime getFin();
+	public boolean estaEncendido() {
+		return false;
+	}
 
-	public LocalDateTime getInicio();
+	public boolean estaApagado() {
+		return false;
+	}
+
+	public void apagate(DispositivoInteligenteAbstracto dispositivo) {
+	}
+
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
+	}
+
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivoInteligenteConcreto) {
+	}
 	
-	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin);
+	public double calcularConsumo(double potencia) {
+		return 0;
+	}
 
-	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia);
+	public LocalDateTime getFin() {
+		return null;
+	}
 
-	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin);
+	public LocalDateTime getInicio() {
+		return null;
+	}
+	
+	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin) {
+		return false;
+	}
+
+	public double calcularConsumoBorder(LocalDateTime inicio, LocalDateTime fin, double potencia) {
+		return 0;
+	}
+
+	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin) {
+		return false;
+	}
 
 }
