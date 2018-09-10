@@ -42,65 +42,53 @@ public abstract class EstadoDispositivo {
 	public LocalDateTime getFin() {
 		return fin;
 	}
-	
-	public LocalDateTime minimo(LocalDateTime fechaMin, LocalDateTime fechaMax) {
-		if (fechaMin.isBefore(fechaMax)) {
-			return fechaMin;
-		} else {
-			return fechaMax;
-		}
-	}
-	
-	public LocalDateTime maximo(LocalDateTime fechaMin, LocalDateTime fechaMax) {
-		if (fechaMin.isAfter(fechaMax)) {
-			return fechaMin;
-		} else {
-			return fechaMax;
-		}
-	}
 
 	public boolean incluyeA(LocalDateTime x) {
+		if(this.fin==null){
+			return this.inicio.compareTo(x) * x.compareTo(LocalDateTime.now()) >=0;
+		}
 		return this.inicio.compareTo(x) * x.compareTo(this.fin) >= 0;
 	}
 	
-	public boolean estaComprendido(LocalDateTime inicio, LocalDateTime fin) {
-		if (this.getFin() == null) {
-			return false;
-		} else {
-		return this.incluyeA(inicio) && this.incluyeA(fin);
-		}
-	}
 	
-	
-	public boolean esCasoBorder(LocalDateTime inicio, LocalDateTime fin) {
-		if (this.getFin() == null) {
-			return true;
-		} else { return
-				inicio.isBefore(this.inicio) && this.incluyeA(fin) ||
-				fin.isAfter(this.fin) && this.incluyeA(inicio) ||
-				inicio.isBefore(this.inicio) && fin.isAfter(this.fin)
-				;	
-		}
-	}
-	
-	public long tiempoEnHoras() {
+	public double tiempoEnHoras() {
 		if (this.fin == null){
-			return this.inicio.until(LocalDateTime.now(), ChronoUnit.HOURS);
+			return (double)this.inicio.until(LocalDateTime.now(), ChronoUnit.MINUTES)/60;
 		}else {
-			return this.inicio.until(this.fin, ChronoUnit.HOURS);
+			return (double)this.inicio.until(this.fin, ChronoUnit.MINUTES)/60;
 		}
 	}
-	
-	public long tiempoEnHorasEnIntervalo(LocalDateTime inicio, LocalDateTime fin) {
-		if(inicio.isBefore(this.inicio) && this.incluyeA(fin)) {
-			return this.inicio.until(fin, ChronoUnit.HOURS);
+		
+	public double tiempoEnHorasEnIntervalo(LocalDateTime inicio, LocalDateTime fin) {
+		if(this.fin==null) {
+			return this.tiempoEnHorasEnIntervaloSinFin(inicio, fin);
+		}
+		else if(inicio.isBefore(this.inicio) && this.incluyeA(fin)) {
+			return (double)this.inicio.until(fin, ChronoUnit.MINUTES)/60;
 		}else if(fin.isAfter(this.fin) && this.incluyeA(inicio)) {
-			return inicio.until(this.fin,ChronoUnit.HOURS);
+			return (double)inicio.until(this.fin,ChronoUnit.MINUTES)/60;
+		}else if(this.incluyeA(inicio) && this.incluyeA(inicio)) {
+			return (double)inicio.until(fin, ChronoUnit.MINUTES)/60;
 		}else if(inicio.isBefore(this.inicio) && fin.isAfter(this.fin)) {
 			return this.tiempoEnHoras();
-		}else {
+		}else{
 			return 0;
 		}
 	}
+	
+	public double tiempoEnHorasEnIntervaloSinFin(LocalDateTime inicio, LocalDateTime fin) {
+		LocalDateTime ahora = LocalDateTime.now();
+		
+		if(this.incluyeA(inicio) && this.incluyeA(fin)) {
+			return (double)inicio.until(fin, ChronoUnit.MINUTES)/60;
+		}else if(inicio.isBefore(this.inicio) && this.incluyeA(fin)) {
+			return (double)this.inicio.until(fin, ChronoUnit.MINUTES)/60;
+		}else if(this.incluyeA(inicio) && fin.isAfter(ahora)) {
+			return (double)inicio.until(ahora, ChronoUnit.MINUTES)/60;
+		}else if(inicio.isBefore(this.inicio) && fin.isAfter(ahora) ) {
+			return this.tiempoEnHoras();
+		}else return 0;
+	}
+
 
 }

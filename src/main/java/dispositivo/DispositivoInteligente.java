@@ -40,10 +40,13 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 
 	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
 		
-		return this.estadosAnteriores
+		double consumoViejo = this.estadosAnteriores
 				.stream()
 				.mapToDouble(estado -> estado.calcularConsumoPeriodo(inicio, fin, this.potencia) )
 				.sum();
+		double consumoReciente = this.estado.calcularConsumoPeriodo(inicio, fin, this.potencia);
+		
+		return consumoViejo + consumoReciente;
 	}
 	
 
