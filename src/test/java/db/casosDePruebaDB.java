@@ -6,10 +6,16 @@ import java.io.IOException;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
+
+import actuador.Actuador;
 import categoria.CategoriaResidencial;
 import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
+import regla.Condicion;
+import regla.Regla;
 import repositorio.RepositorioDeUsuarios;
+import sensor.Sensor;
+import repositorio.RepositorioDeReglas;
 import repositorio.RepositorioDeTransformadoresYZonas;
 import transformador.Transformador;
 import usuario.Cliente;
@@ -18,6 +24,7 @@ import usuario.Usuario;
 
 public class casosDePruebaDB {
 	ClaseParaDB claseParaDB = new ClaseParaDB();
+	RepositorioDeReglas repoDeReglas = new RepositorioDeReglas();
 	
 
 	@Test
@@ -50,6 +57,14 @@ public class casosDePruebaDB {
 	public void caso3() {
 		//Crear una nueva regla. Asociarla a un dispositivo. Agregar condiciones y acciones. Persistirla. Recuperarla y ejecutarla. 
 		//Modificar alguna condición y persistirla. Recuperarla y evaluar que la condición modificada posea la última modificación.
+		Sensor sensor = claseParaDB.getSensor();
+		Condicion condicion = claseParaDB.getCondicion();
+		Actuador actuador = claseParaDB.getActuador();
+		Regla regla = claseParaDB.getRegla();
+		
+		repoDeReglas.persistirRegla(regla);
+		
+		
 		assertTrue(true);
 	}
 	

@@ -4,20 +4,24 @@ import sensor.Sensor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
 public abstract class Condicion {
 
-
+	@ManyToMany
 	List<Regla> reglas = new ArrayList<Regla>();
 	boolean seCumple = false;
-	private Integer numeroDeCondicion;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
 
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	public Integer numeroDeCondicion;
+	
 	public Condicion(){}
 	
 	public Condicion(Sensor sensor) {
@@ -49,4 +53,5 @@ public abstract class Condicion {
 	public boolean seCumple() {
 		return this.seCumple;
 	}
+	
 }
