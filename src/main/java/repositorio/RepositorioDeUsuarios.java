@@ -18,7 +18,7 @@ public class RepositorioDeUsuarios extends Repositorio {
 	}
 	
 	public void agregarUsuario(Usuario usuario) {
-		this.persistir(usuario); //Ivi usa esta funcion que ya existe!
+		this.persistir(usuario);
 	}
 	
 	public Usuario recuperarUsuarioPorNombreDeUsuario(String nombreDeUsuario) {

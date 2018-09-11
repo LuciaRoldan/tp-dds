@@ -3,15 +3,23 @@ package db;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
 import actuador.Actuador;
+import actuador.AireEstadoActuador;
 import categoria.CategoriaResidencial;
+import dispositivo.DispositivoFactory;
+import dispositivosConcretos.AireAcondicionado;
+import dispositivosConcretos.DispositivoConcreto;
+import dispositivosConcretos.Heladera;
 import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
 import regla.Condicion;
+import regla.CondicionTemperaturaAlta;
+import regla.CondicionVentanaAbierta;
 import regla.Regla;
 import repositorio.RepositorioDeUsuarios;
 import sensor.Sensor;
@@ -57,15 +65,51 @@ public class casosDePruebaDB {
 	public void caso3() {
 		//Crear una nueva regla. Asociarla a un dispositivo. Agregar condiciones y acciones. Persistirla. Recuperarla y ejecutarla. 
 		//Modificar alguna condición y persistirla. Recuperarla y evaluar que la condición modificada posea la última modificación.
-		Sensor sensor = claseParaDB.getSensor();
-		Condicion condicion = claseParaDB.getCondicion();
-		Actuador actuador = claseParaDB.getActuador();
-		Regla regla = claseParaDB.getRegla();
+		
+		Sensor sensor = new Sensor();
+		
+		Condicion condicion = new CondicionTemperaturaAlta(sensor, 26);
+		
+		Condicion condicionNueva = new CondicionVentanaAbierta(sensor, true);
+		
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("aire");
+		AireAcondicionado aire = factory.crearAireAcondicionado(2200);
+		AireAcondicionado aireNuevo = factory.crearAireAcondicionado(3500);
+		
+		AireEstadoActuador actuador = new AireEstadoActuador(aire, true); 
+		actuador.setDispositivo(aire);
+		
+		AireEstadoActuador actuadorNuevo = new AireEstadoActuador(aireNuevo, true);
+		actuador.setDispositivo(aireNuevo);
+				
+		List<Actuador> listaDeActuadores = new ArrayList<Actuador>();
+		List<Condicion> listaDeCondiciones = new ArrayList<Condicion>();
+		
+		listaDeActuadores.add(actuador);
+		listaDeCondiciones.add(condicion);
+		
+		int cantidadActuadores = listaDeActuadores.size();
+		int cantidadCondiciones = listaDeCondiciones.size();
+		
+		Regla regla = new Regla(listaDeActuadores, listaDeCondiciones);
 		
 		repoDeReglas.persistirRegla(regla);
 		
+		assertEquals(regla, repoDeReglas.getRegla(regla.numeroDeRegla));
+		assertEquals(actuador, repoDeReglas.getListaActuadores().get(0));
+		assertEquals(condicion, repoDeReglas.getListaCondiciones().get(0));
 		
-		assertTrue(true);
+		//No esta persistiendo cuando agrega actuadores/condiciones
+		regla.agregarActuador(actuadorNuevo);
+		regla.agregarCondicion(condicionNueva);
+		
+		listaDeActuadores = repoDeReglas.getListaActuadores();
+		listaDeCondiciones = repoDeReglas.getListaCondiciones();
+		
+		
+		assertEquals(cantidadActuadores +1, listaDeActuadores.size());
+		assertEquals(cantidadCondiciones +1, listaDeCondiciones.size());
 	}
 	
 	@Test
