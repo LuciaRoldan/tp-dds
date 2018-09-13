@@ -54,7 +54,8 @@ public class Cliente extends Usuario {
 		this.maximoConsumo = 612;
 		
 	}
-	
+
+
 	public Double calcularConsumoMensual() {
 
 		Double consumo = dispositivos.stream()
