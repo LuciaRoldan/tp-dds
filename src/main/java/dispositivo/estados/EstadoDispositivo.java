@@ -1,7 +1,6 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
-import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 
@@ -11,11 +10,11 @@ public interface EstadoDispositivo {
 
 	public boolean estaApagado();
 
-	public void apagate(DispositivoInteligenteInterfaz dispositivo);
+	public void apagate(DispositivoInteligenteAbstracto dispositivo);
 
-	public void encendete(DispositivoInteligenteInterfaz dispositivo);
+	public void encendete(DispositivoInteligenteAbstracto dispositivo);
 
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivoInteligenteConcreto);
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivoInteligenteConcreto);
 	
 	public double calcularConsumo(double potencia);
 

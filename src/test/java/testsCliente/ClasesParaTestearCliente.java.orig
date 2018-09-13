@@ -9,7 +9,7 @@ import testsDispositivo.ClasesParaTestearDispositivos;
 ||||||| merged common ancestors
 import testsDispositivos.ClasesParaTestearDispositivos;
 =======
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivosConcretos.DispositivoConcreto;
 import testsDispositivos.ClasesParaTestearDispositivos;
 >>>>>>> adapter-simplex

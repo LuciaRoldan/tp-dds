@@ -1,6 +1,6 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivo.DispositivoInteligente;
 
 import java.time.LocalDateTime;
