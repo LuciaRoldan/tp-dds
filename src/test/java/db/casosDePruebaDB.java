@@ -51,7 +51,6 @@ public class casosDePruebaDB {
 		
 		Cliente cliente3 = (Cliente) repositorioDeUsuarios.recuperarUsuarioPorNombreDeUsuario(cliente.getNombreUsuario());
 		assertEquals(nuevaCoordenadaX, cliente3.getCoordenadaX());
-		assertTrue(true);
 	}
 	
 	@Test
@@ -105,7 +104,8 @@ public class casosDePruebaDB {
 		regla.agregarActuador(actuadorNuevo);
 		regla.agregarCondicion(condicionNueva);
 		
-		repoDeReglas.persistirRegla(regla);
+		
+		//repoDeReglas.persistirRegla(regla);
 		
 		listaDeActuadores = repoDeReglas.getListaActuadores();
 		listaDeCondiciones = repoDeReglas.getListaCondiciones();
@@ -138,7 +138,7 @@ public class casosDePruebaDB {
 	
 	@Test
 	public void caso5() {
-		// Dado un hogar y un período, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un período, 
+		//Dado un hogar y un período, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un período, 
 		//mostrar por consola su consumo promedio. Dado un transformador y un período, mostrar su consumo promedio. Recuperar un 
 		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese período. Persistir el 
 		//dispositivo. Nuevamente mostrar el consumo para ese transformador.
