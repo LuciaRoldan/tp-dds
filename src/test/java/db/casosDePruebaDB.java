@@ -23,6 +23,7 @@ import regla.CondicionVentanaAbierta;
 import regla.Regla;
 import repositorio.RepositorioDeUsuarios;
 import sensor.Sensor;
+import repositorio.RepositorioDeDispositivos;
 import repositorio.RepositorioDeReglas;
 import repositorio.RepositorioDeTransformadoresYZonas;
 import transformador.Transformador;
@@ -33,7 +34,7 @@ import usuario.Usuario;
 public class casosDePruebaDB {
 	ClaseParaDB claseParaDB = new ClaseParaDB();
 	RepositorioDeReglas repoDeReglas = new RepositorioDeReglas();
-	
+	RepositorioDeDispositivos repoDeDispositivos = new RepositorioDeDispositivos();
 
 	@Test
 	public void caso1() {
@@ -54,10 +55,29 @@ public class casosDePruebaDB {
 	}
 	
 	@Test
-	public void caso2() {
+	public void caso2() {		
 		//Recuperar un dispositivo. Mostrar por consola todos los intervalos que estuvo encendido durante el último mes. Modificar 
 		//su nombre (o cualquier otro atributo editable) y grabarlo. Recuperarlo y evaluar que el nombre coincida con el esperado.
-		assertTrue(true);
+		
+		DispositivoConcreto aire = ClaseParaDB.unDispositivoConEstados();
+		
+		//cómo persistir fechas?? por qué no puedo pesistir el dispositivo??
+		
+		//repoDeDispositivos.persistirDispositivo(aire);
+		
+		DispositivoConcreto dispositivoRecuperado = repoDeDispositivos.getDispositivo(aire.getId());
+		
+		//verificar que sean del ult mes
+		dispositivoRecuperado.getEstadosAnteriores().forEach(estado ->
+				System.out.printf("El dispositivo estuvo encendido entre el ", estado.getInicio(), " y el ", estado.getFin()));
+		
+		dispositivoRecuperado.setName("aireConNombreCambiado");
+		
+		//repoDeDispositivos.persistirDispositivo(aire);
+		
+		DispositivoConcreto dispositivoRecuperadoConNuevoNombre = repoDeDispositivos.getDispositivo(aire.getId());
+		
+		assertEquals("aireConNombreCambiado", dispositivoRecuperadoConNuevoNombre.getName());
 	}
 	
 	@Test
@@ -104,8 +124,7 @@ public class casosDePruebaDB {
 		regla.agregarActuador(actuadorNuevo);
 		regla.agregarCondicion(condicionNueva);
 		
-		
-		//repoDeReglas.persistirRegla(regla);
+		repoDeReglas.persistirRegla(regla);
 		
 		listaDeActuadores = repoDeReglas.getListaActuadores();
 		listaDeCondiciones = repoDeReglas.getListaCondiciones();

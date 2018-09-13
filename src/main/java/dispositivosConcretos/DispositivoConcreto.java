@@ -1,6 +1,7 @@
 package dispositivosConcretos;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import dispositivo.DispositivoBase;
 import dispositivo.DispositivoInteligente;
@@ -57,6 +58,7 @@ public abstract class DispositivoConcreto {
 	public double getUsoMensualMinimo() {return this.dispositivoBase.getUsoMensualMinimo();}
 	public double getHorasDeUsoIdeal() {return this.dispositivoBase.getHorasDeUsoIdeal();}
 	public double consumoCorriente() { return this.dispositivoBase.consumoCorriente();}
+	public List<EstadoDispositivo> getEstadosAnteriores(){ return this.dispositivoBase.getEstadosAnteriores();}
 
 }
 

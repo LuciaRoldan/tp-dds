@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import actuador.Actuador;
+import dispositivosConcretos.DispositivoConcreto;
 import regla.Condicion;
 import regla.Regla;
 import sensor.Sensor;
@@ -30,6 +31,7 @@ public class RepositorioDeReglas extends Repositorio {
 	public Regla getRegla(Integer id) {
         return entityManager.find(Regla.class,id);
     }
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Condicion> getListaCondiciones(){

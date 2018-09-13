@@ -7,12 +7,16 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 @Entity
 public class Encendido extends EstadoDispositivo {
 	
+	//@OneToOne
 	public LocalDateTime inicio;
+	
+	//@OneToOne
 	public LocalDateTime fin = LocalDateTime.of(2050, 9, 9, 00, 00);
 	
 	public Encendido() {

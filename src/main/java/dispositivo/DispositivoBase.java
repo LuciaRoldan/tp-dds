@@ -3,6 +3,7 @@ package dispositivo;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 import dispositivo.estados.Encendido;
 import dispositivo.estados.EstadoDispositivo;
@@ -42,6 +43,7 @@ public abstract class DispositivoBase {
     public double getUsoMensualMinimo(){return -500;};
     public double getUsoMensualMaximo(){return -600;};
     public double getHorasDeUsoIdeal(){return -700;};
+    public List<EstadoDispositivo> getEstadosAnteriores() {return null;}
     
     //////////SETTERS//////////
     

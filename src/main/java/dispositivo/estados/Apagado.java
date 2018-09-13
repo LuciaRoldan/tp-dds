@@ -7,12 +7,16 @@ import dispositivo.*;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
 @Entity
 public class Apagado extends EstadoDispositivo {
 
+	//@OneToOne
 	private LocalDateTime inicio;
+	
+	//@OneToOne
 	private LocalDateTime fin;
 	
 	public Apagado() {

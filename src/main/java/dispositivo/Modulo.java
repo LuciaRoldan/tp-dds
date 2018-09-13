@@ -41,12 +41,13 @@ public class Modulo extends DispositivoInteligenteAbstracto {
     //////////////// SETTERS Y GETTERS ////////////////
 
     //GETTERS
-    public EstadoDispositivo getEstado() {      return this.estado;  }
+    public EstadoDispositivo getEstado() { return this.estado; }
     public double getPotencia(){return this.dispositivoEstandar.getPotencia();}
    	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
    	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
    	public double getHorasDeUsoIdeal() {return this.dispositivoEstandar.getHorasDeUsoIdeal();}
     public boolean esInteligente() {return true;}
+	public List<EstadoDispositivo> getEstadosAnteriores() { return this.estadosAnteriores; }
     
     //SETTERS
     public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }

@@ -29,6 +29,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double usoMensualMaximo;
 	private double HorasDeUsoIdeal;
 	private boolean esBajoConsumo;
+	
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "idEstado")
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
@@ -116,6 +117,10 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 	public double getUsoMensualMaximo() {
 		return this.usoMensualMaximo;
+	}
+	
+	public List<EstadoDispositivo> getEstadosAnteriores() {
+		return this.estadosAnteriores;
 	}
 
 	

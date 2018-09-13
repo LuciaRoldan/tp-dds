@@ -2,8 +2,11 @@ package db;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoFactory;
+import dispositivo.estados.Encendido;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
+import mock.ApagadoMock;
+import mock.EncendidoMock;
 import regla.Condicion;
 import regla.CondicionTemperaturaAlta;
 import regla.Regla;
@@ -15,6 +18,8 @@ import usuario.Usuario;
 import zona.Zona;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collector;
@@ -42,6 +47,24 @@ public class ClaseParaDB {
         CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
     }
 
+    public static DispositivoConcreto unDispositivoConEstados() {
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setNombre("aire");
+		AireAcondicionado aire = factory.crearAireAcondicionado(2200);
+		EncendidoMock encendido1 = new EncendidoMock(LocalDateTime.now().minus(25, ChronoUnit.DAYS), LocalDateTime.now().minus(20, ChronoUnit.DAYS));
+		ApagadoMock apagado1 = new ApagadoMock(LocalDateTime.now().minus(20, ChronoUnit.DAYS), LocalDateTime.now().minus(15, ChronoUnit.DAYS));
+		Encendido encendido2 = new EncendidoMock(LocalDateTime.now().minus(15, ChronoUnit.DAYS), LocalDateTime.now().minus(10, ChronoUnit.DAYS));
+		ApagadoMock apagado2 = new ApagadoMock(LocalDateTime.now().minus(10, ChronoUnit.DAYS), LocalDateTime.now().minus(5, ChronoUnit.DAYS));
+		
+		aire.agregarEstado(encendido1);
+		aire.agregarEstado(apagado1);
+		aire.agregarEstado(encendido2);
+		aire.agregarEstado(apagado2);
+		
+		return aire;
+    }
+    
+    
     public static Transformador getTransformador(){
         return new Transformador(listaDeClientes,"Transformador 001" , new Zona(),  coordenadaX, coordenadaY );
     }
@@ -49,7 +72,6 @@ public class ClaseParaDB {
     public Zona getZona() {
         return new Zona("Comuna 13", Float.valueOf(1), Float.valueOf(coordenadaX), Float.valueOf(coordenadaY), null);
     }
-    
     
     public Sensor getSensor(){
         return unSensor;
