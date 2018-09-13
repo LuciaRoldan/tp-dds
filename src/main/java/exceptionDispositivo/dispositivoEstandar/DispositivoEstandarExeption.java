@@ -1,7 +1,6 @@
 package exceptionDispositivo.dispositivoEstandar;
 
 import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligenteInterfaz;
 
 import java.util.Date;
 

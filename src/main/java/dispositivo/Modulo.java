@@ -7,9 +7,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import dispositivo.estados.EstadoDispositivo;
-import dispositivosConcretos.DispositivoConcreto;
 
-public class Modulo implements DispositivoInteligenteInterfaz {
+public class Modulo implements DispositivoInteligenteAbstracto {
 
     DispositivoBase dispositivoEstandar;
     private EstadoDispositivo estado;

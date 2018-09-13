@@ -1,8 +1,6 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
-import dispositivo.DispositivoInteligente;
-import dispositivo.*;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 
@@ -34,11 +32,11 @@ public class Apagado implements EstadoDispositivo {
 	}
 
 	@Override
-	public void apagate(DispositivoInteligenteInterfaz dispositivo) {
+	public void apagate(DispositivoInteligenteAbstracto dispositivo) {
 	}
 
 	@Override
-	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Encendido());
@@ -46,7 +44,7 @@ public class Apagado implements EstadoDispositivo {
 
 
 	@Override
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new AhorroDeEnergia());
