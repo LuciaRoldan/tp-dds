@@ -10,6 +10,11 @@ public class AireEstadoActuador extends Actuador {
 		super(dispositivo);
 		this.encender = encender;
 	}
+	
+	public void setEncender(boolean encender) {
+		this.encender = encender;
+	}
+	
 
 	@Override
 	public void actuar() {

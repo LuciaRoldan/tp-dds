@@ -1,7 +1,7 @@
 package exceptionDispositivo.dispositivoEstandar;
 
 import dispositivo.DispositivoEstandar;
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.util.Date;
 

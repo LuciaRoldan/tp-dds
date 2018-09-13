@@ -1,14 +1,15 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivo.DispositivoInteligente;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.Transient;
+
+@Entity
 public class AhorroDeEnergia extends Encendido {
-	
-	private LocalDateTime inicio;
-	private LocalDateTime fin;
 	
 	public AhorroDeEnergia() {
 		inicio = LocalDateTime.now();
@@ -23,13 +24,13 @@ public class AhorroDeEnergia extends Encendido {
 	}
 
 	@Override
-	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Encendido());
 	}
 	
 
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivo) {
 	}
 }

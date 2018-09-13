@@ -8,17 +8,28 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
+import javax.persistence.*;
+
+@Entity
 public class Transformador {
 
 			
     ////////////////////////////////// ATRIBUTOS ///////////////////////////////////////////
     private Float coordenadaX;
     private Float coordenadaY;
-    private Zona  zona;
     private String nombre;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "numeroDeTransformador")
     private List<Cliente> listaDeClientes = new ArrayList<Cliente>();
+    
+    @GeneratedValue
+    @Id
+    private Integer numeroDeTransformador;
 
     ///////////////////////////////////GETTERS Y SETTERS ////////////////////////////////////
+
+    public Integer getNumeroDeId(){return this.numeroDeTransformador;}
 
     public void addCliente(Cliente cliente){
         listaDeClientes.add(cliente);
@@ -30,6 +41,10 @@ public class Transformador {
 
     public Float getCoordenadaX() {
         return this.coordenadaX;
+    }
+    
+    public String getNombre() {
+    	return this.nombre;
     }
 
 ///////////////////////////////// METODOS ///////////////////////////////////////////////
@@ -45,9 +60,15 @@ public class Transformador {
     public Transformador(List<Cliente> listaDeClientes,String nombre,Zona zona, Float coordenadaX, Float coordenadaY ){
         this.listaDeClientes = listaDeClientes;
         this.nombre = nombre;
-        this.zona = zona;
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
     }
 
+    public Integer getNumeroDeTransformador() {
+        return this.numeroDeTransformador;
+    }
+
+    public Integer getId() {
+        return this.numeroDeTransformador;
+    }
 }

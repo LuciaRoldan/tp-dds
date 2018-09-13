@@ -1,14 +1,22 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivo.DispositivoInteligente;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-public class Encendido implements EstadoDispositivo {
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+@Entity
+public class Encendido extends EstadoDispositivo {
 	
+	//@OneToOne
 	public LocalDateTime inicio;
+	
+	//@OneToOne
 	public LocalDateTime fin = LocalDateTime.of(2050, 9, 9, 00, 00);
 	
 	public Encendido() {
@@ -34,18 +42,18 @@ public class Encendido implements EstadoDispositivo {
 	}
 
 	@Override
-	public void apagate(DispositivoInteligenteInterfaz dispositivo) {
+	public void apagate(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		//dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Apagado());
 	}
 
 	@Override
-	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
 	}
 	
 	@Override
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new AhorroDeEnergia());
