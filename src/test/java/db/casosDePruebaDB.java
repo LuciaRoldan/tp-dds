@@ -75,6 +75,7 @@ public class casosDePruebaDB {
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("aire");
 		AireAcondicionado aire = factory.crearAireAcondicionado(2200);
+		factory.setNombre("aireNuevo");
 		AireAcondicionado aireNuevo = factory.crearAireAcondicionado(3500);
 		
 		AireEstadoActuador actuador = new AireEstadoActuador(aire, true); 
@@ -104,6 +105,8 @@ public class casosDePruebaDB {
 		regla.agregarActuador(actuadorNuevo);
 		regla.agregarCondicion(condicionNueva);
 		
+		repoDeReglas.persistirRegla(regla);
+		
 		listaDeActuadores = repoDeReglas.getListaActuadores();
 		listaDeCondiciones = repoDeReglas.getListaCondiciones();
 		
@@ -126,6 +129,7 @@ public class casosDePruebaDB {
 		
 		ParserTransformadorYZona parser = new ParserTransformadorYZona();
 		Transformador nuevoTransformador = parser.parsearTransformador("src/test/java/db/transformador.json");
+		System.out.println(nuevoTransformador.getNombre());
 		repoTransformadores.persistirTransformador(nuevoTransformador);
 		
 		transformadores = repoTransformadores.getListaTransformadores();

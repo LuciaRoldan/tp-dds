@@ -7,7 +7,6 @@ import javax.persistence.InheritanceType;
 import sensor.Sensor;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class CondicionTemperaturaAlta extends Condicion {
 	int temperaturaLimite;
 	

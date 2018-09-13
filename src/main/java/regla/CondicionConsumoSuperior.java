@@ -1,7 +1,12 @@
 package regla;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import sensor.Sensor;
 
+@Entity
 public class CondicionConsumoSuperior extends Condicion {
 	double consumoLimite;
 	

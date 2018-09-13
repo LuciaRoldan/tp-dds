@@ -1,8 +1,13 @@
 package regla;
 
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 import sensor.Sensor;
 
+@Entity
 public class CondicionVentanaAbierta extends Condicion {
 	boolean abierta; //dice si quiero que la ventana este abierta o cerrada. true = abierta, false = cerrada
 	
