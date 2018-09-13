@@ -18,13 +18,9 @@ public class Zona {
     private Float coordenadaY;
     private Float radio;
     private String nombre;
-   // @Transient
-  //  private DataBase db2;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "numeroDeZona")
     private List<Transformador> listaDeTransformadores = new ArrayList<Transformador>();
-    //@ElementCollection
-    //private List<Integer>     listaDeIdTransformadores = new ArrayList<Integer>();
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer numeroDeZona;
@@ -34,7 +30,6 @@ public class Zona {
 
     public void addTransformador(Transformador transformador){
         listaDeTransformadores.add(transformador);
-        //listaDeIdTransformadores.add(transformador.getId());
     }
 
     public Float getCoordenadaY() {
@@ -50,18 +45,12 @@ public class Zona {
     public Zona() {}
 
     public Zona(String nombre, Float radio, Float coordenadaX, Float coordenadaY, List<Transformador> listaDeTransformadores) {
-       // db2 = DataBase.getInstance();
         this.nombre = nombre;
         this.radio = radio;
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
         this.listaDeTransformadores = listaDeTransformadores;
-       /* if (listaDeTransformadores != null) {
-            for (Transformador transformador : listaDeTransformadores) {
-                listaDeIdTransformadores.add(transformador.getId());
-                listaDeTransformadores.add(db2.getTransformador(transformador.getId()));
-            }
-        }*/
+
     }
 
 

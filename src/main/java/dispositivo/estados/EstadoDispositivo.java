@@ -2,23 +2,24 @@ package dispositivo.estados;
 
 import dispositivo.DispositivoInteligenteAbstracto;
 import dispositivo.DispositivoInteligente;
-
 import java.time.LocalDateTime;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class EstadoDispositivo {
 	
-	@Id
+
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
 	public int idEstado;
+
+
+
+	public int getIdEstado() {
+		return idEstado;
+	}
 
 	public boolean estaEncendido() {
 		return false;

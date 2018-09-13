@@ -8,19 +8,14 @@ import dispositivo.DispositivoInteligente;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@Transient
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
 	@Id
@@ -33,8 +28,8 @@ public abstract class DispositivoConcreto {
 	}
 
 	public Integer getId(){return this.numeroDeDispositivoConcreto;}
-	
-    public double consumoMensual() { return dispositivoBase.consumoMensual(); }
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) { return this.dispositivoBase.consumoPromedioPorHora(inicio, fin);}
+	public double consumoMensual() { return dispositivoBase.consumoMensual(); }
     public void activarAhorroDeEnergia() { this.dispositivoBase.activarAhorroDeEnergia(); }
     public void agregarEstado(EstadoDispositivo estado) {this.dispositivoBase.agregarEstado(estado);}
     public void setEstado(EstadoDispositivo estado) { this.dispositivoBase.setEstado(estado);}

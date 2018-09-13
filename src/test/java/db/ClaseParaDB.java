@@ -2,6 +2,7 @@ package db;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoFactory;
+import dispositivo.estados.Apagado;
 import dispositivo.estados.Encendido;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
@@ -51,15 +52,17 @@ public class ClaseParaDB {
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("aire");
 		AireAcondicionado aire = factory.crearAireAcondicionado(2200);
-		EncendidoMock encendido1 = new EncendidoMock(LocalDateTime.now().minus(25, ChronoUnit.DAYS), LocalDateTime.now().minus(20, ChronoUnit.DAYS));
-		ApagadoMock apagado1 = new ApagadoMock(LocalDateTime.now().minus(20, ChronoUnit.DAYS), LocalDateTime.now().minus(15, ChronoUnit.DAYS));
-		Encendido encendido2 = new EncendidoMock(LocalDateTime.now().minus(15, ChronoUnit.DAYS), LocalDateTime.now().minus(10, ChronoUnit.DAYS));
-		ApagadoMock apagado2 = new ApagadoMock(LocalDateTime.now().minus(10, ChronoUnit.DAYS), LocalDateTime.now().minus(5, ChronoUnit.DAYS));
-		
+        EncendidoMock encendido1 = new EncendidoMock(LocalDateTime.now().minus(25, ChronoUnit.DAYS), LocalDateTime.now().minus(20, ChronoUnit.DAYS));
+        ApagadoMock apagado1 = new ApagadoMock(LocalDateTime.now().minus(20, ChronoUnit.DAYS), LocalDateTime.now().minus(15, ChronoUnit.DAYS));
+        EncendidoMock encendido2 = new EncendidoMock(LocalDateTime.now().minus(15, ChronoUnit.DAYS), LocalDateTime.now().minus(10, ChronoUnit.DAYS));
+        ApagadoMock apagado2 = new ApagadoMock(LocalDateTime.now().minus(10, ChronoUnit.DAYS), LocalDateTime.now().minus(5, ChronoUnit.DAYS));
+		Encendido encendido3 = new Encendido();
+
 		aire.agregarEstado(encendido1);
 		aire.agregarEstado(apagado1);
 		aire.agregarEstado(encendido2);
 		aire.agregarEstado(apagado2);
+		aire.agregarEstado(encendido3);
 		
 		return aire;
     }

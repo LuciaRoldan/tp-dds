@@ -6,13 +6,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import dispositivo.estados.EstadoDispositivo;
 
@@ -27,10 +21,11 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
 	private boolean esBajoConsumo;
-	
-    @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "idEstado")
+
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "idEstado")
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
+
 
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente(String name, EstadoDispositivo estadoInicial,
@@ -116,7 +111,8 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public double getUsoMensualMaximo() {
 		return this.usoMensualMaximo;
 	}
-	
+
+	@Override
 	public List<EstadoDispositivo> getEstadosAnteriores() {
 		return this.estadosAnteriores;
 	}

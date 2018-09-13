@@ -1,8 +1,10 @@
 package transformador;
 
+import org.hibernate.annotations.Cascade;
 import usuario.Cliente;
 import zona.Zona;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +23,9 @@ public class Transformador {
     
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "numeroDeTransformador")
-    private List<Cliente> listaDeClientes = new ArrayList<Cliente>();
+    public List<Cliente> listaDeClientes = new ArrayList<Cliente>();
     
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Integer numeroDeTransformador;
 
@@ -48,6 +50,11 @@ public class Transformador {
     }
 
 ///////////////////////////////// METODOS ///////////////////////////////////////////////
+
+    public double consumoPromedio(LocalDateTime inicio, LocalDateTime fin) {
+        return listaDeClientes.stream().mapToDouble(cliente -> cliente.consumoHogarPeriodo(inicio, fin)).sum();
+    }
+
 
     public Long energiaSuministrada(){
         return   listaDeClientes.stream().mapToLong(cliente -> cliente.calcularConsumoAhora()).sum();

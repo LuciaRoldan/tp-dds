@@ -2,15 +2,16 @@ package dispositivo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
 import dispositivo.estados.EstadoDispositivo;
 
 @Entity
 public abstract class DispositivoInteligenteAbstracto extends DispositivoBase{
-	
+
 
     public double consumoMensual() {
         return 0;

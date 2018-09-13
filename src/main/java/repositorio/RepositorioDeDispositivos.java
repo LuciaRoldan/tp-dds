@@ -19,6 +19,5 @@ public class RepositorioDeDispositivos extends Repositorio {
 	public DispositivoConcreto getDispositivo(Integer id) {
         return entityManager.find(DispositivoConcreto.class, id);
     }
-	
 
 }

@@ -3,6 +3,7 @@ package usuario;
 import static usuario.TipoDeUsuario.CLIENTE;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,8 +29,8 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
-	@OneToMany
-	@JoinColumn(name="numeroDeDispositivoConcreto")
+	@OneToMany()
+	@JoinColumn(nullable = true )
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Enumerated(EnumType.STRING)
 	private CategoriaResidencial categoriaResidencial;
@@ -127,10 +128,17 @@ public class Cliente extends Usuario {
 	public void ejecutarSimplex() {
 		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
-	
-	
-	
-	
+
+
+	//REPORTES
+
+	public double consumoHogarPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+		return dispositivos.stream().
+				mapToDouble(dispositivo -> dispositivo.calcularConsumoPeriodo(inicio, fin)).
+				sum();
+	}
+
+
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 

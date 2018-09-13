@@ -38,7 +38,7 @@ public class casosDePruebaDB {
 
 	@Test
 	public void caso1() {
-		//Crear 1 usuario nuevo. Persistirlo. Recuperarlo, modificar la geolocalización y grabarlo. Recuperarlo y evaluar 
+		//Crear 1 usuario nuevo. Persistirlo. Recuperarlo, modificar la geolocalizaciï¿½n y grabarlo. Recuperarlo y evaluar 
 		//que el cambio se haya realizado.
 
 		Cliente cliente = ClaseParaDB.getCliente();
@@ -55,15 +55,16 @@ public class casosDePruebaDB {
 	}
 	
 	@Test
-	public void caso2() {		
-		//Recuperar un dispositivo. Mostrar por consola todos los intervalos que estuvo encendido durante el último mes. Modificar 
+	public void caso2() {
+		//Recuperar un dispositivo. Mostrar por consola todos los intervalos que estuvo encendido durante el ï¿½ltimo mes. Modificar 
 		//su nombre (o cualquier otro atributo editable) y grabarlo. Recuperarlo y evaluar que el nombre coincida con el esperado.
 		
 		DispositivoConcreto aire = ClaseParaDB.unDispositivoConEstados();
+
+		System.out.println(aire.getEstadosAnteriores().size());
+		//cï¿½mo persistir fechas?? por quï¿½ no puedo pesistir el dispositivo??
 		
-		//cómo persistir fechas?? por qué no puedo pesistir el dispositivo??
-		
-		//repoDeDispositivos.persistirDispositivo(aire);
+		repoDeDispositivos.persistirDispositivo(aire);
 		
 		DispositivoConcreto dispositivoRecuperado = repoDeDispositivos.getDispositivo(aire.getId());
 		
@@ -83,7 +84,7 @@ public class casosDePruebaDB {
 	@Test
 	public void caso3() {
 		//Crear una nueva regla. Asociarla a un dispositivo. Agregar condiciones y acciones. Persistirla. Recuperarla y ejecutarla. 
-		//Modificar alguna condición y persistirla. Recuperarla y evaluar que la condición modificada posea la última modificación.
+		//Modificar alguna condiciï¿½n y persistirla. Recuperarla y evaluar que la condiciï¿½n modificada posea la ï¿½ltima modificaciï¿½n.
 		
 		Sensor sensor = new Sensor();
 		
@@ -137,7 +138,7 @@ public class casosDePruebaDB {
 	@Test
 	public void caso4() throws NoSePudoAbrirElArchivoException, IOException {
 		//Recuperar todos los transformadores persistidos. Registrar la cantidad. Agregar una instancia de Transformador al JSON de 
-		//entradas. Ejecutar el método de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
+		//entradas. Ejecutar el mï¿½todo de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
 		
 		Transformador transformador = ClaseParaDB.getTransformador();
 		RepositorioDeTransformadoresYZonas repoTransformadores = new RepositorioDeTransformadoresYZonas();
@@ -157,9 +158,9 @@ public class casosDePruebaDB {
 	
 	@Test
 	public void caso5() {
-		//Dado un hogar y un período, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un período, 
-		//mostrar por consola su consumo promedio. Dado un transformador y un período, mostrar su consumo promedio. Recuperar un 
-		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese período. Persistir el 
+		//Dado un hogar y un perï¿½odo, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un perï¿½odo, 
+		//mostrar por consola su consumo promedio. Dado un transformador y un perï¿½odo, mostrar su consumo promedio. Recuperar un 
+		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese perï¿½odo. Persistir el 
 		//dispositivo. Nuevamente mostrar el consumo para ese transformador.
 		assertTrue(true);
 	}

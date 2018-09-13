@@ -8,48 +8,45 @@ import java.util.List;
 import dispositivo.estados.Encendido;
 import dispositivo.estados.EstadoDispositivo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoBase {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer numeroDeDispositivoBase;
-	
-    public double consumoMensual(){return -800;};
-    public void activarAhorroDeEnergia(){};
-    public void setEstado(EstadoDispositivo estado){};
-    public void apagate(){};
-    public void encendete(){};
-    public boolean estaEncendido(){return false;};
-    public boolean estaApagado(){return false;};
-    public EstadoDispositivo getEstado(){return new Encendido();};
-    public double calcularConsumoUltimasNHoras(int horas){return -100;};
-    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin){return -200;};
-    public boolean esInteligente(){return false;};
-    public double consumoCorriente(){return -300;};
-    
+
+
+
+    public double consumoMensual(){return -800;}
+    public void activarAhorroDeEnergia(){}
+    public void setEstado(EstadoDispositivo estado){}
+    public void apagate(){}
+    public void encendete(){}
+    public boolean estaEncendido(){return false;}
+    public boolean estaApagado(){return false;}
+    public EstadoDispositivo getEstado(){return new Encendido();}
+    public double calcularConsumoUltimasNHoras(int horas){return -100;}
+    public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin){return -200;}
+    public boolean esInteligente(){return false;}
+    public double consumoCorriente(){return -300;}
+    public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin){return -100;}
     //////////GETTERS//////////
     
-    public String getName(){return "ERROR";};
-    public double getPotencia(){return -400;};
-    public double getUsoMensualMinimo(){return -500;};
-    public double getUsoMensualMaximo(){return -600;};
-    public double getHorasDeUsoIdeal(){return -700;};
-    public List<EstadoDispositivo> getEstadosAnteriores() {return null;}
+    public String getName(){return "ERROR";}
+    public double getPotencia(){return -400;}
+    public double getUsoMensualMinimo(){return -500;}
+    public double getUsoMensualMaximo(){return -600;}
+    public double getHorasDeUsoIdeal(){return -700;}
     
     //////////SETTERS//////////
     
-    public void setName(String name){};
-    public void setPotencia(double potencia){};
-	public void setBajoConsumo(boolean bajoConsumo){};
-	public void agregarEstado(EstadoDispositivo estado){};
+    public void setName(String name){}
+    public void setPotencia(double potencia){}
+	public void setBajoConsumo(boolean bajoConsumo){}
+	public void agregarEstado(EstadoDispositivo estado){}
+	public List<EstadoDispositivo> getEstadosAnteriores(){return new ArrayList<EstadoDispositivo>();}
 
 }
