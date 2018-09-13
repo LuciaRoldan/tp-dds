@@ -13,10 +13,9 @@ import dispositivosConcretos.DispositivoConcreto;
 
 public class DispositivosInteligentes {
 
-	DispositivoInteligente dispositivoInteligente = ClasesParaTestearDispositivos.unDispositivoInteligente();
-	DispositivoInteligente dispositivo;
-	
-	DispositivoConcreto aire = ClasesParaTestearDispositivos.unDispositivoConcretoInteligente();
+	DispositivoInteligente dispositivoInteligente = new ClasesParaTestearDispositivos().unDispositivoInteligente();
+
+	DispositivoConcreto aire = new ClasesParaTestearDispositivos().unDispositivoConcretoConFactory();
 	
 
 	@Test
@@ -57,7 +56,7 @@ public class DispositivosInteligentes {
 		
 		double consumo = aire.calcularConsumoPeriodo(ayer, hoy);
 
-		assertEquals(37, consumo, 0.1);
+		assertEquals(38, consumo, 1);
 	}
 	
 	@Test
@@ -65,7 +64,7 @@ public class DispositivosInteligentes {
 		
 		double consumo = aire.calcularConsumoUltimasNHoras(3);
 		
-		assertEquals(3.2, consumo,0.1);
+		assertEquals(4, consumo,1);
 	}
 
 }

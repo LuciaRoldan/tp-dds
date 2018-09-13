@@ -14,7 +14,7 @@ import org.junit.Test;
 
 public class DispositivosConcretos {
 
-	 DispositivoConcreto dispositivo = ClasesParaTestearDispositivos.unDispositivoConcreto();
+	 DispositivoConcreto dispositivo = new ClasesParaTestearDispositivos().heladeraConFactory();
 	
 
 	@Test
@@ -56,6 +56,7 @@ public class DispositivosConcretos {
 
 	@Test //esta re loco debuguea verde y prueba en rojo
 	public void testConsumoEnPeriodo() {
+
 		LocalDateTime hoy = LocalDateTime.now();
 		LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
 		
@@ -64,7 +65,7 @@ public class DispositivosConcretos {
 		assertEquals(1.8, consumo,0.1);
 	}
 
-	@Test// se alternan con el de arriba y andan cuando quieren 
+	@Test
 	public void testConsumoEnUltimasTresHoras() {
 		double consumo = dispositivo.calcularConsumoUltimasNHoras(3);
 		//0.075*3=0.225

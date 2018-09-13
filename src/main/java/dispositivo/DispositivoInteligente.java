@@ -2,7 +2,6 @@ package dispositivo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,6 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
-	private double HorasDeUsoIdeal;
 	private boolean esBajoConsumo;
 	
     @OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
@@ -147,6 +145,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 	public void setEstado(EstadoDispositivo estado) {
 		this.estado = estado;
+		this.agregarEstado(estado);
 	}
 	public void agregarEstado(EstadoDispositivo estado) {
 		estadosAnteriores.add(estado);

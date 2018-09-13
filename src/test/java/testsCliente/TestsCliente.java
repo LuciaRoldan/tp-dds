@@ -113,7 +113,7 @@ public class TestsCliente {
 	@Test
 	public void testRecategorizacion() {
 		cliente.recategorizarse();
-		assertEquals(CategoriaResidencial.CATEGORIAR1, cliente.getCategoriaResidencial());
+		assertEquals(CategoriaResidencial.CATEGORIAR2, cliente.getCategoriaResidencial());
 	}
 
 }

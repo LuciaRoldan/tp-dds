@@ -31,11 +31,11 @@ public class ClasesParaTestearCliente {
 
 	public  static ArrayList<DispositivoConcreto> cincoDispositivosConcretos(){
 		ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
-		DispositivoConcreto	dispositivo1 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto	dispositivo2 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto	dispositivo3 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto dispositivo4 = ClasesParaTestearDispositivos.unDispositivoConcreto();
-		DispositivoConcreto dispositivo5 = ClasesParaTestearDispositivos.unDispositivoConcreto();
+		DispositivoConcreto	dispositivo1 = new ClasesParaTestearDispositivos().heladeraConFactory();
+		DispositivoConcreto	dispositivo2 = new ClasesParaTestearDispositivos().heladeraConFactory();
+		DispositivoConcreto	dispositivo3 = new ClasesParaTestearDispositivos().heladeraConFactory();
+		DispositivoConcreto dispositivo4 = new ClasesParaTestearDispositivos().heladeraConFactory();
+		DispositivoConcreto dispositivo5 = new ClasesParaTestearDispositivos().heladeraConFactory();
 		dispositivo1.encendete();
 		dispositivo2.encendete();
 		dispositivo3.encendete();
