@@ -60,6 +60,10 @@ public abstract class DispositivoInteligenteAbstracto extends DispositivoBase{
     public double consumoCorriente() {
         return 0;
     }
+    
+    public double consumoCorrienteMock() {
+    	return 0;
+    }
 
     ///////////////////////////////////// GETTERS PARA LOS TESTS ////////////////////////
 

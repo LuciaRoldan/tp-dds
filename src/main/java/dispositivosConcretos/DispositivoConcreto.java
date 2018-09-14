@@ -51,6 +51,7 @@ public abstract class DispositivoConcreto {
 	public double getHorasDeUsoIdeal() {return this.dispositivoBase.getHorasDeUsoIdeal();}
 	public double consumoCorriente() { return this.dispositivoBase.consumoCorriente();}
 	public List<EstadoDispositivo> getEstadosAnteriores(){ return this.dispositivoBase.getEstadosAnteriores();}
+	public double consumoCorrienteMock() {return this.dispositivoBase.consumoCorrienteMock();}
 
 }
 

@@ -99,6 +99,13 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
 	}
     
+	public double consumoCorrienteMock() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual - 1, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.of(anoActual, mesActual - 1, 30, 0, 0, 0));		
+	}
+    
     public boolean estaEncendido() {  return estado.estaEncendido(); }
 
     public boolean estaApagado() {return estado.estaApagado();  }

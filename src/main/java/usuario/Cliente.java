@@ -132,6 +132,10 @@ public class Cliente extends Usuario {
 	public void ejecutarSimplex() {
 		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
+	
+	public void ejecutarSimplexMock() {
+		SimplexAdapter.ejecutarSimplexMock(this.dispositivos, this.maximoConsumo);
+	}
 
 
 	//REPORTES

@@ -43,7 +43,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	///////////////////// METODOS /////////////////////
 
 	public double consumoMensual() {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minus(30, ChronoUnit.DAYS), LocalDateTime.now());
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minusDays(30), LocalDateTime.now());
 	}
 	
 
@@ -162,6 +162,13 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		int anoActual = LocalDate.now().getYear();
 		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
+	
+	public double consumoCorrienteMock() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual - 1, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.of(anoActual, mesActual - 1, 30, 0, 0, 0));		
 	}
 
 	@Override

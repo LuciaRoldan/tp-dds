@@ -120,7 +120,9 @@ public class TestsSimplex {
 		Float coordenadaY = 200F;
 		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099",	LocalDate.of(2000,01,01) , "aboghoss","hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos,coordenadaX,coordenadaY);
 
-		ariel.ejecutarSimplex();
+		//ariel.ejecutarSimplex();
+		
+		ariel.ejecutarSimplexMock();
 
 		//LocalDateTime hoy = LocalDateTime.now();
 		//LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);

@@ -33,6 +33,8 @@ public abstract class DispositivoBase {
     public boolean esInteligente(){return false;}
     public double consumoCorriente(){return -300;}
     public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin){return -100;}
+	public double consumoCorrienteMock() { return 0; }
+    
     //////////GETTERS//////////
     
     public String getName(){return "ERROR";}
