@@ -174,6 +174,10 @@ public class casosDePruebaDB {
 		System.out.print("El consumo del transformador es: " + consumoTransformador + "\n");
 		
 		DispositivoConcreto dispositivo = repoDeDispositivos.getDispositivoPorUsuario(cliente.numeroDeUsuario);
+		dispositivo.setPotencia(dispositivo.getPotencia()*10);
+		
+		double consumoTransformador2 = cliente.consumoHogarPeriodo(inicio, fin);
+		System.out.print("El consumo nuevo del transformador es: " + consumoTransformador2 + "\n");
 		
 		assertTrue(true);
 	}

@@ -1,10 +1,8 @@
 package dispositivosConcretos;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
 import dispositivo.DispositivoBase;
-import dispositivo.DispositivoInteligente;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
 

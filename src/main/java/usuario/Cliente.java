@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.ForeignKey;
 
@@ -29,8 +30,7 @@ public class Cliente extends Usuario {
 	private int telefono;
 	private int puntos = 0;
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"), referencedColumnName="numeroDeUsuario")
-	//
+	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Enumerated(EnumType.STRING)
 	private CategoriaResidencial categoriaResidencial;
