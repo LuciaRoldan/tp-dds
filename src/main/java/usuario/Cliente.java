@@ -9,16 +9,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.persistence.ElementCollection;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.ForeignKey;
 
 import categoria.CategoriaResidencial;
-import dataBase.DataBase;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
@@ -29,8 +28,9 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
-	@OneToMany()
-	@JoinColumn(nullable = true )
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"), referencedColumnName="numeroDeUsuario")
+	//
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Enumerated(EnumType.STRING)
 	private CategoriaResidencial categoriaResidencial;
@@ -116,6 +116,10 @@ public class Cliente extends Usuario {
 		this.puntos += 10;
 		}
 	}
+	
+	/*public void agregarDispositivoConcreto(DispositivoConcreto dispositivo) {
+		this.dispositivos.add(dispositivo);
+	}*/
 	
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS

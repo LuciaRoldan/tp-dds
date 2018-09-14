@@ -15,7 +15,6 @@ import sensor.Sensor;
 import transformador.Transformador;
 import usuario.Cliente;
 import usuario.TipoDocumento;
-import usuario.Usuario;
 import zona.Zona;
 
 import java.time.LocalDate;
@@ -23,9 +22,6 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collector;
-
-import javax.persistence.GenerationType;
 
 import actuador.Actuador;
 import actuador.AireEstadoActuador;
@@ -116,6 +112,36 @@ public class ClaseParaDB {
     	return new Regla(actuadores, condiciones);
     }
    
-    
+   public LocalDateTime getInicioPeriodo() {
+	   return LocalDateTime.of(2018, 9, 1, 00, 00);
+   }
+   
+   public LocalDateTime getFinPeriodo() {
+	   return LocalDateTime.of(2018, 9, 2, 00, 00);
+   }
+   
+   public Cliente getClienteConDispositivos() {
+	   Cliente cliente = new Cliente("Maximo Cozzetti", "Calle falsa 123", LocalDate.of(2001, 01, 01), "Emilio Ravenna", "caracterizacion", TipoDocumento.DNI ,  007, 4545-4545, CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
+	   DispositivoFactory factory = new DispositivoFactory();
+	   
+	   factory.setNombre("aire");
+	   AireAcondicionado aire = factory.crearAireAcondicionado(2200);
+       
+	   EncendidoMock encendido1 = new EncendidoMock(this.getInicioPeriodo(), this.getFinPeriodo());
+       ApagadoMock apagado1 = new ApagadoMock(this.getFinPeriodo(), LocalDateTime.of(2018, 9, 3, 00, 00));
+       Encendido encendido2 = new Encendido();
+	   //Apagado apagado = new Apagado();
+
+       aire.agregarEstado(encendido1);
+       aire.agregarEstado(apagado1);
+       aire.agregarEstado(encendido2);
+       //aire.agregarEstado(apagado);
+       
+       List<DispositivoConcreto> disp = new ArrayList<DispositivoConcreto>();
+       disp.add(aire);
+       cliente.setDispositivos((ArrayList<DispositivoConcreto>) disp);
+	   
+	   return cliente;
+   }
     
 }

@@ -3,18 +3,16 @@ package db;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
 import org.junit.Test;
 
 import actuador.Actuador;
 import actuador.AireEstadoActuador;
-import categoria.CategoriaResidencial;
 import dispositivo.DispositivoFactory;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;
-import dispositivosConcretos.Heladera;
 import exceptionParser.NoSePudoAbrirElArchivoException;
 import parserTransformadorYZona.ParserTransformadorYZona;
 import regla.Condicion;
@@ -28,13 +26,12 @@ import repositorio.RepositorioDeReglas;
 import repositorio.RepositorioDeTransformadoresYZonas;
 import transformador.Transformador;
 import usuario.Cliente;
-import usuario.TipoDocumento;
-import usuario.Usuario;
 
 public class casosDePruebaDB {
 	ClaseParaDB claseParaDB = new ClaseParaDB();
 	RepositorioDeReglas repoDeReglas = new RepositorioDeReglas();
 	RepositorioDeDispositivos repoDeDispositivos = new RepositorioDeDispositivos();
+	RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
 
 	@Test
 	public void caso1() {
@@ -42,7 +39,7 @@ public class casosDePruebaDB {
 		//que el cambio se haya realizado.
 
 		Cliente cliente = ClaseParaDB.getCliente();
-		RepositorioDeUsuarios repositorioDeUsuarios = new RepositorioDeUsuarios();
+		
 		repositorioDeUsuarios.agregarUsuario(cliente);
 		
 		
@@ -158,10 +155,26 @@ public class casosDePruebaDB {
 	
 	@Test
 	public void caso5() {
-		//Dado un hogar y un per�odo, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un per�odo, 
-		//mostrar por consola su consumo promedio. Dado un transformador y un per�odo, mostrar su consumo promedio. Recuperar un 
-		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese per�odo. Persistir el 
+		//Dado un hogar y un periodo, mostrar por consola (interfaz de comandos) el consumo total. Dado un dispositivo y un periodo, 
+		//mostrar por consola su consumo promedio. Dado un transformador y un perido, mostrar su consumo promedio. Recuperar un 
+		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese periodo. Persistir el 
 		//dispositivo. Nuevamente mostrar el consumo para ese transformador.
+		Cliente cliente = claseParaDB.getClienteConDispositivos();
+		repositorioDeUsuarios.agregarUsuario(cliente);
+		LocalDateTime inicio = claseParaDB.getInicioPeriodo();
+		LocalDateTime fin = claseParaDB.getFinPeriodo();
+		
+		double consumoCliente = cliente.consumoHogarPeriodo(inicio, fin);
+		System.out.print("El consumo del cliente es: " + consumoCliente + "\n");
+		
+		Transformador transformador = claseParaDB.getTransformador();
+		transformador.addCliente(cliente);
+		
+		double consumoTransformador = cliente.consumoHogarPeriodo(inicio, fin);
+		System.out.print("El consumo del transformador es: " + consumoTransformador + "\n");
+		
+		DispositivoConcreto dispositivo = repoDeDispositivos.getDispositivoPorUsuario(cliente.numeroDeUsuario);
+		
 		assertTrue(true);
 	}
 
