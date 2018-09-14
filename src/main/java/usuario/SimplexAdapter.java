@@ -58,20 +58,20 @@ public class SimplexAdapter {
 							});
 
 		return configuracionOptima;
-
+		
 	}
 	
 	public static void ejecutarSimplex(List<DispositivoConcreto> dispositivos, double maximoConsumo) {
 		
 		SimplexAdapter.configuracionOptima(dispositivos, maximoConsumo);
 		
-		dispositivos.forEach(dispositivo -> {
+		/*dispositivos.forEach(dispositivo -> {
 							horasCorrientes = dispositivo.consumoCorriente()/ dispositivo.getPotencia();
 								if(dispositivo.getConsumoIdeal() < horasCorrientes) {
 								dispositivo.apagate();
 								}
 		});
-		/*
+		*/
 		dispositivos.forEach(dispositivo -> {
 			EncenderActuador actuador = new EncenderActuador(dispositivo, false);
 			List<Actuador> actuadores = new ArrayList<Actuador>();
@@ -87,7 +87,7 @@ public class SimplexAdapter {
 			
 			sensor.cambiarMedicion(dispositivo.consumoCorriente() / dispositivo.getPotencia());
 			
-});*/
+		});
 		
 	}
 
