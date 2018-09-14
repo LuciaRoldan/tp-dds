@@ -13,7 +13,8 @@ import dispositivo.estados.EstadoDispositivo;
 @Entity
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
+	@Transient
 	private EstadoDispositivo estado;
 	private String name;
 	private double potencia;

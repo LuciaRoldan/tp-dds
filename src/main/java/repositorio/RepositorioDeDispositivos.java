@@ -13,7 +13,7 @@ public class RepositorioDeDispositivos extends Repositorio {
     }
 	
 	public DispositivoConcreto getDispositivoPorUsuario(int numeroCliente) {
-		return (DispositivoConcreto) this.obtenerEntityManager().createQuery("SELECT d FROM DispositivoConcreto d WHERE Cliente = :numeroCliente")
+		return (DispositivoConcreto) this.entityManager.createQuery("SELECT d FROM DispositivoConcreto d WHERE Cliente = :numeroCliente")
 				.setParameter("numeroCliente", numeroCliente).setMaxResults(1).getSingleResult();
 	}
 }

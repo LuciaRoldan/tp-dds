@@ -24,7 +24,7 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 
 	@OneToOne
     DispositivoBase dispositivoEstandar;
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
     private EstadoDispositivo estado;
 	
 	@JoinColumn(name = "idEstado")

@@ -12,8 +12,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
-	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-	@Transient
+	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
 	@Id
