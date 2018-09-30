@@ -14,11 +14,11 @@ import mock.EncendidoMock;
 
 public class ClasesParaTestearDispositivos {
 	
-	public EstadoDispositivo unEstadoEncendido() {
+	public static EstadoDispositivo unEstadoEncendido() {
 		LocalDateTime hoy = LocalDateTime.now().plus(1,ChronoUnit.DAYS);
-		LocalDateTime ayer = LocalDateTime.now().minus(1, ChronoUnit.MONTHS);
+		LocalDateTime elMesPasado = LocalDateTime.now().minus(1, ChronoUnit.MONTHS);
 		
-		return new EncendidoMock(ayer, hoy);
+		return new EncendidoMock(elMesPasado, hoy);
 	}
 
 	public DispositivoInteligente unDispositivoInteligente() {

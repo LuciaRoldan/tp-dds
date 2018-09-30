@@ -57,9 +57,7 @@ public class DispositivoEstandar implements DispositivoBase {
 	
 	public void setBajoConsumo(boolean bajoConsumo) {
 		this.esBajoConsumo = bajoConsumo;
-	}
-	
-	
+	}	
 
 
 /////////////METODOS/////////////

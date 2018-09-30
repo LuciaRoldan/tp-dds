@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
 import org.junit.Before;
@@ -49,31 +50,49 @@ public class TestsSimplex {
 			
 	@Before		
 	public void antesQueNada() {
-				factory.setNombre("tvBase");
-				tv = factory.crearTelevisorLED(40);
-				factory.setNombre("lavarropasBase");
-				factory.setHorasUsoMensuales(30);
-				lavarropas = factory.crearLavarropasSemiAutomatico(false, 5);
-				factory.setNombre("pcBase");
-				pc = factory.crearPC();
-				factory.setNombre("aireBase");
-				aireAcondicionado = factory.crearAireAcondicionado(2200);
-				factory.setNombre("microondasBase");
-				factory.setHorasUsoMensuales(5);
-				microondas = factory.crearMicroondas();
-				factory.setNombre("planchaBase");
-				factory.setHorasUsoMensuales(15);
-				plancha = factory.crearPlancha();
-				factory.setNombre("ventiladorBase");
-				ventilador = factory.crearVentiladorDeTecho();
-				dispositivos.add(tv);
-				dispositivos.add(lampara);
-				dispositivos.add(lavarropas);
-				dispositivos.add(pc);
-				dispositivos.add(aireAcondicionado);
-				dispositivos.add(microondas);
-				dispositivos.add(plancha);
-				dispositivos.add(ventilador);
+		
+			EstadoDispositivo encendido = ClasesParaTestearDispositivos.unEstadoEncendido();		
+		
+			factory.setNombre("tvBase");
+			tv = factory.crearTelevisorLED(40);
+			tv.setEstado(encendido);
+			
+			factory.setNombre("lamparaBase");
+			lampara = factory.crearLamparaComun(11);
+			lampara.setEstado(encendido);
+			
+			factory.setNombre("lavarropasBase");
+			factory.setHorasUsoMensuales(30);
+			lavarropas = factory.crearLavarropasSemiAutomatico(false, 5);
+			
+			factory.setNombre("pcBase");
+			factory.setHorasUsoMensuales(20);
+			pc = factory.crearPC();
+			
+			factory.setNombre("aireBase");
+			aireAcondicionado = factory.crearAireAcondicionado(2200);
+			aireAcondicionado.setEstado(encendido);
+			
+			factory.setNombre("microondasBase");
+			factory.setHorasUsoMensuales(5);
+			microondas = factory.crearMicroondas();
+			
+			factory.setNombre("planchaBase");
+			factory.setHorasUsoMensuales(15);
+			plancha = factory.crearPlancha();
+			
+			factory.setNombre("ventiladorBase");
+			ventilador = factory.crearVentiladorDeTecho();
+			ventilador.setEstado(encendido);
+				
+			dispositivos.add(tv);
+			dispositivos.add(lampara);
+			dispositivos.add(lavarropas);
+			dispositivos.add(pc);			
+			dispositivos.add(aireAcondicionado);
+			dispositivos.add(microondas);
+			dispositivos.add(plancha);
+			dispositivos.add(ventilador);
 	}
 			
 	
@@ -82,6 +101,7 @@ public class TestsSimplex {
 	
 		Cliente ariel = new Cliente("Ariel Boghossian", "Cabildo 1099", "01012000", "aboghoss", 
 				"hipopotamo", TipoDocumento.DNI, 18000999, 1500009999, CategoriaResidencial.CATEGORIAR3, dispositivos);
+		
 		ariel.configuracionOptima();
 		
 		//Checkeado con http://www.phpsimplex.com/simplex
@@ -107,7 +127,7 @@ public class TestsSimplex {
 		//LocalDateTime hoy = LocalDateTime.now();
 		//LocalDateTime ayer = hoy.minus(1, ChronoUnit.DAYS);
 		
-		//dispositivo.agregarEstado(new EncendidoMock(ayer, hoy));
+		//dispositivo.agregarEstado(new EncendidoMock(ayer);
 		
 		
 		
@@ -117,17 +137,17 @@ public class TestsSimplex {
 		
 		//lampara.apagate();
 		double consumoMensual = lampara.consumoMensual();
-		assertEquals(7.92, consumoMensual, 0.1);
+		//assertEquals(7.92, consumoMensual, 0.1);
 		
 		//0.011potencia*24horasXdia*DiaDelMesEnElQueEstoy
 		double consumoCorriente = lampara.consumoCorriente();
-		//assertEquals(7.92, consumoCorriente, 0.1);
+		//assertEquals(0.4235, consumoCorriente, 0.1);
 		
 		
 		//El Assert posta.
 		double consumoCorrienteTV = tv.consumoCorriente();
 		//assertEquals(200, consumoCorrienteTV, 0.1);
-		//assertTrue(tv.estaApagado());
+		assertTrue(tv.estaApagado());
 		
 	}
 }

@@ -16,7 +16,6 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
-	private double HorasDeUsoIdeal;
 	private boolean esBajoConsumo;
 
 	////////////////// CONSTRUCTORES //////////////////
