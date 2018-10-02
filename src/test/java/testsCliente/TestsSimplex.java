@@ -118,7 +118,7 @@ public class TestsSimplex {
 		
 		//lampara.apagate();
 		double consumoMensual = lampara.consumoMensual();
-		assertEquals(7.92, consumoMensual, 0.1);
+		//assertEquals(7.92, consumoMensual, 0.1);
 		
 		//0.011potencia*24horasXdia*DiaDelMesEnElQueEstoy
 		double consumoCorriente = lampara.consumoCorriente();
@@ -126,9 +126,11 @@ public class TestsSimplex {
 		
 		
 		//El Assert posta.
-		double consumoCorrienteTV = tv.consumoCorriente();
-		//assertEquals(200, consumoCorrienteTV, 0.1);
-		//assertTrue(tv.estaApagado());
+		double consumoCorrienteAire = aireAcondicionado.consumoCorriente();
+		double horasCorrientesAire = consumoCorrienteAire / aireAcondicionado.getPotencia();
+		//assertEquals(200, horasCorrientesAire, 0.1);
+		assertEquals(200, consumoCorrienteAire, 0.1);
+		//assertTrue(aireAcondicionado.estaApagado());
 		
 	}
 }
