@@ -1,21 +1,32 @@
 package dispositivosConcretos;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import dispositivo.DispositivoBase;
 import dispositivo.Modulo;
 import dispositivo.estados.EstadoDispositivo;
 
+import javax.persistence.*;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
+	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public Integer numeroDeDispositivoConcreto;
+
+	public DispositivoConcreto(){};
 	DispositivoConcreto(DispositivoBase dispositivoBase){
 		this.dispositivoBase = dispositivoBase;
 	}
-	
-    public double consumoMensual() { return dispositivoBase.consumoMensual(); }
+
+	public Integer getId(){return this.numeroDeDispositivoConcreto;}
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) { return this.dispositivoBase.consumoPromedioPorHora(inicio, fin);}
+	public double consumoMensual() { return dispositivoBase.consumoMensual(); }
     public void activarAhorroDeEnergia() { this.dispositivoBase.activarAhorroDeEnergia(); }
     public void agregarEstado(EstadoDispositivo estado) {this.dispositivoBase.agregarEstado(estado);}
     public void setEstado(EstadoDispositivo estado) { this.dispositivoBase.setEstado(estado);}
@@ -39,6 +50,8 @@ public abstract class DispositivoConcreto {
 	public double getUsoMensualMinimo() {return this.dispositivoBase.getUsoMensualMinimo();}
 	public double getHorasDeUsoIdeal() {return this.dispositivoBase.getHorasDeUsoIdeal();}
 	public double consumoCorriente() { return this.dispositivoBase.consumoCorriente();}
+	public List<EstadoDispositivo> getEstadosAnteriores(){ return this.dispositivoBase.getEstadosAnteriores();}
+	public double consumoCorrienteMock() {return this.dispositivoBase.consumoCorrienteMock();}
 
 }
 

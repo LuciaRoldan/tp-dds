@@ -20,7 +20,7 @@ public class testsParser {
 	@Before
 	public void inicializar() throws NoSePudoAbrirElArchivoException, IOException {
 		parser = new ParserTransformadorYZona();
-		transformador = parser.parsearTransformador("src/test/java/testParser/transformador.json");
+		transformador = parser.parsearTransformador("src/test/java/db/transformador.json");
 		zona = parser.parsearZona("src/test/java/testParser/zona.json");
 	}
 	

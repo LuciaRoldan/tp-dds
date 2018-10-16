@@ -46,7 +46,7 @@ public class DispositivoFactory {
 	
 	public Heladera crearHeladeraConFreezer() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
+		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 720, 720);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.09);
 		return new Heladera(dispositivo, true);
@@ -54,7 +54,7 @@ public class DispositivoFactory {
 	
 	public Heladera crearHeladeraSinFreezer() {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
+		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 720, 720);
 		dispositivo.setBajoConsumo(true);
 		dispositivo.setPotencia(0.075);
 		return new Heladera(dispositivo, false);
@@ -62,7 +62,8 @@ public class DispositivoFactory {
 	
 	public Lampara crearLamparaHalogena(int w) {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 0, 100, 50);
+		this.verificarHorasUsoMensuales();
+		DispositivoBase dispositivo = new DispositivoEstandar(nombre, 90, 360, horasUsoMensuales);
 		dispositivo.setBajoConsumo(false);
 		if (w == 40) {
 			dispositivo.setPotencia(0.4);
@@ -76,7 +77,7 @@ public class DispositivoFactory {
 	
 	public Lampara crearLamparaComun(int w) {
 		this.verificarNombre();
-		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
+		DispositivoBase dispositivo = new DispositivoInteligente(nombre, new Apagado(), 90, 360);
 		dispositivo.setBajoConsumo(true);
 		if(w == 11) {
 			dispositivo.setPotencia(0.011);
@@ -100,7 +101,7 @@ public class DispositivoFactory {
 			dispositivo.setBajoConsumo(false);
 			dispositivo.setPotencia(0.875);
 		} else {
-			dispositivo = new DispositivoInteligente(nombre, new Apagado(), 0, 0);
+			dispositivo = new DispositivoInteligente(nombre, new Apagado(), 6, 30);
 			dispositivo.setPotencia(0.175);
 			dispositivo.setBajoConsumo(true);
 		}

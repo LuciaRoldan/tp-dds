@@ -1,12 +1,14 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
-import dispositivo.*;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 
 public class Apagado extends EstadoDispositivo {
+	
+	public LocalDateTime inicio;
+	public LocalDateTime fin;
 
 	
 	public Apagado() {
@@ -21,28 +23,33 @@ public class Apagado extends EstadoDispositivo {
 		return true;
 	}
 
-	public void apagate(DispositivoInteligenteInterfaz dispositivo) {
+
+	
+	public void apagate(DispositivoInteligenteAbstracto dispositivo) {
 	}
 
-	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
+
+	@Override
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();		
 		dispositivo.agregarEstado(this);
 		dispositivo.setEstado(new Encendido());
 	}
 
 
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
-		fin = LocalDateTime.now();		
-		dispositivo.agregarEstado(this);
-		dispositivo.setEstado(new AhorroDeEnergia());
-	}
-	
+
 	public double consumoTotal(double potencia) {
 		return 0;
 	}
 
 	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, double potencia) {
 		return 0;
+	}
+
+	@Override
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivoInteligenteConcreto) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

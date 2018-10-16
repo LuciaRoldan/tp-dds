@@ -4,16 +4,32 @@ import exceptionDispositivo.dispositivoInteligente.NoSePuedeAgregarOtroModuloAdi
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
-public class Modulo implements DispositivoInteligenteInterfaz {
+@Entity
+public class Modulo extends DispositivoInteligenteAbstracto {
 
+	@OneToOne
     DispositivoBase dispositivoEstandar;
+	@OneToOne(cascade=CascadeType.ALL)
     private EstadoDispositivo estado;
-    private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
+	
+	@JoinColumn(name = "idEstado")
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
@@ -26,12 +42,13 @@ public class Modulo implements DispositivoInteligenteInterfaz {
     //////////////// SETTERS Y GETTERS ////////////////
 
     //GETTERS
-    public EstadoDispositivo getEstado() {      return this.estado;  }
+    public EstadoDispositivo getEstado() { return this.estado; }
     public double getPotencia(){return this.dispositivoEstandar.getPotencia();}
    	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
    	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
    	public double getHorasDeUsoIdeal() {return this.dispositivoEstandar.getHorasDeUsoIdeal();}
     public boolean esInteligente() {return true;}
+	public List<EstadoDispositivo> getEstadosAnteriores() { return this.estadosAnteriores; }
     
     //SETTERS
     public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }
@@ -62,12 +79,24 @@ public class Modulo implements DispositivoInteligenteInterfaz {
     public double calcularConsumoUltimasNHoras(int horas) {
         return this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
     }
+    
+    public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) {
+		double cantidadHoras = inicio.until(fin, ChronoUnit.HOURS);
+		return this.calcularConsumoPeriodo(inicio, fin) / cantidadHoras;
+	}
 
     public double consumoCorriente() {
 		int mesActual = LocalDate.now().getMonthValue();
 		int anoActual = LocalDate.now().getYear();
 		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
+    
+	public double consumoCorrienteMock() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual - 1, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.of(anoActual, mesActual - 1, 30, 0, 0, 0));		
 	}
     
     public boolean estaEncendido() {  return estado.estaEncendido(); }

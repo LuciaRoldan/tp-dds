@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import dispositivo.DispositivoInteligente;
 import dispositivo.estados.AhorroDeEnergia;
+import dispositivo.estados.Encendido;
 import dispositivo.estados.EstadoDispositivo;
 import mock.EncendidoMock;
 
@@ -30,6 +31,8 @@ public class testsEstados {
 	
 	EstadoDispositivo encendido = new ClasesParaTestearDispositivos().unEstadoEncendido();
 	//el intervalo de encendido: [haceUnMes ; maniana]
+	
+	
 
 	@Test
 	public void CrearAhorroDeEnergia() {
@@ -62,8 +65,8 @@ public class testsEstados {
 	
 	@Test
 	public void tiempoEnHoras(){
-		double tiempoEsperado = (double)haceUnMes.until(maniana, ChronoUnit.HOURS);
-		double resultado = (double)encendido.tiempoEnHoras();
+		double tiempoEsperado = haceUnMes.until(maniana, ChronoUnit.HOURS);
+		double resultado = encendido.tiempoEnHoras();
 		assertEquals(tiempoEsperado,resultado,0.0001);
 	}
 	

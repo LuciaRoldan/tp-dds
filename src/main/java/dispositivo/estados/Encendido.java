@@ -1,7 +1,8 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
+
 import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -23,15 +24,15 @@ public class Encendido extends EstadoDispositivo {
 		return false;
 	}
 
-	public void apagate(DispositivoInteligenteInterfaz dispositivo) {
+	public void apagate(DispositivoInteligenteAbstracto dispositivo) {
 		this.fin = LocalDateTime.now();
 		dispositivo.setEstado(new Apagado());
 	}
 
-	public void encendete(DispositivoInteligenteInterfaz dispositivo) {
+	public void encendete(DispositivoInteligenteAbstracto dispositivo) {
 	}
 	
-	public void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivo) {
+	public void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivo) {
 		fin = LocalDateTime.now();
 		dispositivo.setEstado(new AhorroDeEnergia());
 	}
@@ -44,4 +45,5 @@ public class Encendido extends EstadoDispositivo {
 	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin, double potencia) {
 		return (double) this.tiempoEnHorasEnIntervalo(inicio, fin) * potencia;
 	}
+
 }

@@ -4,20 +4,29 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
 
 import dispositivo.estados.EstadoDispositivo;
 
-public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
+@Entity
+public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
+	@OneToOne(cascade=CascadeType.ALL)
+	@Transient
 	private EstadoDispositivo estado;
 	private String name;
-	private ArrayList<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 	private double potencia;
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
-	private double HorasDeUsoIdeal;
 	private boolean esBajoConsumo;
+
+	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "idEstado")
+	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
+
 
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente(String name, EstadoDispositivo estadoInicial,
@@ -34,7 +43,7 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	///////////////////// METODOS /////////////////////
 
 	public double consumoMensual() {
-		return this.calcularConsumoPeriodo(LocalDateTime.now().minus(30, ChronoUnit.DAYS), LocalDateTime.now());
+		return this.calcularConsumoPeriodo(LocalDateTime.now().minusDays(30), LocalDateTime.now());
 	}
 	
 
@@ -53,6 +62,11 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 	public double calcularConsumoUltimasNHoras(int horas) {
 		double consumo = this.calcularConsumoPeriodo(LocalDateTime.now().minusHours(horas), LocalDateTime.now());
 		return consumo;
+	}
+	
+	public double consumoPromedioPorHora(LocalDateTime inicio, LocalDateTime fin) {
+		double cantidadHoras = inicio.until(fin, ChronoUnit.HOURS);
+		return this.calcularConsumoPeriodo(inicio, fin) / cantidadHoras;
 	}
 	
 
@@ -102,6 +116,11 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 		return this.usoMensualMaximo;
 	}
 
+	@Override
+	public List<EstadoDispositivo> getEstadosAnteriores() {
+		return this.estadosAnteriores;
+	}
+
 	
 
 	//////////////////////////////////// SETTERS ////////////////////////////////////
@@ -142,6 +161,13 @@ public class DispositivoInteligente implements DispositivoInteligenteInterfaz {
 		int anoActual = LocalDate.now().getYear();
 		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual, 1, 0, 0, 0);
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.now());		
+	}
+	
+	public double consumoCorrienteMock() {
+		int mesActual = LocalDate.now().getMonthValue();
+		int anoActual = LocalDate.now().getYear();
+		LocalDateTime fechaInicio = LocalDateTime.of(anoActual, mesActual - 1, 1, 0, 0, 0);
+		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.of(anoActual, mesActual - 1, 30, 0, 0, 0));		
 	}
 
 	@Override

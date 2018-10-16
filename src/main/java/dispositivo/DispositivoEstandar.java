@@ -4,10 +4,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import javax.persistence.Entity;
+
 import dispositivo.estados.EstadoDispositivo;
 import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
-public class DispositivoEstandar implements DispositivoBase {
+@Entity
+public class DispositivoEstandar extends DispositivoBase {
 	
 	private String name;
 	private double usoMensualMinimo;
@@ -57,9 +60,7 @@ public class DispositivoEstandar implements DispositivoBase {
 	
 	public void setBajoConsumo(boolean bajoConsumo) {
 		this.esBajoConsumo = bajoConsumo;
-	}
-	
-	
+	}	
 
 
 /////////////METODOS/////////////

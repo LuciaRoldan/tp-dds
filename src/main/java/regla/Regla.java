@@ -2,14 +2,24 @@ package regla;
 
 import actuador.Actuador;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Regla {
-	
+
+	@ManyToMany(cascade = CascadeType.ALL)
 	List<Actuador> actuadores = new ArrayList<Actuador>();
+	
+	@ManyToMany(cascade = CascadeType.ALL)
 	List<Condicion> condiciones = new ArrayList<Condicion>();
 	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	public Integer numeroDeRegla;
+
+	public Regla(){}
 	
 	public Regla(List<Actuador> actuadores, List<Condicion> condiciones) {
 		this.actuadores = actuadores;

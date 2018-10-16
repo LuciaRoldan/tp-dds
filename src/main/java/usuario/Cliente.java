@@ -2,42 +2,61 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
+import javax.persistence.ForeignKey;
+
 import categoria.CategoriaResidencial;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
+@Entity
 public class Cliente extends Usuario {
 
-	private TipoDocumento tipoDocumento;
+	private double maximoConsumo;
 	private int documento;
 	private int telefono;
-	private CategoriaResidencial categoriaResidencial;
-	private ArrayList<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	private int puntos = 0;
-	private double maximoConsumo;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
+	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
+	@Enumerated(EnumType.STRING)
+	private CategoriaResidencial categoriaResidencial;
+	@Enumerated(EnumType.STRING)
+	private TipoDocumento tipoDocumento;
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
 	public Cliente() {}
 
-	public Cliente(String nombreYApellido, String domicilio, String fechaDeAlta, String nombreDeUsuario,
+	public Cliente(String nombreYApellido, String domicilio, LocalDate fechaDeAlta, String nombreDeUsuario,
 			String contrasena, TipoDocumento tipoDocumento, int documento, int telefono,
-			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos) {
+			CategoriaResidencial categoriaResidencial, ArrayList<DispositivoConcreto> dispositivos, Float coordenadaX, Float coordenadaY) {
 
-		super.inicializar(nombreYApellido, fechaDeAlta, nombreDeUsuario, nombreDeUsuario, contrasena, CLIENTE);
+		//dataBase = DataBase.getInstance();
+		super.inicializar(nombreYApellido, domicilio, fechaDeAlta, nombreDeUsuario, contrasena, CLIENTE, coordenadaX, coordenadaY);
 		this.tipoDocumento = tipoDocumento;
 		this.documento = documento;
 		this.telefono = telefono;
 		this.categoriaResidencial = categoriaResidencial;
 		this.dispositivos = dispositivos;
 		this.maximoConsumo = 612;
+		
 	}
-	
+
+
 	public Double calcularConsumoMensual() {
 
 		Double consumo = dispositivos.stream()
@@ -51,6 +70,8 @@ public class Cliente extends Usuario {
 		CategoriaResidencial nuevaCategoria = this.categoriaResidencial.recategorizar(this.calcularConsumoMensual());
 		this.setCategoriaResidencial(nuevaCategoria);
 	}
+
+
 	
 	public int getCantidadDispositivos() {
 		return dispositivos.size();
@@ -96,6 +117,10 @@ public class Cliente extends Usuario {
 		}
 	}
 	
+	/*public void agregarDispositivoConcreto(DispositivoConcreto dispositivo) {
+		this.dispositivos.add(dispositivo);
+	}*/
+	
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
 	
@@ -108,9 +133,20 @@ public class Cliente extends Usuario {
 		SimplexAdapter.ejecutarSimplex(this.dispositivos, this.maximoConsumo);
 	}
 	
-	
-	
-	
+	public void ejecutarSimplexMock() {
+		SimplexAdapter.ejecutarSimplexMock(this.dispositivos, this.maximoConsumo);
+	}
+
+
+	//REPORTES
+
+	public double consumoHogarPeriodo(LocalDateTime inicio, LocalDateTime fin) {
+		return dispositivos.stream().
+				mapToDouble(dispositivo -> dispositivo.calcularConsumoPeriodo(inicio, fin)).
+				sum();
+	}
+
+
 
 	////////////////////////////////// GETTERS NECESARIOS PARA TESTS //////////////////////////////////////////////////////
 
@@ -134,7 +170,7 @@ public class Cliente extends Usuario {
 		return CLIENTE;
 	}
 
-	public ArrayList<DispositivoConcreto> getDispositivos() {
+	public List<DispositivoConcreto> getDispositivos() {
 		return this.dispositivos;
 	}
 	

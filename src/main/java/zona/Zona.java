@@ -1,10 +1,15 @@
 package zona;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import dataBase.DataBase;
+import dispositivosConcretos.DispositivoConcreto;
 import transformador.Transformador;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Zona {
 
 
@@ -13,7 +18,12 @@ public class Zona {
     private Float coordenadaY;
     private Float radio;
     private String nombre;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "numeroDeZona")
     private List<Transformador> listaDeTransformadores = new ArrayList<Transformador>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer numeroDeZona;
 
     ///////////////////////////////// GETTERS Y SETTERS /////////////////////////////////////
 
@@ -40,6 +50,7 @@ public class Zona {
         this.coordenadaX = coordenadaX;
         this.coordenadaY = coordenadaY;
         this.listaDeTransformadores = listaDeTransformadores;
+
     }
 
 
@@ -48,6 +59,7 @@ public class Zona {
     }
 
 
-
-
+    public Integer getNumeroDeZona() {
+        return this.numeroDeZona;
+    }
 }

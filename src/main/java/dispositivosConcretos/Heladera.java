@@ -1,7 +1,10 @@
 package dispositivosConcretos;
+import javax.persistence.Entity;
+
 import dispositivo.DispositivoBase;
 import exceptionDispositivo.DispositivoBaseInvalidoException;
 
+@Entity
 public class Heladera extends DispositivoConcreto {
 	
 	boolean tieneFreezer;

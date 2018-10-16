@@ -2,6 +2,7 @@ package usuario;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.math3.optim.linear.LinearConstraint;
 import org.apache.commons.math3.optim.linear.Relationship;
@@ -14,7 +15,7 @@ public class RestriccionBuilder {
 	private static int posicion;
 	double maximoConsumo;
 	
-	public static ArrayList<LinearConstraint> getRestricciones(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo){
+	public static ArrayList<LinearConstraint> getRestricciones(List<DispositivoConcreto> dispositivos, double maximoConsumo){
 		
 		ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
 		
@@ -27,7 +28,7 @@ public class RestriccionBuilder {
 		return restricciones;
 	}
 	
-	private static LinearConstraint crearRestriccionPrincipal(ArrayList<DispositivoConcreto> dispositivos, double maximoConsumo){
+	private static LinearConstraint crearRestriccionPrincipal(List<DispositivoConcreto> dispositivos, double maximoConsumo){
 
 		i = 0;
 		double coeficientes[] = new double[dispositivos.size()];	
@@ -42,7 +43,7 @@ public class RestriccionBuilder {
 		return restriccionPrincipal;
 	}
 
-	private static ArrayList<LinearConstraint> crearRestriccionHoras(ArrayList<DispositivoConcreto> dispositivos) {
+	private static ArrayList<LinearConstraint> crearRestriccionHoras(List<DispositivoConcreto> dispositivos) {
 		
 		posicion = 0;
 		ArrayList<LinearConstraint> restricciones = new ArrayList<LinearConstraint>();
@@ -59,7 +60,7 @@ public class RestriccionBuilder {
 	}
 	
 
-	private static double[] prepararArray(DispositivoConcreto dispositivo, int posicion, ArrayList<DispositivoConcreto> dispositivos) {
+	private static double[] prepararArray(DispositivoConcreto dispositivo, int posicion, List<DispositivoConcreto> dispositivos) {
 		double array[] = new double[dispositivos.size()];
 		array[posicion] = 1;
 		return array;

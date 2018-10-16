@@ -1,7 +1,7 @@
 package dispositivo.estados;
 
-import dispositivo.DispositivoInteligenteInterfaz;
 import dispositivo.DispositivoInteligente;
+import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -15,11 +15,11 @@ public abstract class EstadoDispositivo {
 
 	public abstract boolean estaApagado();
 
-	public abstract void apagate(DispositivoInteligenteInterfaz dispositivo);
+	public abstract void apagate(DispositivoInteligenteAbstracto dispositivo);
 
-	public abstract void encendete(DispositivoInteligenteInterfaz dispositivo);
+	public abstract void encendete(DispositivoInteligenteAbstracto dispositivo);
 
-	public abstract void activarAhorroDeEnergia(DispositivoInteligenteInterfaz dispositivoInteligenteConcreto);
+	public abstract void activarAhorroDeEnergia(DispositivoInteligenteAbstracto dispositivoInteligenteConcreto);
 	
 	//
 	public abstract double consumoTotal(double potencia);
@@ -88,6 +88,14 @@ public abstract class EstadoDispositivo {
 		}else if(inicio.isBefore(this.inicio) && fin.isAfter(ahora) ) {
 			return this.tiempoEnHoras();
 		}else return 0;
+	}
+	
+	public void mostrarHoras() {
+		if(inicio != null && fin != null) {
+			System.out.println(inicio.until(fin, ChronoUnit.MINUTES)/60);
+		}else if(inicio == null) {
+			System.out.println("inicio null");
+		}else System.out.println("fin null");
 	}
 
 
