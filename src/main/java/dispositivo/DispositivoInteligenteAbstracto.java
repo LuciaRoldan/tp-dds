@@ -45,9 +45,6 @@ public abstract class DispositivoInteligenteAbstracto extends DispositivoBase{
         return false;
     }
 
-    public EstadoDispositivo getEstado() {
-        return null;
-    }
 
     public double calcularConsumoUltimasNHoras(int horas) {
         return 0;

@@ -32,18 +32,18 @@ public class testsEstados {
 	EstadoDispositivo encendido = new ClasesParaTestearDispositivos().unEstadoEncendido();
 	//el intervalo de encendido: [haceUnMes ; maniana]
 	
+	DispositivoInteligente dispositivoInteligente = new ClasesParaTestearDispositivos().unDispositivoInteligente();
+	
 	
 
 	@Test
 	public void CrearAhorroDeEnergia() {
-		DispositivoInteligente dispositivoInteligente = new ClasesParaTestearDispositivos().unDispositivoInteligente();
 		dispositivoInteligente.activarAhorroDeEnergia();
 		assertEquals(dispositivoInteligente.getEstado().getClass(), AhorroDeEnergia.class);
 		}
 	
 	@Test
 	public void PasarDeAhorroDeEnergiaAEncendido() {
-		DispositivoInteligente dispositivoInteligente = new ClasesParaTestearDispositivos().unDispositivoInteligente();
 		dispositivoInteligente.activarAhorroDeEnergia();
 		dispositivoInteligente.encendete();
 		assertTrue(dispositivoInteligente.estaEncendido());
@@ -51,7 +51,6 @@ public class testsEstados {
 	
 	@Test
 	public void SiEstaEncendidoNoEstaApagado() {
-		DispositivoInteligente dispositivoInteligente = new ClasesParaTestearDispositivos().unDispositivoInteligente();
 		dispositivoInteligente.encendete();
 		assertFalse(dispositivoInteligente.estaApagado());
 	}

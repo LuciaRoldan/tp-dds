@@ -58,7 +58,7 @@ public abstract class EstadoDispositivo {
 			return (double)this.inicio.until(this.fin, ChronoUnit.MINUTES)/60;
 		}
 	}
-		
+	
 	public double tiempoEnHorasEnIntervalo(LocalDateTime inicio, LocalDateTime fin) {
 		if(this.fin==null) {
 			return this.tiempoEnHorasEnIntervaloSinFin(inicio, fin);

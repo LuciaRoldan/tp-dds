@@ -27,7 +27,6 @@ public abstract class DispositivoBase {
     public void encendete(){}
     public boolean estaEncendido(){return false;}
     public boolean estaApagado(){return false;}
-    public EstadoDispositivo getEstado(){return new Encendido();}
     public double calcularConsumoUltimasNHoras(int horas){return -100;}
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin){return -200;}
     public boolean esInteligente(){return false;}

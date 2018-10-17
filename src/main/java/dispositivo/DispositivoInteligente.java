@@ -15,7 +15,6 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@Transient
-	private EstadoDispositivo estado;
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
@@ -31,14 +30,13 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	////////////////// CONSTRUCTORES //////////////////
 	public DispositivoInteligente(String name, EstadoDispositivo estadoInicial,
 			double usoMensualMinimo, double usoMensualMaximo) {
-		this.name = name;
-		this.estado = estadoInicial;
-		this.estadosAnteriores.add(estadoInicial);
+		this.name = name;		
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.consumoIdeal = 0;
 		this.esBajoConsumo = false;
-	}
+		this.setEstado(estadoInicial);
+		}
 
 	///////////////////// METODOS /////////////////////
 
@@ -49,13 +47,12 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 	public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {
 		
-		double consumoViejo = this.estadosAnteriores
+		double resultado = this.estadosAnteriores
 				.stream()
 				.mapToDouble(estado -> estado.calcularConsumoPeriodo(inicio, fin, this.potencia) )
 				.sum();
-		double consumoReciente = this.estado.calcularConsumoPeriodo(inicio, fin, this.potencia);
-		
-		return consumoViejo + consumoReciente;
+
+		return resultado ;
 	}
 	
 
@@ -71,23 +68,23 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 
 	public boolean estaEncendido() {
-		return estado.estaEncendido();
+		return this.getEstado().estaEncendido();
 	}
 	
 	public boolean estaApagado() {
-		return estado.estaApagado();
+		return this.getEstado().estaApagado();
 	}
 	
 	public void encendete() {
-		estado.encendete(this);
+		this.getEstado().encendete(this);
 	}
 	
 	public void apagate() {
-		estado.apagate(this);
+		this.getEstado().apagate(this);
 	}
 
 	public void activarAhorroDeEnergia() {
-		estado.activarAhorroDeEnergia(this);
+		this.getEstado().activarAhorroDeEnergia(this);
 	}
 
 
@@ -105,7 +102,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	}
 	
 	public EstadoDispositivo getEstado() {
-		return this.estado;
+		return this.estadosAnteriores.get(this.estadosAnteriores.size()-1);
 	}
 	
 	public double getUsoMensualMinimo() {
@@ -144,12 +141,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	}
 	
 	public void setEstado(EstadoDispositivo estado) {
-		this.agregarEstadoAnterior(this.estado);
-		this.estado = estado;
-		this.agregarEstado(estado);
-	}
-	public void agregarEstadoAnterior(EstadoDispositivo estado) {
-		estadosAnteriores.add(estado);
+		this.estadosAnteriores.add(estado);
 	}
 	
 	public String getName(){
@@ -187,11 +179,6 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		this.esBajoConsumo = bajoConsumo;
 	}
 
-	@Override
-	public void agregarEstado(EstadoDispositivo estado) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
 

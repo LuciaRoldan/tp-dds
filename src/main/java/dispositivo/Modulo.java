@@ -24,8 +24,7 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 
 	@OneToOne
     DispositivoBase dispositivoEstandar;
-	@OneToOne(cascade=CascadeType.ALL)
-    private EstadoDispositivo estado;
+
 	
 	@JoinColumn(name = "idEstado")
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
@@ -42,7 +41,9 @@ public class Modulo extends DispositivoInteligenteAbstracto {
     //////////////// SETTERS Y GETTERS ////////////////
 
     //GETTERS
-    public EstadoDispositivo getEstado() { return this.estado; }
+	public EstadoDispositivo getEstado() {
+		return this.estadosAnteriores.get(this.estadosAnteriores.size()-1);
+	}
     public double getPotencia(){return this.dispositivoEstandar.getPotencia();}
    	public double getUsoMensualMinimo() { return this.dispositivoEstandar.getUsoMensualMinimo();}
    	public double getUsoMensualMaximo() { return this.dispositivoEstandar.getUsoMensualMaximo();}
@@ -51,7 +52,7 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 	public List<EstadoDispositivo> getEstadosAnteriores() { return this.estadosAnteriores; }
     
     //SETTERS
-    public void setEstado(EstadoDispositivo estado) {    this.estado = estado; }
+    public void setEstado(EstadoDispositivo estado) {  this.estadosAnteriores.add(estado); }
     public String getName(){return this.dispositivoEstandar.getName();}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
     public void setPotencia(double potencia){this.dispositivoEstandar.setPotencia(potencia);}
@@ -61,8 +62,6 @@ public class Modulo extends DispositivoInteligenteAbstracto {
     ///////////////////// METODOS /////////////////////
 
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicionalException(this);}
-
-    public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
     
     public double consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());
@@ -99,15 +98,15 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 		return this.calcularConsumoPeriodo(fechaInicio, LocalDateTime.of(anoActual, mesActual - 1, 30, 0, 0, 0));		
 	}
     
-    public boolean estaEncendido() {  return estado.estaEncendido(); }
+    public boolean estaEncendido() {  return getEstado().estaEncendido(); }
 
-    public boolean estaApagado() {return estado.estaApagado();  }
+    public boolean estaApagado() {return getEstado().estaApagado();  }
 
-    public void encendete() { estado.encendete(this); }
+    public void encendete() { getEstado().encendete(this); }
     
-    public void apagate() {estado.apagate(this);}
+    public void apagate() {getEstado().apagate(this);}
 
-    public void activarAhorroDeEnergia() { estado.activarAhorroDeEnergia(this); }
+    public void activarAhorroDeEnergia() { getEstado().activarAhorroDeEnergia(this); }
     
     
 
