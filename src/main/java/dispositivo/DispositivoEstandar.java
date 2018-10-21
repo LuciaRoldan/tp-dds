@@ -116,10 +116,10 @@ public class DispositivoEstandar extends DispositivoBase {
 		return false;
 	}
 
-	@Override
+	/*@Override
 	public EstadoDispositivo getEstado() {
 		return null;
-	}
+	}*/
 
 	@Override
 	public double calcularConsumoUltimasNHoras(int horas) {

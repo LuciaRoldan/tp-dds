@@ -5,6 +5,9 @@ import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Apagado extends EstadoDispositivo {
 	
 	public LocalDateTime inicio;

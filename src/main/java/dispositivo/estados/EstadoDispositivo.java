@@ -6,7 +6,20 @@ import dispositivo.DispositivoInteligenteAbstracto;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class EstadoDispositivo {
+	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id
+	public int idEstado;
 	
 	public LocalDateTime inicio;
 	public LocalDateTime fin;
