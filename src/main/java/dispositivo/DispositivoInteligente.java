@@ -14,8 +14,7 @@ import dispositivo.estados.EstadoDispositivo;
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 	@OneToOne(cascade=CascadeType.ALL)
-	@Transient
-	private EstadoDispositivo estado; //Este no deberia estar no?
+	private EstadoDispositivo estado;
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
