@@ -59,7 +59,6 @@ public class casosDePruebaDB {
 		DispositivoConcreto aire = ClaseParaDB.unDispositivoConEstados();
 
 		System.out.println(aire.getEstadosAnteriores().size());
-		//c�mo persistir fechas?? por qu� no puedo pesistir el dispositivo??
 		
 		repoDeDispositivos.persistirDispositivo(aire);
 		
@@ -71,8 +70,6 @@ public class casosDePruebaDB {
 		
 		dispositivoRecuperado.setName("aireConNombreCambiado");
 		
-		//repoDeDispositivos.persistirDispositivo(aire);
-		
 		DispositivoConcreto dispositivoRecuperadoConNuevoNombre = repoDeDispositivos.getDispositivo(aire.getId());
 		
 		assertEquals("aireConNombreCambiado", dispositivoRecuperadoConNuevoNombre.getName());
@@ -81,7 +78,7 @@ public class casosDePruebaDB {
 	@Test
 	public void caso3() {
 		//Crear una nueva regla. Asociarla a un dispositivo. Agregar condiciones y acciones. Persistirla. Recuperarla y ejecutarla. 
-		//Modificar alguna condici�n y persistirla. Recuperarla y evaluar que la condici�n modificada posea la �ltima modificaci�n.
+		//Modificar alguna condicion y persistirla. Recuperarla y evaluar que la condicion modificada posea la ultima modificaci�n.
 		
 		Sensor sensor = new Sensor();
 		
@@ -135,7 +132,7 @@ public class casosDePruebaDB {
 	@Test
 	public void caso4() throws NoSePudoAbrirElArchivoException, IOException {
 		//Recuperar todos los transformadores persistidos. Registrar la cantidad. Agregar una instancia de Transformador al JSON de 
-		//entradas. Ejecutar el m�todo de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
+		//entradas. Ejecutar el metodo de lectura y persistencia. Evaluar que la cantidad actual sea la anterior + 1.
 		
 		Transformador transformador = ClaseParaDB.getTransformador();
 		RepositorioDeTransformadoresYZonas repoTransformadores = new RepositorioDeTransformadoresYZonas();
@@ -159,6 +156,7 @@ public class casosDePruebaDB {
 		//mostrar por consola su consumo promedio. Dado un transformador y un perido, mostrar su consumo promedio. Recuperar un 
 		//dispositivo asociado a un hogar de ese transformador e incrementar un 1000 % el consumo para ese periodo. Persistir el 
 		//dispositivo. Nuevamente mostrar el consumo para ese transformador.
+		
 		Cliente cliente = claseParaDB.getClienteConDispositivos();
 		repositorioDeUsuarios.agregarUsuario(cliente);
 		LocalDateTime inicio = claseParaDB.getInicioPeriodo();

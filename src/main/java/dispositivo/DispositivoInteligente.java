@@ -15,7 +15,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 	@OneToOne(cascade=CascadeType.ALL)
 	@Transient
-	private EstadoDispositivo estado;
+	private EstadoDispositivo estado; //Este no deberia estar no?
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
@@ -24,7 +24,8 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private boolean esBajoConsumo;
 
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idEstado")
+	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
+	//@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 

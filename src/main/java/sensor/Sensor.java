@@ -15,7 +15,7 @@ public class Sensor {
 	
 	//interesados
 
-	@ManyToMany
+	@ManyToMany //Deberia ser un one to many?
 	List<Condicion> condiciones = new ArrayList<Condicion>();
 	double medicion;
 	

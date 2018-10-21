@@ -25,10 +25,11 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 	@OneToOne
     DispositivoBase dispositivoEstandar;
 	@OneToOne(cascade=CascadeType.ALL)
-    private EstadoDispositivo estado;
+	@Transient
+    private EstadoDispositivo estado; //Este no deberia estar no?
 	
-	@JoinColumn(name = "idEstado")
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
     private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
