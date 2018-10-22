@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 		@JsonSubTypes.Type(value=Administrador.class, name="ADMINISTRADOR")
 })
 
-@Entity
+
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Usuario {
 

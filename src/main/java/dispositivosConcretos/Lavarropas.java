@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import dispositivo.DispositivoBase;
 
-@Entity
+
 public class Lavarropas extends DispositivoConcreto{
 	
 	int capacidad;

@@ -6,7 +6,7 @@ import dispositivo.estados.Apagado;
 
 import javax.persistence.Entity;
 
-@Entity
+
 public class ApagadoMock extends Apagado {
 	
 	public ApagadoMock(LocalDateTime inicio, LocalDateTime fin) {

@@ -8,7 +8,7 @@ import dispositivo.estados.EstadoDispositivo;
 
 import javax.persistence.*;
 
-@Entity
+
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
@@ -35,7 +35,6 @@ public abstract class DispositivoConcreto {
     public boolean estaEncendido() {return this.dispositivoBase.estaEncendido();}
     public boolean estaApagado() {return this.dispositivoBase.estaApagado();}
     public boolean esInteligente() {return this.dispositivoBase.esInteligente();}
-    public EstadoDispositivo getEstado() {return this.dispositivoBase.getEstado();}
     public double calcularConsumoUltimasNHoras(int horas) {return this.dispositivoBase.calcularConsumoUltimasNHoras(horas);}
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {return this.dispositivoBase.calcularConsumoPeriodo(inicio, fin);}
 	public void agregarModulo(EstadoDispositivo estadoDispositivo) {this.dispositivoBase = new Modulo(dispositivoBase, estadoDispositivo);}

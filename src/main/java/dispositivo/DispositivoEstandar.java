@@ -9,7 +9,7 @@ import javax.persistence.Entity;
 import dispositivo.estados.EstadoDispositivo;
 import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
-@Entity
+
 public class DispositivoEstandar extends DispositivoBase {
 	
 	private String name;
@@ -116,10 +116,6 @@ public class DispositivoEstandar extends DispositivoBase {
 		return false;
 	}
 
-	@Override
-	public EstadoDispositivo getEstado() {
-		return null;
-	}
 
 	@Override
 	public double calcularConsumoUltimasNHoras(int horas) {

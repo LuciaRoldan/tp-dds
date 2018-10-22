@@ -4,7 +4,7 @@ import usuario.Cliente;
 
 import javax.persistence.Entity;
 
-@Entity
+
 public class ClienteMock extends Cliente {
 
 

@@ -6,7 +6,7 @@ import javax.persistence.InheritanceType;
 
 import sensor.Sensor;
 
-@Entity
+
 public class CondicionTemperaturaAlta extends Condicion {
 	int temperaturaLimite;
 	

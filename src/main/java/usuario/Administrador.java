@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 
-@Entity
+
 public class Administrador extends Usuario{
 
 	// Lo comento porque ahora es el numero de usuario private Integer numeroDeIdentificacion;

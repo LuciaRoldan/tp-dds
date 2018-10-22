@@ -10,7 +10,7 @@ import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+
 public class Sensor {
 	
 	//interesados

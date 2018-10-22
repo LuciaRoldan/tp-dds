@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.persistence.*;
 
-@Entity
+
 public class Transformador {
 
 			

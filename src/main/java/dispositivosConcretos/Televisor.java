@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 import dispositivo.DispositivoBase;
 
-@Entity
+
 public class Televisor extends DispositivoConcreto{
 	TipoPantalla pantalla;
 	int pulgadas;

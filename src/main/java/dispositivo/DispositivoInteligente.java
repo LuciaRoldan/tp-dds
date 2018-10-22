@@ -12,9 +12,11 @@ import dispositivo.estados.EstadoDispositivo;
 
 @Entity
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
-
-	@OneToOne(cascade=CascadeType.ALL)
-	@Transient
+	
+	@Id 
+	@GeneratedValue
+	private long id;
+	//@OneToOne(cascade=CascadeType.ALL)
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
@@ -22,6 +24,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double usoMensualMaximo;
 	private boolean esBajoConsumo;
 
+	@Transient
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idEstado")
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
