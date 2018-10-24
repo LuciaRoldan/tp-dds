@@ -7,11 +7,11 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
-public class ControladorMenu implements WithGlobalEntityManager, TransactionalOps{
+public class ControladorLogin implements WithGlobalEntityManager, TransactionalOps{
 	
 	public ModelAndView mostrar(Request request, Response response) {
-		System.out.println("Mostrar Menu");
-		return new ModelAndView(null, "menu.hbs");
+		System.out.println("Mostrar Login");
+		return new ModelAndView(null, "login.hbs");
 	}
 
 }
