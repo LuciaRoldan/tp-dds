@@ -9,10 +9,8 @@ import spark.Response;
 
 public class ControladorMenu implements WithGlobalEntityManager, TransactionalOps{
 	
-	public ModelAndView mostrarMenu(Request request, Response response) {
+	public ModelAndView mostrar(Request request, Response response) {
 		System.out.println("Mostrar Menu");
-		System.out.println(request.body());
-		System.out.println(request.attributes());
 		return new ModelAndView(null, "menu.hbs");
 	}
 
