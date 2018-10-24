@@ -4,11 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
-
-
-
-  <link rel="stylesheet" href="css/styleUsuario.css">
-
+  <link rel="stylesheet" href="css/styleMap.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel='stylesheet' href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css'>
 
 </head>
 
@@ -67,8 +65,10 @@
       </div>
       <div class="averages-table">
         <div class="test testers">
-          <p><i class="fa fa-user-circle-o" aria-hidden="true"></i></p>
-          <p>24 Testers</p>
+          <div class="icon-profile">
+          <p><img src="https://bethami.org/wp-content/uploads/sites/110/2018/08/ScheduleIcon.png" alt="days" ></p>
+            <p>24 Dias</p>
+           </div>
         </div>
         <div class="test to-buy">
           <p>12/12/12</p>
@@ -88,44 +88,52 @@
         </div>
       </div>
     </div>
+
+
+
     <!-- Completed tests -->
     <div class="complete-tests">
       <!-- First table of completed tests section-->
       <div class="complete-tests-title">
-        <p>Completed tests</p>
-        <p>Today</p>
+        <p>Funcionalidades</p>
+        <p>Calcular consumo periodo</p>
       </div>
       <div class="complete-test-table">
-        <div class="table-name">
-          <p>John Smith</p>
-        </div>
-        <div class="table-content">
-          <p>"I've been looking for something like this for a very long time, let me know if you need any beta testers."</p>
-        </div>
-        <div class="table-score">
-          <p>7.6</p>
-          <p>View more</p>
-        </div>
-      </div>
-      <!-- Second table of completed tests section-->
-      <div class="complete-test-table">
-        <div class="table-name">
-          <p>Marry</p>
-        </div>
-        <div class="table-content">
-          <p>"Don't think it's different enough from other apps that are already out there."</p>
-        </div>
-        <div class="table-score">
-          <p>5.1</p>
-          <p>View more</p>
-        </div>
+        <form method="POST" action="/login">
+          <br>
+          <br>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="fechaInicio" name="fechaInicio" />
+            <label class="mdl-textfield__label" for="fechaInicio">Fecha Inicio DD/MM/AAAA </label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="fechaFin" name="fechaFin" />
+            <label class="mdl-textfield__label" for="fechaFin">Fecha Fin DD/MM/AAAA</label>
+          </div>
+
+          <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="CALCULAR">CALCULAR</button>
+        </br>
+        </form>
       </div>
     </div>
+            <!-- Second table of completed tests section-->
+            <div class="complete-test-table">
+              <div class="table-name">
+                <p style="font-size:20px"> 20/02 - 20/03</p>
+              </div>
+              <div class="table-content">
+                <br>
+                <p>Consumo ultimo periodo</p>
+              </br>
+              </div>
+              <div class="table-score">
+                <p style="font-size:20px">434234 KW</p>
+                <p href="/login">Ver mas</p>
+              </div>
+            </div>
+
   </div>
 </div>
-</body>
-</html>
-
 
 
 </body>

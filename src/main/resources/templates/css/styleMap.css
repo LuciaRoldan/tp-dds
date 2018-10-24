@@ -4,6 +4,7 @@
 body {
 	margin: 0;
 	background-color: #F8F9FE;
+	margin-bottom: 20px;
 }
 .container {
 	width: 1243px;
@@ -17,6 +18,7 @@ body {
 .header {
 	height: 66px;
 	background-color: #25A3D5;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .header-content {
 	margin: 0 100px 0 100px;
@@ -63,6 +65,11 @@ body {
 	border-radius: 50%;
 	margin-top: 12px;
 }
+.icon-profile img {
+	height: 40px;
+	width: 40px;
+	margin-top: -35px;
+}
 .head-search {
 	float: right;
 	padding-right: 39px;
@@ -81,6 +88,7 @@ body {
 	height: 180px;
 	background-color: #2AB6ED;
 	border-bottom: 2px solid #FFD700;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .navigation li {
 	display: inline-block;
@@ -106,13 +114,11 @@ body {
 .nav-top-right {
 	float: left;
 	width: 50%;
+	font-size: 20px;
 }
 .nav-top-right i {
 	float: right;
 	padding-top: 37px;
-	padding-right: 21px;
-	font-size: 26px;
-	color: white;
 }
 .nav-bottom {
 	clear: both;
@@ -223,8 +229,10 @@ body {
 	height: 100%;
 	width: 209px;
 	float: right;
+	text-align: center;
 	margin-left: 29px;
 	background-color: white;
+	padding-top: 15px;
 }
 .averages-table p:nth-child(odd) {
 	margin-top: 54px;
@@ -237,7 +245,8 @@ body {
 .score p:first-child {
 	margin-top: 40px;
 	font-size: 59px;
-	color: #23A6DF
+	color: #23A6DF;
+	border-radius: 5px;
 }
 /* Completed tests titles */
 .complete-tests-title {
@@ -262,7 +271,6 @@ body {
 	border: 2px solid #EDEEEF;
 	border-radius: 5px;
 	box-shadow: 0 1px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	margin-bottom: 20px;
 }
 
 
@@ -299,7 +307,14 @@ body {
 	color: #23A6DF;
 }
 .table-score p:last-child {
-	margin: 10px;
+	margin: 0;
 	padding: 0px;
 	font-size: 14px;
+}
+.googleMap {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding-bottom: 5%;
+	border-radius: 5px;
+	box-shadow: 0 1px 6px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
