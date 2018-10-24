@@ -22,6 +22,9 @@ public class ControladorLogin implements WithGlobalEntityManager, TransactionalO
 		if(request.body().equals("user=1234&password=1234")) {
 			response.redirect("/usuario");
 			return new ModelAndView(null, "usuario.hbs");
+		}else if(request.body().equals("user=4321&password=4321")){
+			response.redirect("/admin");
+			return new ModelAndView(null, "admin.hbs");
 		}else {
 			response.status(400);
 			Map<String, Object> viewModel = new HashMap<>();

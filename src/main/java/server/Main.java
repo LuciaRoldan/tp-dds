@@ -9,7 +9,7 @@ import spark.debug.DebugScreen;
 
 public class Main {
     public static void main(String[] args) {
-    	port(8080);
+    	port(8000);
     	
     	HandlebarsTemplateEngineBuilder builder = new HandlebarsTemplateEngineBuilder(new HandlebarsTemplateEngine());
     	DebugScreen.enableDebugScreen();
@@ -19,6 +19,7 @@ public class Main {
     	ControladorMenu menu = new ControladorMenu();
     	ControladorUsuario controladorUsuario = new ControladorUsuario();
 		ControladorMap map = new ControladorMap();
+		ControladorAdministrador controladorAdmin = new ControladorAdministrador();
     	
     	//HandlebarsTemplateEngine engine = builder.build();
 
@@ -35,6 +36,7 @@ public class Main {
 
 
         get("/usuario", controladorUsuario::mostrar, engine);
+        get("/admin", controladorAdmin::mostrar,engine);
         
 
     }
