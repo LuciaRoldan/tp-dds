@@ -2,8 +2,9 @@ package menu;
 
 import static spark.Spark.*;
 
-import contralador.ControladorLogin;
-import contralador.ControladorMenu;
+import controlador.ControladorInicio;
+import controlador.ControladorLogin;
+import controlador.ControladorMenu;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 public class Main {
@@ -12,13 +13,18 @@ public class Main {
     	
     	HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
     	
-    	ControladorLogin home = new ControladorLogin();
+    	ControladorLogin login = new ControladorLogin();
+    	ControladorInicio home = new ControladorInicio();
     	ControladorMenu menu = new ControladorMenu();
     	
     	staticFileLocation("/templates");
-		
-        get("/hola", (req, res) -> "Hola amiguitos");
+
+        //PANTALLA DE INICIO
         get("/", home::mostrar, engine);
-        post("/menu", menu::mostrarMenu, engine);
+
+        //LOGIN SE ENCARGA DE VALIDAR EL LOGIN Y LLEVAR AL MENU
+        post("/login", login::mostrar);
+
+        get("/usuario", menu::mostrar, engine);
     }
 }
