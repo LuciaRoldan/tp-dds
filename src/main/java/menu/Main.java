@@ -2,15 +2,12 @@ package menu;
 
 import static spark.Spark.*;
 
-<<<<<<< HEAD
 import controlador.ControladorInicio;
 import controlador.ControladorLogin;
 import controlador.ControladorMenu;
-=======
 import contralador.ControladorLogin;
 import contralador.ControladorMenu;
 import contralador.ControladorUsuario;
->>>>>>> ae2f43ddbfaadfc61d9e5afb6ed1c3d5860a61b9
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import sparkUtils.HandlebarsTemplateEngineBuilder;
 import spark.debug.DebugScreen;
@@ -30,7 +27,6 @@ public class Main {
     	HandlebarsTemplateEngine engine = builder.build(); 
     	
     	staticFileLocation("/templates");
-<<<<<<< HEAD
 
         //PANTALLA DE INICIO
         get("/", home::mostrar, engine);
@@ -39,13 +35,11 @@ public class Main {
         post("/login", login::mostrar);
 
         get("/usuario", menu::mostrar, engine);
-=======
-		
+
         get("/hola", (req, res) -> "Hola amiguitos");
         
         get("/", home::mostrar, engine);
         //get("/usuario", ControladorUsuario::mostrar, engine);
         
->>>>>>> ae2f43ddbfaadfc61d9e5afb6ed1c3d5860a61b9
     }
 }
