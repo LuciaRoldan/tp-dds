@@ -4,21 +4,30 @@ import static spark.Spark.*;
 
 import contralador.ControladorLogin;
 import contralador.ControladorMenu;
+import contralador.ControladorUsuario;
 import spark.template.handlebars.HandlebarsTemplateEngine;
+import sparkUtils.HandlebarsTemplateEngineBuilder;
+import spark.debug.DebugScreen;
 
 public class Main {
     public static void main(String[] args) {
-    	port(8080);
+    	port(8000);
     	
-    	HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
+    	HandlebarsTemplateEngineBuilder builder = new HandlebarsTemplateEngineBuilder(new HandlebarsTemplateEngine());
+    	DebugScreen.enableDebugScreen();
     	
     	ControladorLogin home = new ControladorLogin();
     	ControladorMenu menu = new ControladorMenu();
+    	ControladorUsuario usuario = new ControladorUsuario();
+    	
+    	HandlebarsTemplateEngine engine = builder.build(); 
     	
     	staticFileLocation("/templates");
 		
         get("/hola", (req, res) -> "Hola amiguitos");
+        
         get("/", home::mostrar, engine);
-        post("/menu", menu::mostrarMenu, engine);
+        //get("/usuario", ControladorUsuario::mostrar, engine);
+        
     }
 }
