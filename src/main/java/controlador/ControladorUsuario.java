@@ -14,6 +14,7 @@ import usuario.TipoDeUsuario;
 import usuario.Usuario;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,16 +34,24 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 	}
 	
 	public ModelAndView buscarUsuario(Request request, Response response) throws IOException {
-//		String nombre = request.body().substring(5); Aca Ro usa el parser magico que habias hecho
-//		System.out.println(nombre);
+
+		System.out.println(request.body());
+		String p = Arrays.asList(request.body().split("&")).get(0);
+		String user = Arrays.asList(p.split("=")).get(1);
+
+		String p2 = Arrays.asList(request.body().split("&")).get(1);
+		String pass = Arrays.asList(p2.split("=")).get(1);
+
+		System.out.println(user);
+		System.out.println(pass);
 		
 //		Aca deberia funcionar con lo que haya cargado en la base de datos
 		
-//		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(nombre);
-//		if(usuario.tipoDeUsuario == TipoDeUsuario.CLIENTE) {
+//		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(user);
+//		if(usuario.tipoDeUsuario == TipoDeUsuario.CLIENTE && contraseniaValida(usuario, pass)) {
 //			response.redirect("/usuario");
 //			vista = new ModelAndView(null, "cliente.hbs");
-//		} else if (usuario.tipoDeUsuario == TipoDeUsuario.ADMINISTRADOR) {
+//		} else if (usuario.tipoDeUsuario == TipoDeUsuario.ADMINISTRADOR && contraseniaValida(usuario, pass)) {
 //			response.redirect("/admin");
 //			vista = new ModelAndView(null, "admin.hbs");
 //		} else {
@@ -67,6 +76,11 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 		}
 		return vista;
 	}
+
+	private boolean contraseniaValida(Usuario usuario, String contrasenia) {
+		return usuario.contrasena == contrasenia;
+	}
+
 }
 		
 		
