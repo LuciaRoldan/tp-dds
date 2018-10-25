@@ -13,9 +13,8 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class EstadoDispositivo {
 	
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	@JoinColumn(name = "id_estado")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int idEstado;
 	
 	public LocalDateTime inicio;

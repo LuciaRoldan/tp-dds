@@ -6,7 +6,7 @@ import dispositivo.estados.AhorroDeEnergia;
 
 import javax.persistence.Entity;
 
-
+@Entity
 public class AhorroDeEnergiaMock extends AhorroDeEnergia {
 	
 	public AhorroDeEnergiaMock(LocalDateTime inicio, LocalDateTime fin) {

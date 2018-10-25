@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 import dispositivo.estados.EstadoDispositivo;
 
-
+@Entity
 public abstract class DispositivoInteligenteAbstracto extends DispositivoBase{
 
 

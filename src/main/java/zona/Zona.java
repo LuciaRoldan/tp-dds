@@ -1,21 +1,20 @@
 package zona;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import dataBase.DataBase;
-import dispositivosConcretos.DispositivoConcreto;
 import transformador.Transformador;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Zona {
 
 
     ////////////////////////////////// ATRIBUTOS ///////////////////////////////////////////
     private Float coordenadaX;
     private Float coordenadaY;
-    private Float radio;
+	private Float radio;
     private String nombre;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "numeroDeZona")

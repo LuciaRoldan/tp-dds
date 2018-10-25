@@ -19,15 +19,14 @@ import javax.persistence.Transient;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
-
+@Entity
 public class Modulo extends DispositivoInteligenteAbstracto {
 
 	@OneToOne
     DispositivoBase dispositivoEstandar;
 
-	@Transient
-	@JoinColumn(name = "idEstado")
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
     private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 

@@ -13,10 +13,6 @@ import dispositivo.estados.EstadoDispositivo;
 @Entity
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
-	@Id 
-	@GeneratedValue
-	private long id;
-	//@OneToOne(cascade=CascadeType.ALL)
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
@@ -26,7 +22,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_estado")
+	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 

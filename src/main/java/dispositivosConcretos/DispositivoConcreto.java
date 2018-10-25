@@ -15,6 +15,7 @@ public abstract class DispositivoConcreto {
 	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Integer numeroDeDispositivoConcreto;

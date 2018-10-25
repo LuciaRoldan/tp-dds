@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
-
+@Entity
 public class AhorroDeEnergia extends Encendido {
 	
 	public AhorroDeEnergia() {

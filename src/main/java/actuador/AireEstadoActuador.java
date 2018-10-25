@@ -1,7 +1,10 @@
 package actuador;
 
+import javax.persistence.Entity;
+
 import dispositivosConcretos.DispositivoConcreto;
 
+@Entity
 public class AireEstadoActuador extends Actuador {
 	
 	boolean encender; //la accion es cambiar la temperatura del aire

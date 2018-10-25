@@ -22,7 +22,7 @@ import categoria.CategoriaResidencial;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
 
-
+@Entity
 public class Cliente extends Usuario {
 
 	private double maximoConsumo;
