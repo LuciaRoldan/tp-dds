@@ -1,9 +1,11 @@
 package repositorio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 
+import sensor.Sensor;
 import usuario.Usuario;
 
 public class RepositorioDeUsuarios extends Repositorio {
@@ -26,13 +28,13 @@ public class RepositorioDeUsuarios extends Repositorio {
 		List<Usuario> usuarios = this.obtenerEntityManager()
 				.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.nombreDeUsuario = :nombreDeUsuario", Usuario.class)
 				.setParameter("nombreDeUsuario", nombreDeUsuario).getResultList();
-		if (!usuarios.isEmpty()) { //Mmmmmmmmmmmmmm
+		if (!usuarios.isEmpty()) {
 			return usuarios.get(0);
 		}
 		return null;
 	}
 	
-public Usuario recuperarUsuarioPorId(Integer id) {
+	public Usuario recuperarUsuarioPorId(Integer id) {
 		
 		List<Usuario> usuarios = this.obtenerEntityManager()
 				.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.numeroDeUsuario = :id", Usuario.class)
@@ -49,5 +51,13 @@ public Usuario recuperarUsuarioPorId(Integer id) {
 		System.out.println(usuario.getNombreUsuario());
 		return usuario.getContrasena().matches(pass);
 		
+	}
+	
+	public List<Sensor> obtenerSensoresDeUsuario(Integer id){
+		List<Sensor> sensores = this.obtenerEntityManager()
+				.createQuery("SELECT sensor FROM Sensor sensor WHERE Cliente = :id", Sensor.class)
+				.setParameter("id", id).getResultList();
+		
+		return sensores;
 	}
 }
