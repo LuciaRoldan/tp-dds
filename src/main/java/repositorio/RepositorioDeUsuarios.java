@@ -26,6 +26,17 @@ public class RepositorioDeUsuarios extends Repositorio {
 		List<Usuario> usuarios = this.obtenerEntityManager()
 				.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.nombreDeUsuario = :nombreDeUsuario", Usuario.class)
 				.setParameter("nombreDeUsuario", nombreDeUsuario).getResultList();
+		if (!usuarios.isEmpty()) { //Mmmmmmmmmmmmmm
+			return usuarios.get(0);
+		}
+		return null;
+	}
+	
+public Usuario recuperarUsuarioPorId(Integer id) {
+		
+		List<Usuario> usuarios = this.obtenerEntityManager()
+				.createQuery("SELECT usuario FROM Usuario usuario WHERE usuario.numeroDeUsuario = :id", Usuario.class)
+				.setParameter("id", id).getResultList();
 		if (!usuarios.isEmpty()) {
 			return usuarios.get(0);
 		}

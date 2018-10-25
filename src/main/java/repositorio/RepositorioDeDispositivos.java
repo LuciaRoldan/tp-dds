@@ -16,4 +16,11 @@ public class RepositorioDeDispositivos extends Repositorio {
 		return (DispositivoConcreto) this.entityManager.createQuery("SELECT d FROM DispositivoConcreto d WHERE Cliente = :numeroCliente")
 				.setParameter("numeroCliente", numeroCliente).setMaxResults(1).getSingleResult();
 	}
+	
+	public DispositivoConcreto getDispositivoPorUsername(String username) {
+		return (DispositivoConcreto) this.entityManager.createQuery("SELECT d FROM Cliente c "
+																	+ "JOIN c.dispositivos d "
+																	+ "WHERE c.nombreDeUsuario = :username")
+				.setParameter("username", username).setMaxResults(1).getSingleResult();
+	}
 }
