@@ -8,7 +8,7 @@ import dispositivo.estados.EstadoDispositivo;
 
 import javax.persistence.*;
 
-
+@Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class DispositivoConcreto {
 	
@@ -18,7 +18,7 @@ public abstract class DispositivoConcreto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Integer numeroDeDispositivoConcreto;
+	private Integer numeroDeDispositivoConcreto;
 
 	public DispositivoConcreto(){};
 	DispositivoConcreto(DispositivoBase dispositivoBase){

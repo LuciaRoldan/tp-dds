@@ -57,7 +57,7 @@ public class testGuardarYLeerCliente {
     }
 
 
-/*
+
     @Test
     public void guardarYleerUnSensor() {
         db2.persistirSensor(sensor);
@@ -67,6 +67,6 @@ public class testGuardarYLeerCliente {
         assertEquals(sensor2,sensor);
     }
 
-*/
+
 
 }

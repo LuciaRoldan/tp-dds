@@ -1,19 +1,14 @@
 package dispositivo.estados;
 
 
-import dispositivo.DispositivoInteligente;
 import dispositivo.DispositivoInteligenteAbstracto;
 
 import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 
 import javax.persistence.Entity;
 
 @Entity
 public class Encendido extends EstadoDispositivo {
-	
-	public LocalDateTime inicio;
-	public LocalDateTime fin;
 	
 	public Encendido() {
 		inicio = LocalDateTime.now();

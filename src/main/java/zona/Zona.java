@@ -16,8 +16,8 @@ public class Zona {
     private Float coordenadaY;
 	private Float radio;
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "numeroDeZona")
+	@OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(nullable = true, name = "numeroDeZona")
     private List<Transformador> listaDeTransformadores = new ArrayList<Transformador>();
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,6 +37,22 @@ public class Zona {
     public Float getCoordenadaX() {
         return this.coordenadaX;
     }
+    
+    public Float getRadio() {
+		return radio;
+	}
+
+	public void setRadio(Float radio) {
+		this.radio = radio;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
     ///////////////////////////////// METODOS ///////////////////////////////////////////////
     @JsonCreator

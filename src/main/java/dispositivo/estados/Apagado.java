@@ -10,10 +10,6 @@ import javax.persistence.Entity;
 @Entity
 public class Apagado extends EstadoDispositivo {
 	
-	public LocalDateTime inicio;
-	public LocalDateTime fin;
-
-	
 	public Apagado() {
 		inicio = LocalDateTime.now();
 	}
