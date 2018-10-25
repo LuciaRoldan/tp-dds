@@ -2,12 +2,10 @@ package server;
 
 import static spark.Spark.*;
 
+import controlador.*;
 import controlador.ControladorInicio;
 import controlador.ControladorLogin;
-import controlador.ControladorMenu;
-import contralador.ControladorLogin;
-import contralador.ControladorMenu;
-import contralador.ControladorUsuario;
+import controlador.ControladorMenu; 
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import sparkUtils.HandlebarsTemplateEngineBuilder;
 import spark.debug.DebugScreen;
@@ -38,12 +36,17 @@ public class Main {
 
         //LOGIN SE ENCARGA DE VALIDAR EL LOGIN Y LLEVAR AL MENU
         post("/login", controladorUsuario::buscarUsuario,engine);
-		get("/login", controladorUsuario::buscarUsuario,engine);
+		get("/login", controladorUsuario::buscarUsuario,engine); //por que hay un get?? hce lo mismo q el post?
 		get("/map", map::mostrar,engine);
 
 
         get("/usuario", controladorCliente::mostrar, engine);
-        get("/admin", controladorAdmin::mostrar,engine);
+        
+        //ADMIN
+        get("/admin", controladorAdmin::mostrar, engine);
+        get("/user/:id", controladorAdmin::infoUsuario, engine);
+        
+        //get("/usuario/id/alta", controladorAdmin::altaDispositivo, engine);
         
     }
 

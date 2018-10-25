@@ -20,7 +20,7 @@ import java.util.Map;
 public class ControladorUsuario implements WithGlobalEntityManager, TransactionalOps{
 	
 	private static ControladorUsuario instancia = null;
-	String error="Error combinacion de usuario y contraseña invalidos";
+	String error="Error combinacion de usuario y contrasenia invalidos";
 	public Usuario usuario = null;
 	
 	public RepositorioDeUsuarios repoDeUsuarios = RepositorioDeUsuarios.getInstancia();

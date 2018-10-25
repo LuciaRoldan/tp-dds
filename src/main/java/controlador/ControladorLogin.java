@@ -36,9 +36,9 @@ public class ControladorLogin implements WithGlobalEntityManager, TransactionalO
 			response.redirect("/inicio");
 			return new ModelAndView(null, "inicio.hbs");
 		}else {
-			HashMap<String, Object> viewModel = new HashMap<String, Object>();
+			//HashMap<String, Object> viewModel = new HashMap<String, Object>();
 			String error = "ERROR CONTRASEÑA INCONRRECTA";
-			viewModel.put(error);
+			//viewModel.put(error);
 			//Template template = handlebars.compileInline("login.hbs","{{error}}","ERROR");
 			return new ModelAndView(error, "login.hbs");
 		}
