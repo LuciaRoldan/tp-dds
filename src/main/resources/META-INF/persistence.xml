@@ -9,18 +9,6 @@
     
     	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     	
-        <!--class>actuador.Actuador</class>
-        <class>dispositivo</class>
-        <class>dispositivosConcretos</class>
-        <class>mock</class>
-        <class>regla</class>
-        <class>sensor</class>
-        <class>transformador</class>
-        <class>usuario</class>
-        <class>zona</class-->
-
-        <class>dispositivo.DispositivoInteligente</class>
-    	 
         <properties> 
 	    <property name="hibernate.archive.autodetection" value="class"/>
         
@@ -39,7 +27,7 @@
             <property name="hibernate.show_sql" value="true" /> 
             <property name="hibernate.format_sql" value="true" /> 
             <property name="use_sql_comments" value="true" /> 
-            <property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
+            <property name="hibernate.hbm2ddl.auto" value="create" /> 
         </properties>
           
     </persistence-unit> 

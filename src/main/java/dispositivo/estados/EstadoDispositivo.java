@@ -6,12 +6,8 @@ import dispositivo.DispositivoInteligenteAbstracto;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -19,6 +15,7 @@ public abstract class EstadoDispositivo {
 	
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
+	@JoinColumn(name = "id_estado")
 	public int idEstado;
 	
 	public LocalDateTime inicio;

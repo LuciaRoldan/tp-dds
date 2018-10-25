@@ -24,9 +24,9 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double usoMensualMaximo;
 	private boolean esBajoConsumo;
 
-	@Transient
+
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "idEstado")
+	@JoinColumn(name = "id_estado")
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
