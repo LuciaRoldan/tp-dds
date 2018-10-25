@@ -35,6 +35,7 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 	
 	public ModelAndView buscarUsuario(Request request, Response response) throws IOException {
 
+		ModelAndView vista = null;
 		System.out.println(request.body());
 		String p = Arrays.asList(request.body().split("&")).get(0);
 		String user = Arrays.asList(p.split("=")).get(1);
@@ -42,43 +43,27 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 		String p2 = Arrays.asList(request.body().split("&")).get(1);
 		String pass = Arrays.asList(p2.split("=")).get(1);
 
-		System.out.println(user);
-		System.out.println(pass);
-		
-//		Aca deberia funcionar con lo que haya cargado en la base de datos
-		
-//		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(user);
-//		if(usuario.tipoDeUsuario == TipoDeUsuario.CLIENTE && contraseniaValida(usuario, pass)) {
-//			response.redirect("/usuario");
-//			vista = new ModelAndView(null, "cliente.hbs");
-//		} else if (usuario.tipoDeUsuario == TipoDeUsuario.ADMINISTRADOR && contraseniaValida(usuario, pass)) {
-//			response.redirect("/admin");
-//			vista = new ModelAndView(null, "admin.hbs");
-//		} else {
-//			response.status(400);
-//			Map<String, Object> viewModel = new HashMap<>();
-//			viewModel.put("error",error);
-//			vista =  new ModelAndView(viewModel , "login.hbs");
-//		}
-//		HARDCODE HASTA QUE FUNCIONE PERSISTENCIA
-		
-		ModelAndView vista = null;
-		
-		if(request.body().equals("user=1234&password=1234")) {
+		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(user);
+
+		if ((usuario.getTipoDeUsuario() == TipoDeUsuario.CLIENTE) && contraseniaValida(usuario, pass)) {
 			response.redirect("/usuario");
 			vista = new ModelAndView(null, "cliente.hbs");
-		}else if(request.body().equals("user=4321&password=4321")){
+		} else if ((usuario.getTipoDeUsuario() == TipoDeUsuario.ADMINISTRADOR) && contraseniaValida(usuario, pass)) {
 			response.redirect("/admin");
 			vista = new ModelAndView(null, "admin.hbs");
-		}else {
+		} else {
 			response.status(400);
 			Map<String, Object> viewModel = new HashMap<>();
+			viewModel.put("error", error);
+			vista = new ModelAndView(viewModel, "login.hbs");
 		}
+
 		return vista;
 	}
 
 	private boolean contraseniaValida(Usuario usuario, String contrasenia) {
-		return usuario.contrasena == contrasenia;
+		String contrasena = usuario.getContrasena();
+		return contrasenia.equals(contrasena);
 	}
 
 }
