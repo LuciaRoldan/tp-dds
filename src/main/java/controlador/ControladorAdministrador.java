@@ -9,7 +9,7 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
-public class ControladorAdministrador implements WithGlobalEntityManager, TransactionalOps{
+public class ControladorAdministrador extends ControladorUsuario{
 
 	public ModelAndView mostrar(Request request, Response response) throws IOException {
 

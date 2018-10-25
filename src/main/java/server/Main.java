@@ -14,12 +14,12 @@ public class Main {
     	HandlebarsTemplateEngineBuilder builder = new HandlebarsTemplateEngineBuilder(new HandlebarsTemplateEngine());
     	DebugScreen.enableDebugScreen();
     	
-    	ControladorLogin login = new ControladorLogin();
     	ControladorInicio home = new ControladorInicio();
     	ControladorMenu menu = new ControladorMenu();
     	ControladorUsuario controladorUsuario = new ControladorUsuario();
 		ControladorMap map = new ControladorMap();
 		ControladorAdministrador controladorAdmin = new ControladorAdministrador();
+		ControladorCliente controladorCliente = new ControladorCliente();
     	
     	//HandlebarsTemplateEngine engine = builder.build();
 
@@ -30,15 +30,14 @@ public class Main {
         get("/", home::mostrar, engine);
 
         //LOGIN SE ENCARGA DE VALIDAR EL LOGIN Y LLEVAR AL MENU
-        post("/login", login::mostrar,engine);
-		get("/login", login::mostrar,engine);
+        post("/login", controladorUsuario::buscarUsuario,engine);
+		get("/login", controladorUsuario::buscarUsuario,engine);
 		get("/map", map::mostrar,engine);
 
 
-        get("/usuario", controladorUsuario::mostrar, engine);
+        get("/usuario", controladorCliente::mostrar, engine);
         get("/admin", controladorAdmin::mostrar,engine);
         
-
     }
 
 
