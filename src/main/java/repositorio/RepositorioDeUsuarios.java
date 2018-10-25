@@ -31,4 +31,12 @@ public class RepositorioDeUsuarios extends Repositorio {
 		}
 		return null;
 	}
+	
+	public boolean isLoginValido(String user, String pass) {
+		
+		Usuario usuario = this.recuperarUsuarioPorNombreDeUsuario(user);
+		System.out.println(usuario.getNombreUsuario());
+		return usuario.getContrasena().matches(pass);
+		
+	}
 }
