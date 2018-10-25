@@ -25,6 +25,10 @@ public class Sensor {
 	
 	public Sensor() {}
 	
+	public Integer getId() {
+		return this.numeroDeSensor;
+	}
+	
 	public void agregarCondicion(Condicion unaCondicion){
 	      condiciones.add(unaCondicion);
 	}

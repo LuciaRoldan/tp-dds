@@ -21,6 +21,7 @@ import javax.persistence.ForeignKey;
 import categoria.CategoriaResidencial;
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
+import sensor.Sensor;
 
 @Entity
 public class Cliente extends Usuario {
@@ -36,6 +37,9 @@ public class Cliente extends Usuario {
 	private CategoriaResidencial categoriaResidencial;
 	@Enumerated(EnumType.STRING)
 	private TipoDocumento tipoDocumento;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
+	private List<Sensor> sensores = new ArrayList<Sensor>();
 
 	/////////////////////////////////// CONSTRUCTORES /////////////////////////
 
@@ -106,6 +110,10 @@ public class Cliente extends Usuario {
 	
 	public boolean alMenosUnoEstaEncendido() {
 		return this.getCantidadDispositivosEncendidos() > 0;
+	}
+	
+	public void agregarSensor(Sensor sensor) {
+		this.sensores.add(sensor);
 	}
 
 	// AL AGREGAR UN MODULO A UN DISPOTIVO ESTANDAR DEBE ESPECIFICARSE EL ESTADO INICIAL
