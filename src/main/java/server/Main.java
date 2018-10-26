@@ -27,9 +27,7 @@ public class Main {
 		ControladorCliente controladorCliente = new ControladorCliente();
     	
 		HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
-    	
-    	Init init = new Init();
-    	
+
 
     	staticFileLocation("/templates");
         //PANTALLA DE INICIO
@@ -48,12 +46,7 @@ public class Main {
         get("/admin/informacion", controladorAdmin::infoUsuario, engine);
         get("/admin/reportes/:id", controladorAdmin::reportes, engine);
         get("/admin/altaDispositivo", controladorAdmin::mostrarAltaDispositivo, engine);
-        
-        //get("/admin/informacion/:id", controladorAdmin::infoUsuario, engine);
-     
-        //get("/admin/altaDispositivo/:id", controladorAdmin::mostrarAltaDispositivo, engine);
-        //post("/admin/altaDispositivo/:id/heladera", controladorAdmin::altaHeladera, engine); //y asi con todos los dispos       
-              
+
     }
 
 
