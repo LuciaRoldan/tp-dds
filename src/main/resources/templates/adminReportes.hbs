@@ -51,7 +51,7 @@
         <div class="header-content">
             <div class="nav-top">
                 <div class="nav-top-left">
-                    <p>Administrador {{ nombre }}</p>
+                    <p>Administrador </p>
                 </div>
                 <div class="nav-top-right">
                 </div>
@@ -78,6 +78,12 @@
                     <label class="mdl-textfield__label" for="FECHAFIN">INGRESE FECHA FIN </label>
                 </div>
 
+
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="ID" name="ID" />
+                    <label class="mdl-textfield__label" for="id">INGRESE ID </label>
+                </div>
+
                 <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="VERREPORTE ">VER REPORTE</button>
                 </br>
             </form>
@@ -92,7 +98,16 @@
             <p>ID USUARIO:1234 </p>
         </div>
         <div class="complete-test-table2">
-             <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
+            <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
+                <p style="text-align:left">{{cliente.numeroDeUsuarioS}}</p>
+                <p style="text-align:center">ID USUARIO</p>
+            </div>
+            <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
+                <p style="text-align:left">{{cliente.consumoHogarPeriodoS}}</p>
+                <p style="text-align:center">CONSUMO</p>
+            </div>
+        </div>
+           <!--  <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
                 <p style="text-align:left">1234</p>
                 <p style="text-align:center">ID USUARIO</p>
             </div>
