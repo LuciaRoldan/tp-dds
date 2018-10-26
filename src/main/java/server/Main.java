@@ -47,6 +47,25 @@ public class Main {
         get("/admin/informacion", controladorAdmin::infoUsuario, engine);
         get("/admin/reportes", controladorAdmin::reportes, engine);
         get("/admin/altaDispositivo", controladorAdmin::mostrarAltaDispositivo, engine);
+        
+        //---altas        
+        //aire
+        get("/admin/altaDispositivo/aireAcondicionado", controladorAdmin::mostrarAltaAire, engine);
+        post("/admin/altaDispositivo/aireAcondicionado", controladorAdmin::altaAire, engine);
+        //heladeras
+        post("/admin/altaDispositivo/heladeraConFreezer", controladorAdmin::altaHeladeraConFreezer, engine);
+        post("/admin/altaDispositivo/heladeraSinFreezer", controladorAdmin::altaHeladeraSinFreezer, engine);
+        //lamparas
+        get("/admin/altaDispositivo/lamparaHalogena", controladorAdmin::mostrarAltaHalogena, engine);
+        post("/admin/altaDispositivo/lamparaHalogena", controladorAdmin::altaHalogena, engine);
+        get("/admin/altaDispositivo/lamparaComun", controladorAdmin::mostrarAltaHalogena, engine);
+        post("/admin/altaDispositivo/lamparaComun", controladorAdmin::altaHalogena, engine);
+        //lavarropas
+        get("/admin/altaDispositivo/lavarropasAtomatico", controladorAdmin::mostrarAltaHalogena, engine);
+        post("/admin/altaDispositivo/lavarropasAutomatico", controladorAdmin::altaHalogena, engine);
+        get("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::mostrarAltaHalogena, engine);
+        post("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::altaHalogena, engine);
+        
 
     }
 
