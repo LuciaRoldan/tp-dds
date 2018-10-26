@@ -28,15 +28,8 @@ public class ControladorCliente extends ControladorUsuario {
 		configuracionOptima = cliente.configuracionOptima();
 		System.out.println(configuracionOptima.toString());
 		
-		response.redirect("/usuarioSimplex");
 		return new ModelAndView(null, "usuarioSimplex.hbs");
 	}
-	
-//	public ModelAndView mostrarSimplex(Request request, Response response) throws IOException {
-//		System.out.println("Entre a mostrar");
-//		response.redirect("/usuarioSimplex");
-//		return new ModelAndView(null, "usuarioSimplex.hbs");
-//	}
 	
 	public ModelAndView mostrarEstadoDispositivos(Request request, Response response) throws IOException {
 		HashMap<DispositivoConcreto, EstadoDispositivo> estadosDeDispositivos = new HashMap<DispositivoConcreto, EstadoDispositivo>();
@@ -45,17 +38,16 @@ public class ControladorCliente extends ControladorUsuario {
 		}
 		System.out.println(estadosDeDispositivos.toString());
 		
-		response.redirect("/estados");
 		return new ModelAndView(estadosDeDispositivos,"usuarioEstados.hbs");
 	}
 	
+	public ModelAndView mostrarMediciones(Request request, Response response) throws IOException {
+		
+		return new ModelAndView(null,"usuarioUltimas.hbs");
+		
+	}
 	
-//	private HashMap<DispositivoConcreto, EstadoDispositivo> mapearEstadosDispositivos(){
-//		HashMap<DispositivoConcreto, EstadoDispositivo> estadosDeDispositivos = new HashMap<DispositivoConcreto, EstadoDispositivo>();
-//		for (DispositivoConcreto dispo : cliente.getDispositivos()) {
-//			estadosDeDispositivos.put(dispo, dispo.getEstado());
-//		}
-//		return estadosDeDispositivos;
-//	}
-
+	
+	
+	
 }

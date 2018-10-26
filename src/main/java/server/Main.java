@@ -37,8 +37,8 @@ public class Main {
 		get("/login", controladorUsuario::buscarUsuario,engine);
 		get("/usuario/:id", controladorCliente::mostrar, engine);
 		get("/usuarioSimplex", controladorCliente::ejecutarSimplex, engine);
-	
-		get("/estados", controladorCliente::mostrarEstadoDispositivos, engine);
+		get("/usuarioEstados", controladorCliente::mostrarEstadoDispositivos, engine);
+		get("/usuarioUltimas", controladorCliente::mostrarMediciones, engine);
 
 
         
