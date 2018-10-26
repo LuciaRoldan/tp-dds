@@ -1,29 +1,26 @@
 package controlador;
 
-import com.github.jknack.handlebars.Handlebars;
-
-import repositorio.RepositorioDeUsuarios;
-
-import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
-import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
-import spark.ModelAndView;
-import spark.Request;
-import spark.Response;
-import spark.template.handlebars.HandlebarsTemplateEngine;
-import usuario.TipoDeUsuario;
-import usuario.Usuario;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
+import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
+
+import repositorio.RepositorioDeUsuarios;
+import spark.ModelAndView;
+import spark.Request;
+import spark.Response;
+import usuario.TipoDeUsuario;
+import usuario.Usuario;
 
 public class ControladorUsuario implements WithGlobalEntityManager, TransactionalOps{
 	
 	private static ControladorUsuario instancia = null;
 	String error="Error combinacion de usuario y contrasenia invalidos";
 	public Usuario usuario = null;
-	
+
 	public RepositorioDeUsuarios repoDeUsuarios = RepositorioDeUsuarios.getInstancia();
 
 	public static ControladorUsuario getInstancia() {
@@ -46,7 +43,11 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(user);
 
 		if ((usuario.getTipoDeUsuario() == TipoDeUsuario.CLIENTE) && contraseniaValida(usuario, pass)) {
-			response.redirect("/usuario");
+			
+			String ruta = "/usuario/" + usuario.getId().toString();
+			ruta.concat(String.valueOf(usuario.getId()));
+			response.redirect(ruta);
+			
 			vista = new ModelAndView(null, "cliente.hbs");
 		} else if ((usuario.getTipoDeUsuario() == TipoDeUsuario.ADMINISTRADOR) && contraseniaValida(usuario, pass)) {
 			response.redirect("/admin");

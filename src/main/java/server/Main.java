@@ -28,18 +28,19 @@ public class Main {
     	
 		HandlebarsTemplateEngine engine = new HandlebarsTemplateEngine();
 
-
     	staticFileLocation("/templates");
         //PANTALLA DE INICIO
         get("/", home::mostrar, engine);
 
         //LOGIN SE ENCARGA DE VALIDAR EL LOGIN Y LLEVAR AL MENU
         post("/login", controladorUsuario::buscarUsuario,engine);
-		get("/login", controladorUsuario::buscarUsuario,engine); //por que hay un get?? hce lo mismo q el post?
-		get("/map", map::mostrar,engine);
+		get("/login", controladorUsuario::buscarUsuario,engine);
+		get("/usuario/:id", controladorCliente::mostrar, engine);
+		get("/usuarioSimplex", controladorCliente::ejecutarSimplex, engine);
+	
+		get("/estados", controladorCliente::mostrarEstadoDispositivos, engine);
 
 
-        get("/usuario", controladorCliente::mostrar, engine);
         
         //ADMIN|        
         get("/admin", controladorAdmin::mostrar, engine);

@@ -47,6 +47,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		System.out.printf("El id ingresado es: ", id);
 		
 		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+
 		//chequear que pasa cuando no encuentra el usuario ..
 		viewModel.put("cliente", cliente);
 		
