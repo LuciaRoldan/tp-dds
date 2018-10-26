@@ -225,6 +225,14 @@ public class Cliente extends Usuario {
 		return this.sensores;
 	}
 
+	public String getNumeroDeUsuarioS(){ return String.valueOf(this.numeroDeUsuario); }
+
+	public String getMaximoConsumoS(){ return String.valueOf(this.getMaximoConsumo()); }
+
+	public String getConsumoMensualS(){ return String.valueOf(this.getConsumo()); }
+
+	public String getCategoriaResidencialS(){ return this.getCategoriaResidencial().getNombre(); }
+
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
