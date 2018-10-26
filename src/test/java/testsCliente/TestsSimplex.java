@@ -46,8 +46,10 @@ public class TestsSimplex {
 
 	@Before
 	public void antesQueNada() {
+		
+		ClasesParaTestearDispositivos repo = new ClasesParaTestearDispositivos();
 
-		EstadoDispositivo encendido = ClasesParaTestearDispositivos.unEstadoEncendido();
+		EstadoDispositivo encendido = repo.unEstadoEncendido();
 
 		factory.setNombre("tvBase");
 		tv = factory.crearTelevisorLED(40);
@@ -147,7 +149,8 @@ public class TestsSimplex {
 		//El Assert posta.
 		double consumoCorrienteTV = tv.consumoCorriente();
 		//assertEquals(200, consumoCorrienteTV, 0.1);
-		assertTrue(tv.estaApagado());
+		 
+		assertTrue(tv.estaApagado());//tira false
 
 	}
 }

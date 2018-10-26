@@ -1,3 +1,0 @@
-- Nombre de funcionalidad: 
-- Fecha
-- Autor

@@ -1,12 +1,10 @@
 package dispositivo.estados;
 
 import dispositivo.DispositivoInteligenteAbstracto;
-import dispositivo.DispositivoInteligente;
 
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
-import javax.persistence.Transient;
 
 @Entity
 public class AhorroDeEnergia extends Encendido {

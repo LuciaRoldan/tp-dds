@@ -13,8 +13,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.ForeignKey;
 
@@ -29,7 +29,7 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Enumerated(EnumType.STRING)
@@ -184,6 +184,15 @@ public class Cliente extends Usuario {
 	
 	public double getMaximoConsumo() {
 		return maximoConsumo;
+	}
+	
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
 	}
 	
 	

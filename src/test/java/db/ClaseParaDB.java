@@ -2,7 +2,6 @@ package db;
 
 import categoria.CategoriaResidencial;
 import dispositivo.DispositivoFactory;
-import dispositivo.estados.Apagado;
 import dispositivo.estados.Encendido;
 import dispositivosConcretos.AireAcondicionado;
 import dispositivosConcretos.DispositivoConcreto;

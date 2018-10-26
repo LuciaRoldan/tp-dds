@@ -1,7 +1,10 @@
 package actuador;
 
+import javax.persistence.Entity;
+
 import dispositivosConcretos.DispositivoConcreto;
 
+@Entity
 public class EncenderActuador extends Actuador {
 	boolean encender;
 	

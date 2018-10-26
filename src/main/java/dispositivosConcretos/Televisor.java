@@ -1,11 +1,16 @@
 package dispositivosConcretos;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 
 import dispositivo.DispositivoBase;
 
 @Entity
 public class Televisor extends DispositivoConcreto{
+	@Transient
 	TipoPantalla pantalla;
 	int pulgadas;
 	

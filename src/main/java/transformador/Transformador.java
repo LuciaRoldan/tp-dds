@@ -1,6 +1,5 @@
 package transformador;
 
-import org.hibernate.annotations.Cascade;
 import usuario.Cliente;
 import zona.Zona;
 
@@ -22,7 +21,7 @@ public class Transformador {
     private String nombre;
     
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "numeroDeTransformador")
+    @JoinColumn(nullable = true, name = "numeroDeTransformador")
     public List<Cliente> listaDeClientes = new ArrayList<Cliente>();
     
     @GeneratedValue(strategy = GenerationType.AUTO)

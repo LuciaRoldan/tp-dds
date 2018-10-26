@@ -24,7 +24,13 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 
 	@OneToOne
     DispositivoBase dispositivoEstandar;
+<<<<<<< HEAD
+	@OneToOne(cascade=CascadeType.ALL)
+    private EstadoDispositivo estado;
+	
+=======
 
+>>>>>>> konsumo
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
     private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
@@ -61,8 +67,6 @@ public class Modulo extends DispositivoInteligenteAbstracto {
     ///////////////////// METODOS /////////////////////
 
     public void agregarModulo(){throw new NoSePuedeAgregarOtroModuloAdicionalException(this);}
-
-    //public void agregarEstado(EstadoDispositivo estado) { estadosAnteriores.add(estado); }
     
     public double consumoMensual() {
         return calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1), LocalDateTime.now());

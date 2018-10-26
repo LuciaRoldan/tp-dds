@@ -15,9 +15,10 @@ public abstract class DispositivoConcreto {
 	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	DispositivoBase dispositivoBase;
 	double consumoIdeal;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	public Integer numeroDeDispositivoConcreto;
+	private Integer numeroDeDispositivoConcreto;
 
 	public DispositivoConcreto(){};
 	DispositivoConcreto(DispositivoBase dispositivoBase){
@@ -35,7 +36,6 @@ public abstract class DispositivoConcreto {
     public boolean estaEncendido() {return this.dispositivoBase.estaEncendido();}
     public boolean estaApagado() {return this.dispositivoBase.estaApagado();}
     public boolean esInteligente() {return this.dispositivoBase.esInteligente();}
-    public EstadoDispositivo getEstado() {return this.dispositivoBase.getEstado();}
     public double calcularConsumoUltimasNHoras(int horas) {return this.dispositivoBase.calcularConsumoUltimasNHoras(horas);}
     public double calcularConsumoPeriodo(LocalDateTime inicio, LocalDateTime fin) {return this.dispositivoBase.calcularConsumoPeriodo(inicio, fin);}
 	public void agregarModulo(EstadoDispositivo estadoDispositivo) {this.dispositivoBase = new Modulo(dispositivoBase, estadoDispositivo);}

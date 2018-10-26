@@ -12,7 +12,13 @@ import dispositivo.estados.EstadoDispositivo;
 
 @Entity
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
+<<<<<<< HEAD
+
+	@OneToOne(cascade=CascadeType.ALL)
+	private EstadoDispositivo estado;
+=======
 	
+>>>>>>> konsumo
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
@@ -23,7 +29,10 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
-
+<<<<<<< HEAD
+	//@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
+=======
+>>>>>>> konsumo
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
@@ -82,7 +91,6 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public void apagate() {
 		this.getEstado().apagate(this);
 	}
-	
 
 	public void activarAhorroDeEnergia() {
 		this.getEstado().activarAhorroDeEnergia(this);
