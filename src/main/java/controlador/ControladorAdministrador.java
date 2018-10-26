@@ -46,7 +46,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		
 		System.out.printf(id);
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -76,7 +76,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			id = request.queryParams("NUMERODECLIENTE");
 		}
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -102,7 +102,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		String id = "0";
 		id = request.queryParams("NUMERODECLIENTE");
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
