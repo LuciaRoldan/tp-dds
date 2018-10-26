@@ -39,6 +39,7 @@ public class Main {
 		get("/usuarioSimplex", controladorCliente::ejecutarSimplex, engine);
 		get("/usuarioEstados", controladorCliente::mostrarEstadoDispositivos, engine);
 		get("/usuarioUltimas", controladorCliente::mostrarMediciones, engine);
+		get("/usuarioConsumo", controladorCliente::calcularConsumoEnPeriodo, engine);
 		get("/logout", home::mostrar, engine);
 
         	

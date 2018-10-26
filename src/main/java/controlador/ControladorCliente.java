@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
 
-import com.sun.corba.se.spi.ior.ObjectKey;
-import dispositivo.DispositivoInteligente;
-import dispositivo.estados.EstadoDispositivo;
+import org.uqbarproject.jpa.java8.extras.convert.LocalDateTimeConverter;
+
 import dispositivosConcretos.DispositivoConcreto;
 import sensor.Sensor;
 import spark.ModelAndView;
@@ -22,6 +23,9 @@ public class ControladorCliente extends ControladorUsuario {
 	
 	Cliente cliente = null;
 	String id;
+	String inicio;
+	String fin;
+	
 	
 	public ModelAndView mostrar(Request request, Response response) throws IOException {
 		id = request.params(":id");
@@ -83,7 +87,34 @@ public class ControladorCliente extends ControladorUsuario {
 		
 	}
 	
+	public ModelAndView calcularConsumoEnPeriodo(Request request, Response response) throws IOException {
+		
+		HashMap<String, Object> viewModel = new HashMap<String, Object>();
+		inicio = request.queryParams("fechaInicio");
+		fin = request.queryParams("fechaFin");
+		
+		LocalDateTime fechaInicio = parsearFecha(inicio).atStartOfDay();
+		LocalDateTime fechaFin = parsearFecha(fin).atStartOfDay();
+		
+		System.out.println(fechaInicio);
+		System.out.println(fechaFin);
+		
+		Double consumo = cliente.calcularConsumoPeriodo(fechaInicio, fechaFin);
+		
+		viewModel.put("consumo", consumo);
+
+		response.redirect("/usuario/" + id);
+		return new ModelAndView(null, "usuarioConsumo.hbs");
+	}
 	
-	
-	
-}
+	private LocalDate parsearFecha(String fecha) {
+		 
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	        
+	        LocalDate localDate = LocalDate.parse(fecha, formatter);
+	 
+	        return localDate;
+
+	    }
+	}
+
