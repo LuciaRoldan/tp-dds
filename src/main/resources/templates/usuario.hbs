@@ -27,7 +27,7 @@
       <div class="head-menu">
         <ul>
           <div class="link">
-          <li><a href="/usuario" style="font-size:15px;"> Inicio</a></li>
+          <li><a href="/usuario/{{ cliente.numeroDeUsuario }}" style="font-size:15px;"> Inicio</a></li>
           <li><a href="/usuarioEstados">Dispositivos</a></li>
           <li><a href="/usuarioUltimas">Mediciones</a></li>
           <li><a href="/usuarioSimplex">Simplex</a></li>
@@ -51,13 +51,13 @@
     <div class="header-content">
       <div class="nav-top">
         <div class="nav-top-left">
-          <p>{{ nombreYApellido }}</p>
+          <p>{{ cliente.nombreYApellido }}</p>
         </div>
         <div class="nav-top-right">
         </div>
         <div class="nav-bottom">
           <ul>
-          <li>Cliente N° {{ numeroDeUsuario }}</li>
+          <li>Cliente N° {{ cliente.numeroDeUsuario }}</li>
           </ul>
         </div>
       </div>
@@ -74,7 +74,7 @@
         <div class="test testers">
           <div class="icon-profile">
           <p><img src="https://bethami.org/wp-content/uploads/sites/110/2018/08/ScheduleIcon.png" alt="days" ></p>
-            <p>{{ periodo }}</p>
+            <p>{{ periodo }} dias</p>
            </div>
         </div>
         <div class="test to-buy">
@@ -86,12 +86,12 @@
           <p>Fin</p>
         </div>
         <div class="test want-it">
-          <p> {{  maximoConsumo }}</p>
+          <p> {{  cliente.maximoConsumo }} KW</p>
           <p>Consumo maximo</p>
         </div>
-        <div class="test score">
-          <p>{{ consumo }}</p>
-          <p>Consumo total</p>
+        <div class="test score" >
+          <p style="font-size:25px;">{{ cliente.consumo }} KW</p>
+          <p style="font-size: 14px;">Consumo total</p>
         </div>
       </div>
     </div>
@@ -109,7 +109,7 @@
         </br>
       </div>
       <div class="table-score">
-        <p style="font-size:20px"> {{ consumoAnterior }} </p>
+        <p style="font-size:20px"> {{ cliente.consumoAnterior }} </p>
         <p href="/login">KiloWatts</p>
       </div>
     </div>

@@ -2,6 +2,7 @@ package usuario;
 
 import static usuario.TipoDeUsuario.CLIENTE;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
+	private Double consumoAnterior;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
@@ -67,6 +69,31 @@ public class Cliente extends Usuario {
 									 .mapToDouble(dispositivo -> dispositivo.consumoMensual())
 									 .sum();
 		return consumo;
+	}
+
+	public Double calcularConsumoPeriodo(LocalDateTime inicio,LocalDateTime fin) {
+
+		consumoAnterior = dispositivos.stream()
+				.mapToDouble(dispositivo -> dispositivo.calcularConsumoPeriodo(inicio,fin))
+				.sum();
+		return consumoAnterior;
+	}
+
+	public String getConsumoAnterior(){
+		this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1),LocalDateTime.now().minusMonths(2));
+		DecimalFormat formatter = new DecimalFormat("#0.00");
+
+		return formatter.format(consumoAnterior);
+	}
+
+	public String getConsumo() {
+
+		Double consumo = dispositivos.stream()
+				.mapToDouble(dispositivo -> dispositivo.consumoMensual())
+				.sum();
+		DecimalFormat formatter = new DecimalFormat("#0.00");
+
+		return formatter.format(consumo);
 	}
 
 	public void recategorizarse() {

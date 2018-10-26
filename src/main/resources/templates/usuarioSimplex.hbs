@@ -27,10 +27,10 @@
       <div class="head-menu">
         <ul>
           <div class="link">
-          <li><a href="/usuario" > Inicio</a></li>
-          <li><a href="/usuario/id/dispositivos">Dispositivos</a></li>
-          <li><a href="/usuario/id/mediciones">Mediciones</a></li>
-          <li><a href="/usuario/id/simplex" style="font-size:15px;">Simplex</a></li>
+          <li><a href="/usuario/{{cliente.numeroDeUsuario}}" > Inicio</a></li>
+          <li><a href="/usuarioEstados">Dispositivos</a></li>
+          <li><a href="/usuarioUltimas">Mediciones</a></li>
+          <li><a href="/usuarioSimplex" style="font-size:15px;">Simplex</a></li>
           </div>
 
         </ul>
@@ -51,13 +51,13 @@
     <div class="header-content">
       <div class="nav-top">
         <div class="nav-top-left">
-          <p>{{ nombreYApellido }}</p>
+          <p>{{ cliente.nombreYApellido }}</p>
         </div>
         <div class="nav-top-right">
         </div>
         <div class="nav-bottom">
           <ul>
-            <li>Cliente N° {{ numeroDeUsuario }}</li>
+            <li>Cliente N° {{ cliente.numeroDeUsuario }}</li>
           </ul>
         </div>
       </div>
@@ -71,7 +71,7 @@
     <div class="complete-tests-title2">
       <p> CONSUMO IDEAL PARA EL PERIODO {{ periodo }} </p>
     </div>
-    {{# listaDispositivos}}
+    {{#listaDispositivos}}
     <div class="complete-test-table2">
       <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
         <p style="text-align:left">{{ name }}</p>

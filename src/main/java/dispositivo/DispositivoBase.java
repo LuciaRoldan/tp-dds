@@ -18,8 +18,8 @@ public abstract class DispositivoBase {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer numeroDeDispositivoBase;
 
-
-
+    public String getEsBajoConsumoBoolean(){return "ERROR";}
+    public String getEstadoString() { return "ERROR";}
     public double consumoMensual(){return -800;}
     public void activarAhorroDeEnergia(){}
     public void setEstado(EstadoDispositivo estado){}

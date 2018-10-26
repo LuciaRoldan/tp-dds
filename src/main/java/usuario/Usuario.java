@@ -64,6 +64,7 @@ public abstract class Usuario {
 	public TipoDeUsuario getTipoDeUsuario()					  { return null;							 		   }
 	public Float 		 getCoordenadaX()					  { return coordenadaX;								   }
 	public Float 		 getCoordenadaY()					  { return coordenadaY;								   }
+	public Integer       getNumeroDeUsuario()                   { return numeroDeUsuario;								}
 	
 	/////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 

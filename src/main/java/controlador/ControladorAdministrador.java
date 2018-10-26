@@ -24,8 +24,11 @@ public class ControladorAdministrador extends ControladorUsuario{
 		return new ModelAndView(null , "admin.hbs");
 	}
 	
-	String parsearId(String body) {
-		String id = Arrays.asList(body.split("=")).get(1);
+	public String parsearId(String body) {
+		String id = null;
+		if(body.split("=").length>1) {
+			id = Arrays.asList(body.split("=")).get(1);
+		}
 		return id;
 	}
 
@@ -35,24 +38,25 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 		
-		if(id.length() == 0) {
+		if(id == null) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
 			vista =  new ModelAndView(viewModel , "admin.hbs");
 			return vista;
-		}
-		
-		System.out.printf("El id ingresado es: ", id);
-		
-		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+		}else {
 
-		//chequear que pasa cuando no encuentra el usuario ..
-		viewModel.put("cliente", cliente);
-		
-		vista = new ModelAndView(viewModel, "admin.hbs");
-		return vista; //esta vista es la misma que antes pero con la tablita completa con consumos
+			System.out.printf("El id ingresado es: ", id);
+
+			cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+
+			//chequear que pasa cuando no encuentra el usuario ..
+			viewModel.put("cliente", cliente);
+
+			vista = new ModelAndView(viewModel, "admin.hbs");
+			return vista; //esta vista es la misma que antes pero con la tablita completa con consumos
+		}
 		//y el id del usuario en el texto
 	}
 	
@@ -63,21 +67,22 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 	
-		if(id.length() == 0) {
+		if(id == null) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
 			vista =  new ModelAndView(viewModel , "admin.hbs");
 			return vista;
+		}else {
+
+			System.out.printf("El id ingresado es: ", id);
+
+			cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+
+			viewModel.put("cliente", cliente);
+			vista = new ModelAndView(viewModel, "altaDispositivo.hbs");
 		}
-	
-		System.out.printf("El id ingresado es: ", id);
-	
-		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
-		
-		viewModel.put("cliente", cliente);
-		vista = new ModelAndView(viewModel, "altaDispositivo.hbs");
 		return vista;
 	}
 	
@@ -92,21 +97,22 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 			
-		if(id.length() == 0) {
+		if(id == null) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
 			vista =  new ModelAndView(viewModel , "admin.hbs");
 			return vista;
+		}else {
+
+			System.out.printf("El id ingresado es: ", id);
+
+			cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+
+			viewModel.put("cliente", cliente);
+			vista = new ModelAndView(viewModel, "reportes.hbs");
 		}
-		
-		System.out.printf("El id ingresado es: ", id);
-		
-		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
-				
-		viewModel.put("cliente", cliente);
-		vista = new ModelAndView(viewModel, "reportes.hbs");
 		return vista;
 	}
 }

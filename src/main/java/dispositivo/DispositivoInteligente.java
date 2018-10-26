@@ -20,7 +20,8 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
-	private boolean esBajoConsumo;
+	private boolean esBajoConsumoBoolean;
+	private String esBajoConsumo;
 
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
@@ -37,7 +38,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.consumoIdeal = 0;
-		this.esBajoConsumo = false;
+		this.esBajoConsumoBoolean = false;
 	}
 
 	///////////////////// METODOS /////////////////////
@@ -101,14 +102,13 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public double getConsumoIdeal() {
 		return consumoIdeal;
 	}
-	
-	public boolean getEsBajoConsumo() {
-		return esBajoConsumo;
-	}
+
 	
 	public EstadoDispositivo getEstado() {
 		return this.estado;
 	}
+
+	public String getEstadoString() { return this.getEstado().toString();}
 	
 	public double getUsoMensualMinimo() {
 		return this.usoMensualMinimo;
@@ -133,8 +133,8 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 	public void setConsumoIdeal(double consumoIdeal) {this.consumoIdeal = consumoIdeal;}
 	
-	public void setEsBajoConsumo(boolean esBajoConsumo) {
-		this.esBajoConsumo = esBajoConsumo;
+	public void setEsBajoConsumoBoolean(boolean esBajoConsumoBoolean) {
+		this.esBajoConsumoBoolean = esBajoConsumoBoolean;
 	}
 	
 	public void setUsoMensualMinimo(double consumo) {
@@ -155,6 +155,17 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 	public String getName(){
 		return this.name;
+	}
+
+	public String getEsBajoConsumoBoolean(){
+		String estring = "error";
+		if(esBajoConsumoBoolean){
+			estring = "SI";
+		}else{
+			estring = "NO";
+		}
+
+		return estring;
 	}
 	
 	public double consumoCorriente() {
@@ -185,7 +196,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	@Override
 	public void setBajoConsumo(boolean bajoConsumo) {
 		// TODO Auto-generated method stub
-		this.esBajoConsumo = bajoConsumo;
+		this.esBajoConsumoBoolean = bajoConsumo;
 	}
 
 }

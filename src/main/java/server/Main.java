@@ -39,13 +39,13 @@ public class Main {
 		get("/usuarioSimplex", controladorCliente::ejecutarSimplex, engine);
 		get("/usuarioEstados", controladorCliente::mostrarEstadoDispositivos, engine);
 		get("/usuarioUltimas", controladorCliente::mostrarMediciones, engine);
-
+		get("/logout", home::mostrar, engine);
 
         
         //ADMIN|        
         get("/admin", controladorAdmin::mostrar, engine);
         get("/admin/informacion", controladorAdmin::infoUsuario, engine);
-        get("/admin/reportes/:id", controladorAdmin::reportes, engine);
+        get("/admin/reportes", controladorAdmin::reportes, engine);
         get("/admin/altaDispositivo", controladorAdmin::mostrarAltaDispositivo, engine);
 
     }
