@@ -46,7 +46,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		
 		System.out.printf(id);
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -76,7 +76,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			id = request.queryParams("NUMERODECLIENTE");
 		}
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -102,7 +102,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		String id = "0";
 		id = request.queryParams("NUMERODECLIENTE");
 		
-		if(id.length() < 1 || id == "0") {
+		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -160,18 +160,27 @@ public class ControladorAdministrador extends ControladorUsuario{
 		
 		List<String> p = Arrays.asList(request.body().split("&"));
 		
-		String nombre = Arrays.asList(p.get(0).split("=")).get(1);
-		String frigorias = Arrays.asList(p.get(1).split("=")).get(1);
+		if(p.get(0).length() != 0 || p.get(1).length() != 0) {
 		
-		DispositivoFactory factory = new DispositivoFactory();
-		factory.setNombre(nombre);
+			String nombre = Arrays.asList(p.get(0).split("=")).get(1);
+			String frigorias = Arrays.asList(p.get(1).split("=")).get(1);
 		
-		DispositivoConcreto aireAcondicionado = factory.crearAireAcondicionado(Integer.valueOf(frigorias));
-		//cliente.agregarDispositivo(aireAcondicionado);
+			DispositivoFactory factory = new DispositivoFactory();
+			factory.setNombre(nombre);
 		
-		viewModel.put("exito", exito);
-		vista = new ModelAndView(viewModel, "adminAlta.hbs");
-		return vista;		
+			DispositivoConcreto aireAcondicionado = factory.crearAireAcondicionado(Integer.valueOf(frigorias));
+			cliente.agregarDispositivoConcreto(aireAcondicionado);
+		
+			viewModel.put("exito", exito);
+			vista = new ModelAndView(viewModel, "adminAlta.hbs");
+			return vista;
+		}
+		else {
+			String error = "Ingrese todos los datos";
+			viewModel.put("error", error);
+			vista = new ModelAndView(viewModel, "adminAltaAire.hbs");
+			return vista;
+		}
 	}
 	
 	//-----HELADERA-----
@@ -186,7 +195,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto heladeraConFreezer = factory.crearHeladeraConFreezer();
-		//cliente.agregarDispositivo(heladeraConFreezer);
+		cliente.agregarDispositivoConcreto(heladeraConFreezer);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -204,7 +213,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto heladeraSinFreezer = factory.crearHeladeraSinFreezer();
-		//cliente.agregarDispositivo(heladeraSinFreezer);
+		cliente.agregarDispositivoConcreto(heladeraSinFreezer);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -233,7 +242,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
 		
 		DispositivoConcreto lamparaHalogena = factory.crearLamparaHalogena(Integer.valueOf(w));
-		//cliente.agregarDispositivo(lamparaHalogena;
+		cliente.agregarDispositivoConcreto(lamparaHalogena);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -259,7 +268,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lamparaComun = factory.crearLamparaComun(Integer.valueOf(w));
-		//cliente.agregarDispositivo(lamparaComun);
+		cliente.agregarDispositivoConcreto(lamparaComun);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -295,7 +304,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lavarropasAutomatico = factory.crearLavarropasAutomatico(tieneCalentamiento, Integer.valueOf(capacidad));
-		//cliente.agregarDispositivo(lavarropasAutomatico);
+		cliente.agregarDispositivoConcreto(lavarropasAutomatico);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -326,7 +335,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lavarropasSemiAutomatico = factory.crearLavarropasSemiAutomatico(tieneCalentamiento, Integer.valueOf(capacidad));
-		//cliente.agregarDispositivo(lavarropasSemiAutomatico);
+		cliente.agregarDispositivoConcreto(lavarropasSemiAutomatico);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -348,7 +357,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto microondas = factory.crearMicroondas();
-		//cliente.agregarDispositivo(microondas);
+		cliente.agregarDispositivoConcreto(microondas);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -365,16 +374,24 @@ public class ControladorAdministrador extends ControladorUsuario{
 		String nombre = Arrays.asList(p.get(0).split("=")).get(1);
 		String horasMensuales = Arrays.asList(p.get(1).split("=")).get(1);
 		
-		DispositivoFactory factory = new DispositivoFactory();
-		factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
-		factory.setNombre(nombre);
+		if(p.get(0).length() != 0 || p.get(1).length() != 0) {
 		
-		DispositivoConcreto pc = factory.crearPC();
-		//cliente.agregarDispositivo(pc);
+			DispositivoFactory factory = new DispositivoFactory();
+			factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
+			factory.setNombre(nombre);
+			
+			DispositivoConcreto pc = factory.crearPC();
+			cliente.agregarDispositivoConcreto(pc);
 		
-		viewModel.put("exito", exito);
-		vista = new ModelAndView(viewModel, "adminAlta.hbs");
-		return vista;
+			viewModel.put("exito", exito);
+			vista = new ModelAndView(viewModel, "adminAlta.hbs");
+			return vista;
+		} else {
+			String error = "Ingrese todos los datos";
+			viewModel.put("error", error);
+			vista = new ModelAndView(viewModel, "adminAltaPC.hbs");
+			return vista;
+		}
 	}
 	
 }

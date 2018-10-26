@@ -48,7 +48,8 @@ public class ControladorCliente extends ControladorUsuario {
 		HashMap<String, Object> viewModel = new HashMap<String,Object>();
 		HashMap<DispositivoConcreto, Double> listaDispositivos = new HashMap<DispositivoConcreto,Double>();
 		listaDispositivos = cliente.configuracionOptima();
-		viewModel.put("listaDispositivos",listaDispositivos);
+		List<DispositivoConcreto> list = new ArrayList<DispositivoConcreto>(listaDispositivos.keySet());
+		viewModel.put("listaDispositivos",list);
 		viewModel.put("cliente",cliente);
 		System.out.println(listaDispositivos.toString());
 		
