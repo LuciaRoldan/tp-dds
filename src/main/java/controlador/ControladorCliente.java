@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import dispositivo.estados.EstadoDispositivo;
 import dispositivosConcretos.DispositivoConcreto;
+import sensor.Sensor;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -43,7 +44,16 @@ public class ControladorCliente extends ControladorUsuario {
 	
 	public ModelAndView mostrarMediciones(Request request, Response response) throws IOException {
 		
-		return new ModelAndView(null,"usuarioUltimas.hbs");
+		HashMap<Double, String> mediciones = new HashMap<Double, String>();
+		
+		HashMap<HashMap<Double, String>, String> medicionesCompleto = new HashMap<HashMap<Double, String>, String>();
+		
+		for (Sensor sensor : cliente.getSensores()) {
+			mediciones.put(sensor.getMedicion(), sensor.getUnidad());
+			medicionesCompleto.put(mediciones, sensor.getDescripcion());
+		}
+		System.out.println(medicionesCompleto.toString());
+		return new ModelAndView(medicionesCompleto,"usuarioUltimas.hbs");
 		
 	}
 	
