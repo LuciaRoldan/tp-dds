@@ -51,13 +51,13 @@
     <div class="header-content">
       <div class="nav-top">
         <div class="nav-top-left">
-          <p>Carlos Garcia {{ cliente }}</p>
+          <p>{{ nombreYApellido }}</p>
         </div>
         <div class="nav-top-right">
         </div>
         <div class="nav-bottom">
           <ul>
-          <li>Cliente N° 1234</li>
+          <li>Cliente N° {{ numeroDeUsuario }}</li>
           </ul>
         </div>
       </div>
@@ -74,23 +74,23 @@
         <div class="test testers">
           <div class="icon-profile">
           <p><img src="https://bethami.org/wp-content/uploads/sites/110/2018/08/ScheduleIcon.png" alt="days" ></p>
-            <p>24 Dias</p>
+            <p>{{ periodo }}</p>
            </div>
         </div>
         <div class="test to-buy">
-          <p>12/12/12</p>
+          <p> {{ fechaInicio }}</p>
           <p>Inicio</p>
         </div>
         <div class="test desirability">
-          <p>13/13/13</p>
+          <p> {{ fechaFin }}</p>
           <p>Fin</p>
         </div>
         <div class="test want-it">
-          <p>9.0</p>
+          <p> {{  maximoConsumo }}</p>
           <p>Consumo maximo</p>
         </div>
         <div class="test score">
-          <p>7.77</p>
+          <p>{{ consumo }}</p>
           <p>Consumo total</p>
         </div>
       </div>
@@ -101,7 +101,7 @@
     <!-- Second table of completed tests section-->
     <div class="complete-test-table">
       <div class="table-name">
-        <p style="font-size:20px"> 20/02 - 20/03</p>
+        <p style="font-size:20px"> {{ periodoAnterior }}</p>
       </div>
       <div class="table-content">
         <br>
@@ -109,8 +109,8 @@
         </br>
       </div>
       <div class="table-score">
-        <p style="font-size:20px">434234 KW</p>
-        <p href="/login">Ver mas</p>
+        <p style="font-size:20px"> {{ consumoAnterior }} </p>
+        <p href="/login">KiloWatts</p>
       </div>
     </div>
 

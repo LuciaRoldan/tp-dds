@@ -51,13 +51,13 @@
     <div class="header-content">
       <div class="nav-top">
         <div class="nav-top-left">
-          <p>Carlos Garcia {{ cliente }}</p>
+          <p>{{ nombreYapellido }}</p>
         </div>
         <div class="nav-top-right">
         </div>
         <div class="nav-bottom">
           <ul>
-          <li>Cliente N° 1234</li>
+          <li>Cliente N° {{ numeroDeUsuario }}</li>
           </ul>
         </div>
       </div>
@@ -70,112 +70,25 @@
     <div class="complete-tests-title2">
       <p> ESTADO DE LOS DISPOSITIVOS </p>
     </div>
+    {{# listaDispositivos}}
     <div class="complete-test-table2">
       <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
-        <p style="text-align:left">1234</p>
-        <p style="text-align:center">ID USUARIO</p>
+        <p style="text-align:left">{{ name }}</p>
+        <p style="text-align:center">DISPOSITIVO </p>
       </div>
       <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-        <p style="text-align:left">32131 KW</p>
-        <p style="text-align:center">CONSUMO</p>
+        <p style="text-align:left">{{ esBajoConsumo }}</p>
+        <p style="text-align:center">ES BAJO CONSUMO</p>
       </div>
       <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-        <p style="text-align:left">43224 KW</p>
-        <p style="text-align:center">CONSUMO MENSUAL</p>
+        <p style="text-align:left">{{ estado }} </p>
+        <p style="text-align:center">ESTADO</p>
       </div>
       <div class="test desirability4" style="display: inline-block">
-        <p style="text-align:left">R9 SARASA</p>
-        <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
+        <p style="text-align:left">{{ potencia }}</p>
+        <p style="text-align:center">POTENCIA</p>
       </div>
-      <div class="complete-test-table2">
-        <div class="test to-buy2" style="display: inline-block;margin-right:50px; " >
-          <p style="text-align:left">1234</p>
-          <p style="text-align:center">ID USUARIO</p>
-        </div>
-        <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-          <p style="text-align:left">32131 KW</p>
-          <p style="text-align:center">CONSUMO</p>
-        </div>
-        <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-          <p style="text-align:left">43224 KW</p>
-          <p style="text-align:center">CONSUMO MENSUAL</p>
-        </div>
-        <div class="test desirability4" style="display: inline-block">
-          <p style="text-align:left">R9 SARASA</p>
-          <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
-        </div>
-
-        <div class="complete-test-table2">
-          <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
-            <p style="text-align:left">1234</p>
-            <p style="text-align:center">ID USUARIO</p>
-          </div>
-          <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-            <p style="text-align:left">32131 KW</p>
-            <p style="text-align:center">CONSUMO</p>
-          </div>
-          <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-            <p style="text-align:left">43224 KW</p>
-            <p style="text-align:center">CONSUMO MENSUAL</p>
-          </div>
-          <div class="test desirability4" style="display: inline-block">
-            <p style="text-align:left">R9 SARASA</p>
-            <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
-          </div>
-        </div>
-        <div class="complete-test-table2">
-          <div class="test to-buy2" style="display: inline-block;margin-right:50px; " >
-            <p style="text-align:left">1234</p>
-            <p style="text-align:center">ID USUARIO</p>
-          </div>
-          <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-            <p style="text-align:left">32131 KW</p>
-            <p style="text-align:center">CONSUMO</p>
-          </div>
-          <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-            <p style="text-align:left">43224 KW</p>
-            <p style="text-align:center">CONSUMO MENSUAL</p>
-          </div>
-          <div class="test desirability4" style="display: inline-block">
-            <p style="text-align:left">R9 SARASA</p>
-            <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
-          </div>
-
-          <div class="complete-test-table2">
-            <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
-              <p style="text-align:left">1234</p>
-              <p style="text-align:center">ID USUARIO</p>
-            </div>
-            <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-              <p style="text-align:left">32131 KW</p>
-              <p style="text-align:center">CONSUMO</p>
-            </div>
-            <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-              <p style="text-align:left">43224 KW</p>
-              <p style="text-align:center">CONSUMO MENSUAL</p>
-            </div>
-            <div class="test desirability4" style="display: inline-block">
-              <p style="text-align:left">R9 SARASA</p>
-              <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
-            </div>
-          </div>
-          <div class="complete-test-table2">
-            <div class="test to-buy2" style="display: inline-block;margin-right:50px; " >
-              <p style="text-align:left">1234</p>
-              <p style="text-align:center">ID USUARIO</p>
-            </div>
-            <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-              <p style="text-align:left">32131 KW</p>
-              <p style="text-align:center">CONSUMO</p>
-            </div>
-            <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-              <p style="text-align:left">43224 KW</p>
-              <p style="text-align:center">CONSUMO MENSUAL</p>
-            </div>
-            <div class="test desirability4" style="display: inline-block">
-              <p style="text-align:left">R9 SARASA</p>
-              <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
-
+      {{/listaDispositivos}}
             </div>
             <div style="margin:10px;padding-top: 26px;"  >
              SITIO CREADO POR NOSOTROS eskereee
