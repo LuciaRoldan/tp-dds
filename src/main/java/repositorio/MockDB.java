@@ -24,7 +24,7 @@ public class MockDB {
 		
 		/////////////// Persisto un cliente con un dispositivo con estados //////////////////////////////
 		
-		Cliente cliente = new Cliente("Maximo Cozzetti", "Calle falsa 123", LocalDate.of(2001, 01, 01), "EmilioRavenna", "hola", TipoDocumento.DNI ,  007, 4545-4545, CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
+		Cliente cliente = new Cliente("Maximo Cozzetti", "Calle falsa 123", LocalDate.of(2001, 01, 01), "ro", "xd", TipoDocumento.DNI ,  007, 4545-4545, CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
 		
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("aire");
@@ -49,7 +49,7 @@ public class MockDB {
 	    
 		//////////////// Persisto un administrador ///////////////////////////////
 	    
-	    Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123", LocalDate.now().minusMonths(1), "jperez", "123", (float) 0 ,(float) 0);
+	    Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123", LocalDate.now().minusMonths(1), "hola", "1997", (float) 0 ,(float) 0);
 	    repo.agregarUsuario(administrador);
 	
 	}

@@ -41,6 +41,7 @@ public class ControladorUsuario implements WithGlobalEntityManager, Transactiona
 		String pass = Arrays.asList(p2.split("=")).get(1);
 
 		usuario = repoDeUsuarios.recuperarUsuarioPorNombreDeUsuario(user);
+		System.out.print(usuario.getNombreUsuario());
 
 		if ((usuario.getTipoDeUsuario() == TipoDeUsuario.CLIENTE) && contraseniaValida(usuario, pass)) {
 			
