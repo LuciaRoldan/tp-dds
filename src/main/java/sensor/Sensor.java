@@ -18,6 +18,8 @@ public class Sensor {
 	@ManyToMany //Deberia ser un one to many?
 	List<Condicion> condiciones = new ArrayList<Condicion>();
 	double medicion;
+	String descripcion;
+	String unidad;
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -45,5 +47,27 @@ public class Sensor {
     public Integer getNumeroDeSensor() {
 		return this.numeroDeSensor;
     }
+    
+    public void agregarDescripcion(String descripcion) {
+    	this.descripcion = descripcion;
+    }
+    
+    public void agregarUnidad(String unidad) {
+    	this.unidad = unidad;
+    }
+
+	public double getMedicion() {
+		return medicion;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public String getUnidad() {
+		return unidad;
+	}
+    
+    
 }
 
