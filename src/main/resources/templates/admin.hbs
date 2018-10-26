@@ -28,8 +28,8 @@
                 <ul>
                     <div class="link">
                         <li><a href="/admin" style="font-size:15px;"> Inicio</a></li>
-                        <li><a href="/adminAlta"> Alta dispositivo</a></li>
-                        <li><a href="/adminReportes"> Ver reportes</a></li>
+                        <li><a href="/admin/altaDispositivo"> Alta dispositivo</a></li>
+                        <li><a href="/admin/reportes"> Ver reportes</a></li>
                     </div>
 
                 </ul>
@@ -64,7 +64,7 @@
     <div class="content row">
         <div class="averages">
 
-            <form method="POST" action="/usuario">
+            <form method="GET" action="/informacion">
                 <br>
                 <br>
                 <div class="mdl-textfield mdl-js-textfield">
@@ -86,20 +86,20 @@
         </div>
         <div class="complete-test-table2">
              <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
-                <p style="text-align:left">1234</p>
+                <p style="text-align:left">{{ numeroDeUsuario }}</p>
                 <p style="text-align:center">ID USUARIO</p>
             </div>
             <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
-                <p style="text-align:left">32131 KW</p>
-                <p style="text-align:center">CONSUMO</p>
+                <p style="text-align:left">{{ maximoConsumo }} KW </p>
+                <p style="text-align:center">MAXIMO CONSUMO</p>
             </div>
             <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
-                <p style="text-align:left">43224 KW</p>
+                <p style="text-align:left">{{ consumoMensual }} KW</p>
                 <p style="text-align:center">CONSUMO MENSUAL</p>
             </div>
             <div class="test desirability4" style="display: inline-block">
-                <p style="text-align:left">R9 SARASA</p>
-                <p style="text-align:center">CATEGORIA DATOS DEL USUARIO</p>
+                <p style="text-align:left"> {{ CategoriaResidencial }}</p>
+                <p style="text-align:center">CATEGORIA</p>
             </div>
 
         </div>
