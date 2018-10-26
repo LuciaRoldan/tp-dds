@@ -41,7 +41,7 @@ public class Main {
 		get("/usuarioUltimas", controladorCliente::mostrarMediciones, engine);
 		get("/logout", home::mostrar, engine);
 
-        
+        	
         //ADMIN|        
         get("/admin", controladorAdmin::mostrar, engine);
         get("/admin/informacion", controladorAdmin::infoUsuario, engine);
@@ -65,7 +65,10 @@ public class Main {
         post("/admin/altaDispositivo/lavarropasAutomatico", controladorAdmin::altaHalogena, engine);
         get("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::mostrarAltaHalogena, engine);
         post("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::altaHalogena, engine);
-        
+        //microondas
+        //post("/admin/altaDispositivo/microondas", controladorAdmin::altaHeladeraConFreezer, engine);
+        //pc
+        post("/admin/altaDispositivo/pc", controladorAdmin::altaPC, engine);
 
     }
 

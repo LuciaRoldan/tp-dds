@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styleMap.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet' href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css'>
+
+</head>
+
+<body>
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Code-mine App1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/styleUsuario.css">
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="head-menu">
+                <ul>
+                    <div class="link">
+                        <li><a href="/admin"> Inicio</a></li>
+                        <li><a href="/admin/altaDispositivo" style="font-size:15px;"> Alta dispositivo</a></li>
+                        <li><a href="/adminReportes" > Ver Reportes</a></li>
+                    </div>
+
+                </ul>
+            </div>
+            <div class="head-buttons">
+                <div class="link-logOut">
+                    <a style="text-align:right;" href="/logout"> LOGOUT</a>
+                </div>
+                <div class="head-profile">
+                    <img src="https://image.flaticon.com/icons/png/512/17/17797.png" alt="Profile photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="navigation">
+        <div class="header-content">
+            <div class="nav-top">
+                <div class="nav-top-left">
+                    <p>Administrador {{ nombre }}</p>
+                </div>
+                <div class="nav-top-right">
+                </div>
+                <div class="nav-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content row" style="display:inline-block">
+        <div class="averages" style="display:inline-block">
+        </div>
+
+        <!-- Second table of completed tests section-->
+        <div class="complete-tests-title2" style="display: inline-block">
+            <p>SELECCION DE DISPOSITIVO:</p>
+            <ul>
+                <div class="linkDispositivos">
+                    <li><a href="/usuario"> Aire Acondicionado</a></li>
+                    <li><a href="/dispositivo"> Televisor </a></li>
+                    <li><a href="/reportes"> Heladera</a></li>
+                    <li><a href="/usuario"> Lavarropas</a></li>
+                    <li><a href="/dispositivo"> Ventilador</a></li>
+                    <li><a href="/reportes"> Lampara</a></li>
+                    <li><a href="/usuario"> PC</a></li>
+                    <li><a href="/dispositivo"> Microondas</a></li>
+                    <li><a href="/reportes"> Plancha</a></li>
+                </div>
+
+            </ul>
+        </div>
+
+        <div class="complete-tests-title2" style="display: inline-block">
+            <ul>
+                <div class="linkDispositivos">
+                    {{#opciones}}
+                    <li><a href={{link}}> {{opcion}}</a></li>
+                    {{/opciones}}
+                </div>
+            </ul>
+        </div>
+        <div class="complete-tests-title2" style="display: inline-block">
+            <ul>
+                <div class="linkDispositivos">
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                </div>
+            </ul>
+        </div>
+        <div class="complete-tests-title2" style="display: inline-block">
+            <ul>
+                <div class="linkDispositivos">
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                    <li><a href="/usuario"> Inicio</a></li>
+                    <li><a href="/dispositivo"> Alta dispositivo</a></li>
+                    <li><a href="/reportes"> Ver reportes</a></li>
+                </div>
+            </ul>
+        </div>
+        <form method="POST" action="/usuario" style="display: inline-block;height: 50%;margin-left:15px;">
+            <br>
+            <br>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="CONSUMODISPOSITIVO" name="NUMERODECLIENTE" />
+                <label class="mdl-textfield__label" for="CONSUMODISPOSITIVO">CONSUMO </label>
+            <button type="submit" style="display: inline-block;margin-left:100% " class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="CONSUMODISPOSITIVO ">ENVIAR</button>
+            </div>
+            </br>
+
+            </form>
+
+
+        </div>
+
+        </div>
+
+        <!-- Completed tests -->
+
+</div>
+
+
+</body>
+
+</html>
