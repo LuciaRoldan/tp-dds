@@ -7,11 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
-import org.uqbarproject.jpa.java8.extras.transaction.TransactionalOps;
-
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 import dispositivo.DispositivoFactory;
 import dispositivosConcretos.DispositivoConcreto;
 import repositorio.RepositorioDeUsuarios;
@@ -42,7 +37,9 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 		String id = "0";
-		id = request.queryParams("NUMERODECLIENTE");
+		if(request.queryParamOrDefault("NUMERODECLIENTE", "0") != "0") {
+			id = request.queryParams("NUMERODECLIENTE");
+		}
 		
 		System.out.printf(id);
 		
@@ -100,7 +97,9 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 		String id = "0";
-		id = request.queryParams("NUMERODECLIENTE");
+		if(request.queryParamOrDefault("NUMERODECLIENTE", "0") != "0") {
+			id = request.queryParams("NUMERODECLIENTE");
+		}
 		
 		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
@@ -160,14 +159,17 @@ public class ControladorAdministrador extends ControladorUsuario{
 		
 		List<String> p = Arrays.asList(request.body().split("&"));
 		
-		if(p.get(0).length() != 0 || p.get(1).length() != 0) {
+		if(p.get(0).length() != 0 && p.get(1).length() != 0 && p.get(2).length() != 0) {
 		
 			String nombre = Arrays.asList(p.get(0).split("=")).get(1);
 			String frigorias = Arrays.asList(p.get(1).split("=")).get(1);
+			String id = Arrays.asList(p.get(1).split("=")).get(2);
 		
 			DispositivoFactory factory = new DispositivoFactory();
 			factory.setNombre(nombre);
 		
+			cliente = (Cliente) repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+			
 			DispositivoConcreto aireAcondicionado = factory.crearAireAcondicionado(Integer.valueOf(frigorias));
 			cliente.agregarDispositivoConcreto(aireAcondicionado);
 		
@@ -371,10 +373,14 @@ public class ControladorAdministrador extends ControladorUsuario{
 		String exito = "Dispositivo agregado correctamente";
 		
 		List<String> p = Arrays.asList(request.body().split("&"));
-		String nombre = Arrays.asList(p.get(0).split("=")).get(1);
-		String horasMensuales = Arrays.asList(p.get(1).split("=")).get(1);
 		
-		if(p.get(0).length() != 0 || p.get(1).length() != 0) {
+		if(p.get(0).length() != 0 && p.get(1).length() != 0 && p.get(2).length() != 0) {
+			
+			String nombre = Arrays.asList(p.get(0).split("=")).get(1);
+			String horasMensuales = Arrays.asList(p.get(1).split("=")).get(1);
+			String id = Arrays.asList(p.get(0).split("=")).get(1);
+			
+			cliente = (Cliente) repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
 		
 			DispositivoFactory factory = new DispositivoFactory();
 			factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
