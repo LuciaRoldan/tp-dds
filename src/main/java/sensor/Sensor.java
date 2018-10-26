@@ -2,11 +2,16 @@ package sensor;
 
 import regla.Condicion;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +20,9 @@ public class Sensor {
 	
 	//interesados
 
-	@ManyToMany //Deberia ser un one to many?
+	//@ManyToMany //Deberia ser un one to many?
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(nullable = true, name = "numeroDeSensor", foreignKey = @ForeignKey(name = "numeroDeSensor"))
 	List<Condicion> condiciones = new ArrayList<Condicion>();
 	double medicion;
 	String descripcion;

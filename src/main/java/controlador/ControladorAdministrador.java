@@ -56,19 +56,6 @@ public class ControladorAdministrador extends ControladorUsuario{
 			vista = new ModelAndView(viewModel, "admin.hbs");
 			return vista; //esta vista es la misma que antes pero con la tablita completa con consumos
 		}
-		
-		//String id = parsearId(request.body());
-		
-		System.out.printf("El id ingresado es: " + id);
-		
-		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
-
-		//chequear que pasa cuando no encuentra el usuario ..
-		viewModel.put("cliente", cliente);
-		
-		vista = new ModelAndView(viewModel, "admin.hbs");
-		return vista; //esta vista es la misma que antes pero con la tablita completa con consumos
-		//y el id del usuario en el texto
 	}
 	
 

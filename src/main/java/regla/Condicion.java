@@ -2,6 +2,7 @@ package regla;
 
 import sensor.Sensor;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +14,7 @@ import java.util.List;
 @Entity
 public abstract class Condicion {
 
-	@ManyToMany
+	@ManyToMany(cascade = { CascadeType.ALL })
 	List<Regla> reglas = new ArrayList<Regla>();
 	boolean seCumple = false;
 	//cada condicion va a tener una o mas variables de la magnitud que mide
