@@ -45,8 +45,8 @@ public class ControladorCliente extends ControladorUsuario {
 	
 	public ModelAndView ejecutarSimplex(Request request, Response response) throws IOException {
 
-		HashMap<String, Object> viewModel = new HashMap<>();
-		HashMap<DispositivoConcreto, Double> listaDispositivos = new HashMap<>();
+		HashMap<String, Object> viewModel = new HashMap<String,Object>();
+		HashMap<DispositivoConcreto, Double> listaDispositivos = new HashMap<DispositivoConcreto,Double>();
 		listaDispositivos = cliente.configuracionOptima();
 		viewModel.put("listaDispositivos",listaDispositivos);
 		viewModel.put("cliente",cliente);
