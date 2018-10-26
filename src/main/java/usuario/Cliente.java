@@ -194,6 +194,10 @@ public class Cliente extends Usuario {
 		return maximoConsumo;
 	}
 	
+	public List<Sensor>getSensores(){
+		return this.sensores;
+	}
+
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 
