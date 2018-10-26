@@ -43,12 +43,17 @@ public class Main {
 
         get("/usuario", controladorCliente::mostrar, engine);
         
-        //ADMIN
+        //ADMIN|        
         get("/admin", controladorAdmin::mostrar, engine);
-        get("/user/:id", controladorAdmin::infoUsuario, engine);
+        get("/admin/informacion", controladorAdmin::infoUsuario, engine);
+        get("/admin/reportes/:id", controladorAdmin::reportes, engine);
+        get("/admin/altaDispositivo", controladorAdmin::mostrarAltaDispositivo, engine);
         
-        //get("/usuario/id/alta", controladorAdmin::altaDispositivo, engine);
-        
+        //get("/admin/informacion/:id", controladorAdmin::infoUsuario, engine);
+     
+        //get("/admin/altaDispositivo/:id", controladorAdmin::mostrarAltaDispositivo, engine);
+        //post("/admin/altaDispositivo/:id/heladera", controladorAdmin::altaHeladera, engine); //y asi con todos los dispos       
+              
     }
 
 

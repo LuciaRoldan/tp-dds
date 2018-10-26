@@ -1,6 +1,7 @@
 package controlador;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,26 +13,24 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 import usuario.Cliente;
+import usuario.Usuario;
 
 public class ControladorAdministrador extends ControladorUsuario{
 
 	public RepositorioDeUsuarios repoDeUsuarios = RepositorioDeUsuarios.getInstancia();
-	private static ControladorAdministrador instancia = null;
-	Cliente cliente;
-
-	public static ControladorAdministrador getInstancia() {
-		if (instancia == null) {
-			instancia = new ControladorAdministrador();
-		}
-		return instancia;
-	}
+	Usuario cliente;
 	
 	public ModelAndView mostrar(Request request, Response response) throws IOException {
 		return new ModelAndView(null , "admin.hbs");
 	}
+	
+	String parsearId(String body) {
+		String id = Arrays.asList(body.split("=")).get(1);
+		return id;
+	}
 
 	public ModelAndView infoUsuario(Request request, Response response) {
-		String id = request.params(":id");
+		String id = parsearId(request.body());
 		
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
@@ -39,15 +38,15 @@ public class ControladorAdministrador extends ControladorUsuario{
 		if(id.length() == 0) {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
-			viewModel.put("error", error); //seria un cartelito de "Por favor, ingrese un id"
-			//response.redirect("/admin"); //o puedo redireccionar a la pag que ya estaba y fue
+			String error = "Ingrese un ID";
+			viewModel.put("error", error);
 			vista =  new ModelAndView(viewModel , "admin.hbs");
 			return vista;
 		}
 		
 		System.out.printf("El id ingresado es: ", id);
 		
-		cliente = repoDeUsuarios.recuperarUsuarioPorIdDeUsuario(Integer.valueOf(id)); //implementar:)
+		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
 		//chequear que pasa cuando no encuentra el usuario ..
 		viewModel.put("cliente", cliente);
 		
@@ -55,8 +54,58 @@ public class ControladorAdministrador extends ControladorUsuario{
 		return vista; //esta vista es la misma que antes pero con la tablita completa con consumos
 		//y el id del usuario en el texto
 	}
+	
 
-	//public ModelAndView altaDispositivo(Request req, Response res) throws IOException {
+	public ModelAndView mostrarAltaDispositivo(Request request, Response response) throws IOException {
+		String id = parsearId(request.body());
+	
+		ModelAndView vista = null;
+		Map<String, Object> viewModel = new HashMap<>();
+	
+		if(id.length() == 0) {
+			System.out.printf("No me ingresaron ningun id");
+			//response.status(400);
+			String error = "Ingrese un ID";
+			viewModel.put("error", error);
+			vista =  new ModelAndView(viewModel , "admin.hbs");
+			return vista;
+		}
+	
+		System.out.printf("El id ingresado es: ", id);
+	
+		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
 		
-	//}
+		viewModel.put("cliente", cliente);
+		vista = new ModelAndView(viewModel, "altaDispositivo.hbs");
+		return vista;
+	}
+	
+	public ModelAndView altaDispositivo(Request request, Response response) throws IOException { //falta implementar
+		ModelAndView vista = null;
+		return vista;
+	}
+	
+	public ModelAndView reportes(Request request, Response response) throws IOException {
+		String id = parsearId(request.body());
+		
+		ModelAndView vista = null;
+		Map<String, Object> viewModel = new HashMap<>();
+			
+		if(id.length() == 0) {
+			System.out.printf("No me ingresaron ningun id");
+			//response.status(400);
+			String error = "Ingrese un ID";
+			viewModel.put("error", error);
+			vista =  new ModelAndView(viewModel , "admin.hbs");
+			return vista;
+		}
+		
+		System.out.printf("El id ingresado es: ", id);
+		
+		cliente = repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
+				
+		viewModel.put("cliente", cliente);
+		vista = new ModelAndView(viewModel, "reportes.hbs");
+		return vista;
+	}
 }
