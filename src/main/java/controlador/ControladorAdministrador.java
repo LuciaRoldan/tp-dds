@@ -41,12 +41,12 @@ public class ControladorAdministrador extends ControladorUsuario{
 	public ModelAndView infoUsuario(Request request, Response response) {
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
-		String id = null;
+		String id = "0";
 		id = request.queryParams("NUMERODECLIENTE");
 		
 		System.out.printf(id);
 		
-		if(id.length() < 1) {
+		if(id.length() < 1 || id == "0") {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
@@ -71,15 +71,17 @@ public class ControladorAdministrador extends ControladorUsuario{
 	public ModelAndView mostrarAltaDispositivo(Request request, Response response) throws IOException {
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
-		String id = null;
-		id = request.queryParams("NUMERODECLIENTE");
+		String id = "0";
+		if(request.queryParamOrDefault("NUMERODECLIENTE", "0") != "0") {
+			id = request.queryParams("NUMERODECLIENTE");
+		}
 		
-		if(id.length() < 1) {
+		if(id.length() < 1 || id == "0") {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
-			vista =  new ModelAndView(viewModel , "admin.hbs");
+			vista =  new ModelAndView(viewModel , "adminAlta.hbs");
 			return vista;
 		}else {
 
@@ -88,7 +90,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			cliente = (Cliente) repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
 
 			viewModel.put("cliente", cliente);
-			vista = new ModelAndView(viewModel, "altaDispositivo.hbs");
+			vista = new ModelAndView(viewModel, "adminAlta.hbs");
 			return vista;
 		}
 		
@@ -97,15 +99,15 @@ public class ControladorAdministrador extends ControladorUsuario{
 	public ModelAndView reportes(Request request, Response response) throws IOException {
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
-		String id = null;
+		String id = "0";
 		id = request.queryParams("NUMERODECLIENTE");
 		
-		if(id.length() < 1 ) {
+		if(id.length() < 1 || id == "0") {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
-			vista =  new ModelAndView(viewModel , "admin.hbs");
+			vista =  new ModelAndView(viewModel , "adminReportes.hbs");
 			return vista;
 		}else {
 
@@ -114,23 +116,23 @@ public class ControladorAdministrador extends ControladorUsuario{
 			cliente = (Cliente) repoDeUsuarios.recuperarUsuarioPorId(Integer.valueOf(id));
 
 			viewModel.put("cliente", cliente);
-			vista = new ModelAndView(viewModel, "reportes.hbs");
+			vista = new ModelAndView(viewModel, "adminReportes.hbs");
 			return vista;
 		}
 	}
 	
-	public ModelAndView altaDispositivo(Request request, Response response) throws IOException { //falta implementar
+/*	public ModelAndView altaDispositivo(Request request, Response response) throws IOException { //falta implementar
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
-		String id = null;
+		String id = "0";
 		id = request.queryParams("NUMERODECLIENTE");
 		
-		if(id.length() < 1) {
+		if(id.length() < 1 || id == "0") {
 			System.out.printf("No me ingresaron ningun id");
 			//response.status(400);
 			String error = "Ingrese un ID";
 			viewModel.put("error", error);
-			vista =  new ModelAndView(viewModel , "admin.hbs");
+			vista =  new ModelAndView(viewModel , "adminAlta.hbs");
 			return vista;
 		}else {
 
@@ -143,6 +145,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			return vista;
 		}
 	}
+*/
 	
 	//-----AIRE-----
 	public ModelAndView mostrarAltaAire(Request request, Response response) throws IOException {
@@ -330,6 +333,28 @@ public class ControladorAdministrador extends ControladorUsuario{
 		return vista;
 	}
 	
+	//-----Microondas-----
+	public ModelAndView altaMicroondas(Request request, Response response) throws IOException {
+		ModelAndView vista = null;
+		Map<String, Object> viewModel = new HashMap<>();
+		String exito = "Dispositivo agregado correctamente";
+		
+		List<String> p = Arrays.asList(request.body().split("&"));
+		String nombre = Arrays.asList(p.get(0).split("=")).get(1);
+		String horasMensuales = Arrays.asList(p.get(1).split("=")).get(1);
+		
+		DispositivoFactory factory = new DispositivoFactory();
+		factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
+		factory.setNombre(nombre);
+		
+		DispositivoConcreto microondas = factory.crearMicroondas();
+		//cliente.agregarDispositivo(microondas);
+		
+		viewModel.put("exito", exito);
+		vista = new ModelAndView(viewModel, "adminAlta.hbs");
+		return vista;
+	}
+	
 	//-----PC-----
 	public ModelAndView altaPC(Request request, Response response) throws IOException {
 		ModelAndView vista = null;
@@ -351,8 +376,5 @@ public class ControladorAdministrador extends ControladorUsuario{
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
 		return vista;
 	}
-	
-	
-	
 	
 }

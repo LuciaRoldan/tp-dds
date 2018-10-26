@@ -66,7 +66,7 @@ public class Main {
         get("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::mostrarAltaHalogena, engine);
         post("/admin/altaDispositivo/lavarropasSemiAutomatico", controladorAdmin::altaHalogena, engine);
         //microondas
-        //post("/admin/altaDispositivo/microondas", controladorAdmin::altaHeladeraConFreezer, engine);
+        post("/admin/altaDispositivo/microondas", controladorAdmin::altaMicroondas, engine);
         //pc
         post("/admin/altaDispositivo/pc", controladorAdmin::altaPC, engine);
 
