@@ -37,7 +37,9 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 		String id = "0";
-		id = request.queryParams("NUMERODECLIENTE");
+		if(request.queryParamOrDefault("NUMERODECLIENTE", "0") != "0") {
+			id = request.queryParams("NUMERODECLIENTE");
+		}
 		
 		System.out.printf(id);
 		
@@ -95,7 +97,9 @@ public class ControladorAdministrador extends ControladorUsuario{
 		ModelAndView vista = null;
 		Map<String, Object> viewModel = new HashMap<>();
 		String id = "0";
-		id = request.queryParams("NUMERODECLIENTE");
+		if(request.queryParamOrDefault("NUMERODECLIENTE", "0") != "0") {
+			id = request.queryParams("NUMERODECLIENTE");
+		}
 		
 		if(id.length() < 1 || id.equals("0")) {
 			System.out.printf("No me ingresaron ningun id");
