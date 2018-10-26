@@ -26,37 +26,44 @@
     <div class="header-content">
       <div class="head-menu">
         <ul>
-          <li>Inicio</li>
-          <li>Dispositivos</li>
-          <li>Mediciones</li>
-          <li>Contacto</li>
+          <div class="link">
+          <li><a href="/usuario" style="font-size:15px;"> Inicio</a></li>
+          <li><a href="/usuarioEstados">Dispositivos</a></li>
+          <li><a href="/usuarioUltimas">Mediciones</a></li>
+          <li><a href="/usuarioSimplex">Simplex</a></li>
+          </div>
+
         </ul>
       </div>
       <div class="head-buttons">
+        <div class="link-logOut">
+        <a style="text-align:right;" href="/logout"> LOGOUT</a>
+        </div>
         <div class="head-profile">
           <img src="https://image.flaticon.com/icons/png/512/17/17797.png" alt="Profile photo">
         </div>
       </div>
     </div>
   </div>
-  <!-- App 1 navigation -->
+
+
   <div class="navigation">
     <div class="header-content">
       <div class="nav-top">
         <div class="nav-top-left">
-          <p>Cliente N°{{ cliente }}</p>
+          <p>Carlos Garcia {{ cliente }}</p>
         </div>
         <div class="nav-top-right">
         </div>
-      </div>
-      <div class="nav-bottom">
+        <div class="nav-bottom">
+          <ul>
+          <li>Cliente N° 1234</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-  <!-- Integrate analytics row -->
-  <div class="info">
-    <p>Queres obtener tu consumo? <a href="/simplex"> Ejecuta el Simplex</a></p>
-  </div>
+
   <!-- Content -->
   <div class="content row">
     <div class="averages">
@@ -91,12 +98,28 @@
 
 
 
+    <!-- Second table of completed tests section-->
+    <div class="complete-test-table">
+      <div class="table-name">
+        <p style="font-size:20px"> 20/02 - 20/03</p>
+      </div>
+      <div class="table-content">
+        <br>
+        <p>Consumo ultimo periodo</p>
+        </br>
+      </div>
+      <div class="table-score">
+        <p style="font-size:20px">434234 KW</p>
+        <p href="/login">Ver mas</p>
+      </div>
+    </div>
+
     <!-- Completed tests -->
+
     <div class="complete-tests">
       <!-- First table of completed tests section-->
-      <div class="complete-tests-title">
-        <p>Funcionalidades</p>
-        <p>Calcular consumo periodo</p>
+      <div class="complete-tests-title2">
+        <p>CALCULAR CONSUMO PERIODO:</p>
       </div>
       <div class="complete-test-table">
         <form method="POST" action="/login">
@@ -116,22 +139,6 @@
         </form>
       </div>
     </div>
-            <!-- Second table of completed tests section-->
-            <div class="complete-test-table">
-              <div class="table-name">
-                <p style="font-size:20px"> 20/02 - 20/03</p>
-              </div>
-              <div class="table-content">
-                <br>
-                <p>Consumo ultimo periodo</p>
-              </br>
-              </div>
-              <div class="table-score">
-                <p style="font-size:20px">434234 KW</p>
-                <p href="/login">Ver mas</p>
-              </div>
-            </div>
-
   </div>
 </div>
 

@@ -4,6 +4,7 @@
 body {
 	margin: 0;
 	background-color: #F8F9FE;
+	margin-bottom: 20px;
 }
 .container {
 	width: 1243px;
@@ -160,26 +161,6 @@ body {
 	font-weight: 900;
 	color: #5379fa;
 }
-
-
-.linkDispositivos a{
-	line-height: 20px;
-	margin: 0;
-	font-size: 10px;
-	text-decoration: none;
-	font-weight: 900;
-	color: #000000;
-}
-.linkDispositivos a:hover{
-	line-height: 20px;
-	margin: 0;
-	font-size: 10px;
-	text-decoration: none;
-	font-weight: 900;
-	color: #5379fa;
-}
-
-
 .link-logOut a{
 	line-height: 10px;
 	margin: 0;
@@ -335,7 +316,7 @@ body {
 
 /* Completed tests table */
 .complete-test-table2 {
-	margin-top: 5%;
+	margin-top: 21px;
 	width: 100%;
 	height: 147px;
 	text-align: center;
