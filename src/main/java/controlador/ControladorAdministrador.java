@@ -169,7 +169,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			factory.setNombre(nombre);
 		
 			DispositivoConcreto aireAcondicionado = factory.crearAireAcondicionado(Integer.valueOf(frigorias));
-			//cliente.agregarDispositivo(aireAcondicionado);
+			cliente.agregarDispositivoConcreto(aireAcondicionado);
 		
 			viewModel.put("exito", exito);
 			vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -195,7 +195,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto heladeraConFreezer = factory.crearHeladeraConFreezer();
-		//cliente.agregarDispositivo(heladeraConFreezer);
+		cliente.agregarDispositivoConcreto(heladeraConFreezer);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -213,7 +213,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto heladeraSinFreezer = factory.crearHeladeraSinFreezer();
-		//cliente.agregarDispositivo(heladeraSinFreezer);
+		cliente.agregarDispositivoConcreto(heladeraSinFreezer);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -242,7 +242,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setHorasUsoMensuales(Integer.valueOf(horasMensuales));
 		
 		DispositivoConcreto lamparaHalogena = factory.crearLamparaHalogena(Integer.valueOf(w));
-		//cliente.agregarDispositivo(lamparaHalogena;
+		cliente.agregarDispositivoConcreto(lamparaHalogena);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -268,7 +268,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lamparaComun = factory.crearLamparaComun(Integer.valueOf(w));
-		//cliente.agregarDispositivo(lamparaComun);
+		cliente.agregarDispositivoConcreto(lamparaComun);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -304,7 +304,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lavarropasAutomatico = factory.crearLavarropasAutomatico(tieneCalentamiento, Integer.valueOf(capacidad));
-		//cliente.agregarDispositivo(lavarropasAutomatico);
+		cliente.agregarDispositivoConcreto(lavarropasAutomatico);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -335,7 +335,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto lavarropasSemiAutomatico = factory.crearLavarropasSemiAutomatico(tieneCalentamiento, Integer.valueOf(capacidad));
-		//cliente.agregarDispositivo(lavarropasSemiAutomatico);
+		cliente.agregarDispositivoConcreto(lavarropasSemiAutomatico);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -357,7 +357,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 		factory.setNombre(nombre);
 		
 		DispositivoConcreto microondas = factory.crearMicroondas();
-		//cliente.agregarDispositivo(microondas);
+		cliente.agregarDispositivoConcreto(microondas);
 		
 		viewModel.put("exito", exito);
 		vista = new ModelAndView(viewModel, "adminAlta.hbs");
@@ -381,7 +381,7 @@ public class ControladorAdministrador extends ControladorUsuario{
 			factory.setNombre(nombre);
 			
 			DispositivoConcreto pc = factory.crearPC();
-			//cliente.agregarDispositivo(pc);
+			cliente.agregarDispositivoConcreto(pc);
 		
 			viewModel.put("exito", exito);
 			vista = new ModelAndView(viewModel, "adminAlta.hbs");

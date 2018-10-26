@@ -152,9 +152,9 @@ public class Cliente extends Usuario {
 		}
 	}
 	
-	/*public void agregarDispositivoConcreto(DispositivoConcreto dispositivo) {
+	public void agregarDispositivoConcreto(DispositivoConcreto dispositivo) {
 		this.dispositivos.add(dispositivo);
-	}*/
+	}
 	
 	
 	//CONFIGURACION OPTIMA DE DISPOSITIVOS
