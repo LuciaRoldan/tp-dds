@@ -57,7 +57,7 @@ public class ControladorCliente extends ControladorUsuario {
 	
 	public ModelAndView mostrarEstadoDispositivos(Request request, Response response) throws IOException {
 		HashMap<String, Object> viewModel = new HashMap<String, Object>();
-		List<DispositivoConcreto> listaDispositivos = cliente.getDispositivos();
+		List<DispositivoConcreto> listaDispositivos = cliente.getDispositivosInteligentes(); //Cambie dispositivos por dispositivos inteligentes
 		viewModel.put("listaDispositivos",listaDispositivos);
 		viewModel.put("cliente",cliente);
 

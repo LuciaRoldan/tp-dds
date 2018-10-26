@@ -52,6 +52,7 @@ public abstract class DispositivoConcreto {
 	public double consumoCorriente() { return this.dispositivoBase.consumoCorriente();}
 	public List<EstadoDispositivo> getEstadosAnteriores(){ return this.dispositivoBase.getEstadosAnteriores();}
 	public double consumoCorrienteMock() {return this.dispositivoBase.consumoCorrienteMock();}
-
+	public String getEsBajoConsumoBoolean() {return this.dispositivoBase.getEsBajoConsumoBoolean();}
+	public String getEstadoString() {return this.dispositivoBase.getEstadoString();}
 }
 

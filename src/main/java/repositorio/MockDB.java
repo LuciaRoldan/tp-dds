@@ -122,18 +122,18 @@ public class MockDB {
 		condiciones.add(hacen30Grados);
 		condiciones.add(estaCerrada);
 		
-		cliente.agregarSensor(sensorVentana);
-		cliente.agregarSensor(sensorTemperatura);
 		new Regla(actuadores, condiciones);
 
 		sensorVentana.cambiarMedicion(0);
-		sensorVentana.agregarUnidad("IDK");
+		sensorVentana.agregarUnidad("% apertura");
 		sensorVentana.agregarDescripcion("Medicion de la ventana");
 
 		sensorTemperatura.cambiarMedicion(35);
-		sensorTemperatura.agregarUnidad("IDK");
+		sensorTemperatura.agregarUnidad("°C");
 		sensorTemperatura.agregarDescripcion("Medicion de la temperatura");
 		
+		cliente.agregarSensor(sensorVentana);
+		cliente.agregarSensor(sensorTemperatura);
 	    repo.agregarUsuario(cliente);
 	    
 		//////////////// Persisto un administrador ///////////////////////////////

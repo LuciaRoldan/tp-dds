@@ -24,9 +24,10 @@ public class Sensor {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(nullable = true, name = "numeroDeSensor", foreignKey = @ForeignKey(name = "numeroDeSensor"))
 	List<Condicion> condiciones = new ArrayList<Condicion>();
-	double medicion;
-	String descripcion;
-	String unidad;
+	private double medicion;
+	private String descripcion;
+	private String unidad;
+	private String medicionS;
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -75,6 +76,9 @@ public class Sensor {
 		return unidad;
 	}
     
+	public String getMedicionS() {
+		return Double.toString(medicion);
+	}
     
 }
 

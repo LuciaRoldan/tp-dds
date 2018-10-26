@@ -108,7 +108,17 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		return this.estado;
 	}
 
-	public String getEstadoString() { return this.getEstado().toString();}
+	public String getEstadoString() { 
+		if(this.estaEncendido()) {
+			return "Encendido";}
+		else {
+			if(this.estaApagado()) {
+				return "Apagado";
+			}else {
+				return "Ahorro de energía";
+			}
+		}
+	}
 	
 	public double getUsoMensualMinimo() {
 		return this.usoMensualMinimo;
@@ -167,6 +177,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 
 		return estring;
 	}
+	
 	
 	public double consumoCorriente() {
 		int mesActual = LocalDate.now().getMonthValue();
