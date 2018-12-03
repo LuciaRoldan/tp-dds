@@ -29,7 +29,6 @@ public class Modulo extends DispositivoInteligenteAbstracto {
 	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
     private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
-
     ///////////////// CONSTRUCTOR /////////////////////////////////////////////////////
 
     public Modulo(DispositivoBase dispositivoEstandar,EstadoDispositivo estadoDispositivo){
@@ -53,6 +52,8 @@ public class Modulo extends DispositivoInteligenteAbstracto {
     //SETTERS
     public void setEstado(EstadoDispositivo estado) {  this.estadosAnteriores.add(estado); }
     public String getName(){return this.dispositivoEstandar.getName();}
+    public String getEsBajoConsumo(){return "ERROR";}
+    public String getEstadoString() { return "ERROR";}
     public void setName(String name){this.dispositivoEstandar.setName(name);}
     public void setPotencia(double potencia){this.dispositivoEstandar.setPotencia(potencia);}
     public void setBajoConsumo(boolean bajoConsumo) {this.dispositivoEstandar.setBajoConsumo(bajoConsumo);}

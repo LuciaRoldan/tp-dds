@@ -12,27 +12,19 @@ import dispositivo.estados.EstadoDispositivo;
 
 @Entity
 public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
-<<<<<<< HEAD
-
-	@OneToOne(cascade=CascadeType.ALL)
-	private EstadoDispositivo estado;
-=======
 	
->>>>>>> konsumo
 	private String name;
 	private double potencia;
 	private double consumoIdeal;
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
-	private boolean esBajoConsumo;
+	private boolean esBajoConsumoBoolean;
+	private String esBajoConsumo;
 
 
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "numeroDeDispositivoBase", nullable = true)
-<<<<<<< HEAD
-	//@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
-=======
->>>>>>> konsumo
+
 	private List<EstadoDispositivo> estadosAnteriores = new ArrayList<EstadoDispositivo>();
 
 
@@ -43,9 +35,14 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.consumoIdeal = 0;
+<<<<<<< HEAD
 		this.esBajoConsumo = false;
 		this.setEstado(estadoInicial);
 		}
+=======
+		this.esBajoConsumoBoolean = false;
+	}
+>>>>>>> Configuracion-UX
 
 	///////////////////// METODOS /////////////////////
 
@@ -91,6 +88,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public void apagate() {
 		this.getEstado().apagate(this);
 	}
+	
 
 	public void activarAhorroDeEnergia() {
 		this.getEstado().activarAhorroDeEnergia(this);
@@ -105,13 +103,22 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public double getConsumoIdeal() {
 		return consumoIdeal;
 	}
-	
-	public boolean getEsBajoConsumo() {
-		return esBajoConsumo;
-	}
+
 	
 	public EstadoDispositivo getEstado() {
 		return this.estadosAnteriores.get(this.estadosAnteriores.size()-1);
+	}
+
+	public String getEstadoString() { 
+		if(this.estaEncendido()) {
+			return "Encendido";}
+		else {
+			if(this.estaApagado()) {
+				return "Apagado";
+			}else {
+				return "Ahorro de energía";
+			}
+		}
 	}
 	
 	public double getUsoMensualMinimo() {
@@ -137,8 +144,8 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	
 	public void setConsumoIdeal(double consumoIdeal) {this.consumoIdeal = consumoIdeal;}
 	
-	public void setEsBajoConsumo(boolean esBajoConsumo) {
-		this.esBajoConsumo = esBajoConsumo;
+	public void setEsBajoConsumoBoolean(boolean esBajoConsumoBoolean) {
+		this.esBajoConsumoBoolean = esBajoConsumoBoolean;
 	}
 	
 	public void setUsoMensualMinimo(double consumo) {
@@ -156,6 +163,18 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	public String getName(){
 		return this.name;
 	}
+
+	public String getEsBajoConsumoBoolean(){
+		String estring = "error";
+		if(esBajoConsumoBoolean){
+			estring = "SI";
+		}else{
+			estring = "NO";
+		}
+
+		return estring;
+	}
+	
 	
 	public double consumoCorriente() {
 		int mesActual = LocalDate.now().getMonthValue();
@@ -185,7 +204,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 	@Override
 	public void setBajoConsumo(boolean bajoConsumo) {
 		// TODO Auto-generated method stub
-		this.esBajoConsumo = bajoConsumo;
+		this.esBajoConsumoBoolean = bajoConsumo;
 	}
 
 

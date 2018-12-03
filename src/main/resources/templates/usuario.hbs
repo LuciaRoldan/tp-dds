@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/css/styleMap.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <link rel='stylesheet' href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css'>
+
+</head>
+
+<body>
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Code-mine App1</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/styleUsuario.css">
+</head>
+<body>
+<div class="container">
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <div class="head-menu">
+        <ul>
+          <div class="link">
+          <li><a href="/usuario/{{ cliente.numeroDeUsuario }}" style="font-size:15px;"> Inicio</a></li>
+          <li><a href="/usuarioEstados">Dispositivos</a></li>
+          <li><a href="/usuarioUltimas">Mediciones</a></li>
+          <li><a href="/usuarioSimplex">Simplex</a></li>
+          </div>
+
+        </ul>
+      </div>
+      <div class="head-buttons">
+        <div class="link-logOut">
+        <a style="text-align:right;" href="/logout"> LOGOUT</a>
+        </div>
+        <div class="head-profile">
+          <img src="https://image.flaticon.com/icons/png/512/17/17797.png" alt="Profile photo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="navigation">
+    <div class="header-content">
+      <div class="nav-top">
+        <div class="nav-top-left">
+          <p>{{ cliente.nombreYApellido }}</p>
+        </div>
+        <div class="nav-top-right">
+        </div>
+        <div class="nav-bottom">
+          <ul>
+          <li>Cliente N° {{ cliente.numeroDeUsuario }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content row">
+    <div class="averages">
+      <div class="averages-title">
+        <p>Consumo actual</p>
+      </div>
+      <div class="averages-table">
+        <div class="test testers">
+          <div class="icon-profile">
+          <p><img src="https://bethami.org/wp-content/uploads/sites/110/2018/08/ScheduleIcon.png" alt="days" ></p>
+            <p>{{ periodo }} dias</p>
+           </div>
+        </div>
+        <div class="test to-buy">
+          <p> {{ fechaInicio }}</p>
+          <p>Inicio</p>
+        </div>
+        <div class="test desirability">
+          <p> {{ fechaFin }}</p>
+          <p>Fin</p>
+        </div>
+        <div class="test want-it">
+          <p> {{  cliente.maximoConsumo }} KW</p>
+          <p>Consumo maximo</p>
+        </div>
+        <div class="test score" >
+          <p style="font-size:25px;">{{ cliente.consumo }} KW</p>
+          <p style="font-size: 14px;">Consumo total</p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Second table of completed tests section-->
+    <div class="complete-test-table">
+      <div class="table-name">
+        <p style="font-size:20px"> {{ periodoAnterior }}</p>
+      </div>
+      <div class="table-content">
+        <br>
+        <p>Consumo ultimo periodo</p>
+        </br>
+      </div>
+      <div class="table-score">
+        <p style="font-size:20px"> {{ cliente.consumoAnterior }} </p>
+        <p href="/login">KiloWatts</p>
+      </div>
+    </div>
+
+    <!-- Completed tests -->
+
+    <div class="complete-tests">
+      <!-- First table of completed tests section-->
+      <div class="complete-tests-title2">
+        <p>CALCULAR CONSUMO PERIODO:</p>
+      </div>
+      <div class="complete-test-table">
+<<<<<<< Updated upstream
+        <form method="POST" action="/usuario/{{ cliente.numeroDeUsuario }}/reportes">
+=======
+        <form method="GET" action="/usuarioConsumo">
+>>>>>>> Stashed changes
+          <br>
+          <br>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="fechaInicio" name="fechaInicio" />
+            <label class="mdl-textfield__label" for="fechaInicio">Fecha Inicio DD/MM/AAAA </label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="fechaFin" name="fechaFin" />
+            <label class="mdl-textfield__label" for="fechaFin">Fecha Fin DD/MM/AAAA</label>
+          </div>
+
+          <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="CALCULAR">CALCULAR</button>
+        </br>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

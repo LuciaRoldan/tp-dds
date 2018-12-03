@@ -2,11 +2,16 @@ package sensor;
 
 import regla.Condicion;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,15 +20,24 @@ public class Sensor {
 	
 	//interesados
 
-	@ManyToMany //Deberia ser un one to many?
+	//@ManyToMany //Deberia ser un one to many?
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(nullable = true, name = "numeroDeSensor", foreignKey = @ForeignKey(name = "numeroDeSensor"))
 	List<Condicion> condiciones = new ArrayList<Condicion>();
-	double medicion;
+	private double medicion;
+	private String descripcion;
+	private String unidad;
+	private String medicionS;
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Integer numeroDeSensor;
 	
 	public Sensor() {}
+	
+	public Integer getId() {
+		return this.numeroDeSensor;
+	}
 	
 	public void agregarCondicion(Condicion unaCondicion){
 	      condiciones.add(unaCondicion);
@@ -41,5 +55,30 @@ public class Sensor {
     public Integer getNumeroDeSensor() {
 		return this.numeroDeSensor;
     }
+    
+    public void agregarDescripcion(String descripcion) {
+    	this.descripcion = descripcion;
+    }
+    
+    public void agregarUnidad(String unidad) {
+    	this.unidad = unidad;
+    }
+
+	public double getMedicion() {
+		return medicion;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public String getUnidad() {
+		return unidad;
+	}
+    
+	public String getMedicionS() {
+		return Double.toString(medicion);
+	}
+    
 }
 

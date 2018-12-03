@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/styleMap.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet' href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-blue.min.css'>
+
+</head>
+
+<body>
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Code-mine App1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href=/css/styleUsuario.css">
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <div class="head-menu">
+                <ul>
+                    <div class="link">
+                        <li><a href="/admin" style="font-size:15px;"> Inicio</a></li>
+                        <li><a href="/admin/altaDispositivo"> Alta dispositivo</a></li>
+                        <li><a href="/admin/reportes"> Ver reportes</a></li>
+                    </div>
+
+                </ul>
+            </div>
+            <div class="head-buttons">
+                <div class="link-logOut">
+                    <a style="text-align:right;" href="/logout"> LOGOUT</a>
+                </div>
+                <div class="head-profile">
+                    <img src="https://image.flaticon.com/icons/png/512/17/17797.png" alt="Profile photo">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{usuarios}}
+    <div class="navigation">
+        <div class="header-content">
+            <div class="nav-top">
+                <div class="nav-top-left">
+                    <p>Administrador </p>
+                </div>
+                <div class="nav-top-right">
+                </div>
+                <div class="nav-bottom">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content row">
+        <div class="averages">
+
+            <form method="GET" action="/admin/informacion">
+                <br>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield">
+                    <input class="mdl-textfield__input" type="text" id="NUMERODECLIENTE" name="NUMERODECLIENTE" />
+                    <label class="mdl-textfield__label" for="NUMERODECLIENTE">INGRESE NUMERO DE CLIENTE </label>
+                </div>
+
+                <button type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" value="INFOUSUARIO ">INFO USUARIO</button>
+                </br>
+            </form>
+            <div style="color:#ff472e;">{{ error }}
+        </div> 
+
+
+
+        <!-- Second table of completed tests section-->
+        <div class="complete-tests-title2">
+            <p>RESUMEN:</p>
+        </div>
+        <div class="complete-test-table2">
+             <div class="test to-buy2" style="display: inline-block;margin-right:50px;" >
+                <p style="text-align:left">{{ cliente.numeroDeUsuarioS }}</p>
+                <p style="text-align:center">ID USUARIO</p>
+            </div>
+            <div class="test desirability2" style="display: inline-block;margin-right: 50px;">
+                <p style="text-align:left">{{ cliente.maximoConsumoS }} KW </p>
+                <p style="text-align:center">MAXIMO CONSUMO</p>
+            </div>
+            <div class="test desirability3" style="display: inline-block;margin-right: 50px;">
+                <p style="text-align:left">{{ cliente.consumoMensualS }} KW</p>
+                <p style="text-align:center">CONSUMO MENSUAL</p>
+            </div>
+            <div class="test desirability4" style="display: inline-block">
+                <p style="text-align:left"> {{ cliente.categoriaResidencialS }}</p>
+                <p style="text-align:center">CATEGORIA</p>
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- Completed tests -->
+
+</div>
+
+
+</body>
+
+</html>

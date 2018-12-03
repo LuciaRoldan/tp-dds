@@ -16,7 +16,6 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.ForeignKey;
 
@@ -32,7 +31,12 @@ public class Cliente extends Usuario {
 	private int documento;
 	private int telefono;
 	private int puntos = 0;
+<<<<<<< HEAD
 	@OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+=======
+	private Double consumoAnterior;
+	@OneToMany(cascade = CascadeType.ALL)
+>>>>>>> Configuracion-UX
 	@JoinColumn(nullable = true, name = "numeroDeUsuario", foreignKey = @ForeignKey(name = "numeroDeUsuario"))
 	private List<DispositivoConcreto> dispositivos = new ArrayList<DispositivoConcreto>();
 	@Enumerated(EnumType.STRING)
@@ -69,6 +73,31 @@ public class Cliente extends Usuario {
 									 .mapToDouble(dispositivo -> dispositivo.consumoMensual())
 									 .sum();
 		return consumo;
+	}
+
+	public Double calcularConsumoPeriodo(LocalDateTime inicio,LocalDateTime fin) {
+
+		consumoAnterior = dispositivos.stream()
+				.mapToDouble(dispositivo -> dispositivo.calcularConsumoPeriodo(inicio,fin))
+				.sum();
+		return consumoAnterior;
+	}
+
+	public String getConsumoAnterior(){
+		this.calcularConsumoPeriodo(LocalDateTime.now().minusMonths(1),LocalDateTime.now().minusMonths(2));
+		DecimalFormat formatter = new DecimalFormat("#0.00");
+
+		return formatter.format(consumoAnterior);
+	}
+
+	public String getConsumo() {
+
+		Double consumo = dispositivos.stream()
+				.mapToDouble(dispositivo -> dispositivo.consumoMensual())
+				.sum();
+		DecimalFormat formatter = new DecimalFormat("#0.00");
+
+		return formatter.format(consumo);
 	}
 
 	public void recategorizarse() {
@@ -196,6 +225,17 @@ public class Cliente extends Usuario {
 		return maximoConsumo;
 	}
 	
+<<<<<<< HEAD
+
+	public int getPuntos() {
+		return puntos;
+	}
+
+	public void setPuntos(int puntos) {
+		this.puntos = puntos;
+	}
+	
+=======
 	public List<Sensor>getSensores(){
 		return this.sensores;
 	}
@@ -208,6 +248,7 @@ public class Cliente extends Usuario {
 
 	public String getCategoriaResidencialS(){ return this.getCategoriaResidencial().getNombre(); }
 
+>>>>>>> Configuracion-UX
 	
 	/////////////////////////////////////////// SETTERS /////////////////////////////////////////////////////////////
 

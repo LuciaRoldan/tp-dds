@@ -7,7 +7,6 @@ import java.time.temporal.ChronoUnit;
 import javax.persistence.Entity;
 
 import dispositivo.estados.EstadoDispositivo;
-import exceptionDispositivo.dispositivoEstandar.NoSePuedeCalcularElConsumoException;
 
 @Entity
 public class DispositivoEstandar extends DispositivoBase {
@@ -16,7 +15,8 @@ public class DispositivoEstandar extends DispositivoBase {
 	private double usoMensualMinimo;
 	private double usoMensualMaximo;
 	private double potencia;
-	private boolean esBajoConsumo;
+	private boolean esBajoConsumoBoolean;
+	private String esBajoConsumo;
 	private double horasUsoMensuales;
 	
 
@@ -24,8 +24,15 @@ public class DispositivoEstandar extends DispositivoBase {
 		this.name = name;
 		this.setUsoMensualMinimo(usoMensualMinimo);
 		this.setUsoMensualMaximo(usoMensualMaximo);
-		this.esBajoConsumo = false;
+		this.esBajoConsumoBoolean = false;
 		this.horasUsoMensuales = horasUsoMensuales;
+	}
+	public String getesBajoConsumo(){
+		if(esBajoConsumoBoolean){
+			return "SI";
+		}else{
+			return "NO";
+		}
 	}
 	
 
@@ -59,7 +66,7 @@ public class DispositivoEstandar extends DispositivoBase {
 	}
 	
 	public void setBajoConsumo(boolean bajoConsumo) {
-		this.esBajoConsumo = bajoConsumo;
+		this.esBajoConsumoBoolean = bajoConsumo;
 	}	
 
 
