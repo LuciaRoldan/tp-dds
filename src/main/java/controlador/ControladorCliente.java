@@ -99,7 +99,8 @@ public class ControladorCliente extends ControladorUsuario {
 		System.out.println(fechaInicio);
 		System.out.println(fechaFin);
 		
-		Double consumo = cliente.calcularConsumoPeriodo(fechaInicio, fechaFin);
+		Double consumo = cliente.consumoHogarPeriodo(fechaInicio, fechaFin);
+		//LE CAMBIE EL NOMBRE POR QUE EL METODO QUE TENIA ANTES NO EXISTIA, EL QUE EXISTE ES ESTE DE consumoHogarPeriodo
 		
 		viewModel.put("consumo", consumo);
 

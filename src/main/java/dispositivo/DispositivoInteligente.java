@@ -35,14 +35,11 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 		this.usoMensualMinimo = usoMensualMinimo;
 		this.usoMensualMaximo = usoMensualMaximo;
 		this.consumoIdeal = 0;
-<<<<<<< HEAD
-		this.esBajoConsumo = false;
+		this.esBajoConsumoBoolean = false;
 		this.setEstado(estadoInicial);
 		}
-=======
-		this.esBajoConsumoBoolean = false;
-	}
->>>>>>> Configuracion-UX
+//ACA ARREGLE EL MERGE Y SOLO DEJE QUE EL esBajoConsumoBoolean SEA FALSE POR DEFAULT NO COMPLETE EL esBajoConsumo POR 
+	//QUE NO LO NECESITA
 
 	///////////////////// METODOS /////////////////////
 
@@ -116,7 +113,7 @@ public class DispositivoInteligente extends DispositivoInteligenteAbstracto {
 			if(this.estaApagado()) {
 				return "Apagado";
 			}else {
-				return "Ahorro de energía";
+				return "Ahorro de energï¿½a";
 			}
 		}
 	}

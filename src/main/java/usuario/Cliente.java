@@ -199,6 +199,8 @@ public class Cliente extends Usuario {
 	public List<Sensor>getSensores(){
 		return this.sensores;
 	}
+	
+	public Double getConsumo() {return 1.0;} //METODO AGREGADO NO SE SI VA
 
 	public String getNumeroDeUsuarioS(){ return String.valueOf(this.numeroDeUsuario); }
 
