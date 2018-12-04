@@ -32,14 +32,14 @@ import usuario.Cliente;
 import usuario.TipoDocumento;
 
 public class MockDB {
-	
+
 	public void inicializarDB() {
 		RepositorioDeUsuarios repo = new RepositorioDeUsuarios();
-		
+
 		/////////////// Persisto un cliente con un dispositivo con estados //////////////////////////////
-		
+
 		Cliente cliente = new Cliente("Maximo Cozzetti", "Calle falsa 123", LocalDate.of(2001, 01, 01), "ro", "xd", TipoDocumento.DNI ,  007, 4545-4545, CategoriaResidencial.CATEGORIAR5 ,null, (float) 0, (float) 0);
-		
+
 		Televisor tv;
 		Lampara lampara;
 		Lavarropas lavarropas;
@@ -48,7 +48,7 @@ public class MockDB {
 		Microondas microondas;
 		Plancha plancha;
 		Ventilador ventilador;
-		
+
 		DispositivoFactory factory = new DispositivoFactory();
 		factory.setNombre("aire");
 		AireAcondicionado aire = factory.crearAireAcondicionado(2200);
@@ -57,7 +57,7 @@ public class MockDB {
         EncendidoMock encendido2 = new EncendidoMock(LocalDateTime.now().minus(15, ChronoUnit.DAYS), LocalDateTime.now().minus(10, ChronoUnit.DAYS));
         ApagadoMock apagado2 = new ApagadoMock(LocalDateTime.now().minus(10, ChronoUnit.DAYS), LocalDateTime.now().minus(5, ChronoUnit.DAYS));
 		Encendido encendido3 = new Encendido();
-		
+
 		factory.setNombre("tv");
 		tv = factory.crearTelevisorLED(40);
 		tv.setEstado(encendido1);
@@ -96,7 +96,7 @@ public class MockDB {
 		aire.agregarEstado(encendido2);
 		aire.agregarEstado(apagado2);
 		aire.agregarEstado(encendido3);
-		
+
 		List<DispositivoConcreto> disp = new ArrayList<DispositivoConcreto>();
 	    disp.add(aire);
 	    disp.add(tv);
@@ -108,20 +108,20 @@ public class MockDB {
 	    disp.add(plancha);
 	    disp.add(ventilador);
 	    cliente.setDispositivos((ArrayList<DispositivoConcreto>) disp);
-	    
-	    
+
+
 		Sensor sensorTemperatura = new Sensor();
 		Sensor sensorVentana = new Sensor();
 		CondicionTemperaturaAlta hacen30Grados = new CondicionTemperaturaAlta(sensorTemperatura, 30);
 		CondicionVentanaAbierta estaCerrada = new CondicionVentanaAbierta(sensorVentana, false);
 		AireEstadoActuador actuadorAire = new AireEstadoActuador(aire,true);
-		
+
 		ArrayList<Actuador> actuadores = new ArrayList <Actuador>();
 		ArrayList<Condicion> condiciones = new ArrayList <Condicion>();
 		actuadores.add(actuadorAire);
 		condiciones.add(hacen30Grados);
 		condiciones.add(estaCerrada);
-		
+
 		new Regla(actuadores, condiciones);
 
 		sensorVentana.cambiarMedicion(0);
@@ -129,17 +129,17 @@ public class MockDB {
 		sensorVentana.agregarDescripcion("Medicion de la ventana");
 
 		sensorTemperatura.cambiarMedicion(35);
-		sensorTemperatura.agregarUnidad("°C");
+		sensorTemperatura.agregarUnidad("C");
 		sensorTemperatura.agregarDescripcion("Medicion de la temperatura");
-		
+
 		cliente.agregarSensor(sensorVentana);
 		cliente.agregarSensor(sensorTemperatura);
 	    repo.agregarUsuario(cliente);
-	    
+
 		//////////////// Persisto un administrador ///////////////////////////////
-	    
+
 	    Administrador administrador = new Administrador("Juan Perez", "Calle Falsa 123", LocalDate.now().minusMonths(1), "hola", "1997", (float) 0 ,(float) 0);
 	    repo.agregarUsuario(administrador);
-	
+
 	}
 }
