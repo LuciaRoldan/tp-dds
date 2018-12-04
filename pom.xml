@@ -5,6 +5,10 @@
 	<artifactId>TPANUAL</artifactId>
 	<version>1</version>
 
+<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 	<!-- Dependencias -->
 	<dependencies>
 
@@ -19,6 +23,7 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>5.3.6.Final</version>
         </dependency>
+
         
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -155,21 +160,14 @@
         				<forkMode>always</forkMode>
     				</configuration>
 			</plugin>
-			<plugin>
-    				<groupId>com.heroku.sdk</groupId>
-    				<artifactId>heroku-maven-plugin</artifactId>
-    				<version>0.4.4</version>
-    				<configuration>
-        				<jdkVersion>1.8</jdkVersion>
-        				<!-- Use your own application name -->
-        				<appName>guarded-tor-91121</appName> 
-        				<processTypes>
-            				<!-- Tell Heroku how to launch your application -->
-            				<!-- You might have to remove the ./ in front   -->
-            				<web>java -jar ./target/my-app-1.0-jar-with-dependencies.jar</web>
-        				</processTypes>
-    				</configuration>
-			</plugin>
+<plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+   <artifactId>maven-compiler-plugin</artifactId>
+   <version>2.3.2</version>
+   <configuration>
+       <encoding>Cp1252</encoding>
+   </configuration> 
+</plugin>
 			<plugin>
             			<groupId>org.apache.maven.plugins</groupId>
             			<artifactId>maven-dependency-plugin</artifactId>
@@ -191,6 +189,19 @@
                 			</execution>
             			</executions>
         		</plugin>
+<plugin>
+    <groupId>com.heroku.sdk</groupId>
+    <artifactId>heroku-maven-plugin</artifactId>
+    <version>0.4.4</version>
+    <configuration>
+        <jdkVersion>1.8</jdkVersion>
+        <appName>guarded-tor-91121</appName> 
+        <processTypes>
+            <!-- Tell Heroku how to launch your application -->
+            <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
+        </processTypes>
+    </configuration>
+</plugin>
 		</plugins>
 	</build>
 
