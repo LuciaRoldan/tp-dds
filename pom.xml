@@ -1,217 +1,228 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>TPANUAL</groupId>
-	<artifactId>TPANUAL</artifactId>
-	<version>1</version>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+  <groupId>TPANUAL</groupId>
+  <artifactId>TPANUAL</artifactId>
+  <version>1</version>
 
-	<!-- Dependencias -->
-	<dependencies>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 
-		<dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>2.2.8</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.3.6.Final</version>
-        </dependency>
+  <!-- Dependencias -->
+  <dependencies>
 
-        
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.2.2.Final</version>
-        </dependency>
-        
-        	<dependency>
-            		<groupId>org.uqbar-project</groupId>
-            		<artifactId>jpa-java8-extras</artifactId>
-            		<version>1.0-alpha-1</version>
-        	</dependency>
-        
-        	<dependency>
-            		<groupId>mysql</groupId>
-            		<artifactId>mysql-connector-java</artifactId>
-            		<version>8.0.12</version>
-        	</dependency>
+    <dependency>
+      <groupId>org.hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>2.2.8</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>5.3.6.Final</version>
+    </dependency>
 
 
-		<!-- driver jdbc -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.26</version>
-		</dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>5.2.2.Final</version>
+    </dependency>
 
-		<!-- spark -->
-	    	<dependency>
-		    	<groupId>com.sparkjava</groupId>
-	        	<artifactId>spark-core</artifactId>
-	        	<version>2.7.2</version>
-	    	</dependency>
-		
-		<dependency>
-		    <groupId>com.sparkjava</groupId>
-		    <artifactId>spark-template-handlebars</artifactId>
-		    <version>2.7.1</version>
-		</dependency>
+    <dependency>
+      <groupId>org.uqbar-project</groupId>
+      <artifactId>jpa-java8-extras</artifactId>
+      <version>1.0-alpha-1</version>
+    </dependency>
 
-		<dependency>
-			<groupId>com.sparkjava</groupId>
-			<artifactId>spark-debug-tools</artifactId>
-			<version>0.5</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.jknack</groupId>
-			<artifactId>handlebars-helpers</artifactId>
-			<version>4.0.6</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.github.jknack</groupId>
-			<artifactId>handlebars-humanize</artifactId>
-			<version>4.0.6</version>
-		</dependency>
-
-	    	<dependency>
-		 	<groupId>org.slf4j</groupId>
-	    	<artifactId>slf4j-simple</artifactId>
-	    	<version>1.7.21</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-		</dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.12</version>
+    </dependency>
 
 
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
-		</dependency>
+    <!-- driver jdbc -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.26</version>
+    </dependency>
 
-		<dependency>
-			<groupId>com.google.code.gson</groupId>
-			<artifactId>gson</artifactId>
-			<version>2.8.2</version>
-		</dependency>
+    <!-- spark -->
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-core</artifactId>
+      <version>2.7.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-template-handlebars</artifactId>
+      <version>2.7.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sparkjava</groupId>
+      <artifactId>spark-debug-tools</artifactId>
+      <version>0.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.jknack</groupId>
+      <artifactId>handlebars-helpers</artifactId>
+      <version>4.0.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.github.jknack</groupId>
+      <artifactId>handlebars-humanize</artifactId>
+      <version>4.0.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.21</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
 
 
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.9.4</version>
-		</dependency>
+    <dependency>
+      <groupId>com.googlecode.json-simple</groupId>
+      <artifactId>json-simple</artifactId>
+      <version>1.1.1</version>
+    </dependency>
 
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-math3</artifactId>
-			<version>3.3</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.1</version>
-		</dependency>
-
-	</dependencies>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.2</version>
+    </dependency>
 
 
-	<build>
-		<defaultGoal>install</defaultGoal>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>2.4</version>
-            <executions>
-                <execution>
-                    <id>copy-dependencies</id>
-                    <phase>package</phase>
-                    <goals><goal>copy-dependencies</goal></goals>
-                </execution>
-            </executions>
-        </plugin>
-			<plugin>
-   				<groupId>org.apache.maven.plugins</groupId>
-    				<artifactId>maven-surefire-plugin</artifactId>
-    				<version>2.12</version>
-    				<configuration>
-        				<forkMode>always</forkMode>
-    				</configuration>
-			</plugin>
-<plugin>
-   <groupId>org.apache.maven.plugins</groupId>
-   <artifactId>maven-compiler-plugin</artifactId>
-   <version>2.3.2</version>
-   <configuration>
-       <encoding>Cp1252</encoding>
-   </configuration> 
-</plugin>
-			<plugin>
-            			<groupId>org.apache.maven.plugins</groupId>
-            			<artifactId>maven-dependency-plugin</artifactId>
-            			<version>2.3</version>
-            			<executions>
-                			<execution>
-                    			<phase>package</phase>
-                    			<goals><goal>copy</goal></goals>
-                    			<configuration>
-                        			<artifactItems>
-                            			<artifactItem>
-                         			<groupId>com.github.jsimone</groupId>
-                        			<artifactId>webapp-runner</artifactId>
-                                			<version>8.0.30.2</version>
-                     				<destFileName>webapp-runner.jar</destFileName>
-                            			</artifactItem>
-                        			</artifactItems>
-                    			</configuration>
-                			</execution>
-            			</executions>
-        		</plugin>
-<plugin>
-    <groupId>com.heroku.sdk</groupId>
-    <artifactId>heroku-maven-plugin</artifactId>
-    <version>0.4.4</version>
-    <configuration>
-        <jdkVersion>1.8</jdkVersion>
-        <appName>guarded-tor-91121</appName> 
-        <processTypes>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.9.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math3</artifactId>
+      <version>3.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>2.2.1</version>
+    </dependency>
+
+  </dependencies>
+
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.0.1</version>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals><goal>copy-dependencies</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.12</version>
+        <configuration>
+          <forkMode>always</forkMode>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <encoding>Cp1252</encoding>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <descriptorRefs>
+            <!-- This tells Maven to include all dependencies -->
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <archive>
+            <manifest>
+              <mainClass>Main</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>0.4.4</version>
+        <configuration>
+          <jdkVersion>1.8</jdkVersion>
+          <!-- Use your own application name -->
+          <appName>sge-grupo-19</appName>
+          <processTypes>
             <!-- Tell Heroku how to launch your application -->
-            <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
-        </processTypes>
-    </configuration>
-</plugin>
-		</plugins>
-	</build>
+            <!-- You might have to remove the ./ in front   -->
+            <web>java -jar ./target/TPANUAL-1-jar-with-dependencies.jar</web>
+          </processTypes>
+        </configuration>
+      </plugin>
 
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</reporting>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
 
 </project>
